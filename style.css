@@ -1,0 +1,238 @@
+/* General styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1, h2, h3 {
+    font-weight: bold;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Header styles */
+header {
+    background-color: #fff;
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.logo {
+    float: left;
+    margin-right: 20px;
+}
+
+.logo h1 {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+}
+
+.logo span {
+    font-size: 16px;
+    color: #777;
+}
+
+nav {
+    float: right;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav li {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+/* About section styles */
+# about {
+    background-color: #fff;
+    padding: 40px;
+    margin-bottom: 40px;
+}
+
+.about-content {
+    margin-top: 20px;
+    line-height: 1.6;
+}
+
+/* Experience section styles */
+# experience {
+    background-color: #fff;
+    padding: 40px;
+    margin-bottom: 40px;
+}
+
+.experience-content {
+    margin-top: 20px;
+}
+
+.job {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.job h3 {
+    margin: 0 0 10px 0;
+}
+
+.job h4 {
+    margin: 0;
+    font-size: 18px;
+    color: #777;
+}
+
+.job span {
+    display: block;
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+.job ul {
+    margin: 0;
+    padding: 0;
+    list-style: disc;
+    margin-left: 20px;
+}
+
+/* Projects section styles */
+# projects {
+    background-color: #fff;
+    padding: 40px;
+    margin-bottom: 40px;
+}
+
+.projects-content {
+    margin-top: 20px;
+}
+
+.project {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.project h3 {
+    margin: 0 0 10px 0;
+}
+
+.project a {
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.project span {
+    display: block;
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+/* Skills section styles */
+# skills {
+    background-color: #fff;
+    padding: 40px;
+    margin-bottom: 40px;
+}
+
+.skills-content {
+    margin-top: 20px;
+}
+
+.skill-group {
+    margin-bottom: 20px;
+}
+
+.skill-group h3 {
+    margin: 0 0 10px 0;
+}
+
+.skill-group ul {
+    margin: 0;
+    padding: 0;
+    list-style: disc;
+    margin-left: 20px;
+}
+
+/* Contact section styles */
+# contact {
+    background-color: #fff;
+    padding: 40px;
+    margin-bottom: 40px;
+}
+
+.contact-content {
+    margin-top: 20px;
+}
+
+.contact-content ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.contact-content li {
+    margin-bottom: 10px;
+}
+
+.contact-content i {
+    margin-right: 10px;
+}
+
+/* Footer styles */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    header {
+        text-align: center;
+    }
+
+    .logo {
+        float: none;
+        margin-bottom: 10px;
+    }
+
+    nav {
+        float: none;
+    }
+
+    nav ul {
+        display: block;
+    }
+
+    nav li {
+        display: block;
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+}
