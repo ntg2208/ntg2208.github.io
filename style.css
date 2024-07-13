@@ -107,8 +107,8 @@ section h2 {
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    /* object-fit: cover; */
-    display: inline-block;
+    object-fit: cover;
+    /* display: inline-block; */
 }
 .section-title h2 {
     color: #2c3e50;
