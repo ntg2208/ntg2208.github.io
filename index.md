@@ -1,11 +1,38 @@
-# Truong Nguyen - Data Scientist & Machine Learning Engineer
+---
+layout: default
+title: Truong Nguyen
+---
 
-## Contact Information
-- **Location**: London, UK
-- **Phone**: 07904035063
-- **Email**: ntg2208@gmail.com
-- **GitHub**: [ntg2208](https://github.com/ntg2208)
-- **LinkedIn**: [ntg2208](https://www.linkedin.com/in/ntg2208/)
+<header>
+  <div class="container">
+    <h1>Truong Nguyen</h1>
+    <p>Data Scientist & Machine Learning Engineer</p>
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section id="about">
+    <div class="container">
+        <div class="profile-image">
+            <img src="assets/images/profile-img.jpg" alt="Truong Nguyen">
+        </div>
+        <div class="section-title">
+            <h2>About Me</h2>
+        </div>
+        <div class="about-content">
+            <p>I am a passionate Data Scientist and Machine Learning Engineer with a strong academic background and practical experience in various domains. My expertise lies in building and deploying machine learning solutions to solve complex business problems, improve customer experiences, and drive innovation.</p>
+            <p>I am proficient in Python, R, SQL, NoSQL, Pytorch, Scikit-Learn, OpenCV, Docker, and BigQuery, and I am eager to leverage my skills to contribute to impactful projects. My portfolio showcases my ability to deliver robust and efficient solutions across diverse domains, including retail analytics, healthcare, computer vision, and natural language processing. I am a collaborative team player with a keen eye for detail, driven to deliver high-quality results that exceed expectations.</p>
+        </div>
+    </div>
+</section>
 
 ## Experiences
 

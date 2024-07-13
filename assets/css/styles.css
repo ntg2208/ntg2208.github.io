@@ -1,0 +1,8 @@
+/* assets/css/styles.css */
+.profile-image img {
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto 20px;
+    max-width: 150px;
+    height: auto;
+}

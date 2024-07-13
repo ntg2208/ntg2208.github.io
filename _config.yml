@@ -1,4 +1,8 @@
 # _config.yml
 title: Truong Nguyen's Portfolio
 description: Portfolio website for Truong Nguyen - Data Scientist & Machine Learning Engineer
-remote_theme: "mmistakes/so-simple-theme@3.2.0"
+theme: minima
+
+# Add the following line to include the custom CSS
+include:
+  - assets/css/styles.css
