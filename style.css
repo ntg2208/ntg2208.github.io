@@ -107,14 +107,15 @@ section h2 {
     width: 200px;
     height: 200px;
     border-radius: 50%;
-    object-fit: cover;
+    /* object-fit: cover; */
+    display: inline-block;
 }
 .section-title h2 {
     color: #2c3e50;
-    text-align: left;
+    text-align: center;
 }
 .about-content {
-    text-align: left;
+    text-align: center;
 }
 
 /* Experience section styles */
