@@ -1,1 +1,4 @@
-theme: jekyll-theme-cayman
+# _config.yml
+title: Truong Nguyen's Portfolio
+description: Portfolio website for Truong Nguyen - Data Scientist & Machine Learning Engineer
+remote_theme: "mmistakes/so-simple-theme@3.2.0"
