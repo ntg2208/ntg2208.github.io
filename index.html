@@ -234,35 +234,64 @@
             <div class="section-title">
                 <h2>Skills</h2>
             </div>
-            <div class="skills-content">
-                <div class="skill-group">
-                    <h3>Programming Languages</h3>
-                    <ul>
-                        <li>Python</li>
-                        <li>R</li>
-                        <li>SQL</li>
-                        <li>NoSQL</li>
-                        <li>C++</li>
-                        <li>Java</li>
-                        <li>MATLAB</li>
-                    </ul>
+            <div class="category">
+                <h3>Programing Languages</h3>
+                <div class="icons">
+                  <div class="icon">
+                    <img src="assets/img/skills/python.png" alt="Python">
+                    <!-- <span>Python</span> -->
+                  </div>
+                  <div class="icon">
+                    <img src="assets/img/skills/cpp.png" alt="CPP">
+                    <!-- <span>C++</span> -->
+                  </div>
+                  <div class="icon">
+                    <img src="assets/img/skills/R.png" alt="R">
+                    <!-- <span>R</span> -->
+                  </div>
+                  <div class="icon">
+                    <img src="assets/img/skills/sql.png" alt="SQL">
+                    <!-- <span>R</span> -->
+                  </div>
+                  <div class="icon">
+                    <img src="assets/img/skills/Matlab.png" alt="MATLAB">
+                    <!-- <span>MATLAB</span> -->
+                  </div>
                 </div>
-                <div class="skill-group">
-                    <h3>Libraries/Tools</h3>
-                    <ul>
-                        <li>Scikit-Learn</li>
-                        <li>Pytorch</li>
-                        <li>BigQuery</li>
-                        <li>OpenCV</li>
-                        <li>git</li>
-                        <li>Docker</li>
-                        <li>PySpark</li>
-                        <li>Azure</li>
-                        <li>AWS</li>
-                        <li>GCP</li>
-                    </ul>
+              </div>
+              <div class="category">
+                <h3>Frameworks & Clouds</h3>
+                <div class="icons">
+                  <div class="icon">
+                    <img src="assets/img/skills/pytorch.png" alt="pytorch">
+                    <!-- <span>TensorFlow</span> -->
+                  </div>
+                  <div class="icon">
+                    <img src="assets/img/skills/tf.png" alt="tensorflow">
+                    <!-- <span>TensorFlow</span> -->
+                  </div>
+                  <div class="icon">
+                    <img src="assets/img/skills/hf.png" alt="HF">
+                    <!-- <span>HuggingFace</span> -->
+                  </div>
+                  <div class="icon">
+                    <img src="assets/img/skills/opencv.png" alt="opencv">
+                    <!-- <span>HuggingFace</span> -->
+                  </div>
+                  <div class="icon">
+                    <img src="assets/img/skills/sklearn.png" alt="sklearn">
+                    <!-- <span>GCP</span> -->
+                  </div>
+                  <div class="icon">
+                    <img src="assets/img/skills/aws.png" alt="aws">
+                    <!-- <span>AWS</span> -->
+                  </div>
+                  <div class="icon">
+                    <img src="assets/img/skills/gcp.png" alt="gcp">
+                    <!-- <span>GCP</span> -->
+                  </div>
                 </div>
-            </div>
+              </div>
         </div>
     </section>
 
@@ -299,5 +328,21 @@
             <p>&copy; 2024 Truong Nguyen</p>
         </div>
     </footer>
+    <script>
+        let lastScrollTop = 0;
+        const navbar = document.querySelector('header');
+
+        window.addEventListener('scroll', () => {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            if (scrollTop > lastScrollTop) {
+                // Scrolling down
+                navbar.style.top = '-100px';
+            } else {
+                // Scrolling up
+                navbar.style.top = '0';
+            }
+            lastScrollTop = scrollTop;
+        });
+    </script>
 </body>
 </html>

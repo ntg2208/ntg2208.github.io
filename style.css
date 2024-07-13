@@ -48,18 +48,22 @@ header {
     position: sticky;
     top: 0;
     z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: top 0.3s; /* Smooth transition */
 }
 
 .logo {
-    display: flex; /* Use flexbox for the logo */
-    align-items: center; /* Align items vertically */
+    display: flex;
+    align-items: center;
 }
 
 .logo h1 {
     margin: 0;
     font-size: 28px;
     color: var(--secondary-color);
-    margin-right: 10px; /* Add some space between h1 and span */
+    margin-right: 10px;
 }
 
 .logo span {
