@@ -1,168 +1,192 @@
----
-layout: default
-title: Truong Nguyen
----
+# Truong Nguyen
 
-<header>
-  <div class="container">
-    <h1>Truong Nguyen</h1>
-    <p>Data Scientist & Machine Learning Engineer</p>
-    <nav>
-      <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
+<link href="assets/icons/favicon.png" rel="icon">
+<link href="assets/icons/apple-touch-icon.png" rel="apple-touch-icon">  
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
 
-<section id="about">
-    <div class="container">
-        <div class="profile-image">
-            <img src="assets/images/profile-img.jpg" alt="Truong Nguyen">
-        </div>
-        <div class="section-title">
-            <h2>About Me</h2>
-        </div>
-        <div class="about-content">
-            <p>I am a passionate Data Scientist and Machine Learning Engineer with a strong academic background and practical experience in various domains. My expertise lies in building and deploying machine learning solutions to solve complex business problems, improve customer experiences, and drive innovation.</p>
-            <p>I am proficient in Python, R, SQL, NoSQL, Pytorch, Scikit-Learn, OpenCV, Docker, and BigQuery, and I am eager to leverage my skills to contribute to impactful projects. My portfolio showcases my ability to deliver robust and efficient solutions across diverse domains, including retail analytics, healthcare, computer vision, and natural language processing. I am a collaborative team player with a keen eye for detail, driven to deliver high-quality results that exceed expectations.</p>
-        </div>
-    </div>
-</section>
+## About
 
-## Experiences
+![Truong Nguyen](assets/images/profile-img.jpg)
 
-### Data Scientist - Northumbria University, UK
-**Jan 2023 - Jun 2023**
+### About Me
 
-- Extracted data from medical wearable devices, transformed sensory data into tabular datasets, and visualized user behavior patterns.
-- Conducted statistical analysis to assess the effectiveness of medical wearable devices for drooling treatment for People with Parkinson's Disease.
-- Developed a machine learning model to build a personalized treatment schedule recommendation system, predicting treatment hours for individual People with Parkinson's Disease.
+I am a passionate Data Scientist and Machine Learning Engineer with a strong academic background and practical experience in various domains. My expertise lies in building and deploying machine learning solutions to solve complex business problems, improve customer experiences, and drive innovation.
 
-### Machine Learning Engineer - Seedcom, Vietnam
-**Nov 2020 - Present**
-
-#### Recipe Recommendation System
-- **Recipe Data Utilization**: Leveraged Vietnamese recipe blogs to curate product bundles, creating targeted promotions aligned with popular recipes and culinary trends.
-- **Cross-Sale Recommendations**: Developed a recommendation system suggesting complementary products based on user shopping baskets and associated recipes, enhancing the customer shopping experience.
-
-#### Product Price Mapping with Competitors
-- **Data Crawling and Mapping**: Developed a web scraping system to collect product data from competitor websites, utilizing a multimodal model to map competitor products to the company’s product catalog.
-- **Price Tracking Pipeline**: Established a pipeline for continuous monitoring and comparison of online pricing between the company’s products and competitors.
-- **Analytics Integration**: Integrated price tracking data into product analytics dashboards for real-time visibility and actionable insights.
-
-#### Product and Combo Pricing
-- **Statistical Analysis**: Identified top-performing product combinations frequently bought together to optimize cross-sell opportunities.
-- **Pricing Algorithm Development**: Developed a dynamic pricing algorithm for product bundles to maximize customer retention and profit margins.
-- **Strategic Promotion Planning**: Designed a comprehensive promotional strategy for product bundles to boost sales and enhance customer engagement.
-
-#### Sales Forecast and Inventory Management
-- **Statistical Analysis**: Identified trends and seasonal patterns in time-series sales data for decision-making.
-- **Advanced Forecasting Models**: Deployed forecasting models like DeepAR and LightGBM to predict sales at the store and area levels.
-- **Inventory Optimization**: Implemented an alert system for overstock and understock situations to optimize stock levels.
-
-#### Style Improvement Recommendation Systems
-- **Skills**: Pytorch, Object Detection, Project Management, Deploy Computer Vision Model, Object Segmentation, Pandas, Docker, UNIX
-- Led a team of 3 engineers to research, propose, implement, and deploy a computer vision solution.
-- Built a fashion item detection and localization model with RetinaNet and OpenCV, achieving an average precision of 92%.
-- Developed APIs for the recommendation team and packaged the model using Docker.
-
-#### Retail Data Analytic and Marketing Platform
-- **Skills**: BigQuery, Google Cloud Platform, Cloud Computing, SQL, Big Data Analysis, Visualization
-- Created dashboards for analyzing customer and product trends for Vietnam's biggest supermarket chain.
-- Optimized query time for analytic dashboards and documented SQL codes and formulas.
-
-### Machine Learning Engineer - Vulcan Labs, Vietnam
-**Jul 2020 - Nov 2020**
-
-- **Skills**: Research, Pytorch, GANs, Object Segmentation, Salient Object Detection, Docker, AWS
-- Researched and deployed deep learning and computer vision solutions using AWS EC2 and Docker.
-- Focused on topics like GANs, salient object detection, and image segmentation.
-
-### Machine Learning Engineer - Emage Development Pte. Ltd., Singapore
-**Jul 2019 - Jul 2020**
-
-- **Skills**: Image Processing, Object Detection, Object Segmentation, Tensorflow, Docker, AWS
-- Developed a defective semiconductor detection system using OpenCV, Hough transform, Canny edge detection, and ResNet.
-- Deployed machine learning models using Docker and researched reinforcement learning for auto defective inspection.
-
-### Embedded Software Engineer Intern - Robert Bosch Engineering And Business Solutions
-**May 2019 - Nov 2019**
-
-- **Skills**: C++, Application Design Pattern
-- Developed applications for debugging user interfaces in Renault & Nissan interior applications for electric vehicles.
-
-## Education
-
-### MSc Data Science - Northumbria University, UK
-**Jan 2022 - Jul 2023** - Distinction
-
-- **Dissertation**: Assessing Cueing Effectiveness for Drooling in Parkinson's Disease
-- Collaborated with computer scientists and healthcare specialists on the Parkinson's UK project, recruiting 3000 participants.
-- Relevant Skills: Research Project Management, Exploratory Data Analysis, Model Training and Evaluation, Big Data and Cloud Computing, Machine Learning, Statistics, R Programming.
-
-### Bachelor of Engineering in Electrical and Telecommunication - VNU - Ho Chi Minh University of Technology, Vietnam
-**Sep 2015 - May 2020** - 2.1
-
-- Graduated in the top 10%.
-- Relevant Skills: GANs, Deep Learning, Statistics, Probability, Linear Algebra, Critical Thinking, Analytic, Programming, Image Processing, Signal Processing.
-
-## Projects
-
-### DocPatientSumm: Low-Rank Adaptation (LoRA) Finetune for Clinical Conversations
-[**Kaggle Notebook**](https://www.kaggle.com/code/p1ayer0ne/gemma-doctor-patient-dialog) - 2024
-
-- Fine-tuned LLMs to enhance summarization of doctor-patient conversations, improving accuracy threefold.
-
-### Complaint Tweet Classification using Prompt Tuning of Large Language Models (LLMs)
-[**Kaggle**](https://www.kaggle.com/code/p1ayer0ne/prompttuning-bloom?scriptVersionId=165711500) - 2024
-
-- Applied prompt tuning to fine-tune the BLOOM LLM for classifying complaint tweets.
-
-### RAG Agent Llama3
-[**Google Collab**](https://colab.research.google.com/drive/1Pe1wPAGh4Z2b6c8QUhny0KWQyC70vK9r?usp=sharing) - 2024
-
-- Developed a retrieval-augmented generation system using Llama3 and LangGraph for improved question-answering capabilities.
-
-### Building a Q&A System with Retrieval-Augmented Generation (RAG) using LangChain and Llama2
-[**Google Collab**](https://colab.research.google.com/drive/1ct4A3H97BaJoqeyv6MjSXkHS_-4uJCFf?usp=sharing) - 2023
-
-### Malaria Parasite Detection using Deep Learning (TensorFlow v2)
-[**GitHub**](https://github.com/ntg2208/malaria_detection_CNN) - 2023
-
-### Hospital Readmission Prediction
-[**Kaggle**](https://www.kaggle.com/code/p1ayer0ne/hospital-readmissions-eda-and-model) - 2023
-
-### M1 Traffic Analysis
-[**GitHub**](https://github.com/ntg2208/M1-Traffic-Analysis-R) - 2022
-
-### Edible Mushroom Analysis
-[**GitHub**](https://github.com/ntg2208/Edible-Mushroom-Analysis) - 2022
-
-### LUng Nodule Analysis 2016 (LUNA 16) - 2020
-
-### Customer Sentiment Analysis - 2019
-
-### Combating Exam Impersonation in Universities
-[**GitHub**](https://github.com/ntg2208/matlab-anti-impersonator) - 2018
-
-### JPEG Image Compression in Python
-[**GitHub**](https://github.com/ntg2208/JPEG-Image-compression-python-example) - 2018
+I am proficient in Python, R, SQL, NoSQL, Pytorch, Scikit-Learn, OpenCV, Docker, and BigQuery, and I am eager to leverage my skills to contribute to impactful projects. My portfolio showcases my ability to deliver robust and efficient solutions across diverse domains, including retail analytics, healthcare, computer vision, and natural language processing. I am a collaborative team player with a keen eye for detail, driven to deliver high-quality results that exceed expectations.
 
 ## Skills
 
 ### Programming Languages
-- **Experienced**: Python, R, SQL, NoSQL
-- **Familiar**: C++, Java, MATLAB
 
-### Libraries/Tools
-- **Experienced**: Scikit-Learn, Pytorch, BigQuery, OpenCV, git, Docker
-- **Familiar**: PySpark, Azure, AWS, GCP
+- ![Python](assets/img/skills/python.png) Python
+- ![C++](assets/img/skills/cpp.png) C++
+- ![R](assets/img/skills/R.png) R
+- ![SQL](assets/img/skills/sql.png) SQL
+- ![MATLAB](assets/img/skills/Matlab.png) MATLAB
 
----
+### Frameworks & Clouds
 
-**Note**: This website is designed to be responsive and mobile-friendly. It includes a navigation menu for easy access to different sections. The design uses clean, modern elements and appropriate color schemes to reflect the candidate's professional image.
+- ![Pytorch](assets/img/skills/pytorch.png) Pytorch
+- ![TensorFlow](assets/img/skills/tf.png) TensorFlow
+- ![HuggingFace](assets/img/skills/hf.png) HuggingFace
+- ![OpenCV](assets/img/skills/opencv.png) OpenCV
+- ![Sklearn](assets/img/skills/sklearn.png) Sklearn
+- ![AWS](assets/img/skills/aws.png) AWS
+- ![GCP](assets/img/skills/gcp.png) GCP
+
+## Experience
+
+### Data Scientist
+**Northumbria University, UK**  
+*Jan 2023 - Jun 2023*
+
+- Extracted data from medical wearable devices, transformed sensory data into tabular datasets, and visualized users' behavior patterns.
+- Utilized statistical analysis to assess the effectiveness of medical wearable devices for drooling treatment for People with Parkinson's Disease.
+- Developed a Machine Learning model to build a personalized treatment schedule recommendation system, predicting treatment hours for individuals with Parkinson's Disease.
+
+### Machine Learning Engineer
+**Seedcom - A Venture Capital Company, Vietnam**  
+*Nov. 2020 - Present*
+
+#### Recipe Recommendation System
+- Leveraged Vietnamese recipe blogs to curate product bundles, creating targeted promotions that align with popular recipes and culinary trends.
+- Developed a recommendation system that suggests complementary products based on user shopping baskets and associated recipes, driving cross-sales and enhancing the customer shopping experience.
+
+#### Product Price Mapping with Competitors
+- Developed and implemented a web scraping system to collect product data from competitor websites. Utilized a multimodal model to accurately map competitor products to the company's product catalog.
+- Established a robust pipeline for continuous monitoring and comparison of online pricing between the company's products and competitors, ensuring up-to-date pricing intelligence.
+- Integrated price tracking data into product analytics dashboards, enabling real-time visibility and actionable insights for pricing strategies and competitive analysis.
+
+#### Product and Combo Pricing
+- Conducted thorough statistical analysis to identify top-performing product combinations frequently bought together, optimizing cross-sell opportunities.
+- Developed and implemented a dynamic pricing algorithm for product bundles, ensuring competitive pricing that maximizes both customer retention and profit margins.
+- Designed a comprehensive 1-year promotional strategy for product bundles, incorporating special pricing to boost sales and enhance customer engagement.
+
+#### Sales Forecast and Inventory Management
+- Conducted comprehensive statistical analysis to identify trends and seasonal patterns in time-series sales data, providing actionable insights for decision-making.
+- Deployed sophisticated forecasting models, including DeepAR and LightGBM, to predict sales at the store and area levels with high accuracy.
+- Enhanced inventory management by implementing an alert system to identify and address overstock and understock situations, thereby optimizing stock levels and reducing carrying costs.
+
+#### Style Improvement Recommendation Systems
+- Led a team of 3 engineers, researched, proposed, implemented, and deployed a computer vision solution.
+- Utilized RetinaNet and OpenCV to build a fashion items object detection and localization system to identify what users are wearing with an average precision of 92%.
+- Retrieved store's similar items to what users are wearing.
+- Documented and packaged models using Docker, delivered to the Recommendation team for further research by pushing Docker Image to Docker Hub private repository.
+- Packaged as APIs and delivered to the Recommendation team for further research.
+- Built fashion items recommendation and outfit recommendation systems to improve customer's shopping experiences and targeting to increase customer click-rate, cross-sell, and total selling revenue.
+- Deployed models in the form of Application Programming Interfaces (APIs) for store and web access.
+
+#### Retail Data Analytic and Marketing Platform
+- Worked as a team member in a team of 7: Project Manager, Product Design, Business Analyst, Data Engineer, Data Analyst.
+- Created dashboards for analyzing, clustering, identifying trends of customers, and products of Vietnam's biggest supermarket chain using customer transaction data and product information.
+- Optimized the query time for Analytic Dashboards.
+- Created a well-organized documentation with definitions, formulas, and SQL codes for each section of customer and product analysis dashboards.
+- Merged subsidiary database systems for a more general view.
+
+### Machine Learning Engineer
+**Vulcan Labs - Gaming and Application Company**  
+*Jul. 2020 - Nov. 2020*
+
+#### Improve Styling Camera Application
+- Deployed Deep Learning and Computer Vision Solutions to AWS EC2 using Docker.
+- Researched topics: Generative Adversarial Networks, Salient Object Detection, Image Segmentation.
+- Researched models: StyleGAN, StyleGAN2, U-Squared-Net.
+
+### Machine Learning Engineer
+**Emage Development Pte. Ltd. - Computer Vision Company**  
+*Jul. 2019 - Jul. 2020*
+
+#### Defective Semiconductor Detection using Machine Learning
+- Worked with 2 Engineers: Senior Computer Vision Engineer, Junior AI Engineer.
+- Utilized OpenCV and Image Processing techniques: Hough transform, Canny edges detection, and Resnet for feature extraction.
+- Used Yolov3 and RetinaNet to build a defective semiconductor detector with a precision of 98%.
+- Documented and deployed Machine Learning models using Docker.
+
+#### Research on Applying Reinforcement Learning for Auto Defective Inspection
+- Researched the basic definition of Reinforcement Learning and practiced examples of Double Q-Learning.
+- Deployed Machine Learning models on the factory's computer with an inspection time of 0.2 sec/image.
+- Built a Windows Presentation Foundation (WPF) application for semiconductor image annotation, training, inference, and evaluating Object Detection Machine Learning models.
+
+### Embedded Software Engineer - Internship
+**Robert Bosch Engineering And Business Solutions**  
+*May. 2019 - Nov. 2019*
+
+#### Renault & Nissan Interior Application for Electrical Vehicle
+- Trained with multiple problems in C/C++: Parallel Programming, Application's Design Pattern.
+- Developed an application used for debugging Application's User Interface.
+
+## Projects
+
+### DocPatientSumm: Low-Rank Adaptation (LoRA) finetune for Clinical Conversations
+[![Kaggle Notebook](https://www.kaggle.com/code/p1ayer0ne/gemma-doctor-patient-dialog)](https://www.kaggle.com/code/p1ayer0ne/gemma-doctor-patient-dialog)  
+*2024*
+
+Fine-tuned LLMs to enhance summarization of doctor-patient conversations, improving accuracy threefold. Applied low-rank adaptation techniques to significantly boost model efficiency. Set up the model for deployment on local machines and configured multi-GPU training. Implemented model parallelism to manage complex computations and large datasets effectively.
+
+### Complaint Tweet Classification using Prompt Tuning of Large Language Models (LLMs)
+[![Kaggle Notebook](https://www.kaggle.com/code/p1ayer0ne/prompttuning-bloom?scriptVersionId=165711500)](https://www.kaggle.com/code/p1ayer0ne/prompttuning-bloom?scriptVersionId=165711500)  
+*2024*
+
+This project investigated the application of prompt tuning to fine-tune a Large Language Model (LLM), specifically the BLOOM model, for the task of classifying complaint tweets. Data Acquisition and Preprocessing: Collected and prepared a dataset of complaint tweets for the classification task. Prompt Tuning: Designed effective prompts to guide the LLM towards identifying sentiment and classifying complaint tweets. Fine-tuning BLOOM: Fine-tuned the BLOOM LLM using the engineered prompts for complaint tweet classification.
+
+### RAG agent llama3
+[![Google Collab](https://colab.research.google.com/drive/1Pe1wPAGh4Z2b6c8QUhny0KWQyC70vK9r?usp=sharing)](https://colab.research.google.com/drive/1Pe1wPAGh4Z2b6c8QUhny0KWQyC70vK9r?usp=sharing)  
+*2024*
+
+Developed a retrieval-augmented generation system using Llama3 and LangGraph to improve automated question-answering capabilities. Implemented a routing function with LangGraph to classify questions and retrieve relevant documents, ensuring efficient and accurate information retrieval. Integrated a fallback mechanism to perform web searches for queries unrelated to indexed documents, enhancing the system's robustness. Added self-correction and hallucination detection features to validate generated answers, ensuring high accuracy and reliability in responses.
+
+### Building a Q&A system using Langchain and Vicuna
+[![Google Collab](https://colab.research.google.com/drive/1vIM8BdvLihAt2JgqXx9TciEZowzPyMrx?usp=sharing)](https://colab.research.google.com/drive/1vIM8BdvLihAt2JgqXx9TciEZowzPyMrx?usp=sharing)  
+*2024*
+
+Implemented an advanced Question Answering system using Langchain for prompt engineering and Vicuna for fine-tuning. Enhanced system efficiency and relevance in responses by integrating document retrieval and context-aware answering capabilities. Employed prompt engineering techniques to improve system performance and reduce response time. Evaluated and fine-tuned the system using extensive testing and feedback loops to ensure high accuracy and user satisfaction.
+
+### GEMMA: A Generalist Agent for Vision and Language Tasks
+[![Kaggle Notebook](https://www.kaggle.com/code/p1ayer0ne/gemma-a-generalist-agent-for-vision-and-language)](https://www.kaggle.com/code/p1ayer0ne/gemma-a-generalist-agent-for-vision-and-language)  
+*2024*
+
+Developed a versatile model, GEMMA, capable of tackling multiple vision and language tasks by leveraging a unified architecture. Combined state-of-the-art techniques in natural language processing and computer vision to create a robust generalist agent. Integrated multi-task learning approaches to enhance the model's ability to handle diverse tasks without performance degradation. Conducted extensive evaluation and fine-tuning to ensure the model's accuracy and generalization across various vision and language benchmarks.
+
+### Analyzing and Recommending High School and University Curricula
+[![Kaggle Notebook](https://www.kaggle.com/code/p1ayer0ne/build-curriculums)](https://www.kaggle.com/code/p1ayer0ne/build-curriculums)  
+*2024*
+
+Developed an advanced system to analyze and recommend curricula for high schools and universities, optimizing educational pathways. Utilized natural language processing and machine learning techniques to analyze curriculum content and identify key areas for improvement. Implemented recommendation algorithms to suggest curriculum modifications and enhancements based on student performance data. Created a user-friendly interface for educators and administrators to interact with the system and customize recommendations.
+
+### OCR using AWS
+[![Google Collab](https://colab.research.google.com/drive/1X5SwAEJjqzGL7IbdrYYen0FxWu8H4Re9?usp=sharing)](https://colab.research.google.com/drive/1X5SwAEJjqzGL7IbdrYYen0FxWu8H4Re9?usp=sharing)  
+*2024*
+
+Developed and deployed a robust Optical Character Recognition (OCR) system using AWS cloud services, enhancing document digitization processes. Leveraged AWS Textract and other cloud-native tools to build an efficient and scalable OCR pipeline. Implemented pre-processing and post-processing steps to improve the accuracy and reliability of text extraction. Deployed the system on AWS, ensuring high availability, security, and performance for large-scale OCR tasks.
+
+## Education
+
+### Northumbria University
+*Master of Science in Data Science (with Distinction)*  
+2022 - 2023
+
+### Ho Chi Minh City University of Technology
+*Bachelor of Engineering in Electrical and Electronics Engineering*  
+2015 - 2020
+
+## Awards and Recognitions
+
+### XPrize Prompt Engineering
+*Third Place*  
+2023
+
+### Google Kickstart
+*Top 5%*  
+2022
+
+### Kaggle Competition Expert
+*Top 1%*  
+2021
+
+## Contact
+
+- [![GitHub](assets/icons/github.png) GitHub](https://github.com/tnguyen-umbc)
+- [![LinkedIn](assets/icons/linkedin.png) LinkedIn](https://www.linkedin.com/in/truong-nguyen/)
+- [![Email](assets/icons/email.png) Email](mailto:truong.nguyen@gmail.com)
+
