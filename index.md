@@ -19,21 +19,21 @@ I am proficient in Python, R, SQL, NoSQL, Pytorch, Scikit-Learn, OpenCV, Docker,
 
 ### Programming Languages
 
-	•	Python
-	•	C++
-	•	R
-	•	SQL
-	•	MATLAB
+- Python
+- C++
+- R
+- SQL
+- MATLAB
 
 ### Frameworks & Clouds
 
-	•	Pytorch
-	•	TensorFlow
-	•	HuggingFace
-	•	OpenCV
-	•	Sklearn
-	•	AWS
-	•	GCP
+- Pytorch
+- TensorFlow
+- HuggingFace
+- OpenCV
+- Sklearn
+- AWS
+- GCP
 
 ## Experience
 
