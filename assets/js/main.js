@@ -263,4 +263,212 @@ document.addEventListener('DOMContentLoaded', function() {
         // Trigger resize event to update slider positions
         window.dispatchEvent(new Event('resize'));
     });
+
+    // Back to Top Button functionality
+    initializeBackToTop();
+    
+    // Contact Form functionality
+    initializeContactForm();
+    
+    // Smooth scrolling for navigation links
+    initializeSmoothScrolling();
 });
+
+// Back to Top Button
+function initializeBackToTop() {
+    const backToTopButton = document.getElementById('backToTop');
+    if (!backToTopButton) return;
+
+    // Show/hide button based on scroll position
+    function toggleBackToTopButton() {
+        const scrolled = window.pageYOffset;
+        const threshold = 300; // Show button after scrolling 300px
+        
+        if (scrolled > threshold) {
+            backToTopButton.classList.add('visible');
+        } else {
+            backToTopButton.classList.remove('visible');
+        }
+    }
+
+    // Scroll to top when button is clicked
+    backToTopButton.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+
+    // Listen for scroll events
+    window.addEventListener('scroll', toggleBackToTopButton);
+    
+    // Initial check
+    toggleBackToTopButton();
+}
+
+// Contact Form functionality
+function initializeContactForm() {
+    const contactForm = document.querySelector('.contact-form');
+    if (!contactForm) return;
+
+    contactForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        const formData = new FormData(contactForm);
+        const formButton = contactForm.querySelector('.btn-primary');
+        const originalButtonText = formButton.innerHTML;
+        
+        // Show loading state
+        formButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+        formButton.disabled = true;
+        
+        try {
+            // Simulate form submission (replace with actual form handler)
+            await new Promise(resolve => setTimeout(resolve, 2000));
+            
+            // Show success message
+            showNotification('Message sent successfully! I\'ll get back to you soon.', 'success');
+            
+            // Reset form
+            contactForm.reset();
+            
+        } catch (error) {
+            console.error('Form submission error:', error);
+            showNotification('Sorry, there was an error sending your message. Please try again or contact me directly.', 'error');
+        } finally {
+            // Reset button
+            formButton.innerHTML = originalButtonText;
+            formButton.disabled = false;
+        }
+    });
+
+    // Form validation
+    const inputs = contactForm.querySelectorAll('input, textarea');
+    inputs.forEach(input => {
+        input.addEventListener('blur', validateInput);
+        input.addEventListener('input', clearValidationError);
+    });
+}
+
+// Input validation
+function validateInput(e) {
+    const input = e.target;
+    const value = input.value.trim();
+    
+    // Remove existing error styling
+    input.classList.remove('error');
+    
+    // Validate required fields
+    if (input.hasAttribute('required') && !value) {
+        showInputError(input, 'This field is required');
+        return;
+    }
+    
+    // Validate email
+    if (input.type === 'email' && value) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(value)) {
+            showInputError(input, 'Please enter a valid email address');
+            return;
+        }
+    }
+    
+    // Clear any existing errors
+    clearInputError(input);
+}
+
+function showInputError(input, message) {
+    input.classList.add('error');
+    
+    // Remove existing error message
+    const existingError = input.parentNode.querySelector('.error-message');
+    if (existingError) {
+        existingError.remove();
+    }
+    
+    // Add error message
+    const errorDiv = document.createElement('div');
+    errorDiv.className = 'error-message';
+    errorDiv.textContent = message;
+    input.parentNode.appendChild(errorDiv);
+}
+
+function clearInputError(input) {
+    input.classList.remove('error');
+    const errorMessage = input.parentNode.querySelector('.error-message');
+    if (errorMessage) {
+        errorMessage.remove();
+    }
+}
+
+function clearValidationError(e) {
+    const input = e.target;
+    if (input.value.trim()) {
+        clearInputError(input);
+    }
+}
+
+// Notification system
+function showNotification(message, type = 'info') {
+    // Remove existing notifications
+    const existingNotifications = document.querySelectorAll('.notification');
+    existingNotifications.forEach(notification => notification.remove());
+    
+    // Create notification element
+    const notification = document.createElement('div');
+    notification.className = `notification notification-${type}`;
+    notification.innerHTML = `
+        <div class="notification-content">
+            <i class="fas ${type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle'}"></i>
+            <span>${message}</span>
+            <button class="notification-close" aria-label="Close notification">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    `;
+    
+    // Add to page
+    document.body.appendChild(notification);
+    
+    // Close button functionality
+    const closeButton = notification.querySelector('.notification-close');
+    closeButton.addEventListener('click', () => {
+        notification.remove();
+    });
+    
+    // Auto-remove after 5 seconds
+    setTimeout(() => {
+        if (notification.parentNode) {
+            notification.remove();
+        }
+    }, 5000);
+    
+    // Trigger animation
+    setTimeout(() => {
+        notification.classList.add('show');
+    }, 100);
+}
+
+// Smooth scrolling for navigation links
+function initializeSmoothScrolling() {
+    const navLinks = document.querySelectorAll('a[href^="#"]');
+    
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            const targetSection = document.querySelector(targetId);
+            
+            if (targetSection) {
+                const headerHeight = document.querySelector('.main-header')?.offsetHeight || 80;
+                const targetPosition = targetSection.offsetTop - headerHeight;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+}
