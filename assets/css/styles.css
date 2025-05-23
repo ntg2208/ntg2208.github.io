@@ -415,7 +415,7 @@ a:focus {
 }
 
 .profile-hero-img:hover {
-    transform: scale(1.05);
+    transform: scale(1.05); /* Hero image can have its own distinct hover */
     box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
 }
 
@@ -470,45 +470,136 @@ a:focus {
     box-shadow: var(--hover-shadow);
 }
 
-/* Profile Section */
-.profile-image {
-    text-align: center;
-    margin: var(--section-margin);
-    padding: 1rem;
+/* Modern About Section */
+.about-section-modern {
+    padding: var(--section-padding);
+    background-color: var(--card-background); 
 }
 
-.about-content {
-    text-align: center;
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0 1rem;
+.about-container-modern {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* Image on left, text on right */
+    gap: 3rem;
+    align-items: center;
+    max-width: 1100px; /* Adjust as needed */
+    margin: 0 auto;
 }
 
-.about-content h3 {
-    text-align: center;
-}
-
-.about-content p {
-    margin-bottom: 1rem;
-    line-height: 1.9;
-}
-
-.profile-image img {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
+.about-image-modern img {
+    width: 100%;
+    max-width: 350px; /* Control image size */
+    height: auto;
+    border-radius: var(--border-radius);
+    box-shadow: var(--hover-shadow); /* Use hover shadow for a bit more pop */
     object-fit: cover;
-    box-shadow: var(--box-shadow);
-    border: 4px solid white;
-    transition: var(--transition);
 }
 
-.profile-image img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
-    border-color: var(--accent-color);
+.about-content-modern {
+    text-align: left;
 }
+
+.about-tagline-modern {
+    font-size: 1.5rem; /* Slightly larger than standard h3 */
+    color: var(--accent-color);
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.about-content-modern p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    color: var(--light-text-color);
+}
+
+.about-content-modern h4 {
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.about-content-modern ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 1.5rem;
+}
+
+.about-content-modern ul li {
+    font-size: 1rem;
+    color: var(--text-color);
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: flex-start; /* Align icon with first line of text */
+}
+
+.about-content-modern ul li i {
+    color: var(--accent-color);
+    margin-right: 0.75rem;
+    font-size: 1.1rem; /* Icon size */
+    width: 20px; /* Ensure consistent icon spacing */
+    text-align: center;
+    margin-top: 0.15em; /* Align icon better with text */
+}
+
+.about-actions-modern {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+}
+
+/* Responsive for Modern About Section */
+@media (max-width: 992px) {
+    .about-container-modern {
+        grid-template-columns: 1fr; /* Stack image and text */
+        gap: 2rem;
+        text-align: center; /* Center text when stacked */
+    }
+
+    .about-image-modern {
+        display: flex;
+        justify-content: center; /* Center image when stacked */
+        margin-bottom: 1rem;
+    }
+
+    .about-image-modern img {
+        max-width: 300px; 
+    }
+    
+    .about-content-modern {
+        text-align: left; /* Keep text left-aligned even when stacked for readability */
+    }
+
+    .about-actions-modern {
+        justify-content: flex-start; /* Align buttons to the left */
+    }
+}
+
+@media (max-width: 768px) {
+    .about-tagline-modern {
+        font-size: 1.3rem;
+    }
+    .about-content-modern p {
+        font-size: 1rem;
+    }
+    .about-content-modern h4 {
+        font-size: 1.1rem;
+    }
+    .about-content-modern ul li {
+        font-size: 0.95rem;
+    }
+    .about-actions-modern {
+        flex-direction: column; /* Stack buttons on smaller screens */
+        align-items: flex-start;
+    }
+    .about-actions-modern .btn-primary,
+    .about-actions-modern .btn-secondary {
+        width: 100%; /* Make buttons full width */
+        text-align: center;
+        max-width: 280px; /* Optional: limit max width */
+    }
+}
+
 
 /* Section Styles */
 section {
@@ -655,14 +746,13 @@ section:focus-within::before {
 
 .icon:hover,
 .icon:focus-within {
-    transform: translateY(-5px) scale(1.02);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-    border-color: var(--accent-color);
+    transform: translateY(-3px); /* Standardized */
+    box-shadow: var(--hover-shadow); /* Standardized */
 }
 
 .icon:hover img,
 .icon:focus-within img {
-    transform: scale(1.1) rotate(5deg);
+    transform: scale(1.05); /* Keeping this subtle effect for icon images */
 }
 
 /* Projects Section */
@@ -687,8 +777,8 @@ section:focus-within::before {
 }
 
 .project-category:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    transform: translateY(-3px); /* Standardized */
+    box-shadow: var(--hover-shadow); /* Standardized */
 }
 
 .category-heading {
@@ -745,9 +835,8 @@ section:focus-within::before {
 
 .project-card:hover,
 .project-card:focus-within {
-    transform: translateY(-5px) scale(1.02);
-    border-color: var(--accent-color);
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+    transform: translateY(-3px); /* Standardized */
+    box-shadow: var(--hover-shadow); /* Standardized */
 }
 
 .project-card .card-image {
@@ -766,7 +855,7 @@ section:focus-within::before {
 
 .project-card:hover .card-image img,
 .project-card:focus-within .card-image img {
-    transform: scale(1.05);
+    transform: scale(1.05); /* Keeping this subtle effect for card images */
 }
 
 .project-card .card-content {
@@ -841,52 +930,6 @@ section:focus-within::before {
     white-space: nowrap;
 }
 
-/* Slider Controls (removed from projects section, kept for experience section) */
-.slider-arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 40px;
-    height: 40px;
-    background-color: var(--accent-color);
-    border: none;
-    border-radius: 50%;
-    color: white;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: var(--transition);
-    z-index: 10;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-}
-
-.prev-arrow {
-    left: -8px;
-}
-
-.next-arrow {
-    right: -8px;
-}
-
-.slider-arrow:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-    pointer-events: none;
-}
-
-.slider-arrow:hover,
-.slider-arrow:focus {
-    background-color: var(--primary-color);
-    transform: translateY(-50%) scale(1.1);
-    outline: none;
-    box-shadow: 0 0 0 3px var(--accent-color);
-}
-
-.slider-arrow i {
-    font-size: 1.2rem;
-}
-
 /* Experience Section */
 .company-slider {
     background-color: var(--background-color);
@@ -899,14 +942,13 @@ section:focus-within::before {
     margin-left: auto;
     margin-right: auto;
     border: 1px solid transparent;
-    transform: scale(0.98);
+    transform: scale(0.98); /* Base state slightly smaller */
 }
 
 .company-slider:hover,
 .company-slider:focus-within {
-    transform: scale(1);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-    border-color: var(--accent-color);
+    transform: translateY(-3px) scale(1); /* Standardized Y, allow scale back to 1 */
+    box-shadow: var(--hover-shadow); /* Standardized */
 }
 
 .company-slider h3 {
@@ -931,7 +973,7 @@ section:focus-within::before {
     text-align: center;
 }
 
-/* Project Cards */
+/* Project Cards in Experience Section (uses .project-card styles already defined) */
 .project-cards {
     position: relative;
     width: calc(100% + 2rem);
@@ -940,22 +982,10 @@ section:focus-within::before {
     margin: 0 -1rem;
     left: 0;
     right: 0;
-    -webkit-mask-image: -webkit-radial-gradient(white, black);
+    -webkit-mask-image: -webkit-linear-gradient(left, transparent 0%, black 5%, black 95%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
 }
 
-/* Improve touch interaction on mobile */
-@media (hover: none) {
-    .project-cards .slider-arrow {
-        opacity: 1;
-        background-color: rgba(52, 152, 219, 0.8);
-    }
-    
-    .cards-track {
-        touch-action: pan-x pinch-zoom;
-    }
-}
-
-/* Container for proper card alignment */
 .project-cards-container {
     position: relative;
     width: 100%;
@@ -989,22 +1019,10 @@ section:focus-within::before {
     }
 }
 
-/* Container for proper overflow handling */
-.project-cards {
-    overflow: hidden;
-    position: relative;
-    margin: 0 -1rem;
-    padding: 1rem 0;
-    -webkit-mask-image: -webkit-linear-gradient(left, transparent 0%, black 5%, black 95%, transparent 100%);
-    mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
-}
-
-/* Prevent text selection during sliding */
 .cards-track * {
     user-select: none;
 }
 
-/* Add fade effect for slider edges */
 .project-cards::before,
 .project-cards::after {
     content: '';
@@ -1026,110 +1044,6 @@ section:focus-within::before {
     background: linear-gradient(to left, var(--background-color), transparent);
 }
 
-.project-card {
-    flex: 0 0 auto;
-    background: white;
-    border-radius: var(--border-radius);
-    padding: 0;
-    box-shadow: var(--box-shadow);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    transform: scale(0.98);
-    border: 1px solid rgba(52, 152, 219, 0.1);
-    overflow: hidden;
-    margin: 0;
-    will-change: transform;
-}
-
-.project-card:last-child {
-    margin-right: 0 !important;
-}
-
-/* Card hover and focus states */
-.project-card:hover,
-.project-card:focus-within {
-    transform: translateY(-5px) scale(1.02);
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
-    border-color: var(--accent-color);
-}
-
-.project-card:hover .card-image img,
-.project-card:focus-within .card-image img {
-    transform: scale(1.05);
-}
-
-/* Card content styles */
-.card-content {
-    padding: 1.25rem;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-}
-
-.project-card h4 {
-    font-size: 1.2rem;
-    margin-bottom: 0.75rem;
-    color: var(--primary-color);
-    line-height: 1.3;
-    min-height: 2.6em; /* Ensure consistent height for titles */
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-}
-
-.project-card a {
-    display: inline-block;
-    margin-top: 0.5rem;
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: var(--accent-color);
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.project-card a:hover {
-    color: var(--primary-color);
-    text-decoration: underline;
-}
-
-.project-card span {
-    display: block;
-    font-size: 0.85rem;
-    color: var(--light-text-color);
-    margin-top: 0.5rem;
-    margin-bottom: 1rem;
-}
-
-.project-card p {
-    font-size: 0.95rem;
-    line-height: 1.6;
-    color: var(--light-text-color);
-    flex-grow: 1; /* Allow description to take available space */
-    margin-bottom: 1rem;
-    display: -webkit-box;
-    -webkit-line-clamp: 4; /* Limit description to 4 lines */
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-}
-
-.project-keywords {
-    margin-top: 1rem;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.5rem;
-}
-
-.project-keywords span {
-    background-color: var(--accent-color);
-    color: white;
-    padding: 0.3rem 0.8rem;
-    border-radius: 20px;
-    font-size: 0.75rem;
-    font-weight: 500;
-    white-space: nowrap;
-}
-
 /* Education and Awards Sections */
 .education-item {
     background-color: white;
@@ -1147,9 +1061,8 @@ section:focus-within::before {
 
 .education-item:hover,
 .education-item:focus-within {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-    border-color: var(--accent-color);
+    transform: translateY(-3px); /* Standardized */
+    box-shadow: var(--hover-shadow); /* Standardized */
 }
 
 /* Contact Section */
@@ -1276,9 +1189,8 @@ section:focus-within::before {
 .contact-links li a:hover,
 .contact-links li a:focus {
     background-color: rgba(255, 255, 255, 0.2);
-    transform: translateY(-2px);
-    border-color: rgba(255, 255, 255, 0.3);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transform: translateY(-3px); /* Standardized */
+    box-shadow: var(--hover-shadow); /* Standardized */
 }
 
 .contact-links i {
@@ -1364,13 +1276,13 @@ section:focus-within::before {
         height: 280px;
     }
 
-    .project-card {
+    .project-card { /* This rule is for project cards in the main project grid */
         flex: 0 0 calc(50% - 1rem);
         max-width: calc(50% - 1rem);
     }
 
-    .company-slider .project-card {
-        flex: 0 0 calc(50% - 1rem);
+    .company-slider .project-card { /* This rule is for project cards within the experience slider */
+        flex: 0 0 calc(50% - 1rem); /* Adjust if needed, e.g., 100% for single column on smaller screens */
         max-width: calc(50% - 1rem);
     }
 }
@@ -1441,10 +1353,16 @@ section:focus-within::before {
         font-size: 2rem;
     }
 
-    .project-card {
+    .project-card { /* Main project grid cards on smaller screens */
         flex: 0 0 calc(100% - 1rem);
         max-width: calc(100% - 1rem);
     }
+    
+    .company-slider .project-card { /* Experience slider cards on smaller screens */
+         flex: 0 0 calc(100% - 1rem); /* Make them full width in slider on mobile */
+         max-width: calc(100% - 1rem);
+    }
+
 
     .company-slider {
         padding: 1.5rem;
