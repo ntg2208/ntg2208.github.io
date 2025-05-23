@@ -3,417 +3,609 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio of Truong Nguyen - Data Scientist and Machine Learning Engineer specializing in AI, computer vision, and data analytics">
-    <meta name="keywords" content="Data Science, Machine Learning, AI, Computer Vision, Python, PyTorch, TensorFlow">
-    <title>Truong Nguyen - Portfolio</title>
+    <meta name="description" content="Portfolio of Truong Giang Nguyen - AI Engineer specializing in LLMs, RAG systems, computer vision, and production-grade AI solutions">
+    <meta name="keywords" content="AI Engineer, Large Language Models, LLMs, RAG, Computer Vision, Natural Language Processing, Python, PyTorch, TensorFlow, HuggingFace">
+    <title>Truong Giang Nguyen - AI Engineer Portfolio</title>
     <link href="assets/icons/favicon.png" rel="icon">
     <link href="assets/icons/apple-touch-icon.png" rel="apple-touch-icon">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/styles.css">
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Project slider functionality
-            const track = document.querySelector('.projects-track');
-            const projects = document.querySelectorAll('.project');
-            const prevButton = document.querySelector('.prev-arrow');
-            const nextButton = document.querySelector('.next-arrow');
-            let currentIndex = 0;
-
-            // Create placeholder image
-            const canvas = document.createElement('canvas');
-            canvas.width = 800;
-            canvas.height = 400;
-            const ctx = canvas.getContext('2d');
-            
-            // Create gradient background
-            const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
-            gradient.addColorStop(0, '#2c3e50');
-            gradient.addColorStop(1, '#3498db');
-            ctx.fillStyle = gradient;
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-            
-            // Add text
-            ctx.fillStyle = 'white';
-            ctx.font = 'bold 48px Roboto';
-            ctx.textAlign = 'center';
-            ctx.textBaseline = 'middle';
-            ctx.fillText('Project Image', canvas.width/2, canvas.height/2);
-            
-            // Convert to base64 and set as src for all project images
-            const placeholderImage = canvas.toDataURL('image/png');
-            document.querySelectorAll('.project-image img').forEach(img => {
-                img.src = placeholderImage;
-            });
-
-            // Slider functionality
-            function updateSlider() {
-                track.style.transform = `translateX(-${currentIndex * 100}%)`;
-            }
-
-            function moveSlide(direction) {
-                if (direction === 'prev') {
-                    currentIndex = currentIndex > 0 ? currentIndex - 1 : projects.length - 1;
-                } else {
-                    currentIndex = currentIndex < projects.length - 1 ? currentIndex + 1 : 0;
-                }
-                updateSlider();
-            }
-
-            prevButton.addEventListener('click', () => moveSlide('prev'));
-            nextButton.addEventListener('click', () => moveSlide('next'));
-
-            // Auto slide every 5 seconds
-            setInterval(() => moveSlide('next'), 5000);
-        });
-    </script>
+    <script src="assets/js/projects.js"></script>
+    <script src="assets/js/main.js"></script>
 </head>
 <body>
     <div class="container">
-        <header>
-            <h1>Truong Nguyen</h1>
+        <header role="banner">
+            <h1>Truong Giang Nguyen</h1>
+            <nav role="navigation" aria-label="Main navigation">
+                <ul class="visually-hidden">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#awards">Awards</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
         </header>
-        <main>
+        
+        <main role="main">
+            <section id="about" aria-labelledby="about-heading">
+                <h2 id="about-heading">About</h2>
+                <div class="profile-image">
+                    <img src="assets/images/profile-img.jpg" alt="Truong Nguyen" loading="eager">
+                </div>
 
-        <section id="about">
-            <h2>About</h2>
-            <div class="profile-image">
-                <img src="assets/images/profile-img.jpg" alt="Truong Nguyen" loading="eager">
-            </div>
+                <div class="about-content">
+                    <h3>About Me</h3>
+                    <p>I am an AI Engineer with 4+ years of experience developing and deploying production-grade AI solutions, specializing in Large Language Models (LLMs), Retrieval-Augmented Generation (RAG), and robust data pipelines. I have expertise in LLM fine-tuning using LoRA, automated deployment workflows with CI/CD and Airflow, and building comprehensive data analytics platforms.</p>
+                    <p>My technical expertise spans Python, R, C++, SQL, and frameworks including PyTorch, TensorFlow, and HuggingFace. I have experience with cloud platforms (AWS, Google Cloud) and have successfully implemented solutions across healthcare, retail, computer vision, and natural language processing domains. My approach combines cutting-edge AI research with practical implementation, ensuring solutions that drive real business value.</p>
+                </div>
+            </section>
 
-            <div class="about-content">
-                <h3>About Me</h3>
-                <p>I am a Data Scientist and Machine Learning Engineer specializing in developing and deploying AI solutions that solve complex business problems and drive innovation. With expertise in computer vision, natural language processing, and retail analytics, I have consistently delivered high-impact solutions that improve business operations and customer experiences.</p>
-                <p>My technical proficiency spans Python, R, SQL, PyTorch, TensorFlow, and cloud platforms (AWS, GCP). I have successfully implemented solutions across diverse domains, from retail analytics and healthcare to computer vision applications. My approach combines strong analytical skills with practical business acumen, ensuring solutions that are both technically robust and commercially viable.</p>
-            </div>
-        </section>
+            <section id="skills" aria-labelledby="skills-heading">
+                <h2 id="skills-heading">Skills</h2>
+                
+                <div class="skills-slider" role="region" aria-label="Technical Skills">
+                    <div class="slider-track" role="list">
+                        <!-- First set of icons -->
+                        <div class="icon" role="listitem">
+                            <img src="assets/img/skills/python.png" alt="Python" loading="lazy">
+                            <span>Python</span>
+                        </div>
+                        <div class="icon" role="listitem">
+                            <img src="assets/img/skills/cpp.png" alt="C++" loading="lazy">
+                            <span>C++</span>
+                        </div>
+                        <div class="icon" role="listitem">
+                            <img src="assets/img/skills/R.png" alt="R" loading="lazy">
+                            <span>R</span>
+                        </div>
+                        <div class="icon" role="listitem">
+                            <img src="assets/img/skills/sql.png" alt="SQL" loading="lazy">
+                            <span>SQL</span>
+                        </div>
+                        <div class="icon" role="listitem">
+                            <img src="assets/img/skills/Matlab.png" alt="MATLAB" loading="lazy">
+                            <span>MATLAB</span>
+                        </div>
+                        <div class="icon" role="listitem">
+                            <img src="assets/img/skills/pytorch.png" alt="PyTorch" loading="lazy">
+                            <span>PyTorch</span>
+                        </div>
+                        <div class="icon" role="listitem">
+                            <img src="assets/img/skills/tf.png" alt="TensorFlow" loading="lazy">
+                            <span>TensorFlow</span>
+                        </div>
+                        <div class="icon" role="listitem">
+                            <img src="assets/img/skills/hf.png" alt="HuggingFace" loading="lazy">
+                            <span>HuggingFace</span>
+                        </div>
+                        <div class="icon" role="listitem">
+                            <img src="assets/img/skills/opencv.png" alt="OpenCV" loading="lazy">
+                            <span>OpenCV</span>
+                        </div>
+                        <div class="icon" role="listitem">
+                            <img src="assets/img/skills/sklearn.png" alt="Scikit-learn" loading="lazy">
+                            <span>Scikit-learn</span>
+                        </div>
+                        <div class="icon" role="listitem">
+                            <img src="assets/img/skills/aws.png" alt="AWS" loading="lazy">
+                            <span>AWS</span>
+                        </div>
+                        <div class="icon" role="listitem">
+                            <img src="assets/img/skills/gcp.png" alt="GCP" loading="lazy">
+                            <span>GCP</span>
+                        </div>
+                        
+                        <!-- Duplicate set for seamless loop -->
+                        <div class="icon" role="listitem" aria-hidden="true">
+                            <img src="assets/img/skills/python.png" alt="" loading="lazy">
+                            <span>Python</span>
+                        </div>
+                        <div class="icon" role="listitem" aria-hidden="true">
+                            <img src="assets/img/skills/cpp.png" alt="" loading="lazy">
+                            <span>C++</span>
+                        </div>
+                        <div class="icon" role="listitem" aria-hidden="true">
+                            <img src="assets/img/skills/R.png" alt="" loading="lazy">
+                            <span>R</span>
+                        </div>
+                        <div class="icon" role="listitem" aria-hidden="true">
+                            <img src="assets/img/skills/sql.png" alt="" loading="lazy">
+                            <span>SQL</span>
+                        </div>
+                        <div class="icon" role="listitem" aria-hidden="true">
+                            <img src="assets/img/skills/Matlab.png" alt="" loading="lazy">
+                            <span>MATLAB</span>
+                        </div>
+                        <div class="icon" role="listitem" aria-hidden="true">
+                            <img src="assets/img/skills/pytorch.png" alt="" loading="lazy">
+                            <span>PyTorch</span>
+                        </div>
+                        <div class="icon" role="listitem" aria-hidden="true">
+                            <img src="assets/img/skills/tf.png" alt="" loading="lazy">
+                            <span>TensorFlow</span>
+                        </div>
+                        <div class="icon" role="listitem" aria-hidden="true">
+                            <img src="assets/img/skills/hf.png" alt="" loading="lazy">
+                            <span>HuggingFace</span>
+                        </div>
+                        <div class="icon" role="listitem" aria-hidden="true">
+                            <img src="assets/img/skills/opencv.png" alt="" loading="lazy">
+                            <span>OpenCV</span>
+                        </div>
+                        <div class="icon" role="listitem" aria-hidden="true">
+                            <img src="assets/img/skills/sklearn.png" alt="" loading="lazy">
+                            <span>Scikit-learn</span>
+                        </div>
+                        <div class="icon" role="listitem" aria-hidden="true">
+                            <img src="assets/img/skills/aws.png" alt="" loading="lazy">
+                            <span>AWS</span>
+                        </div>
+                        <div class="icon" role="listitem" aria-hidden="true">
+                            <img src="assets/img/skills/gcp.png" alt="" loading="lazy">
+                            <span>GCP</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-        <section id="skills">
-            <h2>Skills</h2>
-            
-            <div class="skills-slider">
-                <div class="slider-track">
-                    <!-- First set of icons -->
-                    <div class="icon">
-                        <img src="assets/img/skills/python.png" alt="Python" loading="lazy">
-                        <span>Python</span>
-                    </div>
-                    <div class="icon">
-                        <img src="assets/img/skills/cpp.png" alt="C++" loading="lazy">
-                        <span>C++</span>
-                    </div>
-                    <div class="icon">
-                        <img src="assets/img/skills/R.png" alt="R" loading="lazy">
-                        <span>R</span>
-                    </div>
-                    <div class="icon">
-                        <img src="assets/img/skills/sql.png" alt="SQL" loading="lazy">
-                        <span>SQL</span>
-                    </div>
-                    <div class="icon">
-                        <img src="assets/img/skills/Matlab.png" alt="MATLAB" loading="lazy">
-                        <span>MATLAB</span>
-                    </div>
-                    <div class="icon">
-                        <img src="assets/img/skills/pytorch.png" alt="PyTorch" loading="lazy">
-                        <span>PyTorch</span>
-                    </div>
-                    <div class="icon">
-                        <img src="assets/img/skills/tf.png" alt="TensorFlow" loading="lazy">
-                        <span>TensorFlow</span>
-                    </div>
-                    <div class="icon">
-                        <img src="assets/img/skills/hf.png" alt="HuggingFace" loading="lazy">
-                        <span>HuggingFace</span>
-                    </div>
-                    <div class="icon">
-                        <img src="assets/img/skills/opencv.png" alt="OpenCV" loading="lazy">
-                        <span>OpenCV</span>
-                    </div>
-                    <div class="icon">
-                        <img src="assets/img/skills/sklearn.png" alt="Scikit-learn" loading="lazy">
-                        <span>Scikit-learn</span>
-                    </div>
-                    <div class="icon">
-                        <img src="assets/img/skills/aws.png" alt="AWS" loading="lazy">
-                        <span>AWS</span>
-                    </div>
-                    <div class="icon">
-                        <img src="assets/img/skills/gcp.png" alt="GCP" loading="lazy">
-                        <span>GCP</span>
-                    </div>
+            <section id="experience" aria-labelledby="experience-heading">
+                <h2 id="experience-heading">Experience</h2>
+
+                <div class="company-slider" role="region" aria-label="Northumbria University Experience">
+                    <h3>Data Scientist</h3>
+                    <h4>Northumbria University, UK</h4>
+                    <span>Jan 2023 - Jun 2023</span>
                     
-                    <!-- Duplicate set for seamless loop -->
-                    <div class="icon">
-                        <img src="assets/img/skills/python.png" alt="Python" loading="lazy">
-                        <span>Python</span>
-                    </div>
-                    <div class="icon">
-                        <img src="assets/img/skills/cpp.png" alt="C++" loading="lazy">
-                        <span>C++</span>
-                    </div>
-                    <div class="icon">
-                        <img src="assets/img/skills/R.png" alt="R" loading="lazy">
-                        <span>R</span>
-                    </div>
-                    <div class="icon">
-                        <img src="assets/img/skills/sql.png" alt="SQL" loading="lazy">
-                        <span>SQL</span>
-                    </div>
-                    <div class="icon">
-                        <img src="assets/img/skills/Matlab.png" alt="MATLAB" loading="lazy">
-                        <span>MATLAB</span>
-                    </div>
-                    <div class="icon">
-                        <img src="assets/img/skills/pytorch.png" alt="PyTorch" loading="lazy">
-                        <span>PyTorch</span>
-                    </div>
-                    <div class="icon">
-                        <img src="assets/img/skills/tf.png" alt="TensorFlow" loading="lazy">
-                        <span>TensorFlow</span>
-                    </div>
-                    <div class="icon">
-                        <img src="assets/img/skills/hf.png" alt="HuggingFace" loading="lazy">
-                        <span>HuggingFace</span>
-                    </div>
-                    <div class="icon">
-                        <img src="assets/img/skills/opencv.png" alt="OpenCV" loading="lazy">
-                        <span>OpenCV</span>
-                    </div>
-                    <div class="icon">
-                        <img src="assets/img/skills/sklearn.png" alt="Scikit-learn" loading="lazy">
-                        <span>Scikit-learn</span>
-                    </div>
-                    <div class="icon">
-                        <img src="assets/img/skills/aws.png" alt="AWS" loading="lazy">
-                        <span>AWS</span>
-                    </div>
-                    <div class="icon">
-                        <img src="assets/img/skills/gcp.png" alt="GCP" loading="lazy">
-                        <span>GCP</span>
+                    <div class="project-cards-container">
+                        <div class="project-cards">
+                            <button class="slider-arrow prev-arrow" aria-label="Previous slide">
+                                <i class="fas fa-chevron-left" aria-hidden="true"></i>
+                            </button>
+                            <button class="slider-arrow next-arrow" aria-label="Next slide">
+                                <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                            </button>
+                            
+                            <div class="cards-track" role="list">
+                                <div class="project-card" role="listitem">
+                                    <div class="card-image">
+                                        <img src="assets/img/projects/placeholder.svg" alt="Data Analysis visualization" loading="lazy">
+                                    </div>
+                                    <div class="card-content">
+                                        <h4>Data Analysis & Processing</h4>
+                                        <p>Extracted and transformed sensory data from medical wearable devices into structured datasets for Parkinson's Disease treatment research.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="project-card" role="listitem">
+                                    <div class="card-image">
+                                        <img src="assets/img/projects/placeholder.svg" alt="Statistical Analysis visualization" loading="lazy">
+                                    </div>
+                                    <div class="card-content">
+                                        <h4>Statistical Analysis</h4>
+                                        <p>Conducted comprehensive statistical analysis of treatment effectiveness using medical device data to validate therapeutic approaches.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="project-card" role="listitem">
+                                    <div class="card-image">
+                                        <img src="assets/img/projects/placeholder.svg" alt="Machine Learning Model visualization" loading="lazy">
+                                    </div>
+                                    <div class="card-content">
+                                        <h4>ML Model Development</h4>
+                                        <p>Developed machine learning model for personalized treatment recommendations with optimal scheduling based on patient data.</p>
+                                    </div>
+                                </div>
+
+                                <!-- Duplicate cards for infinite scroll -->
+                                <div class="project-card" role="listitem" aria-hidden="true">
+                                    <div class="card-image">
+                                        <img src="assets/img/projects/placeholder.svg" alt="" loading="lazy">
+                                    </div>
+                                    <div class="card-content">
+                                        <h4>Data Analysis & Processing</h4>
+                                        <p>Extracted and transformed sensory data from medical wearable devices into structured datasets for Parkinson's Disease treatment research.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="project-card" role="listitem" aria-hidden="true">
+                                    <div class="card-image">
+                                        <img src="assets/img/projects/placeholder.svg" alt="" loading="lazy">
+                                    </div>
+                                    <div class="card-content">
+                                        <h4>Statistical Analysis</h4>
+                                        <p>Conducted comprehensive statistical analysis of treatment effectiveness using medical device data to validate therapeutic approaches.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="project-card" role="listitem" aria-hidden="true">
+                                    <div class="card-image">
+                                        <img src="assets/img/projects/placeholder.svg" alt="" loading="lazy">
+                                    </div>
+                                    <div class="card-content">
+                                        <h4>ML Model Development</h4>
+                                        <p>Developed machine learning model for personalized treatment recommendations with optimal scheduling based on patient data.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
 
-        <section id="experience">
-            <h2>Experience</h2>
-
-            <div class="job">
-                <h3>Data Scientist</h3>
-                <h4>Northumbria University, UK</h4>
-                <span>Jan 2023 - Jun 2023</span>
-                <ul>
-                    <li>Extracted data from medical wearable devices, transformed sensory data into tabular datasets, and visualized users' behavior patterns.</li>
-                    <li>Utilized statistical analysis to assess the effectiveness of medical wearable devices for drooling treatment for People with Parkinson's Disease.</li>
-                    <li>Developed a Machine Learning model to build a personalized treatment schedule recommendation system, predicting treatment hours for individuals with Parkinson's Disease.</li>
-                </ul>
-            </div>
-
-            <div class="job">
-                <h3>Machine Learning Engineer</h3>
-                <h4>Seedcom - A Venture Capital Company, Vietnam</h4>
-                <span>Nov. 2020 - Nov. 2024</span>
-                
-                <h4>Recipe-Based Product Recommendation System</h4>
-                <ul>
-                    <li>Developed a NLP-based system to analyze Vietnamese recipe blogs and automatically curate product bundles, resulting in a 15% increase in bundle purchases.</li>
-                    <li>Implemented a real-time recommendation engine using collaborative filtering to suggest complementary products based on shopping baskets and recipe associations, leading to a 25% increase in cross-sales.</li>
-                </ul>
-
-                <h4>Competitive Price Intelligence System</h4>
-                <ul>
-                    <li>Architected an automated web scraping system using Selenium and BeautifulSoup to monitor competitor pricing across multiple e-commerce platforms.</li>
-                    <li>Implemented a BERT-based multimodal model achieving 95% accuracy in mapping competitor products to internal catalog items.</li>
-                    <li>Developed real-time price monitoring dashboards in Tableau, enabling dynamic pricing strategies that improved profit margins by 12%.</li>
-                </ul>
-
-                <h4>Product and Combo Pricing</h4>
-                <ul>
-                    <li>Conducted thorough statistical analysis to identify top-performing product combinations frequently bought together, optimizing cross-sell opportunities.</li>
-                    <li>Developed and implemented a dynamic pricing algorithm for product bundles, ensuring competitive pricing that maximizes both customer retention and profit margins.</li>
-                    <li>Designed a comprehensive 1-year promotional strategy for product bundles, incorporating special pricing to boost sales and enhance customer engagement.</li>
-                </ul>
-
-                <h4>Sales Forecast and Inventory Management</h4>
-                <ul>
-                    <li>Conducted comprehensive statistical analysis to identify trends and seasonal patterns in time-series sales data, providing actionable insights for decision-making.</li>
-                    <li>Deployed sophisticated forecasting models, including DeepAR and LightGBM, to predict sales at the store and area levels with high accuracy.</li>
-                    <li>Enhanced inventory management by implementing an alert system to identify and address overstock and understock situations, thereby optimizing stock levels and reducing carrying costs.</li>
-                </ul>
-
-                <h4>AI-Powered Fashion Recommendation System</h4>
-                <ul>
-                    <li>Led a team of 3 engineers in developing and deploying an end-to-end computer vision solution for fashion recommendations.</li>
-                    <li>Implemented RetinaNet with custom architecture achieving 92% average precision in fashion item detection and classification.</li>
-                    <li>Developed a similarity-based recommendation engine using deep feature extraction and nearest neighbor search.</li>
-                    <li>Containerized the solution using Docker and deployed to production via RESTful APIs, resulting in a 30% increase in click-through rates.</li>
-                    <li>Integrated the system with the e-commerce platform, leading to a 20% increase in cross-category purchases.</li>
-                </ul>
-
-                <h4>Retail Data Analytic and Marketing Platform</h4>
-                <ul>
-                    <li>Worked as a team member in a team of 7: Project Manager, Product Design, Business Analyst, Data Engineer, Data Analyst.</li>
-                    <li>Created dashboards for analyzing, clustering, identifying trends of customers, and products of Vietnam's biggest supermarket chain using customer transaction data and product information.</li>
-                    <li>Optimized the query time for Analytic Dashboards.</li>
-                    <li>Created a well-organized documentation with definitions, formulas, and SQL codes for each section of customer and product analysis dashboards.</li>
-                    <li>Merged subsidiary database systems for a more general view.</li>
-                </ul>
-            </div>
-
-            <div class="job">
-                <h3>Machine Learning Engineer</h3>
-                <h4>Vulcan Labs - Gaming and Application Company</h4>
-                <span>Jul. 2020 - Nov. 2020</span>
-
-                <h4>Improve Styling Camera Application</h4>
-                <ul>
-                    <li>Deployed Deep Learning and Computer Vision Solutions to AWS EC2 using Docker.</li>
-                    <li>Researched topics: Generative Adversarial Networks, Salient Object Detection, Image Segmentation.</li>
-                    <li>Researched models: StyleGAN, StyleGAN2, U-Squared-Net.</li>
-                </ul>
-            </div>
-
-            <div class="job">
-                <h3>Machine Learning Engineer</h3>
-                <h4>Emage Development Pte. Ltd. - Computer Vision Company</h4>
-                <span>Jul. 2019 - Jul. 2020</span>
-
-                <h4>Defective Semiconductor Detection using Machine Learning</h4>
-                <ul>
-                    <li>Worked with 2 Engineers: Senior Computer Vision Engineer, Junior AI Engineer.</li>
-                    <li>Utilized OpenCV and Image Processing techniques: Hough transform, Canny edges detection, and Resnet for feature extraction.</li>
-                    <li>Used Yolov3 and RetinaNet to build a defective semiconductor detector with a precision of 98%.</li>
-                    <li>Documented and deployed Machine Learning models using Docker.</li>
-                </ul>
-
-                <h4>Research on Applying Reinforcement Learning for Auto Defective Inspection</h4>
-                <ul>
-                    <li>Researched the basic definition of Reinforcement Learning and practiced examples of Double Q-Learning.</li>
-                    <li>Deployed Machine Learning models on the factory's computer with an inspection time of 0.2 sec/image.</li>
-                    <li>Built a Windows Presentation Foundation (WPF) application for semiconductor image annotation, training, inference, and evaluating Object Detection Machine Learning models.</li>
-                </ul>
-            </div>
-
-            <div class="job">
-                <h3>Embedded Software Engineer - Internship</h3>
-                <h4>Robert Bosch Engineering And Business Solutions</h4>
-                <span>May. 2019 - Nov. 2019</span>
-
-                <h4>Renault & Nissan Interior Application for Electrical Vehicle</h4>
-                <ul>
-                    <li>Trained with multiple problems in C/C++: Parallel Programming, Application's Design Pattern.</li>
-                    <li>Developed an application used for debugging Application's User Interface.</li>
-                </ul>
-            </div>
-        </section>
-
-        <section id="projects">
-            <h2>Projects</h2>
-            
-            <div class="projects-slider">
-                <button class="slider-arrow prev-arrow">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                <button class="slider-arrow next-arrow">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
-                
-                <div class="projects-track">
-                    <div class="project">
-                        <div class="project-image">
-                            <img src="assets/img/projects/placeholder.jpg" alt="Project placeholder" loading="lazy">
+                <div class="company-slider" role="region" aria-label="Seedcom Experience">
+                    <h3>Machine Learning Engineer</h3>
+                    <h4>Seedcom - A Venture Capital Company, Vietnam</h4>
+                    <span>Nov. 2020 - Nov. 2024</span>
+                    
+                    <div class="project-cards-container">
+                        <div class="project-cards">
+                            <button class="slider-arrow prev-arrow" aria-label="Previous slide">
+                                <i class="fas fa-chevron-left" aria-hidden="true"></i>
+                            </button>
+                            <button class="slider-arrow next-arrow" aria-label="Next slide">
+                                <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                            </button>
+                            
+                            <div class="cards-track" role="list">
+                                <div class="project-card" role="listitem">
+                                    <div class="card-image">
+                                        <img src="assets/img/projects/placeholder.svg" alt="Recipe Recommendation System visualization" loading="lazy">
+                                    </div>
+                                    <div class="card-content">
+                                        <h4>Recipe-Based Product Recommendation</h4>
+                                        <p>Developed a NLP-based system to analyze Vietnamese recipe blogs and automatically curate product bundles, resulting in a 15% increase in bundle purchases. Implemented a real-time recommendation engine using collaborative filtering to suggest complementary products based on shopping baskets and recipe associations, leading to a 25% increase in cross-sales.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="project-card" role="listitem">
+                                    <div class="card-image">
+                                        <img src="assets/img/projects/placeholder.svg" alt="Price Intelligence System visualization" loading="lazy">
+                                    </div>
+                                    <div class="card-content">
+                                        <h4>Competitive Price Intelligence</h4>
+                                        <p>Architected an automated web scraping system using Selenium and BeautifulSoup to monitor competitor pricing. Implemented a BERT-based multimodal model achieving 95% accuracy in mapping competitor products. Developed real-time price monitoring dashboards in Tableau, improving profit margins by 12%.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="project-card" role="listitem">
+                                    <div class="card-image">
+                                        <img src="assets/img/projects/placeholder.svg" alt="Product Pricing System visualization" loading="lazy">
+                                    </div>
+                                    <div class="card-content">
+                                        <h4>Product and Combo Pricing</h4>
+                                        <p>Conducted statistical analysis to identify top-performing product combinations. Developed dynamic pricing algorithm for product bundles and designed a comprehensive 1-year promotional strategy incorporating special pricing to boost sales and enhance customer engagement.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="project-card" role="listitem">
+                                    <div class="card-image">
+                                        <img src="assets/img/projects/placeholder.svg" alt="Sales Forecast System visualization" loading="lazy">
+                                    </div>
+                                    <div class="card-content">
+                                        <h4>Sales Forecast and Inventory Management</h4>
+                                        <p>Deployed sophisticated forecasting models including DeepAR and LightGBM to predict sales at store and area levels. Enhanced inventory management by implementing an alert system to identify and address overstock and understock situations.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="project-card" role="listitem">
+                                    <div class="card-image">
+                                        <img src="assets/img/projects/placeholder.svg" alt="Fashion AI System visualization" loading="lazy">
+                                    </div>
+                                    <div class="card-content">
+                                        <h4>AI Fashion Recommendation</h4>
+                                        <p>Led a team of 3 engineers in developing computer vision solution using RetinaNet with 92% precision. Containerized the solution using Docker and deployed via RESTful APIs, resulting in 30% increase in click-through rates and 20% increase in cross-category purchases.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="project-card" role="listitem">
+                                    <div class="card-image">
+                                        <img src="assets/img/projects/placeholder.svg" alt="Retail Analytics Platform visualization" loading="lazy">
+                                    </div>
+                                    <div class="card-content">
+                                        <h4>Retail Data Analytics Platform</h4>
+                                        <p>Created dashboards for analyzing customer trends and products for Vietnam's biggest supermarket chain. Optimized query time for Analytics Dashboards and created well-organized documentation with definitions, formulas, and SQL codes.</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                <h3>DocPatientSumm: Low-Rank Adaptation (LoRA) finetune for Clinical Conversations</h3>
-                <a href="https://www.kaggle.com/code/p1ayer0ne/gemma-doctor-patient-dialog">Kaggle Notebook</a>
-                <span>2024</span>
-                <p>Developed a specialized clinical conversation summarization system using LoRA fine-tuning on foundation models. Achieved 3x improvement in summarization accuracy while reducing model size by 75%. Implemented efficient multi-GPU training pipeline and model parallelism for handling large-scale medical dialogue datasets. The system processes conversations in real-time with 95% accuracy in key medical information extraction.</p>
-            </div>
-
-                    <div class="project">
-                        <div class="project-image">
-                            <img src="" alt="Project placeholder" loading="lazy">
-                        </div>
-                        <h3>Complaint Tweet Classification using Prompt Tuning of Large Language Models (LLMs)</h3>
-                        <a href="https://www.kaggle.com/code/p1ayer0ne/prompttuning-bloom?scriptVersionId=165711500">Kaggle Notebook</a>
-                        <span>2024</span>
-                        <p>Implemented an innovative approach to tweet classification using prompt tuning techniques with the BLOOM model. Developed a custom prompt engineering pipeline that achieved 92% classification accuracy. Optimized the fine-tuning process to reduce training time by 40% while maintaining model performance. The system successfully processes over 10,000 tweets per hour with real-time classification capabilities.</p>
                     </div>
-
-                    <div class="project">
-                        <div class="project-image">
-                            <img src="" alt="Project placeholder" loading="lazy">
-                        </div>
-                <h3>RAG agent llama3</h3>
-                <a href="https://colab.research.google.com/drive/1Pe1wPAGh4Z2b6c8QUhny0KWQyC70vK9r?usp=sharing">Google Collab</a>
-                <span>2024</span>
-                <p>Built a sophisticated RAG system combining Llama3 with LangGraph for enhanced question-answering capabilities. Achieved 85% accuracy in document retrieval through custom routing algorithms. Implemented real-time hallucination detection with 90% precision and integrated automated fact-checking mechanisms. The system handles complex queries with context-aware responses and maintains sub-second latency for most operations.</p>
-            </div>
                 </div>
-            </div>
-        </section>
 
-        <section id="education">
-            <h2>Education</h2>
+                <div class="company-slider" role="region" aria-label="Vulcan Labs Experience">
+                    <h3>Machine Learning Engineer</h3>
+                    <h4>Vulcan Labs - Gaming and Application Company</h4>
+                    <span>Jul. 2020 - Nov. 2020</span>
+                    
+                    <div class="project-cards-container">
+                        <div class="project-cards">
+                            <button class="slider-arrow prev-arrow" aria-label="Previous slide">
+                                <i class="fas fa-chevron-left" aria-hidden="true"></i>
+                            </button>
+                            <button class="slider-arrow next-arrow" aria-label="Next slide">
+                                <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                            </button>
+                            
+                            <div class="cards-track" role="list">
+                                <div class="project-card" role="listitem">
+                                    <div class="card-image">
+                                        <img src="assets/img/projects/placeholder.svg" alt="Camera Application visualization" loading="lazy">
+                                    </div>
+                                    <div class="card-content">
+                                        <h4>Styling Camera Application</h4>
+                                        <p>Deployed Deep Learning and Computer Vision solutions to AWS EC2 using Docker. Implemented advanced image processing techniques.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="project-card" role="listitem">
+                                    <div class="card-image">
+                                        <img src="assets/img/projects/placeholder.svg" alt="GAN Research visualization" loading="lazy">
+                                    </div>
+                                    <div class="card-content">
+                                        <h4>GAN Research</h4>
+                                        <p>Researched and implemented Generative Adversarial Networks including StyleGAN and StyleGAN2 for image generation and manipulation.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="project-card" role="listitem">
+                                    <div class="card-image">
+                                        <img src="assets/img/projects/placeholder.svg" alt="Image Processing visualization" loading="lazy">
+                                    </div>
+                                    <div class="card-content">
+                                        <h4>Advanced Image Processing</h4>
+                                        <p>Implemented Salient Object Detection and Image Segmentation using U-Squared-Net architecture for enhanced image analysis.</p>
+                                    </div>
+                                </div>
 
-            <div class="education-item">
-                <h3>Northumbria University</h3>
-                <span>2022 - 2023</span>
-                <p>Master of Science in Data Science (with Distinction)</p>
-            </div>
+                                <!-- Duplicate cards for infinite scroll -->
+                                <div class="project-card" role="listitem" aria-hidden="true">
+                                    <div class="card-image">
+                                        <img src="assets/img/projects/placeholder.svg" alt="" loading="lazy">
+                                    </div>
+                                    <div class="card-content">
+                                        <h4>Styling Camera Application</h4>
+                                        <p>Deployed Deep Learning and Computer Vision solutions to AWS EC2 using Docker. Implemented advanced image processing techniques.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="project-card" role="listitem" aria-hidden="true">
+                                    <div class="card-image">
+                                        <img src="assets/img/projects/placeholder.svg" alt="" loading="lazy">
+                                    </div>
+                                    <div class="card-content">
+                                        <h4>GAN Research</h4>
+                                        <p>Researched and implemented Generative Adversarial Networks including StyleGAN and StyleGAN2 for image generation and manipulation.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="project-card" role="listitem" aria-hidden="true">
+                                    <div class="card-image">
+                                        <img src="assets/img/projects/placeholder.svg" alt="" loading="lazy">
+                                    </div>
+                                    <div class="card-content">
+                                        <h4>Advanced Image Processing</h4>
+                                        <p>Implemented Salient Object Detection and Image Segmentation using U-Squared-Net architecture for enhanced image analysis.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-            <div class="education-item">
-                <h3>Ho Chi Minh City University of Technology</h3>
-                <span>2015 - 2020</span>
-                <p>Bachelor of Engineering in Electrical and Electronics Engineering</p>
-            </div>
-        </section>
+                <div class="company-slider" role="region" aria-label="Emage Development Experience">
+                    <h3>Machine Learning Engineer</h3>
+                    <h4>Emage Development Pte. Ltd. - Computer Vision Company</h4>
+                    <span>Jul. 2019 - Jul. 2020</span>
+                    
+                    <div class="project-cards-container">
+                        <div class="project-cards">
+                            <button class="slider-arrow prev-arrow" aria-label="Previous slide">
+                                <i class="fas fa-chevron-left" aria-hidden="true"></i>
+                            </button>
+                            <button class="slider-arrow next-arrow" aria-label="Next slide">
+                                <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                            </button>
+                            
+                            <div class="cards-track" role="list">
+                                <div class="project-card" role="listitem">
+                                    <div class="card-image">
+                                        <img src="assets/img/projects/placeholder.svg" alt="Semiconductor Detection System visualization" loading="lazy">
+                                    </div>
+                                    <div class="card-content">
+                                        <h4>Defective Semiconductor Detection</h4>
+                                        <p>Built a high-precision semiconductor defect detector using Yolov3 and RetinaNet, achieving 98% precision. Implemented advanced image processing with OpenCV.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="project-card" role="listitem">
+                                    <div class="card-image">
+                                        <img src="assets/img/projects/placeholder.svg" alt="Feature Extraction Pipeline visualization" loading="lazy">
+                                    </div>
+                                    <div class="card-content">
+                                        <h4>Computer Vision Pipeline</h4>
+                                        <p>Developed image processing pipeline using Hough transform, Canny edge detection, and ResNet for feature extraction in semiconductor analysis.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="project-card" role="listitem">
+                                    <div class="card-image">
+                                        <img src="assets/img/projects/placeholder.svg" alt="Auto Inspection System visualization" loading="lazy">
+                                    </div>
+                                    <div class="card-content">
+                                        <h4>Auto Inspection System</h4>
+                                        <p>Researched and implemented Double Q-Learning for automated defect inspection. Built WPF application for model training and evaluation.</p>
+                                    </div>
+                                </div>
 
-        <section id="awards">
-            <h2>Awards and Recognitions</h2>
+                                <!-- Duplicate cards for infinite scroll -->
+                                <div class="project-card" role="listitem" aria-hidden="true">
+                                    <div class="card-image">
+                                        <img src="assets/img/projects/placeholder.svg" alt="" loading="lazy">
+                                    </div>
+                                    <div class="card-content">
+                                        <h4>Defective Semiconductor Detection</h4>
+                                        <p>Built a high-precision semiconductor defect detector using Yolov3 and RetinaNet, achieving 98% precision. Implemented advanced image processing with OpenCV.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="project-card" role="listitem" aria-hidden="true">
+                                    <div class="card-image">
+                                        <img src="assets/img/projects/placeholder.svg" alt="" loading="lazy">
+                                    </div>
+                                    <div class="card-content">
+                                        <h4>Computer Vision Pipeline</h4>
+                                        <p>Developed image processing pipeline using Hough transform, Canny edge detection, and ResNet for feature extraction in semiconductor analysis.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="project-card" role="listitem" aria-hidden="true">
+                                    <div class="card-image">
+                                        <img src="assets/img/projects/placeholder.svg" alt="" loading="lazy">
+                                    </div>
+                                    <div class="card-content">
+                                        <h4>Auto Inspection System</h4>
+                                        <p>Researched and implemented Double Q-Learning for automated defect inspection. Built WPF application for model training and evaluation.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-            <div class="education-item">
-                <h3>XPrize Prompt Engineering</h3>
-                <span>2023</span>
-                <p>Third Place</p>
-            </div>
+                <div class="company-slider" role="region" aria-label="Robert Bosch Experience">
+                    <h3>Embedded Software Engineer - Internship</h3>
+                    <h4>Robert Bosch Engineering And Business Solutions</h4>
+                    <span>May. 2019 - Nov. 2019</span>
+                    
+                    <div class="project-cards-container">
+                        <div class="project-cards">
+                            <button class="slider-arrow prev-arrow" aria-label="Previous slide">
+                                <i class="fas fa-chevron-left" aria-hidden="true"></i>
+                            </button>
+                            <button class="slider-arrow next-arrow" aria-label="Next slide">
+                                <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                            </button>
+                            
+                            <div class="cards-track" role="list">
+                                <div class="project-card" role="listitem">
+                                    <div class="card-image">
+                                        <img src="assets/img/projects/placeholder.svg" alt="EV Interface Development visualization" loading="lazy">
+                                    </div>
+                                    <div class="card-content">
+                                        <h4>EV Interface Development</h4>
+                                        <p>Developed user interface application for Renault & Nissan electric vehicles. Implemented debugging features for interface testing and validation.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="project-card" role="listitem">
+                                    <div class="card-image">
+                                        <img src="assets/img/projects/placeholder.svg" alt="C++ Development visualization" loading="lazy">
+                                    </div>
+                                    <div class="card-content">
+                                        <h4>Advanced C++ Development</h4>
+                                        <p>Trained in complex C++ concepts including parallel programming and design patterns. Applied these concepts in automotive software development.</p>
+                                    </div>
+                                </div>
 
-            <div class="education-item">
-                <h3>Google Kickstart</h3>
-                <span>2022</span>
-                <p>Top 5%</p>
-            </div>
+                                <!-- Duplicate cards for infinite scroll -->
+                                <div class="project-card" role="listitem" aria-hidden="true">
+                                    <div class="card-image">
+                                        <img src="assets/img/projects/placeholder.svg" alt="" loading="lazy">
+                                    </div>
+                                    <div class="card-content">
+                                        <h4>EV Interface Development</h4>
+                                        <p>Developed user interface application for Renault & Nissan electric vehicles. Implemented debugging features for interface testing and validation.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="project-card" role="listitem" aria-hidden="true">
+                                    <div class="card-image">
+                                        <img src="assets/img/projects/placeholder.svg" alt="" loading="lazy">
+                                    </div>
+                                    <div class="card-content">
+                                        <h4>Advanced C++ Development</h4>
+                                        <p>Trained in complex C++ concepts including parallel programming and design patterns. Applied these concepts in automotive software development.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-            <div class="education-item">
-                <h3>Kaggle Competition Expert</h3>
-                <span>2021</span>
-                <p>Top 1%</p>
-            </div>
-        </section>
+            <section id="projects" aria-labelledby="projects-heading">
+                <h2 id="projects-heading">Projects</h2>
+                <div class="projects-content">
+                    <!-- Projects will be dynamically loaded here by category -->
+                </div>
+            </section>
 
+            <section id="education" aria-labelledby="education-heading">
+                <h2 id="education-heading">Education</h2>
+
+                <div class="education-item">
+                    <h3>Northumbria University, UK</h3>
+                    <span>Jan 2022 - Jul 2023</span>
+                    <p><strong>Master of Science in Data Science (with Distinction)</strong></p>
+                    <p><em>Dissertation:</em> Assessing Cueing Effectiveness for Drooling in Parkinson's Disease: Comparing Smartphone and Wearable Cueing</p>
+                </div>
+
+                <div class="education-item">
+                    <h3>VNU - Ho Chi Minh University of Technology, Vietnam</h3>
+                    <span>Sep 2015 - May 2020</span>
+                    <p><strong>Bachelor of Engineering in Electrical and Telecommunication</strong></p>
+                    <p><em>Thesis:</em> Apply Deep Learning for inverse problem in Image Super-Resolution</p>
+                </div>
+            </section>
+
+            <section id="awards" aria-labelledby="awards-heading">
+                <h2 id="awards-heading">Awards and Recognitions</h2>
+
+                <div class="education-item">
+                    <h3>XPrize Prompt Engineering</h3>
+                    <span>2023</span>
+                    <p>Third Place</p>
+                </div>
+
+                <div class="education-item">
+                    <h3>Google Kickstart</h3>
+                    <span>2022</span>
+                    <p>Top 5%</p>
+                </div>
+
+                <div class="education-item">
+                    <h3>Kaggle Competition Expert</h3>
+                    <span>2021</span>
+                    <p>Top 1%</p>
+                </div>
+            </section>
         </main>
-        <footer>
-            <section id="contact" aria-label="Contact Information">
-                <h2>Contact</h2>
+
+        <footer role="contentinfo">
+            <section id="contact" aria-labelledby="contact-heading">
+                <h2 id="contact-heading">Contact</h2>
                 <ul>
                     <li>
                         <a href="https://github.com/ntg2208" target="_blank" rel="noopener noreferrer">
-                        <i class="fab fa-github"></i>
-                        GitHub
-                    </a>
-                </li>
-                <li>
+                            <i class="fab fa-github" aria-hidden="true"></i>
+                            <span>GitHub</span>
+                        </a>
+                    </li>
+                    <li>
                         <a href="https://www.linkedin.com/in/ntg2208/" target="_blank" rel="noopener noreferrer">
-                        <i class="fab fa-linkedin"></i>
-                        LinkedIn
-                    </a>
-                </li>
-                <li>
-                    <a href="mailto:ntg2208@gmail.com">
-                        <i class="far fa-envelope"></i>
-                        Email
-                    </a>
-                </li>
+                            <i class="fab fa-linkedin" aria-hidden="true"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="mailto:ntg2208@gmail.com">
+                            <i class="far fa-envelope" aria-hidden="true"></i>
+                            <span>Email</span>
+                        </a>
+                    </li>
                 </ul>
             </section>
         </footer>
