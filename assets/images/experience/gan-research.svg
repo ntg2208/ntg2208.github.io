@@ -1,74 +1,171 @@
 <svg width="150" height="100" viewBox="0 0 150 100" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <linearGradient id="neuralGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#2563eb;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#1e3a8a;stop-opacity:1" />
-    </linearGradient>
-    <linearGradient id="nodeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#1e40af;stop-opacity:1" />
-    </linearGradient>
-  </defs>
-  
-  <!-- Background -->
-  <rect width="150" height="100" fill="#ffffff" rx="8"/>
-  
-  <!-- Neural Network Structure -->
-  <!-- Input Layer -->
-  <g id="inputLayer">
-    <circle cx="25" cy="20" r="5" fill="url(#nodeGrad)"/>
-    <circle cx="25" cy="35" r="5" fill="url(#nodeGrad)"/>
-    <circle cx="25" cy="50" r="5" fill="url(#nodeGrad)"/>
-    <circle cx="25" cy="65" r="5" fill="url(#nodeGrad)"/>
-    <circle cx="25" cy="80" r="5" fill="url(#nodeGrad)"/>
-  </g>
-  
-  <!-- Hidden Layer 1 -->
-  <g id="hiddenLayer1">
-    <circle cx="60" cy="15" r="4" fill="url(#neuralGrad)"/>
-    <circle cx="60" cy="30" r="4" fill="url(#neuralGrad)"/>
-    <circle cx="60" cy="45" r="4" fill="url(#neuralGrad)"/>
-    <circle cx="60" cy="60" r="4" fill="url(#neuralGrad)"/>
-    <circle cx="60" cy="75" r="4" fill="url(#neuralGrad)"/>
-    <circle cx="60" cy="85" r="4" fill="url(#neuralGrad)"/>
-  </g>
-  
-  <!-- Hidden Layer 2 -->
-  <g id="hiddenLayer2">
-    <circle cx="90" cy="20" r="4" fill="url(#neuralGrad)"/>
-    <circle cx="90" cy="35" r="4" fill="url(#neuralGrad)"/>
-    <circle cx="90" cy="50" r="4" fill="url(#neuralGrad)"/>
-    <circle cx="90" cy="65" r="4" fill="url(#neuralGrad)"/>
-    <circle cx="90" cy="80" r="4" fill="url(#neuralGrad)"/>
-  </g>
-  
-  <!-- Output Layer -->
-  <g id="outputLayer">
-    <circle cx="125" cy="35" r="5" fill="url(#nodeGrad)"/>
-    <circle cx="125" cy="50" r="5" fill="url(#nodeGrad)"/>
-    <circle cx="125" cy="65" r="5" fill="url(#nodeGrad)"/>
-  </g>
-  
-  <!-- Connections -->
-  <g stroke="#2563eb" stroke-width="1" opacity="0.6" fill="none">
-    <!-- Input to Hidden1 connections (simplified) -->
-    <line x1="30" y1="35" x2="55" y2="30"/>
-    <line x1="30" y1="50" x2="55" y2="45"/>
-    <line x1="30" y1="65" x2="55" y2="60"/>
+    <defs>
+        <linearGradient id="ganBg" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#fefce8"/>
+            <stop offset="100%" stop-color="#fef3c7"/>
+        </linearGradient>
+        <linearGradient id="generatorGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#10b981"/>
+            <stop offset="100%" stop-color="#059669"/>
+        </linearGradient>
+        <linearGradient id="discriminatorGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#ef4444"/>
+            <stop offset="100%" stop-color="#dc2626"/>
+        </linearGradient>
+    </defs>
     
-    <!-- Hidden1 to Hidden2 connections (simplified) -->
-    <line x1="64" y1="45" x2="86" y2="50"/>
-    <line x1="64" y1="60" x2="86" y2="65"/>
+    <!-- Background -->
+    <rect width="150" height="100" fill="url(#ganBg)" rx="8"/>
     
-    <!-- Hidden2 to Output connections (simplified) -->
-    <line x1="94" y1="50" x2="120" y2="50"/>
-    <line x1="94" y1="65" x2="120" y2="65"/>
-  </g>
-  
-  <!-- GAN Label -->
-  <text x="5" y="15" font-family="Arial, sans-serif" font-size="10" fill="#2563eb" font-weight="bold">GAN</text>
-  
-  <!-- Generator/Discriminator indicators -->
-  <text x="45" y="95" font-family="Arial, sans-serif" font-size="8" fill="#1e40af">Generator</text>
-  <text x="95" y="95" font-family="Arial, sans-serif" font-size="8" fill="#1e40af">Discriminator</text>
+    <!-- Noise Input -->
+    <g transform="translate(5, 25)">
+        <rect x="0" y="0" width="15" height="30" fill="#6b7280" rx="3"/>
+        <text x="7.5" y="-3" font-family="Arial" font-size="5" fill="#374151" text-anchor="middle" font-weight="bold">Noise</text>
+        
+        <!-- Random dots representing noise -->
+        <circle cx="4" cy="5" r="1" fill="white" opacity="0.8"/>
+        <circle cx="11" cy="8" r="1" fill="white" opacity="0.8"/>
+        <circle cx="7" cy="12" r="1" fill="white" opacity="0.8"/>
+        <circle cx="3" cy="17" r="1" fill="white" opacity="0.8"/>
+        <circle cx="12" cy="20" r="1" fill="white" opacity="0.8"/>
+        <circle cx="6" cy="24" r="1" fill="white" opacity="0.8"/>
+        <circle cx="9" cy="27" r="1" fill="white" opacity="0.8"/>
+    </g>
+    
+    <!-- Generator Network -->
+    <g transform="translate(25, 15)">
+        <rect x="0" y="0" width="40" height="50" fill="url(#generatorGrad)" rx="6" opacity="0.9"/>
+        <text x="20" y="8" font-family="Arial" font-size="6" fill="white" text-anchor="middle" font-weight="bold">GENERATOR</text>
+        
+        <!-- Neural layers representation -->
+        <g transform="translate(5, 12)">
+            <!-- Layer 1 -->
+            <circle cx="5" cy="5" r="2" fill="white" opacity="0.9"/>
+            <circle cx="5" cy="12" r="2" fill="white" opacity="0.9"/>
+            <circle cx="5" cy="19" r="2" fill="white" opacity="0.9"/>
+            <circle cx="5" cy="26" r="2" fill="white" opacity="0.9"/>
+            
+            <!-- Layer 2 -->
+            <circle cx="15" cy="3" r="2" fill="white" opacity="0.7"/>
+            <circle cx="15" cy="9" r="2" fill="white" opacity="0.7"/>
+            <circle cx="15" cy="15" r="2" fill="white" opacity="0.7"/>
+            <circle cx="15" cy="21" r="2" fill="white" opacity="0.7"/>
+            <circle cx="15" cy="27" r="2" fill="white" opacity="0.7"/>
+            
+            <!-- Layer 3 -->
+            <circle cx="25" cy="8" r="2" fill="white" opacity="0.9"/>
+            <circle cx="25" cy="15" r="2" fill="white" opacity="0.9"/>
+            <circle cx="25" cy="22" r="2" fill="white" opacity="0.9"/>
+            
+            <!-- Connections -->
+            <line x1="7" y1="12" x2="13" y2="9" stroke="white" stroke-width="0.5" opacity="0.5"/>
+            <line x1="7" y1="19" x2="13" y2="15" stroke="white" stroke-width="0.5" opacity="0.5"/>
+            <line x1="17" y1="15" x2="23" y2="15" stroke="white" stroke-width="0.5" opacity="0.5"/>
+        </g>
+        
+        <text x="20" y="47" font-family="Arial" font-size="4" fill="white" text-anchor="middle">Creates Fake Data</text>
+    </g>
+    
+    <!-- Generated Image -->
+    <g transform="translate(70, 25)">
+        <rect x="0" y="0" width="20" height="20" fill="white" stroke="#e5e7eb" stroke-width="1" rx="2"/>
+        <rect x="2" y="2" width="16" height="16" fill="#dbeafe" rx="1"/>
+        <text x="10" y="12" font-family="Arial" font-size="6" fill="#3b82f6" text-anchor="middle" font-weight="bold">IMG</text>
+        <text x="10" y="-3" font-family="Arial" font-size="4" fill="#374151" text-anchor="middle">Generated</text>
+    </g>
+    
+    <!-- Real Image -->
+    <g transform="translate(70, 50)">
+        <rect x="0" y="0" width="20" height="20" fill="white" stroke="#e5e7eb" stroke-width="1" rx="2"/>
+        <rect x="2" y="2" width="16" height="16" fill="#dcfce7" rx="1"/>
+        <text x="10" y="12" font-family="Arial" font-size="6" fill="#10b981" text-anchor="middle" font-weight="bold">IMG</text>
+        <text x="10" y="-3" font-family="Arial" font-size="4" fill="#374151" text-anchor="middle">Real</text>
+    </g>
+    
+    <!-- Discriminator Network -->
+    <g transform="translate(95, 25)">
+        <rect x="0" y="0" width="40" height="50" fill="url(#discriminatorGrad)" rx="6" opacity="0.9"/>
+        <text x="20" y="8" font-family="Arial" font-size="6" fill="white" text-anchor="middle" font-weight="bold">DISCRIMINATOR</text>
+        
+        <!-- Neural layers representation -->
+        <g transform="translate(5, 12)">
+            <!-- Layer 1 -->
+            <circle cx="5" cy="8" r="2" fill="white" opacity="0.9"/>
+            <circle cx="5" cy="15" r="2" fill="white" opacity="0.9"/>
+            <circle cx="5" cy="22" r="2" fill="white" opacity="0.9"/>
+            
+            <!-- Layer 2 -->
+            <circle cx="15" cy="6" r="2" fill="white" opacity="0.7"/>
+            <circle cx="15" cy="12" r="2" fill="white" opacity="0.7"/>
+            <circle cx="15" cy="18" r="2" fill="white" opacity="0.7"/>
+            <circle cx="15" cy="24" r="2" fill="white" opacity="0.7"/>
+            
+            <!-- Output -->
+            <circle cx="25" cy="15" r="3" fill="white" opacity="0.9"/>
+            
+            <!-- Connections -->
+            <line x1="7" y1="15" x2="13" y2="12" stroke="white" stroke-width="0.5" opacity="0.5"/>
+            <line x1="17" y1="15" x2="22" y2="15" stroke="white" stroke-width="0.5" opacity="0.5"/>
+        </g>
+        
+        <text x="20" y="47" font-family="Arial" font-size="4" fill="white" text-anchor="middle">Real vs Fake?</text>
+    </g>
+    
+    <!-- Adversarial Training Loop -->
+    <g transform="translate(65, 75)">
+        <path d="M0 0 Q10 -5 20 0" stroke="#f59e0b" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+        <text x="10" y="8" font-family="Arial" font-size="4" fill="#f59e0b" text-anchor="middle" font-weight="bold">Adversarial Training</text>
+    </g>
+    
+    <!-- Arrow Marker -->
+    <defs>
+        <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" fill="#f59e0b"/>
+        </marker>
+    </defs>
+    
+    <!-- Data Flow Arrows -->
+    <g stroke="#6b7280" stroke-width="2" fill="none" marker-end="url(#grayArrow)">
+        <path d="M20 40 L25 40"/>
+        <path d="M65 35 L95 35"/>
+        <path d="M90 35 L95 35"/>
+        <path d="M90 60 L95 60"/>
+    </g>
+    
+    <!-- Gray Arrow Marker -->
+    <defs>
+        <marker id="grayArrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+            <polygon points="0 0, 8 3, 0 6" fill="#6b7280"/>
+        </marker>
+    </defs>
+    
+    <!-- Research Metrics -->
+    <g transform="translate(5, 85)">
+        <rect x="0" y="0" width="25" height="6" fill="#059669" rx="1" opacity="0.9"/>
+        <text x="12.5" y="4" font-family="Arial" font-size="3" fill="white" text-anchor="middle" font-weight="bold">Loss: Minimax</text>
+    </g>
+    
+    <g transform="translate(35, 85)">
+        <rect x="0" y="0" width="25" height="6" fill="#dc2626" rx="1" opacity="0.9"/>
+        <text x="12.5" y="4" font-family="Arial" font-size="3" fill="white" text-anchor="middle" font-weight="bold">FID Score: 25.3</text>
+    </g>
+    
+    <g transform="translate(65, 85)">
+        <rect x="0" y="0" width="25" height="6" fill="#7c3aed" rx="1" opacity="0.9"/>
+        <text x="12.5" y="4" font-family="Arial" font-size="3" fill="white" text-anchor="middle" font-weight="bold">Epochs: 500</text>
+    </g>
+    
+    <g transform="translate(95, 85)">
+        <rect x="0" y="0" width="35" height="6" fill="#f59e0b" rx="1" opacity="0.9"/>
+        <text x="17.5" y="4" font-family="Arial" font-size="3" fill="white" text-anchor="middle" font-weight="bold">Architecture: DCGAN</text>
+    </g>
+    
+    <!-- GAN Types -->
+    <g transform="translate(5, 5)">
+        <text x="0" y="0" font-family="Arial" font-size="6" fill="#374151" font-weight="bold">GAN Research</text>
+        <text x="0" y="8" font-family="Arial" font-size="4" fill="#6b7280">DCGAN • StyleGAN • CycleGAN • WGAN</text>
+    </g>
+    
+    <!-- Title -->
+    <text x="75" y="97" font-family="Arial" font-size="9" fill="#1e293b" text-anchor="middle" font-weight="bold">GAN Research</text>
 </svg>

@@ -177,9 +177,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 const project = window.projectsData.find(p => p['Project Name'] === projectName);
                 if (project && (!img.src || img.src === '' || img.src.includes('placeholder'))) {
                     const filename = getProjectImageFilename(project['Project Name']);
-                    const imagePath = `assets/images/projects/${filename}-small.png`;
+                    const imagePath = `assets/images/projects/${filename}.svg`;
                     
-                    // Try to load the PNG, fallback to placeholder if not found
+                    // Try to load the SVG, fallback to placeholder if not found
                     const testImg = new Image();
                     testImg.onload = () => {
                         img.src = imagePath;
@@ -362,9 +362,9 @@ document.addEventListener('DOMContentLoaded', function() {
             
             if (img && (img.src.includes('placeholder') || img.src.includes('data:image/svg'))) {
                 const filename = getExperienceImageFilename(title);
-                const imagePath = `assets/images/experience/${filename}-small.png`;
+                const imagePath = `assets/images/experience/${filename}.svg`;
                 
-                // Try to load the PNG, fallback to dynamically generated if not found
+                // Try to load the SVG, fallback to dynamically generated if not found
                 const testImg = new Image();
                 testImg.onload = () => {
                     img.src = imagePath;

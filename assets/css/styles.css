@@ -361,7 +361,7 @@ a:focus {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    background: var(--gradient);
+    background: var(--accent-color);
     color: white;
     padding: 0.75rem 1.5rem;
     border-radius: var(--border-radius);
@@ -392,7 +392,7 @@ a:focus {
 .nav-actions .btn-resume:focus {
     transform: translateY(-2px);
     box-shadow: var(--hover-shadow);
-    background: var(--gradient-hover);
+    background: var(--accent-hover);
 }
 
 /* Hero Section */
@@ -550,7 +550,7 @@ a:focus {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    background: var(--gradient);
+    background: var(--accent-color);
     color: white;
     padding: 1rem 2rem;
     border-radius: var(--border-radius);
@@ -566,7 +566,7 @@ a:focus {
 .btn-primary:focus {
     transform: translateY(-2px);
     box-shadow: var(--hover-shadow);
-    background: var(--gradient-hover);
+    background: var(--accent-hover);
     text-decoration: none;
     color: white;
 }
@@ -642,7 +642,7 @@ a:focus {
     right: 2rem;
     width: 50px;
     height: 50px;
-    background: var(--gradient);
+    background: var(--accent-color);
     color: white;
     border: none;
     border-radius: 50%;
@@ -1215,7 +1215,7 @@ section:hover {
 }
 
 .project-keywords span {
-    background: var(--gradient);
+    background: var(--accent-color);
     color: white;
     padding: 0.2rem 0.5rem;
     border-radius: 12px;
@@ -1231,7 +1231,9 @@ section:hover {
 
 .project-keywords span:hover {
     transform: translateY(-1px);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--box-shadow);
+    background: var(--accent-hover);
+    border-color: var(--accent-hover);
 }
 
 /* Experience Section */
@@ -2187,7 +2189,7 @@ html {
 
 .scroll-progress {
     height: 100%;
-    background: var(--gradient);
+    background: var(--accent-color);
     width: 0%;
     transition: width 0.1s ease;
 }

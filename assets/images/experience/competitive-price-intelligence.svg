@@ -1,71 +1,107 @@
 <svg width="150" height="100" viewBox="0 0 150 100" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <linearGradient id="bg2" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#2563eb;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#1e40af;stop-opacity:1" />
-    </linearGradient>
-  </defs>
-  
-  <!-- Background -->
-  <rect width="150" height="100" fill="url(#bg2)" rx="8"/>
-  
-  <!-- Price Tags -->
-  <g transform="translate(15, 20)">
-    <!-- Price Tag 1 -->
-    <path d="M0 0L15 0L20 7.5L15 15L0 15L5 7.5Z" fill="#3b82f6" stroke="#ffffff" stroke-width="1"/>
-    <text x="7.5" y="9" font-family="Arial" font-size="8" fill="#ffffff" text-anchor="middle" font-weight="bold">$49</text>
-    <circle cx="3" cy="4" r="1.5" fill="#ffffff"/>
+    <defs>
+        <linearGradient id="priceBg" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#f0fdf4"/>
+            <stop offset="100%" stop-color="#dcfce7"/>
+        </linearGradient>
+        <linearGradient id="priceGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#10b981"/>
+            <stop offset="50%" stop-color="#059669"/>
+            <stop offset="100%" stop-color="#047857"/>
+        </linearGradient>
+    </defs>
     
-    <!-- Price Tag 2 -->
-    <path d="M0 25L15 25L20 32.5L15 40L0 40L5 32.5Z" fill="#1e3a8a" stroke="#ffffff" stroke-width="1"/>
-    <text x="7.5" y="34" font-family="Arial" font-size="8" fill="#ffffff" text-anchor="middle" font-weight="bold">$45</text>
-    <circle cx="3" cy="29" r="1.5" fill="#ffffff"/>
+    <!-- Background -->
+    <rect width="150" height="100" fill="url(#priceBg)" rx="8"/>
     
-    <!-- Price Tag 3 -->
-    <path d="M0 50L15 50L20 57.5L15 65L0 65L5 57.5Z" fill="#3b82f6" stroke="#ffffff" stroke-width="1"/>
-    <text x="7.5" y="59" font-family="Arial" font-size="8" fill="#ffffff" text-anchor="middle" font-weight="bold">$52</text>
-    <circle cx="3" cy="54" r="1.5" fill="#ffffff"/>
-  </g>
-  
-  <!-- Monitoring Eye -->
-  <g transform="translate(50, 30)">
-    <ellipse cx="15" cy="10" rx="18" ry="12" fill="#ffffff" stroke="#2563eb" stroke-width="2"/>
-    <circle cx="15" cy="10" r="8" fill="#2563eb"/>
-    <circle cx="15" cy="10" r="4" fill="#ffffff"/>
-    <circle cx="16" cy="8" r="2" fill="#2563eb"/>
-    <!-- Eyelashes/monitoring lines -->
-    <path d="M5 5L8 8" stroke="#1e40af" stroke-width="1"/>
-    <path d="M25 5L22 8" stroke="#1e40af" stroke-width="1"/>
-    <path d="M5 15L8 12" stroke="#1e40af" stroke-width="1"/>
-    <path d="M25 15L22 12" stroke="#1e40af" stroke-width="1"/>
-  </g>
-  
-  <!-- Price Comparison Chart -->
-  <g transform="translate(90, 25)">
-    <!-- Chart background -->
-    <rect x="0" y="0" width="40" height="30" fill="#ffffff" rx="2" opacity="0.9"/>
+    <!-- Competitor Price Cards -->
+    <g transform="translate(10, 15)">
+        <!-- Competitor A -->
+        <rect x="0" y="0" width="25" height="20" fill="white" stroke="#e5e7eb" stroke-width="1" rx="3"/>
+        <text x="12.5" y="8" font-family="Arial" font-size="5" fill="#374151" text-anchor="middle" font-weight="bold">Store A</text>
+        <text x="12.5" y="15" font-family="Arial" font-size="7" fill="#dc2626" text-anchor="middle" font-weight="bold">$49.99</text>
+        
+        <!-- Competitor B -->
+        <rect x="0" y="25" width="25" height="20" fill="white" stroke="#e5e7eb" stroke-width="1" rx="3"/>
+        <text x="12.5" y="33" font-family="Arial" font-size="5" fill="#374151" text-anchor="middle" font-weight="bold">Store B</text>
+        <text x="12.5" y="40" font-family="Arial" font-size="7" fill="#dc2626" text-anchor="middle" font-weight="bold">$45.99</text>
+        
+        <!-- Our Price -->
+        <rect x="0" y="50" width="25" height="20" fill="#10b981" stroke="#059669" stroke-width="1" rx="3"/>
+        <text x="12.5" y="58" font-family="Arial" font-size="5" fill="white" text-anchor="middle" font-weight="bold">Our Store</text>
+        <text x="12.5" y="65" font-family="Arial" font-size="7" fill="white" text-anchor="middle" font-weight="bold">$42.99</text>
+    </g>
     
-    <!-- Bars -->
-    <rect x="5" y="20" width="6" height="8" fill="#2563eb"/>
-    <rect x="13" y="15" width="6" height="13" fill="#3b82f6"/>
-    <rect x="21" y="18" width="6" height="10" fill="#1e40af"/>
-    <rect x="29" y="12" width="6" height="16" fill="#1e3a8a"/>
+    <!-- Price Comparison Chart -->
+    <g transform="translate(45, 20)">
+        <rect x="0" y="0" width="60" height="40" fill="white" stroke="#e5e7eb" stroke-width="1" rx="4"/>
+        
+        <!-- Chart Grid -->
+        <g stroke="#f3f4f6" stroke-width="0.5">
+            <line x1="5" y1="10" x2="55" y2="10"/>
+            <line x1="5" y1="20" x2="55" y2="20"/>
+            <line x1="5" y1="30" x2="55" y2="30"/>
+        </g>
+        
+        <!-- Price Bars -->
+        <rect x="8" y="15" width="8" height="20" fill="#ef4444" opacity="0.8"/>
+        <rect x="20" y="18" width="8" height="17" fill="#f97316" opacity="0.8"/>
+        <rect x="32" y="22" width="8" height="13" fill="#10b981" opacity="0.8"/>
+        <rect x="44" y="12" width="8" height="23" fill="#6b7280" opacity="0.8"/>
+        
+        <!-- Labels -->
+        <text x="12" y="38" font-family="Arial" font-size="4" fill="#6b7280" text-anchor="middle">A</text>
+        <text x="24" y="38" font-family="Arial" font-size="4" fill="#6b7280" text-anchor="middle">B</text>
+        <text x="36" y="38" font-family="Arial" font-size="4" fill="#6b7280" text-anchor="middle">Us</text>
+        <text x="48" y="38" font-family="Arial" font-size="4" fill="#6b7280" text-anchor="middle">C</text>
+        
+        <!-- Chart Title -->
+        <text x="30" y="7" font-family="Arial" font-size="6" fill="#374151" text-anchor="middle" font-weight="bold">Price Comparison</text>
+    </g>
     
-    <!-- Trend arrow -->
-    <path d="M35 8L40 3L45 8L40 5L40 10Z" fill="#2563eb" transform="translate(-5, 0)"/>
-  </g>
-  
-  <!-- Data Analytics Symbol -->
-  <g transform="translate(100, 55)">
-    <circle cx="12" cy="12" r="10" fill="#3b82f6" stroke="#ffffff" stroke-width="2"/>
-    <!-- Data points -->
-    <circle cx="8" cy="15" r="1" fill="#ffffff"/>
-    <circle cx="12" cy="10" r="1" fill="#ffffff"/>
-    <circle cx="16" cy="8" r="1" fill="#ffffff"/>
-    <!-- Connecting lines -->
-    <path d="M8 15L12 10L16 8" stroke="#ffffff" stroke-width="1.5" fill="none"/>
-  </g>
-  
-  <!-- Title -->
-  <text x="75" y="90" font-family="Arial" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="bold">Price Intelligence</text>
+    <!-- Real-time Monitoring -->
+    <g transform="translate(115, 15)">
+        <circle cx="15" cy="15" r="12" fill="#3b82f6" opacity="0.9"/>
+        <circle cx="15" cy="15" r="6" fill="white"/>
+        <circle cx="15" cy="15" r="3" fill="#3b82f6"/>
+        
+        <!-- Scanning lines -->
+        <path d="M8 8 L22 22" stroke="#1d4ed8" stroke-width="1" opacity="0.6"/>
+        <path d="M22 8 L8 22" stroke="#1d4ed8" stroke-width="1" opacity="0.6"/>
+        
+        <text x="15" y="35" font-family="Arial" font-size="5" fill="#374151" text-anchor="middle" font-weight="bold">24/7 Monitor</text>
+    </g>
+    
+    <!-- Price Alerts -->
+    <g transform="translate(110, 45)">
+        <rect x="0" y="0" width="35" height="12" fill="#fbbf24" rx="6" opacity="0.9"/>
+        <text x="17.5" y="8" font-family="Arial" font-size="5" fill="white" text-anchor="middle" font-weight="bold">⚠ Price Drop Alert</text>
+    </g>
+    
+    <!-- Competitive Advantage Indicator -->
+    <g transform="translate(10, 75)">
+        <rect x="0" y="0" width="40" height="10" fill="#10b981" rx="5" opacity="0.9"/>
+        <text x="20" y="7" font-family="Arial" font-size="5" fill="white" text-anchor="middle" font-weight="bold">15% Lower Than Market</text>
+    </g>
+    
+    <!-- Intelligence Score -->
+    <g transform="translate(55, 75)">
+        <rect x="0" y="0" width="30" height="10" fill="#7c3aed" rx="5" opacity="0.9"/>
+        <text x="15" y="7" font-family="Arial" font-size="5" fill="white" text-anchor="middle" font-weight="bold">AI Score: 94%</text>
+    </g>
+    
+    <!-- Update Frequency -->
+    <g transform="translate(90, 75)">
+        <rect x="0" y="0" width="25" height="10" fill="#059669" rx="5" opacity="0.9"/>
+        <text x="12.5" y="7" font-family="Arial" font-size="5" fill="white" text-anchor="middle" font-weight="bold">Every 5min</text>
+    </g>
+    
+    <!-- Action Buttons -->
+    <g transform="translate(120, 75)">
+        <rect x="0" y="0" width="25" height="10" fill="#dc2626" rx="5" opacity="0.9"/>
+        <text x="12.5" y="7" font-family="Arial" font-size="5" fill="white" text-anchor="middle" font-weight="bold">Auto Adjust</text>
+    </g>
+    
+    <!-- Title -->
+    <text x="75" y="95" font-family="Arial" font-size="9" fill="#1e293b" text-anchor="middle" font-weight="bold">Competitive Price Intelligence</text>
 </svg>

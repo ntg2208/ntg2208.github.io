@@ -1,27 +1,94 @@
 <svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
     <defs>
-        <pattern id="waves" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
-            <path d="M0,20 Q10,10 20,20 Q30,30 40,20" fill="none" stroke="#2563eb" stroke-width="1" opacity="0.1"/>
-        </pattern>
-        <linearGradient id="oceanGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#ffffff"/>
-            <stop offset="50%" stop-color="#2563eb" stop-opacity="0.1"/>
-            <stop offset="100%" stop-color="#1e40af" stop-opacity="0.05"/>
+        <linearGradient id="medicalBg" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#fef7ff"/>
+            <stop offset="50%" stop-color="#fae8ff"/>
+            <stop offset="100%" stop-color="#f3e8ff"/>
+        </linearGradient>
+        <linearGradient id="hospitalGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#0ea5e9"/>
+            <stop offset="100%" stop-color="#0284c7"/>
+        </linearGradient>
+        <linearGradient id="predictiveGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#8b5cf6"/>
+            <stop offset="100%" stop-color="#7c3aed"/>
         </linearGradient>
     </defs>
-    <rect width="400" height="300" fill="url(#oceanGradient)"/>
-    <rect width="400" height="300" fill="url(#waves)"/>
-    <g transform="translate(200, 150)">
-        <rect x="-30" y="-10" width="60" height="20" fill="#2563eb" rx="5"/>
-        <rect x="-10" y="-30" width="20" height="60" fill="#2563eb" rx="5"/>
-        <rect x="-50" y="-40" width="40" height="30" fill="#1e40af" opacity="0.7" rx="3"/>
-        <rect x="-45" y="-35" width="30" height="5" fill="#ffffff" rx="2"/>
-        <rect x="-45" y="-25" width="25" height="5" fill="#ffffff" rx="2"/>
-        <rect x="-45" y="-15" width="30" height="5" fill="#ffffff" rx="2"/>
-        <path d="M -25,-10 Q 0,10 25,5 Q 50,15 70,10" fill="none" stroke="#3b82f6" stroke-width="3"/>
-        <circle cx="70" cy="10" r="4" fill="#dc2626"/>
+    
+    <!-- Background -->
+    <rect width="400" height="300" fill="url(#medicalBg)"/>
+    
+    <!-- Hospital building -->
+    <g transform="translate(100, 120)">
+        <rect x="0" y="0" width="80" height="60" fill="url(#hospitalGradient)" rx="4"/>
+        <!-- Windows -->
+        <rect x="10" y="10" width="12" height="12" fill="#ffffff" opacity="0.9" rx="2"/>
+        <rect x="25" y="10" width="12" height="12" fill="#ffffff" opacity="0.9" rx="2"/>
+        <rect x="42" y="10" width="12" height="12" fill="#ffffff" opacity="0.9" rx="2"/>
+        <rect x="58" y="10" width="12" height="12" fill="#ffffff" opacity="0.9" rx="2"/>
+        <rect x="10" y="28" width="12" height="12" fill="#ffffff" opacity="0.9" rx="2"/>
+        <rect x="25" y="28" width="12" height="12" fill="#ffffff" opacity="0.9" rx="2"/>
+        <rect x="42" y="28" width="12" height="12" fill="#ffffff" opacity="0.9" rx="2"/>
+        <rect x="58" y="28" width="12" height="12" fill="#ffffff" opacity="0.9" rx="2"/>
+        <!-- Entrance -->
+        <rect x="32" y="45" width="16" height="15" fill="#ffffff" rx="2"/>
+        <!-- Medical cross on building -->
+        <rect x="36" y="47" width="2" height="8" fill="#0ea5e9"/>
+        <rect x="33" y="50" width="8" height="2" fill="#0ea5e9"/>
     </g>
-    <text x="200" y="280" text-anchor="middle" fill="#1e3a8a" font-family="Inter, sans-serif" font-size="14" font-weight="600" opacity="0.8">
+    
+    <!-- Patient flow -->
+    <g transform="translate(50, 90)">
+        <!-- Patient icon -->
+        <circle cx="0" cy="0" r="8" fill="#64748b"/>
+        <rect x="-6" y="8" width="12" height="20" fill="#64748b" rx="6"/>
+    </g>
+    
+    <!-- Arrow indicating flow -->
+    <path d="M68 105 Q85 100 95 105" fill="none" stroke="#0ea5e9" stroke-width="2" marker-end="url(#arrow1)"/>
+    
+    <!-- Predictive analytics visualization -->
+    <g transform="translate(280, 100)">
+        <!-- Data points and trend line -->
+        <circle cx="0" cy="40" r="4" fill="#8b5cf6"/>
+        <circle cx="15" cy="30" r="4" fill="#8b5cf6"/>
+        <circle cx="30" cy="25" r="4" fill="#8b5cf6"/>
+        <circle cx="45" cy="35" r="4" fill="#8b5cf6"/>
+        <circle cx="60" cy="20" r="4" fill="#8b5cf6"/>
+        <circle cx="75" cy="15" r="4" fill="#8b5cf6"/>
+        
+        <!-- Trend line -->
+        <path d="M0,40 Q20,25 40,30 Q60,20 75,15" fill="none" stroke="#8b5cf6" stroke-width="3"/>
+        
+        <!-- Prediction indicator -->
+        <circle cx="90" cy="10" r="6" fill="#dc2626" stroke="#ffffff" stroke-width="2"/>
+        <text x="90" y="14" text-anchor="middle" fill="white" font-family="Inter, sans-serif" font-size="8" font-weight="bold">!</text>
+        
+        <!-- Chart axes -->
+        <line x1="-10" y1="60" x2="95" y2="60" stroke="#64748b" stroke-width="1" opacity="0.3"/>
+        <line x1="-10" y1="60" x2="-10" y2="5" stroke="#64748b" stroke-width="1" opacity="0.3"/>
+    </g>
+    
+    <!-- Return arrow -->
+    <path d="M260 140 Q220 160 180 140" fill="none" stroke="#dc2626" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrow2)"/>
+    
+    <!-- ML Model indicator -->
+    <g transform="translate(200, 200)">
+        <rect x="-25" y="-10" width="50" height="20" fill="url(#predictiveGradient)" rx="10"/>
+        <text x="0" y="4" text-anchor="middle" fill="white" font-family="Inter, sans-serif" font-size="10" font-weight="600">ML Model</text>
+    </g>
+    
+    <!-- Arrow markers -->
+    <defs>
+        <marker id="arrow1" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+            <polygon points="0 0, 8 3, 0 6" fill="#0ea5e9"/>
+        </marker>
+        <marker id="arrow2" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+            <polygon points="0 0, 8 3, 0 6" fill="#dc2626"/>
+        </marker>
+    </defs>
+    
+    <text x="200" y="280" text-anchor="middle" fill="#4c1d95" font-family="Inter, sans-serif" font-size="14" font-weight="600">
         Hospital Readmission Prediction
     </text>
 </svg>

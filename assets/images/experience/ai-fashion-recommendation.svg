@@ -1,91 +1,153 @@
 <svg width="150" height="100" viewBox="0 0 150 100" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <linearGradient id="bg5" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#2563eb;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#1e40af;stop-opacity:1" />
-    </linearGradient>
-  </defs>
-  
-  <!-- Background -->
-  <rect width="150" height="100" fill="url(#bg5)" rx="8"/>
-  
-  <!-- Fashion Items -->
-  <g transform="translate(15, 15)">
-    <!-- Shirt -->
+    <defs>
+        <linearGradient id="fashionBg" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#fdf2f8"/>
+            <stop offset="100%" stop-color="#fce7f3"/>
+        </linearGradient>
+        <linearGradient id="aiGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#ec4899"/>
+            <stop offset="50%" stop-color="#db2777"/>
+            <stop offset="100%" stop-color="#be185d"/>
+        </linearGradient>
+    </defs>
+    
+    <!-- Background -->
+    <rect width="150" height="100" fill="url(#fashionBg)" rx="8"/>
+    
+    <!-- User Profile (Left) -->
+    <g transform="translate(10, 15)">
+        <circle cx="15" cy="15" r="12" fill="white" stroke="#e5e7eb" stroke-width="1"/>
+        <circle cx="15" cy="12" r="4" fill="#6b7280"/>
+        <path d="M7 20 Q15 25 23 20" stroke="#6b7280" stroke-width="2" fill="none"/>
+        <text x="15" y="35" font-family="Arial" font-size="5" fill="#374151" text-anchor="middle" font-weight="bold">User Profile</text>
+        
+        <!-- User Preferences -->
+        <rect x="0" y="40" width="30" height="15" fill="white" stroke="#e5e7eb" stroke-width="1" rx="2"/>
+        <text x="15" y="45" font-family="Arial" font-size="4" fill="#374151" text-anchor="middle" font-weight="bold">Preferences</text>
+        <text x="15" y="49" font-family="Arial" font-size="3" fill="#6b7280" text-anchor="middle">• Casual Style</text>
+        <text x="15" y="52" font-family="Arial" font-size="3" fill="#6b7280" text-anchor="middle">• Size M</text>
+    </g>
+    
+    <!-- AI Processing Engine (Center) -->
+    <g transform="translate(50, 20)">
+        <rect x="0" y="0" width="50" height="35" fill="url(#aiGradient)" rx="6"/>
+        
+        <!-- Neural Network Pattern -->
+        <g transform="translate(5, 5)">
+            <!-- Input Layer -->
+            <circle cx="5" cy="5" r="2" fill="white" opacity="0.9"/>
+            <circle cx="5" cy="12" r="2" fill="white" opacity="0.9"/>
+            <circle cx="5" cy="19" r="2" fill="white" opacity="0.9"/>
+            
+            <!-- Hidden Layer -->
+            <circle cx="20" cy="3" r="2" fill="white" opacity="0.7"/>
+            <circle cx="20" cy="9" r="2" fill="white" opacity="0.7"/>
+            <circle cx="20" cy="15" r="2" fill="white" opacity="0.7"/>
+            <circle cx="20" cy="21" r="2" fill="white" opacity="0.7"/>
+            
+            <!-- Output Layer -->
+            <circle cx="35" cy="8" r="2" fill="white" opacity="0.9"/>
+            <circle cx="35" cy="16" r="2" fill="white" opacity="0.9"/>
+            
+            <!-- Connections -->
+            <line x1="7" y1="5" x2="18" y2="3" stroke="white" stroke-width="0.5" opacity="0.5"/>
+            <line x1="7" y1="12" x2="18" y2="9" stroke="white" stroke-width="0.5" opacity="0.5"/>
+            <line x1="22" y1="9" x2="33" y2="8" stroke="white" stroke-width="0.5" opacity="0.5"/>
+            <line x1="22" y1="15" x2="33" y2="16" stroke="white" stroke-width="0.5" opacity="0.5"/>
+        </g>
+        
+        <text x="25" y="32" font-family="Arial" font-size="5" fill="white" text-anchor="middle" font-weight="bold">AI Fashion Engine</text>
+    </g>
+    
+    <!-- Fashion Recommendations (Right) -->
+    <g transform="translate(110, 10)">
+        <!-- Outfit 1 -->
+        <rect x="0" y="0" width="25" height="18" fill="white" stroke="#e5e7eb" stroke-width="1" rx="3"/>
+        <rect x="3" y="3" width="8" height="6" fill="#3b82f6" rx="1"/>
+        <rect x="3" y="10" width="8" height="5" fill="#1e40af" rx="1"/>
+        <text x="14" y="8" font-family="Arial" font-size="4" fill="#374151" font-weight="bold">Outfit A</text>
+        <text x="14" y="13" font-family="Arial" font-size="3" fill="#059669">★★★★★</text>
+        
+        <!-- Outfit 2 -->
+        <rect x="0" y="22" width="25" height="18" fill="white" stroke="#e5e7eb" stroke-width="1" rx="3"/>
+        <rect x="3" y="25" width="8" height="6" fill="#10b981" rx="1"/>
+        <rect x="3" y="32" width="8" height="5" fill="#059669" rx="1"/>
+        <text x="14" y="30" font-family="Arial" font-size="4" fill="#374151" font-weight="bold">Outfit B</text>
+        <text x="14" y="35" font-family="Arial" font-size="3" fill="#059669">★★★★☆</text>
+        
+        <!-- Outfit 3 -->
+        <rect x="0" y="44" width="25" height="18" fill="white" stroke="#e5e7eb" stroke-width="1" rx="3"/>
+        <rect x="3" y="47" width="8" height="6" fill="#8b5cf6" rx="1"/>
+        <rect x="3" y="54" width="8" height="5" fill="#7c3aed" rx="1"/>
+        <text x="14" y="52" font-family="Arial" font-size="4" fill="#374151" font-weight="bold">Outfit C</text>
+        <text x="14" y="57" font-family="Arial" font-size="3" fill="#059669">★★★☆☆</text>
+    </g>
+    
+    <!-- Fashion Categories -->
+    <g transform="translate(10, 65)">
+        <!-- Tops -->
+        <rect x="0" y="0" width="15" height="12" fill="#3b82f6" rx="2"/>
+        <text x="7.5" y="8" font-family="Arial" font-size="4" fill="white" text-anchor="middle" font-weight="bold">👕</text>
+        
+        <!-- Bottoms -->
+        <rect x="18" y="0" width="15" height="12" fill="#10b981" rx="2"/>
+        <text x="25.5" y="8" font-family="Arial" font-size="4" fill="white" text-anchor="middle" font-weight="bold">👖</text>
+        
+        <!-- Shoes -->
+        <rect x="36" y="0" width="15" height="12" fill="#f59e0b" rx="2"/>
+        <text x="43.5" y="8" font-family="Arial" font-size="4" fill="white" text-anchor="middle" font-weight="bold">👟</text>
+        
+        <!-- Accessories -->
+        <rect x="54" y="0" width="15" height="12" fill="#8b5cf6" rx="2"/>
+        <text x="61.5" y="8" font-family="Arial" font-size="4" fill="white" text-anchor="middle" font-weight="bold">👜</text>
+    </g>
+    
+    <!-- Recommendation Confidence -->
+    <g transform="translate(75, 65)">
+        <rect x="0" y="0" width="40" height="8" fill="#10b981" rx="4" opacity="0.9"/>
+        <text x="20" y="6" font-family="Arial" font-size="4" fill="white" text-anchor="middle" font-weight="bold">Match Confidence: 92%</text>
+    </g>
+    
+    <!-- Style Analysis -->
+    <g transform="translate(120, 65)">
+        <rect x="0" y="0" width="25" height="8" fill="#ec4899" rx="4" opacity="0.9"/>
+        <text x="12.5" y="6" font-family="Arial" font-size="4" fill="white" text-anchor="middle" font-weight="bold">Style Score: A+</text>
+    </g>
+    
+    <!-- Processing Arrows -->
     <g>
-      <path d="M5 8L12 5L19 8L19 25L5 25Z" fill="#3b82f6" stroke="#ffffff" stroke-width="1"/>
-      <path d="M8 8L8 12L16 12L16 8" fill="#ffffff"/>
-      <circle cx="12" cy="10" r="1" fill="#2563eb"/>
-      <text x="12" y="32" font-family="Arial" font-size="6" fill="#ffffff" text-anchor="middle">Shirt</text>
+        <path d="M42 32 L48 32" stroke="#db2777" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+        <path d="M102 32 L108 32" stroke="#db2777" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
     </g>
     
-    <!-- Pants -->
-    <g transform="translate(30, 0)">
-      <path d="M6 8L12 8L14 25L10 25L8 15L6 25L2 25Z" fill="#3b82f6" stroke="#ffffff" stroke-width="1"/>
-      <rect x="6" y="8" width="6" height="3" fill="#ffffff"/>
-      <text x="8" y="32" font-family="Arial" font-size="6" fill="#ffffff" text-anchor="middle">Pants</text>
+    <!-- Arrow Marker -->
+    <defs>
+        <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" fill="#db2777"/>
+        </marker>
+    </defs>
+    
+    <!-- Algorithm Tags -->
+    <g transform="translate(10, 82)">
+        <rect x="0" y="0" width="25" height="6" fill="#059669" rx="1" opacity="0.9"/>
+        <text x="12.5" y="4" font-family="Arial" font-size="3" fill="white" text-anchor="middle" font-weight="bold">Deep Learning</text>
     </g>
     
-    <!-- Shoes -->
-    <g transform="translate(55, 15)">
-      <ellipse cx="8" cy="8" rx="10" ry="4" fill="#3b82f6" stroke="#ffffff" stroke-width="1"/>
-      <ellipse cx="8" cy="6" rx="8" ry="2" fill="#ffffff"/>
-      <text x="8" y="25" font-family="Arial" font-size="6" fill="#ffffff" text-anchor="middle">Shoes</text>
-    </g>
-  </g>
-  
-  <!-- AI Brain Processing -->
-  <g transform="translate(90, 20)">
-    <circle cx="15" cy="15" r="12" fill="#1e3a8a" stroke="#ffffff" stroke-width="2"/>
-    
-    <!-- Neural network pattern -->
-    <circle cx="10" cy="10" r="1.5" fill="#ffffff"/>
-    <circle cx="20" cy="10" r="1.5" fill="#ffffff"/>
-    <circle cx="10" cy="20" r="1.5" fill="#ffffff"/>
-    <circle cx="20" cy="20" r="1.5" fill="#ffffff"/>
-    <circle cx="15" cy="15" r="1.5" fill="#ffffff"/>
-    
-    <!-- Connections -->
-    <path d="M10 10L15 15M20 10L15 15M10 20L15 15M20 20L15 15" stroke="#ffffff" stroke-width="0.8"/>
-    
-    <text x="15" y="35" font-family="Arial" font-size="6" fill="#ffffff" text-anchor="middle" font-weight="bold">AI Analysis</text>
-  </g>
-  
-  <!-- Recommendation Arrow -->
-  <g transform="translate(65, 35)">
-    <path d="M0 5L12 5L8 0L20 8L8 16L12 11L0 11Z" fill="#ffffff"/>
-  </g>
-  
-  <!-- Recommended Outfit -->
-  <g transform="translate(15, 55)">
-    <rect x="0" y="0" width="60" height="25" fill="#1e3a8a" rx="3" stroke="#ffffff" stroke-width="2"/>
-    
-    <!-- Outfit combination -->
-    <g transform="translate(5, 3)">
-      <!-- Mini shirt -->
-      <path d="M2 3L6 2L10 3L10 10L2 10Z" fill="#ffffff"/>
-      <circle cx="6" cy="5" r="0.5" fill="#2563eb"/>
-      
-      <!-- Mini pants -->
-      <path d="M14 3L18 3L19 10L17 10L16 6L15 10L13 10Z" fill="#ffffff"/>
-      
-      <!-- Mini shoes -->
-      <ellipse cx="24" cy="8" rx="4" ry="1.5" fill="#ffffff"/>
-      
-      <!-- Stars for recommendation -->
-      <text x="35" y="8" font-family="Arial" font-size="8" fill="#ffffff">★★★★★</text>
+    <g transform="translate(40, 82)">
+        <rect x="0" y="0" width="30" height="6" fill="#dc2626" rx="1" opacity="0.9"/>
+        <text x="15" y="4" font-family="Arial" font-size="3" fill="white" text-anchor="middle" font-weight="bold">Computer Vision</text>
     </g>
     
-    <text x="30" y="35" font-family="Arial" font-size="7" fill="#ffffff" text-anchor="middle" font-weight="bold">Perfect Match!</text>
-  </g>
-  
-  <!-- Style Preferences -->
-  <g transform="translate(85, 55)">
-    <rect x="0" y="0" width="50" height="20" fill="#3b82f6" rx="2" stroke="#ffffff" stroke-width="1"/>
-    <text x="25" y="8" font-family="Arial" font-size="6" fill="#ffffff" text-anchor="middle" font-weight="bold">Style: Casual</text>
-    <text x="25" y="15" font-family="Arial" font-size="6" fill="#ffffff" text-anchor="middle">Season: Summer</text>
-  </g>
-  
-  <!-- Title -->
-  <text x="75" y="90" font-family="Arial" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="bold">AI Fashion Recommendation</text>
+    <g transform="translate(75, 82)">
+        <rect x="0" y="0" width="35" height="6" fill="#7c3aed" rx="1" opacity="0.9"/>
+        <text x="17.5" y="4" font-family="Arial" font-size="3" fill="white" text-anchor="middle" font-weight="bold">Recommendation System</text>
+    </g>
+    
+    <g transform="translate(115, 82)">
+        <rect x="0" y="0" width="25" height="6" fill="#f59e0b" rx="1" opacity="0.9"/>
+        <text x="12.5" y="4" font-family="Arial" font-size="3" fill="white" text-anchor="middle" font-weight="bold">Style Transfer</text>
+    </g>
+    
+    <!-- Title -->
+    <text x="75" y="95" font-family="Arial" font-size="9" fill="#1e293b" text-anchor="middle" font-weight="bold">AI Fashion Recommendation</text>
 </svg>
