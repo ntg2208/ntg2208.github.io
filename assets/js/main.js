@@ -11,17 +11,17 @@ document.addEventListener('DOMContentLoaded', function() {
     function createProjectThumbnail(project) {
         const isDark = document.body.getAttribute('data-theme') === 'dark';
         const colors = isDark ? {
-            primary: '#22d3ee',
-            secondary: '#67e8f9',
-            accent: '#06b6d4',
+            primary: '#60a5fa',
+            secondary: '#3b82f6',
+            accent: '#2563eb',
             background: '#1e293b',
-            text: '#a5f3fc'
+            text: '#f1f5f9'
         } : {
-            primary: '#0891b2',
-            secondary: '#0c4a6e',
-            accent: '#22d3ee',
-            background: '#f0f9ff',
-            text: '#0c4a6e'
+            primary: '#2563eb',
+            secondary: '#1e40af',
+            accent: '#3b82f6',
+            background: '#ffffff',
+            text: '#1e3a8a'
         };
         
         // Determine project type and icon based on keywords and description
@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (keywords.includes('llm') || keywords.includes('language model') || description.includes('text generation')) {
             // NLP/LLM Projects - Brain/Neural Network
             icon = `
-                <g transform="translate(150, 80)">
+                <g transform="translate(200, 120)">
                     <circle cx="0" cy="0" r="25" fill="${colors.primary}" opacity="0.8"/>
                     <circle cx="40" cy="-20" r="20" fill="${colors.secondary}" opacity="0.7"/>
                     <circle cx="-35" cy="15" r="18" fill="${colors.accent}" opacity="0.6"/>
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
         } else if (keywords.includes('healthcare') || keywords.includes('medical') || keywords.includes('patient')) {
             // Healthcare Projects - Medical Cross with Data
             icon = `
-                <g transform="translate(150, 100)">
+                <g transform="translate(200, 150)">
                     <rect x="-30" y="-10" width="60" height="20" fill="${colors.primary}" rx="5"/>
                     <rect x="-10" y="-30" width="20" height="60" fill="${colors.primary}" rx="5"/>
                     <circle cx="-45" cy="-25" r="8" fill="${colors.secondary}" opacity="0.8"/>
@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function() {
         } else if (keywords.includes('wind') || keywords.includes('turbine') || keywords.includes('energy')) {
             // Energy Projects - Wind Turbine
             icon = `
-                <g transform="translate(150, 100)">
+                <g transform="translate(200, 150)">
                     <rect x="-3" y="-40" width="6" height="80" fill="${colors.secondary}"/>
                     <ellipse cx="0" cy="-40" rx="40" ry="8" fill="${colors.primary}" transform="rotate(0)"/>
                     <ellipse cx="0" cy="-40" rx="40" ry="8" fill="${colors.accent}" opacity="0.7" transform="rotate(120)"/>
@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function() {
         } else if (keywords.includes('machine learning') || keywords.includes('classification') || keywords.includes('clustering')) {
             // ML Projects - Data Nodes
             icon = `
-                <g transform="translate(150, 100)">
+                <g transform="translate(200, 150)">
                     ${Array.from({length: 12}, (_, i) => {
                         const angle = (i * 30) * Math.PI / 180;
                         const radius = 30 + (i % 3) * 15;
@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             // Default - Data Visualization
             icon = `
-                <g transform="translate(150, 100)">
+                <g transform="translate(200, 150)">
                     ${Array.from({length: 6}, (_, i) => {
                         const height = 20 + Math.random() * 40;
                         const x = -75 + i * 25;
@@ -126,13 +126,13 @@ document.addEventListener('DOMContentLoaded', function() {
             </defs>`;
         
         const svg = `
-            <svg width="300" height="200" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+            <svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
                 ${patterns}
-                <rect width="300" height="200" fill="url(#oceanGradient)"/>
-                <rect width="300" height="200" fill="url(#waves)"/>
+                <rect width="400" height="300" fill="url(#oceanGradient)"/>
+                <rect width="400" height="300" fill="url(#waves)"/>
                 ${icon}
-                <text x="150" y="180" text-anchor="middle" fill="${colors.text}" font-family="Inter, sans-serif" font-size="12" font-weight="600" opacity="0.8">
-                    ${project['Project Name'].substring(0, 35)}${project['Project Name'].length > 35 ? '...' : ''}
+                <text x="200" y="280" text-anchor="middle" fill="${colors.text}" font-family="Inter, sans-serif" font-size="14" font-weight="600" opacity="0.8">
+                    ${project['Project Name'].substring(0, 30)}${project['Project Name'].length > 30 ? '...' : ''}
                 </text>
             </svg>`;
         
@@ -161,9 +161,144 @@ document.addEventListener('DOMContentLoaded', function() {
     const themeToggle = document.getElementById('themeToggle');
     if (themeToggle) {
         themeToggle.addEventListener('click', () => {
-            setTimeout(updateProjectThumbnails, 100); // Small delay to let theme change
+            setTimeout(() => {
+                updateProjectThumbnails();
+                updateExperienceIcons();
+            }, 100); // Small delay to let theme change
         });
     }
+    
+    // Generate SVG icons for experience section
+    function createExperienceIcon(title, description) {
+        const isDark = document.body.getAttribute('data-theme') === 'dark';
+        const colors = isDark ? {
+            primary: '#60a5fa',
+            secondary: '#3b82f6',
+            accent: '#2563eb',
+            background: '#1e293b',
+            text: '#f1f5f9'
+        } : {
+            primary: '#2563eb',
+            secondary: '#1e40af',
+            accent: '#3b82f6',
+            background: '#ffffff',
+            text: '#1e3a8a'
+        };
+        
+        let icon = '';
+        const titleLower = title.toLowerCase();
+        const descLower = description.toLowerCase();
+        
+        if (titleLower.includes('data analysis') || titleLower.includes('processing')) {
+            // Data processing icon
+            icon = `
+                <g transform="translate(75, 50)">
+                    <rect x="-30" y="-15" width="60" height="5" fill="${colors.primary}" rx="2"/>
+                    <rect x="-25" y="-5" width="50" height="5" fill="${colors.secondary}" rx="2"/>
+                    <rect x="-35" y="5" width="70" height="5" fill="${colors.accent}" rx="2"/>
+                    <rect x="-20" y="15" width="40" height="5" fill="${colors.primary}" rx="2"/>
+                    <circle cx="-45" cy="-10" r="3" fill="${colors.accent}"/>
+                    <circle cx="45" cy="0" r="3" fill="${colors.secondary}"/>
+                    <circle cx="-40" cy="10" r="3" fill="${colors.primary}"/>
+                    <path d="M -45,-10 Q 0,-5 45,0" fill="none" stroke="${colors.text}" stroke-width="1" opacity="0.5"/>
+                </g>`;
+        } else if (titleLower.includes('statistical') || titleLower.includes('analysis')) {
+            // Statistical analysis icon
+            icon = `
+                <g transform="translate(75, 50)">
+                    ${Array.from({length: 5}, (_, i) => {
+                        const height = 10 + Math.sin(i) * 15;
+                        const x = -30 + i * 15;
+                        return `<rect x="${x}" y="${-height/2}" width="10" height="${height}" fill="${i % 2 === 0 ? colors.primary : colors.secondary}" rx="2"/>`;
+                    }).join('')}
+                    <line x1="-35" y1="20" x2="35" y2="20" stroke="${colors.text}" stroke-width="2" opacity="0.7"/>
+                    <line x1="-35" y1="-20" x2="-35" y2="20" stroke="${colors.text}" stroke-width="2" opacity="0.7"/>
+                    <path d="M -30,-10 Q -15,5 0,-5 Q 15,10 30,-2" fill="none" stroke="${colors.accent}" stroke-width="2" opacity="0.8"/>
+                </g>`;
+        } else if (titleLower.includes('ml') || titleLower.includes('machine learning') || titleLower.includes('model')) {
+            // ML model icon
+            icon = `
+                <g transform="translate(75, 50)">
+                    <circle cx="0" cy="0" r="8" fill="${colors.primary}"/>
+                    ${Array.from({length: 6}, (_, i) => {
+                        const angle = (i * 60) * Math.PI / 180;
+                        const x = Math.cos(angle) * 25;
+                        const y = Math.sin(angle) * 25;
+                        return `<circle cx="${x}" cy="${y}" r="5" fill="${colors.secondary}" opacity="0.8"/>`;
+                    }).join('')}
+                    ${Array.from({length: 6}, (_, i) => {
+                        const angle = (i * 60) * Math.PI / 180;
+                        const x = Math.cos(angle) * 25;
+                        const y = Math.sin(angle) * 25;
+                        return `<line x1="0" y1="0" x2="${x}" y2="${y}" stroke="${colors.accent}" stroke-width="2" opacity="0.6"/>`;
+                    }).join('')}
+                </g>`;
+        } else if (titleLower.includes('recommendation') || titleLower.includes('pricing') || titleLower.includes('fashion')) {
+            // Recommendation/ecommerce icon
+            icon = `
+                <g transform="translate(75, 50)">
+                    <rect x="-20" y="-15" width="40" height="25" fill="${colors.primary}" rx="5" opacity="0.8"/>
+                    <rect x="-15" y="-10" width="30" height="3" fill="${colors.background}" rx="1"/>
+                    <rect x="-15" y="-5" width="20" height="3" fill="${colors.background}" rx="1"/>
+                    <rect x="-15" y="0" width="25" height="3" fill="${colors.background}" rx="1"/>
+                    <circle cx="25" cy="-5" r="8" fill="${colors.secondary}" opacity="0.7"/>
+                    <path d="M 20,-5 L 22,-3 L 28,-9" fill="none" stroke="${colors.background}" stroke-width="2" stroke-linecap="round"/>
+                    <circle cx="-30" cy="5" r="6" fill="${colors.accent}" opacity="0.6"/>
+                    <text x="-30" y="8" text-anchor="middle" fill="${colors.background}" font-size="8" font-weight="bold">★</text>
+                </g>`;
+        } else if (titleLower.includes('forecast') || titleLower.includes('inventory') || titleLower.includes('sales')) {
+            // Forecasting icon
+            icon = `
+                <g transform="translate(75, 50)">
+                    <line x1="-30" y1="15" x2="30" y2="15" stroke="${colors.text}" stroke-width="2" opacity="0.7"/>
+                    <line x1="-30" y1="-15" x2="-30" y2="15" stroke="${colors.text}" stroke-width="2" opacity="0.7"/>
+                    <path d="M -25,10 Q -15,0 -5,5 Q 5,-5 15,-2 Q 25,8 30,0" fill="none" stroke="${colors.primary}" stroke-width="3"/>
+                    <path d="M -20,12 Q -10,2 0,7 Q 10,-3 20,0 Q 30,10 35,2" fill="none" stroke="${colors.secondary}" stroke-width="2" opacity="0.7" stroke-dasharray="3,2"/>
+                    <circle cx="15" cy="-2" r="3" fill="${colors.accent}"/>
+                    <circle cx="-5" cy="5" r="3" fill="${colors.accent}"/>
+                </g>`;
+        } else {
+            // Default icon
+            icon = `
+                <g transform="translate(75, 50)">
+                    <rect x="-25" y="-15" width="50" height="30" fill="${colors.primary}" rx="8" opacity="0.8"/>
+                    <circle cx="0" cy="0" r="12" fill="${colors.secondary}" opacity="0.9"/>
+                    <circle cx="0" cy="0" r="6" fill="${colors.background}"/>
+                    <path d="M -3,-3 L 0,0 L 3,-3" fill="none" stroke="${colors.primary}" stroke-width="2" stroke-linecap="round"/>
+                </g>`;
+        }
+        
+        const svg = `
+            <svg width="150" height="100" viewBox="0 0 150 100" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="experienceGradient${Date.now()}" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="${colors.primary}" stop-opacity="0.1"/>
+                        <stop offset="100%" stop-color="${colors.secondary}" stop-opacity="0.05"/>
+                    </linearGradient>
+                </defs>
+                <rect width="150" height="100" fill="${colors.background}" rx="8"/>
+                <rect width="150" height="100" fill="url(#experienceGradient${Date.now()})" rx="8"/>
+                ${icon}
+            </svg>`;
+        
+        return 'data:image/svg+xml;base64,' + btoa(svg);
+    }
+    
+    function updateExperienceIcons() {
+        document.querySelectorAll('.company-slider .project-card').forEach(card => {
+            const img = card.querySelector('.card-image img');
+            const title = card.querySelector('h4')?.textContent || '';
+            const description = card.querySelector('p')?.textContent || '';
+            
+            if (img && (img.src.includes('placeholder') || img.src.includes('data:image/svg'))) {
+                img.src = createExperienceIcon(title, description);
+                img.alt = `${title} icon`;
+            }
+        });
+    }
+    
+    // Update experience icons initially
+    updateExperienceIcons();
 
     /**
      * Generic slider initialization function that handles both company and project sliders
