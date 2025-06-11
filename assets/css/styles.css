@@ -1127,6 +1127,8 @@ section:hover {
     height: 100%;
     object-fit: cover;
     transition: var(--transition);
+    max-width: 100%;
+    max-height: 100%;
 }
 
 .project-card:hover .card-image img,

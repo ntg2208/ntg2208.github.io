@@ -139,7 +139,36 @@ document.addEventListener('DOMContentLoaded', function() {
         return 'data:image/svg+xml;base64,' + btoa(svg);
     }
 
-    // Generate dynamic SVG thumbnails for projects
+    // Function to convert project name to filename with manual mapping for existing files
+    function getProjectImageFilename(projectName) {
+        // Manual mapping for existing files
+        const fileMapping = {
+            'Shakespeare-Style Text Generation using Hidden Markov Models': 'shakespeare-text-generation',
+            'Wind Turbine Yaw System Performance Analysis': 'wind-turbine-yaw-system',
+            'NHS Employment Gap Analysis Using Machine Learning': 'nhs-employment-gap-analysis',
+            'DocPatientSumm: Low-Rank Adaptation (LoRA) finetune for Clinical Conversations': 'docpatientsumm-lora',
+            'Complaint Tweet Classification using Prompt Tuning of Large Language Models (LLMs)': 'complaint-tweet-classification',
+            'RAG agent llama3': 'rag-agent-llama3',
+            'Building a Q&A System with Retrieval-Augmented Generation (RAG) using LangChain and llama2': 'building-qa-system-rag-langchain-llama2',
+            'Malaria Parasite Detection using Deep Learning (TensorFlow v2)': 'malaria-parasite-detection-deep-learning',
+            'Hospital readmission prediction': 'hospital-readmission-prediction',
+            'Multimodal Conversational AI for E-commerce': 'multimodal-conversational-ai-ecommerce'
+        };
+        
+        // Check if we have a manual mapping
+        if (fileMapping[projectName]) {
+            return fileMapping[projectName];
+        }
+        
+        // Fallback to automatic conversion
+        return projectName.toLowerCase()
+            .replace(/[^a-z0-9\s-]/g, '') // Remove special characters
+            .replace(/\s+/g, '-') // Replace spaces with hyphens
+            .replace(/-+/g, '-') // Replace multiple hyphens with single
+            .replace(/^-|-$/g, ''); // Remove leading/trailing hyphens
+    }
+
+    // Load SVG thumbnails from images folder for projects
     function updateProjectThumbnails() {
         document.querySelectorAll('.project-image img, .card-image img').forEach(img => {
             const card = img.closest('.project-card');
@@ -147,26 +176,31 @@ document.addEventListener('DOMContentLoaded', function() {
                 const projectName = card.querySelector('h4')?.textContent;
                 const project = window.projectsData.find(p => p['Project Name'] === projectName);
                 if (project && (!img.src || img.src === '' || img.src.includes('placeholder'))) {
-                    img.src = createProjectThumbnail(project);
-                    img.alt = `${project['Project Name']} - ${project.Sector}`;
+                    const filename = getProjectImageFilename(project['Project Name']);
+                    const imagePath = `assets/images/projects/${filename}.svg`;
+                    
+                    // Try to load the SVG, fallback to placeholder if not found
+                    const testImg = new Image();
+                    testImg.onload = () => {
+                        img.src = imagePath;
+                        img.alt = `${project['Project Name']} - ${project.Sector}`;
+                    };
+                    testImg.onerror = () => {
+                        // Fallback to dynamically generated SVG if file doesn't exist
+                        img.src = createProjectThumbnail(project);
+                        img.alt = `${project['Project Name']} - ${project.Sector}`;
+                    };
+                    testImg.src = imagePath;
                 }
             }
         });
     }
     
     // Update thumbnails initially and when theme changes
-    updateProjectThumbnails();
+    // Delay initial update to allow DOM to load
+    setTimeout(updateProjectThumbnails, 100);
     
-    // Re-generate thumbnails when theme changes
-    const themeToggle = document.getElementById('themeToggle');
-    if (themeToggle) {
-        themeToggle.addEventListener('click', () => {
-            setTimeout(() => {
-                updateProjectThumbnails();
-                updateExperienceIcons();
-            }, 100); // Small delay to let theme change
-        });
-    }
+    // Theme toggle will be handled in initializeDarkMode function
     
     // Generate SVG icons for experience section
     function createExperienceIcon(title, description) {
@@ -284,6 +318,42 @@ document.addEventListener('DOMContentLoaded', function() {
         return 'data:image/svg+xml;base64,' + btoa(svg);
     }
     
+    // Function to convert experience title to filename with manual mapping for existing files
+    function getExperienceImageFilename(title) {
+        // Manual mapping for existing files
+        const experienceMapping = {
+            'Data Analysis & Processing': 'data-analysis-processing',
+            'Statistical Analysis': 'statistical-analysis',
+            'ML Model Development': 'ml-model-development',
+            'Recipe-Based Product Recommendation': 'recipe-based-product-recommendation',
+            'Competitive Price Intelligence': 'competitive-price-intelligence',
+            'Product and Combo Pricing': 'product-and-combo-pricing',
+            'Sales Forecast and Inventory Management': 'sales-forecast-and-inventory-management',
+            'AI Fashion Recommendation': 'ai-fashion-recommendation',
+            'Retail Data Analytics Platform': 'retail-data-analytics-platform',
+            'Styling Camera Application': 'styling-camera-application',
+            'GAN Research': 'gan-research',
+            'Advanced Image Processing': 'advanced-image-processing',
+            'Defective Semiconductor Detection': 'defective-semiconductor-detection',
+            'Computer Vision Pipeline': 'computer-vision-pipeline',
+            'Auto Inspection System': 'auto-inspection-system',
+            'EV Interface Development': 'ev-interface-development',
+            'Advanced C++ Development': 'advanced-cpp-development'
+        };
+        
+        // Check if we have a manual mapping
+        if (experienceMapping[title]) {
+            return experienceMapping[title];
+        }
+        
+        // Fallback to automatic conversion
+        return title.toLowerCase()
+            .replace(/[^a-z0-9\s-]/g, '') // Remove special characters
+            .replace(/\s+/g, '-') // Replace spaces with hyphens
+            .replace(/-+/g, '-') // Replace multiple hyphens with single
+            .replace(/^-|-$/g, ''); // Remove leading/trailing hyphens
+    }
+
     function updateExperienceIcons() {
         document.querySelectorAll('.company-slider .project-card').forEach(card => {
             const img = card.querySelector('.card-image img');
@@ -291,8 +361,21 @@ document.addEventListener('DOMContentLoaded', function() {
             const description = card.querySelector('p')?.textContent || '';
             
             if (img && (img.src.includes('placeholder') || img.src.includes('data:image/svg'))) {
-                img.src = createExperienceIcon(title, description);
-                img.alt = `${title} icon`;
+                const filename = getExperienceImageFilename(title);
+                const imagePath = `assets/images/experience/${filename}.svg`;
+                
+                // Try to load the SVG, fallback to dynamically generated if not found
+                const testImg = new Image();
+                testImg.onload = () => {
+                    img.src = imagePath;
+                    img.alt = `${title} icon`;
+                };
+                testImg.onerror = () => {
+                    // Fallback to dynamically generated SVG if file doesn't exist
+                    img.src = createExperienceIcon(title, description);
+                    img.alt = `${title} icon`;
+                };
+                testImg.src = imagePath;
             }
         });
     }
@@ -506,6 +589,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Render projects from projects.js
     if (window.renderProjects) {
         window.renderProjects();
+        // Update thumbnails after projects are rendered
+        setTimeout(updateProjectThumbnails, 200);
     }
 
     // Add window load event to ensure all elements are properly rendered
@@ -533,6 +618,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Trigger resize event to update slider positions
         window.dispatchEvent(new Event('resize'));
+        
+        // Update thumbnails after everything is loaded
+        updateProjectThumbnails();
+        updateExperienceIcons();
     });
 
     // Back to Top Button functionality
@@ -762,6 +851,9 @@ function initializeDarkMode() {
     const currentTheme = localStorage.getItem('theme');
     if (currentTheme) {
         body.setAttribute('data-theme', currentTheme);
+    } else {
+        // Set default light theme if no saved preference
+        body.setAttribute('data-theme', 'light');
     }
     
     // Toggle theme function
@@ -777,6 +869,12 @@ function initializeDarkMode() {
         setTimeout(() => {
             body.style.transition = '';
         }, 300);
+        
+        // Update thumbnails after theme change
+        setTimeout(() => {
+            updateProjectThumbnails();
+            updateExperienceIcons();
+        }, 100);
     }
     
     // Theme toggle event listener

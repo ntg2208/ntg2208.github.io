@@ -1,0 +1,99 @@
+<svg width="150" height="100" viewBox="0 0 150 100" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="pipelineGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2563eb;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1e3a8a;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="stageGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1e40af;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="150" height="100" fill="#ffffff" rx="8"/>
+  
+  <!-- Pipeline Flow -->
+  <!-- Stage 1: Image Acquisition -->
+  <g transform="translate(5, 15)">
+    <rect x="0" y="0" width="25" height="20" rx="3" fill="url(#stageGrad)" stroke="#1e3a8a" stroke-width="1"/>
+    <circle cx="12.5" cy="6" r="3" fill="#ffffff" opacity="0.8"/>
+    <rect x="8" y="10" width="9" height="6" rx="1" fill="#ffffff" opacity="0.8"/>
+    <text x="12.5" y="25" font-family="Arial, sans-serif" font-size="6" fill="#2563eb" text-anchor="middle">ACQUIRE</text>
+  </g>
+  
+  <!-- Arrow 1 -->
+  <path d="M 32 25 L 40 25 M 37 22 L 40 25 L 37 28" stroke="#2563eb" stroke-width="2" fill="none"/>
+  
+  <!-- Stage 2: Preprocessing -->
+  <g transform="translate(42, 15)">
+    <rect x="0" y="0" width="25" height="20" rx="3" fill="url(#stageGrad)" stroke="#1e3a8a" stroke-width="1"/>
+    <g fill="#ffffff" opacity="0.8">
+      <rect x="4" y="4" width="4" height="4"/>
+      <rect x="9" y="4" width="4" height="4"/>
+      <rect x="14" y="4" width="4" height="4"/>
+      <rect x="4" y="9" width="4" height="4"/>
+      <rect x="9" y="9" width="4" height="4"/>
+      <rect x="14" y="9" width="4" height="4"/>
+    </g>
+    <text x="12.5" y="25" font-family="Arial, sans-serif" font-size="6" fill="#2563eb" text-anchor="middle">PREPROCESS</text>
+  </g>
+  
+  <!-- Arrow 2 -->
+  <path d="M 69 25 L 77 25 M 74 22 L 77 25 L 74 28" stroke="#2563eb" stroke-width="2" fill="none"/>
+  
+  <!-- Stage 3: Feature Extraction -->
+  <g transform="translate(79, 15)">
+    <rect x="0" y="0" width="25" height="20" rx="3" fill="url(#stageGrad)" stroke="#1e3a8a" stroke-width="1"/>
+    <g stroke="#ffffff" stroke-width="1" fill="none" opacity="0.8">
+      <circle cx="8" cy="8" r="3"/>
+      <circle cx="17" cy="8" r="3"/>
+      <line x1="8" y1="12" x2="17" y2="12"/>
+    </g>
+    <text x="12.5" y="25" font-family="Arial, sans-serif" font-size="6" fill="#2563eb" text-anchor="middle">EXTRACT</text>
+  </g>
+  
+  <!-- Arrow 3 -->
+  <path d="M 106 25 L 114 25 M 111 22 L 114 25 L 111 28" stroke="#2563eb" stroke-width="2" fill="none"/>
+  
+  <!-- Stage 4: Analysis -->
+  <g transform="translate(116, 15)">
+    <rect x="0" y="0" width="25" height="20" rx="3" fill="url(#stageGrad)" stroke="#1e3a8a" stroke-width="1"/>
+    <g fill="#ffffff" opacity="0.8">
+      <circle cx="8" cy="8" r="2"/>
+      <circle cx="17" cy="8" r="2"/>
+      <circle cx="12.5" cy="14" r="2"/>
+    </g>
+    <g stroke="#ffffff" stroke-width="1" opacity="0.6">
+      <line x1="8" y1="8" x2="17" y2="8"/>
+      <line x1="8" y1="8" x2="12.5" y2="14"/>
+      <line x1="17" y1="8" x2="12.5" y2="14"/>
+    </g>
+    <text x="12.5" y="25" font-family="Arial, sans-serif" font-size="6" fill="#2563eb" text-anchor="middle">ANALYZE</text>
+  </g>
+  
+  <!-- Data Flow Indicators -->
+  <g transform="translate(10, 45)">
+    <rect x="0" y="0" width="130" height="25" rx="3" fill="url(#pipelineGrad)" opacity="0.2" stroke="#2563eb" stroke-width="1"/>
+    
+    <!-- Data packets moving through pipeline -->
+    <g opacity="0.7">
+      <rect x="5" y="5" width="8" height="15" rx="2" fill="#3b82f6"/>
+      <rect x="25" y="8" width="8" height="9" rx="2" fill="#2563eb"/>
+      <rect x="45" y="6" width="8" height="13" rx="2" fill="#1e40af"/>
+      <rect x="65" y="7" width="8" height="11" rx="2" fill="#3b82f6"/>
+      <rect x="85" y="5" width="8" height="15" rx="2" fill="#2563eb"/>
+      <rect x="105" y="9" width="8" height="7" rx="2" fill="#1e40af"/>
+    </g>
+    
+    <text x="65" y="32" font-family="Arial, sans-serif" font-size="8" fill="#2563eb" text-anchor="middle">CV PIPELINE</text>
+  </g>
+  
+  <!-- Output Results -->
+  <g transform="translate(20, 80)">
+    <text x="0" y="0" font-family="Arial, sans-serif" font-size="8" fill="#2563eb">DETECT</text>
+    <text x="35" y="0" font-family="Arial, sans-serif" font-size="8" fill="#1e40af">CLASSIFY</text>
+    <text x="75" y="0" font-family="Arial, sans-serif" font-size="8" fill="#2563eb">TRACK</text>
+    <text x="105" y="0" font-family="Arial, sans-serif" font-size="8" fill="#1e40af">MEASURE</text>
+  </g>
+</svg>

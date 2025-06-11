@@ -1,0 +1,95 @@
+<svg width="150" height="100" viewBox="0 0 150 100" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="dashGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2563eb;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1e3a8a;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="screenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1e40af;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="batteryGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#22c55e;stop-opacity:1" />
+      <stop offset="70%" style="stop-color:#22c55e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1e40af;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="150" height="100" fill="#ffffff" rx="8"/>
+  
+  <!-- Dashboard Frame -->
+  <rect x="10" y="15" width="130" height="70" rx="8" fill="url(#dashGrad)" stroke="#1e3a8a" stroke-width="2"/>
+  
+  <!-- Main Display Screen -->
+  <rect x="20" y="25" width="50" height="35" rx="4" fill="#000000" stroke="#3b82f6" stroke-width="1"/>
+  
+  <!-- Speed Display -->
+  <g transform="translate(30, 35)">
+    <text x="15" y="8" font-family="Arial, sans-serif" font-size="12" fill="#ffffff" text-anchor="middle" font-weight="bold">85</text>
+    <text x="15" y="18" font-family="Arial, sans-serif" font-size="6" fill="#3b82f6" text-anchor="middle">KM/H</text>
+  </g>
+  
+  <!-- Battery Level Display -->
+  <g transform="translate(80, 25)">
+    <rect x="0" y="0" width="50" height="15" rx="3" fill="#000000" stroke="#3b82f6" stroke-width="1"/>
+    <text x="3" y="8" font-family="Arial, sans-serif" font-size="6" fill="#ffffff">BATTERY</text>
+    <text x="3" y="13" font-family="Arial, sans-serif" font-size="5" fill="#22c55e">78%</text>
+    
+    <!-- Battery bar -->
+    <rect x="35" y="3" width="12" height="9" rx="1" fill="#1e40af" stroke="#3b82f6" stroke-width="0.5"/>
+    <rect x="36" y="4" width="8" height="7" rx="1" fill="url(#batteryGrad)"/>
+    
+    <!-- Battery tip -->
+    <rect x="47" y="6" width="2" height="3" rx="1" fill="#3b82f6"/>
+  </g>
+  
+  <!-- Range Display -->
+  <g transform="translate(80, 45)">
+    <rect x="0" y="0" width="50" height="15" rx="3" fill="#000000" stroke="#3b82f6" stroke-width="1"/>
+    <text x="3" y="8" font-family="Arial, sans-serif" font-size="6" fill="#ffffff">RANGE</text>
+    <text x="3" y="13" font-family="Arial, sans-serif" font-size="5" fill="#3b82f6">247 KM</text>
+    
+    <!-- Range icon -->
+    <g transform="translate(35, 3)">
+      <circle cx="6" cy="4.5" r="3" fill="none" stroke="#22c55e" stroke-width="1"/>
+      <path d="M 3 4.5 L 6 7.5 L 9 4.5" stroke="#22c55e" stroke-width="1" fill="none"/>
+    </g>
+  </g>
+  
+  <!-- Control Buttons -->
+  <g transform="translate(20, 65)">
+    <!-- Climate Control -->
+    <rect x="0" y="0" width="15" height="12" rx="2" fill="#3b82f6"/>
+    <text x="7.5" y="7" font-family="Arial, sans-serif" font-size="5" fill="#ffffff" text-anchor="middle">AC</text>
+    
+    <!-- Navigation -->
+    <rect x="20" y="0" width="15" height="12" rx="2" fill="#1e40af"/>
+    <text x="27.5" y="7" font-family="Arial, sans-serif" font-size="5" fill="#ffffff" text-anchor="middle">NAV</text>
+    
+    <!-- Media -->
+    <rect x="40" y="0" width="15" height="12" rx="2" fill="#3b82f6"/>
+    <circle cx="47.5" cy="6" r="2" fill="#ffffff"/>
+    <polygon points="46,4 46,8 49,6" fill="#3b82f6"/>
+    
+    <!-- Drive Mode -->
+    <rect x="60" y="0" width="20" height="12" rx="2" fill="#2563eb"/>
+    <text x="70" y="7" font-family="Arial, sans-serif" font-size="5" fill="#ffffff" text-anchor="middle">ECO</text>
+    
+    <!-- Settings -->
+    <rect x="85" y="0" width="15" height="12" rx="2" fill="#1e40af"/>
+    <circle cx="92.5" cy="6" r="3" fill="none" stroke="#ffffff" stroke-width="1"/>
+    <circle cx="92.5" cy="6" r="1" fill="#ffffff"/>
+  </g>
+  
+  <!-- Status Indicators -->
+  <g transform="translate(10, 5)">
+    <circle cx="3" cy="3" r="2" fill="#22c55e"/>
+    <text x="8" y="6" font-family="Arial, sans-serif" font-size="6" fill="#2563eb">READY</text>
+    
+    <circle cx="35" cy="3" r="2" fill="#3b82f6"/>
+    <text x="40" y="6" font-family="Arial, sans-serif" font-size="6" fill="#2563eb">CONNECTED</text>
+    
+    <text x="85" y="6" font-family="Arial, sans-serif" font-size="6" fill="#1e40af">EV INTERFACE</text>
+  </g>
+</svg>

@@ -1,0 +1,93 @@
+<svg width="150" height="100" viewBox="0 0 150 100" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="codeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2563eb;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1e3a8a;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="terminalGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e3a8a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#000000;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="150" height="100" fill="#ffffff" rx="8"/>
+  
+  <!-- Code Editor Window -->
+  <rect x="10" y="15" width="130" height="70" rx="4" fill="url(#terminalGrad)" stroke="#2563eb" stroke-width="2"/>
+  
+  <!-- Window Header -->
+  <rect x="10" y="15" width="130" height="12" rx="4" fill="url(#codeGrad)"/>
+  <g transform="translate(15, 18)">
+    <circle cx="3" cy="3" r="2" fill="#ef4444"/>
+    <circle cx="10" cy="3" r="2" fill="#f59e0b"/>
+    <circle cx="17" cy="3" r="2" fill="#22c55e"/>
+    <text x="30" y="6" font-family="Arial, sans-serif" font-size="6" fill="#ffffff">main.cpp</text>
+  </g>
+  
+  <!-- Line Numbers -->
+  <g transform="translate(15, 35)" fill="#3b82f6" opacity="0.6">
+    <text x="0" y="0" font-family="monospace" font-size="8">1</text>
+    <text x="0" y="8" font-family="monospace" font-size="8">2</text>
+    <text x="0" y="16" font-family="monospace" font-size="8">3</text>
+    <text x="0" y="24" font-family="monospace" font-size="8">4</text>
+    <text x="0" y="32" font-family="monospace" font-size="8">5</text>
+    <text x="0" y="40" font-family="monospace" font-size="8">6</text>
+  </g>
+  
+  <!-- C++ Code -->
+  <g transform="translate(25, 35)" font-family="monospace" font-size="7">
+    <!-- Include statements -->
+    <text x="0" y="0" fill="#3b82f6">#include</text>
+    <text x="40" y="0" fill="#22c55e">&lt;iostream&gt;</text>
+    
+    <!-- Class definition -->
+    <text x="0" y="8" fill="#2563eb">class</text>
+    <text x="25" y="8" fill="#ffffff">MyClass</text>
+    <text x="65" y="8" fill="#ffffff">{</text>
+    
+    <!-- Member function -->
+    <text x="5" y="16" fill="#2563eb">public:</text>
+    <text x="5" y="24" fill="#1e40af">void</text>
+    <text x="25" y="24" fill="#ffffff">process()</text>
+    <text x="65" y="24" fill="#ffffff">{</text>
+    
+    <!-- Function body -->
+    <text x="10" y="32" fill="#ffffff">std::cout</text>
+    <text x="55" y="32" fill="#f59e0b">&lt;&lt;</text>
+    <text x="65" y="32" fill="#22c55e">"C++";</text>
+    
+    <!-- Closing braces -->
+    <text x="5" y="40" fill="#ffffff">}</text>
+    <text x="0" y="48" fill="#ffffff">};</text>
+  </g>
+  
+  <!-- C++ Logo/Symbol -->
+  <g transform="translate(100, 50)">
+    <rect x="0" y="0" width="35" height="25" rx="3" fill="url(#codeGrad)" opacity="0.8"/>
+    <text x="17.5" y="15" font-family="Arial, sans-serif" font-size="12" fill="#ffffff" text-anchor="middle" font-weight="bold">C++</text>
+  </g>
+  
+  <!-- Advanced Features Indicators -->
+  <g transform="translate(15, 90)">
+    <text x="0" y="0" font-family="Arial, sans-serif" font-size="7" fill="#2563eb">OOP</text>
+    <text x="20" y="0" font-family="Arial, sans-serif" font-size="7" fill="#1e40af">TEMPLATES</text>
+    <text x="65" y="0" font-family="Arial, sans-serif" font-size="7" fill="#3b82f6">STL</text>
+    <text x="85" y="0" font-family="Arial, sans-serif" font-size="7" fill="#2563eb">SMART PTR</text>
+  </g>
+  
+  <!-- Memory Management Visual -->
+  <g transform="translate(45, 55)">
+    <rect x="0" y="0" width="20" height="8" rx="1" fill="#3b82f6" opacity="0.3"/>
+    <rect x="2" y="2" width="4" height="4" fill="#2563eb"/>
+    <rect x="8" y="2" width="4" height="4" fill="#1e40af"/>
+    <rect x="14" y="2" width="4" height="4" fill="#3b82f6"/>
+    <text x="10" y="12" font-family="Arial, sans-serif" font-size="5" fill="#2563eb" text-anchor="middle">MEMORY</text>
+  </g>
+  
+  <!-- Compilation Arrow -->
+  <g transform="translate(70, 45)">
+    <path d="M 0 5 L 15 5 M 12 2 L 15 5 L 12 8" stroke="#22c55e" stroke-width="2" fill="none"/>
+    <text x="7.5" y="15" font-family="Arial, sans-serif" font-size="5" fill="#22c55e" text-anchor="middle">COMPILE</text>
+  </g>
+</svg>
