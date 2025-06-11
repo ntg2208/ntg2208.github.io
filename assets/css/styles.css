@@ -893,59 +893,19 @@ section:hover {
     padding: 2rem 0;
 }
 
-.skills-slider {
-    position: relative;
-    width: 100%;
-    height: 150px;
-    overflow: hidden;
-    background: linear-gradient(145deg, var(--surface-1), var(--surface-2));
-    padding: 1.5rem;
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem;
     margin: 2rem 0;
+    background: linear-gradient(145deg, var(--surface-1), var(--surface-2));
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
     border: 1px solid var(--border-color);
-}
-
-.slider-track {
-    display: flex;
-    animation: scroll 30s linear infinite;
-    gap: 2rem;
-    padding: 0 1rem;
-    width: max-content;
-}
-
-.slider-track:hover {
-    animation-play-state: paused;
-}
-
-@keyframes scroll {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-50%);
-    }
-}
-
-.skills-slider::before,
-.skills-slider::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    width: 150px;
-    height: 100%;
-    z-index: 2;
-    pointer-events: none;
-}
-
-.skills-slider::before {
-    left: 0;
-    background: linear-gradient(to right, var(--card-background) 0%, transparent 100%);
-}
-
-.skills-slider::after {
-    right: 0;
-    background: linear-gradient(to left, var(--card-background) 0%, transparent 100%);
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .icon {
@@ -1237,6 +1197,59 @@ section:hover {
 }
 
 /* Experience Section */
+.experience-content {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.experience-category {
+    background-color: var(--card-background);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 2.5rem;
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.experience-category:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--hover-shadow);
+}
+
+.company-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.company-position {
+    font-size: 1.8rem;
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.company-name {
+    font-size: 1.3rem;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.company-period {
+    font-size: 1rem;
+    color: var(--muted-text-color);
+    font-weight: 500;
+}
+
+.experience-projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+}
+
 .company-slider {
     background-color: var(--background-color);
     padding: 2.5rem;
@@ -1636,6 +1649,34 @@ section:hover {
     .hero-section {
         padding: 3rem 1rem;
         min-height: 80vh;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 1rem;
+        padding: 1.5rem;
+    }
+
+    .experience-projects-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .experience-category {
+        padding: 1.5rem;
+    }
+
+    .company-header {
+        margin-bottom: 1.5rem;
+        padding-bottom: 1rem;
+    }
+
+    .company-position {
+        font-size: 1.5rem;
+    }
+
+    .company-name {
+        font-size: 1.1rem;
     }
 
     .navbar {
