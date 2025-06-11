@@ -1,0 +1,129 @@
+<svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2563eb;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1e40af;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="processGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1e3a8a;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="400" height="300" fill="url(#bgGradient)"/>
+  
+  <!-- Original Image -->
+  <g transform="translate(80,120)">
+    <rect x="-30" y="-25" width="60" height="50" fill="url(#processGradient)" stroke="#ffffff" stroke-width="2"/>
+    <!-- Image grid pattern -->
+    <line x1="-20" y1="-15" x2="20" y2="-15" stroke="#ffffff" stroke-width="1" opacity="0.7"/>
+    <line x1="-20" y1="-5" x2="20" y2="-5" stroke="#ffffff" stroke-width="1" opacity="0.7"/>
+    <line x1="-20" y1="5" x2="20" y2="5" stroke="#ffffff" stroke-width="1" opacity="0.7"/>
+    <line x1="-20" y1="15" x2="20" y2="15" stroke="#ffffff" stroke-width="1" opacity="0.7"/>
+    <line x1="-10" y1="-15" x2="-10" y2="15" stroke="#ffffff" stroke-width="1" opacity="0.7"/>
+    <line x1="0" y1="-15" x2="0" y2="15" stroke="#ffffff" stroke-width="1" opacity="0.7"/>
+    <line x1="10" y1="-15" x2="10" y2="15" stroke="#ffffff" stroke-width="1" opacity="0.7"/>
+    <text x="0" y="45" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Original</text>
+    <text x="0" y="60" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="10">High Quality</text>
+  </g>
+  
+  <!-- DCT Transform -->
+  <g transform="translate(200,120)">
+    <circle cx="0" cy="0" r="35" fill="url(#processGradient)" stroke="#ffffff" stroke-width="2"/>
+    <!-- Mathematical symbols -->
+    <text x="0" y="-8" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="14" font-weight="bold">DCT</text>
+    <text x="0" y="6" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="10">Transform</text>
+    
+    <!-- Transform arrows -->
+    <path d="M-25,-25 L-15,-15" stroke="#ffffff" stroke-width="2" opacity="0.7"/>
+    <path d="M25,-25 L15,-15" stroke="#ffffff" stroke-width="2" opacity="0.7"/>
+    <path d="M-25,25 L-15,15" stroke="#ffffff" stroke-width="2" opacity="0.7"/>
+    <path d="M25,25 L15,15" stroke="#ffffff" stroke-width="2" opacity="0.7"/>
+    
+    <text x="0" y="55" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Process</text>
+  </g>
+  
+  <!-- Compressed Image -->
+  <g transform="translate(320,120)">
+    <rect x="-30" y="-25" width="60" height="50" fill="#1e3a8a" stroke="#ffffff" stroke-width="2"/>
+    <!-- Compressed grid pattern (less detailed) -->
+    <line x1="-20" y1="-10" x2="20" y2="-10" stroke="#ffffff" stroke-width="1" opacity="0.5"/>
+    <line x1="-20" y1="10" x2="20" y2="10" stroke="#ffffff" stroke-width="1" opacity="0.5"/>
+    <line x1="-5" y1="-15" x2="-5" y2="15" stroke="#ffffff" stroke-width="1" opacity="0.5"/>
+    <line x1="5" y1="-15" x2="5" y2="15" stroke="#ffffff" stroke-width="1" opacity="0.5"/>
+    <text x="0" y="45" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Compressed</text>
+    <text x="0" y="60" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="10">JPEG Format</text>
+  </g>
+  
+  <!-- Processing arrows -->
+  <path d="M110,120 L165,120" stroke="#ffffff" stroke-width="3" marker-end="url(#arrowhead)"/>
+  <path d="M235,120 L290,120" stroke="#ffffff" stroke-width="3" marker-end="url(#arrowhead)"/>
+  
+  <!-- Arrow marker -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#ffffff"/>
+    </marker>
+  </defs>
+  
+  <!-- Quantization step -->
+  <g transform="translate(200,200)">
+    <rect x="-40" y="-15" width="80" height="30" fill="#3b82f6" stroke="#ffffff" stroke-width="1" opacity="0.8"/>
+    <text x="0" y="-3" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Quantization</text>
+    <text x="0" y="8" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="8">Frequency Domain</text>
+    
+    <!-- Quantization matrix representation -->
+    <g transform="translate(0,35)">
+      <rect x="-20" y="-10" width="40" height="20" fill="none" stroke="#ffffff" stroke-width="1" opacity="0.6"/>
+      <line x1="-15" y1="-5" x2="15" y2="-5" stroke="#ffffff" stroke-width="1" opacity="0.4"/>
+      <line x1="-15" y1="0" x2="15" y2="0" stroke="#ffffff" stroke-width="1" opacity="0.4"/>
+      <line x1="-15" y1="5" x2="15" y2="5" stroke="#ffffff" stroke-width="1" opacity="0.4"/>
+      <line x1="-10" y1="-5" x2="-10" y2="5" stroke="#ffffff" stroke-width="1" opacity="0.4"/>
+      <line x1="0" y1="-5" x2="0" y2="5" stroke="#ffffff" stroke-width="1" opacity="0.4"/>
+      <line x1="10" y1="-5" x2="10" y2="5" stroke="#ffffff" stroke-width="1" opacity="0.4"/>
+    </g>
+  </g>
+  
+  <!-- Inverse DCT -->
+  <g transform="translate(200,50)">
+    <circle cx="0" cy="0" r="25" fill="#1e3a8a" stroke="#ffffff" stroke-width="2" opacity="0.8"/>
+    <text x="0" y="-5" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="8" font-weight="bold">Inverse</text>
+    <text x="0" y="3" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="8" font-weight="bold">DCT</text>
+    <text x="0" y="40" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="10">Decompression</text>
+  </g>
+  
+  <!-- Python logo indicator -->
+  <g transform="translate(80,50)">
+    <rect x="-25" y="-10" width="50" height="20" fill="#3b82f6" stroke="#ffffff" stroke-width="1" opacity="0.8"/>
+    <text x="0" y="-2" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Python</text>
+    <text x="0" y="8" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="8">Implementation</text>
+  </g>
+  
+  <!-- Compression ratio indicator -->
+  <g transform="translate(320,50)">
+    <circle cx="0" cy="0" r="20" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.7"/>
+    <path d="M 0,-20 A 20,20 0 1,1 14.14,14.14" fill="none" stroke="#3b82f6" stroke-width="3"/>
+    <text x="0" y="-3" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="8" font-weight="bold">80%</text>
+    <text x="0" y="4" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="6">Reduced</text>
+    <text x="0" y="35" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="8">Compression</text>
+  </g>
+  
+  <!-- Data flow indicators -->
+  <g transform="translate(200,120)">
+    <circle cx="-120" cy="-40" r="3" fill="#ffffff" opacity="0.6"/>
+    <circle cx="120" cy="-40" r="3" fill="#ffffff" opacity="0.6"/>
+    <circle cx="-120" cy="80" r="3" fill="#ffffff" opacity="0.6"/>
+    <circle cx="120" cy="80" r="3" fill="#ffffff" opacity="0.6"/>
+    
+    <!-- Connecting lines -->
+    <line x1="-120" y1="-40" x2="-35" y2="-30" stroke="#ffffff" stroke-width="1" opacity="0.3"/>
+    <line x1="120" y1="-40" x2="35" y2="-30" stroke="#ffffff" stroke-width="1" opacity="0.3"/>
+    <line x1="-120" y1="80" x2="-35" y2="30" stroke="#ffffff" stroke-width="1" opacity="0.3"/>
+    <line x1="120" y1="80" x2="35" y2="30" stroke="#ffffff" stroke-width="1" opacity="0.3"/>
+  </g>
+  
+  <!-- Title -->
+  <text x="200" y="25" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="16" font-weight="bold">JPEG Compression</text>
+  <text x="200" y="285" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="12">DCT Transform + Python</text>
+</svg>

@@ -1,0 +1,127 @@
+<svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2563eb;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1e40af;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="eyeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1e3a8a;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="400" height="300" fill="url(#bgGradient)"/>
+  
+  <!-- Central eye/vision icon -->
+  <g transform="translate(200,120)">
+    <ellipse cx="0" cy="0" rx="40" ry="25" fill="url(#eyeGradient)" stroke="#ffffff" stroke-width="2"/>
+    <circle cx="0" cy="0" r="15" fill="#ffffff" opacity="0.9"/>
+    <circle cx="0" cy="0" r="8" fill="#1e3a8a"/>
+    <circle cx="3" cy="-3" r="3" fill="#ffffff" opacity="0.8"/>
+  </g>
+  
+  <!-- Faces showing different emotions -->
+  <g transform="translate(100,180)">
+    <!-- Happy face -->
+    <circle cx="0" cy="0" r="20" fill="#3b82f6" stroke="#ffffff" stroke-width="2"/>
+    <circle cx="-6" cy="-5" r="2" fill="#ffffff"/>
+    <circle cx="6" cy="-5" r="2" fill="#ffffff"/>
+    <path d="M-8,5 Q0,15 8,5" stroke="#ffffff" stroke-width="2" fill="none"/>
+    <text x="0" y="35" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="10">Happy</text>
+  </g>
+  
+  <g transform="translate(200,200)">
+    <!-- Neutral face -->
+    <circle cx="0" cy="0" r="20" fill="#3b82f6" stroke="#ffffff" stroke-width="2"/>
+    <circle cx="-6" cy="-5" r="2" fill="#ffffff"/>
+    <circle cx="6" cy="-5" r="2" fill="#ffffff"/>
+    <line x1="-6" y1="8" x2="6" y2="8" stroke="#ffffff" stroke-width="2"/>
+    <text x="0" y="35" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="10">Neutral</text>
+  </g>
+  
+  <g transform="translate(300,180)">
+    <!-- Sad face -->
+    <circle cx="0" cy="0" r="20" fill="#3b82f6" stroke="#ffffff" stroke-width="2"/>
+    <circle cx="-6" cy="-5" r="2" fill="#ffffff"/>
+    <circle cx="6" cy="-5" r="2" fill="#ffffff"/>
+    <path d="M-8,12 Q0,2 8,12" stroke="#ffffff" stroke-width="2" fill="none"/>
+    <text x="0" y="35" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="10">Sad</text>
+  </g>
+  
+  <!-- Face detection rectangles -->
+  <g transform="translate(200,120)">
+    <rect x="-60" y="-40" width="50" height="40" fill="none" stroke="#ffffff" stroke-width="1" stroke-dasharray="3,2" opacity="0.7"/>
+    <rect x="10" y="-35" width="45" height="35" fill="none" stroke="#ffffff" stroke-width="1" stroke-dasharray="3,2" opacity="0.7"/>
+    <rect x="-30" y="30" width="60" height="50" fill="none" stroke="#ffffff" stroke-width="1" stroke-dasharray="3,2" opacity="0.7"/>
+  </g>
+  
+  <!-- Camera/detection icon -->
+  <g transform="translate(120,80)">
+    <rect x="-12" y="-8" width="24" height="16" fill="#3b82f6" stroke="#ffffff" stroke-width="1"/>
+    <circle cx="0" cy="0" r="6" fill="#ffffff" opacity="0.8"/>
+    <circle cx="0" cy="0" r="3" fill="#1e3a8a"/>
+    <rect x="-15" y="-10" width="6" height="4" fill="#3b82f6" stroke="#ffffff" stroke-width="1"/>
+  </g>
+  
+  <!-- Analysis chart -->
+  <g transform="translate(280,80)">
+    <rect x="-20" y="-15" width="40" height="30" fill="none" stroke="#ffffff" stroke-width="1" opacity="0.7"/>
+    <!-- Bars representing sentiment analysis -->
+    <rect x="-15" y="-10" width="8" height="20" fill="#3b82f6"/>
+    <rect x="-5" y="-5" width="8" height="15" fill="#3b82f6"/>
+    <rect x="5" y="-12" width="8" height="22" fill="#3b82f6"/>
+    <text x="0" y="25" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="8">Analysis</text>
+  </g>
+  
+  <!-- Processing arrows -->
+  <path d="M140,80 L160,100" stroke="#ffffff" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <path d="M240,100 L260,80" stroke="#ffffff" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Arrow marker -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#ffffff"/>
+    </marker>
+  </defs>
+  
+  <!-- Data points -->
+  <g transform="translate(200,120)">
+    <circle cx="-80" cy="-30" r="3" fill="#ffffff" opacity="0.8"/>
+    <circle cx="80" cy="-30" r="3" fill="#ffffff" opacity="0.8"/>
+    <circle cx="-80" cy="30" r="3" fill="#ffffff" opacity="0.8"/>
+    <circle cx="80" cy="30" r="3" fill="#ffffff" opacity="0.8"/>
+    
+    <!-- Connecting lines -->
+    <line x1="-80" y1="-30" x2="-40" y2="-20" stroke="#ffffff" stroke-width="1" opacity="0.4"/>
+    <line x1="80" y1="-30" x2="40" y2="-20" stroke="#ffffff" stroke-width="1" opacity="0.4"/>
+    <line x1="-80" y1="30" x2="-40" y2="20" stroke="#ffffff" stroke-width="1" opacity="0.4"/>
+    <line x1="80" y1="30" x2="40" y2="20" stroke="#ffffff" stroke-width="1" opacity="0.4"/>
+  </g>
+  
+  <!-- Satisfaction meter -->
+  <g transform="translate(200,50)">
+    <circle cx="0" cy="0" r="18" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.7"/>
+    <path d="M 0,-18 A 18,18 0 0,1 12.73,12.73" fill="none" stroke="#3b82f6" stroke-width="3"/>
+    <text x="0" y="2" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="8" font-weight="bold">75%</text>
+    <text x="0" y="35" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="8">Satisfaction</text>
+  </g>
+  
+  <!-- TensorFlow logo indicator -->
+  <g transform="translate(80,240)">
+    <rect x="-20" y="-10" width="40" height="20" fill="#3b82f6" stroke="#ffffff" stroke-width="1" opacity="0.8"/>
+    <text x="0" y="-2" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="8" font-weight="bold">TensorFlow</text>
+    <text x="0" y="6" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="6">CV Model</text>
+  </g>
+  
+  <!-- Docker container indicator -->
+  <g transform="translate(320,240)">
+    <rect x="-20" y="-10" width="40" height="20" fill="#3b82f6" stroke="#ffffff" stroke-width="1" opacity="0.8"/>
+    <text x="0" y="-2" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="8" font-weight="bold">Docker</text>
+    <text x="0" y="6" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="6">Deploy</text>
+  </g>
+  
+  <!-- Title -->
+  <text x="200" y="25" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="16" font-weight="bold">Customer Sentiment</text>
+  <text x="200" y="285" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="12">Emotion Recognition + CV</text>
+</svg>
