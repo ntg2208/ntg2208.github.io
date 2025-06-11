@@ -7,35 +7,163 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.classList.remove('loading');
         document.body.classList.add('loaded');
     });
-    // Create placeholder image
-    function createPlaceholderImage() {
-        const canvas = document.createElement('canvas');
-        canvas.width = 800;
-        canvas.height = 400;
-        const ctx = canvas.getContext('2d');
+    // Create water-themed SVG thumbnails based on project type
+    function createProjectThumbnail(project) {
+        const isDark = document.body.getAttribute('data-theme') === 'dark';
+        const colors = isDark ? {
+            primary: '#22d3ee',
+            secondary: '#67e8f9',
+            accent: '#06b6d4',
+            background: '#1e293b',
+            text: '#a5f3fc'
+        } : {
+            primary: '#0891b2',
+            secondary: '#0c4a6e',
+            accent: '#22d3ee',
+            background: '#f0f9ff',
+            text: '#0c4a6e'
+        };
         
-        const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
-        gradient.addColorStop(0, '#2c3e50');
-        gradient.addColorStop(1, '#3498db');
-        ctx.fillStyle = gradient;
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        // Determine project type and icon based on keywords and description
+        const keywords = project.Keywords.toLowerCase();
+        const description = project.Description.toLowerCase();
+        let icon = '';
+        let patterns = '';
         
-        ctx.fillStyle = 'white';
-        ctx.font = 'bold 48px Roboto';
-        ctx.textAlign = 'center';
-        ctx.textBaseline = 'middle';
-        ctx.fillText('Project Image', canvas.width/2, canvas.height/2);
+        if (keywords.includes('llm') || keywords.includes('language model') || description.includes('text generation')) {
+            // NLP/LLM Projects - Brain/Neural Network
+            icon = `
+                <g transform="translate(150, 80)">
+                    <circle cx="0" cy="0" r="25" fill="${colors.primary}" opacity="0.8"/>
+                    <circle cx="40" cy="-20" r="20" fill="${colors.secondary}" opacity="0.7"/>
+                    <circle cx="-35" cy="15" r="18" fill="${colors.accent}" opacity="0.6"/>
+                    <circle cx="20" cy="35" r="22" fill="${colors.primary}" opacity="0.5"/>
+                    <circle cx="-15" cy="-30" r="16" fill="${colors.secondary}" opacity="0.9"/>
+                    ${Array.from({length: 8}, (_, i) => {
+                        const angle = (i * 45) * Math.PI / 180;
+                        const x1 = Math.cos(angle) * 25;
+                        const y1 = Math.sin(angle) * 25;
+                        const x2 = Math.cos(angle) * 45;
+                        const y2 = Math.sin(angle) * 45;
+                        return `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="${colors.text}" stroke-width="2" opacity="0.6"/>`;
+                    }).join('')}
+                </g>`;
+        } else if (keywords.includes('healthcare') || keywords.includes('medical') || keywords.includes('patient')) {
+            // Healthcare Projects - Medical Cross with Data
+            icon = `
+                <g transform="translate(150, 100)">
+                    <rect x="-30" y="-10" width="60" height="20" fill="${colors.primary}" rx="5"/>
+                    <rect x="-10" y="-30" width="20" height="60" fill="${colors.primary}" rx="5"/>
+                    <circle cx="-45" cy="-25" r="8" fill="${colors.secondary}" opacity="0.8"/>
+                    <circle cx="45" cy="-15" r="6" fill="${colors.accent}" opacity="0.7"/>
+                    <circle cx="-35" cy="35" r="7" fill="${colors.secondary}" opacity="0.6"/>
+                    <circle cx="40" cy="25" r="9" fill="${colors.accent}" opacity="0.8"/>
+                    <path d="M -45,-25 Q -20,-10 45,-15" fill="none" stroke="${colors.text}" stroke-width="2" opacity="0.5"/>
+                    <path d="M 45,-15 Q 20,10 -35,35" fill="none" stroke="${colors.text}" stroke-width="2" opacity="0.5"/>
+                </g>`;
+        } else if (keywords.includes('wind') || keywords.includes('turbine') || keywords.includes('energy')) {
+            // Energy Projects - Wind Turbine
+            icon = `
+                <g transform="translate(150, 100)">
+                    <rect x="-3" y="-40" width="6" height="80" fill="${colors.secondary}"/>
+                    <ellipse cx="0" cy="-40" rx="40" ry="8" fill="${colors.primary}" transform="rotate(0)"/>
+                    <ellipse cx="0" cy="-40" rx="40" ry="8" fill="${colors.accent}" opacity="0.7" transform="rotate(120)"/>
+                    <ellipse cx="0" cy="-40" rx="40" ry="8" fill="${colors.secondary}" opacity="0.8" transform="rotate(240)"/>
+                    <circle cx="0" cy="-40" r="6" fill="${colors.text}"/>
+                    ${Array.from({length: 3}, (_, i) => {
+                        const x = Math.cos((i * 120) * Math.PI / 180) * 60;
+                        const y = Math.sin((i * 120) * Math.PI / 180) * 60 - 40;
+                        return `<circle cx="${x}" cy="${y}" r="4" fill="${colors.primary}" opacity="0.6"/>`;
+                    }).join('')}
+                </g>`;
+        } else if (keywords.includes('machine learning') || keywords.includes('classification') || keywords.includes('clustering')) {
+            // ML Projects - Data Nodes
+            icon = `
+                <g transform="translate(150, 100)">
+                    ${Array.from({length: 12}, (_, i) => {
+                        const angle = (i * 30) * Math.PI / 180;
+                        const radius = 30 + (i % 3) * 15;
+                        const x = Math.cos(angle) * radius;
+                        const y = Math.sin(angle) * radius;
+                        const size = 6 + (i % 3) * 3;
+                        const colorIndex = i % 3;
+                        const nodeColor = colorIndex === 0 ? colors.primary : colorIndex === 1 ? colors.secondary : colors.accent;
+                        return `<circle cx="${x}" cy="${y}" r="${size}" fill="${nodeColor}" opacity="0.8"/>`;
+                    }).join('')}
+                    <circle cx="0" cy="0" r="12" fill="${colors.text}" opacity="0.9"/>
+                    ${Array.from({length: 4}, (_, i) => {
+                        const angle = (i * 90) * Math.PI / 180;
+                        const x = Math.cos(angle) * 45;
+                        const y = Math.sin(angle) * 45;
+                        return `<line x1="0" y1="0" x2="${x}" y2="${y}" stroke="${colors.primary}" stroke-width="2" opacity="0.6"/>`;
+                    }).join('')}
+                </g>`;
+        } else {
+            // Default - Data Visualization
+            icon = `
+                <g transform="translate(150, 100)">
+                    ${Array.from({length: 6}, (_, i) => {
+                        const height = 20 + Math.random() * 40;
+                        const x = -75 + i * 25;
+                        return `<rect x="${x}" y="${-height/2}" width="18" height="${height}" fill="${i % 2 === 0 ? colors.primary : colors.secondary}" opacity="0.8" rx="3"/>`;
+                    }).join('')}
+                    <line x1="-80" y1="40" x2="80" y2="40" stroke="${colors.text}" stroke-width="2" opacity="0.6"/>
+                    <line x1="-80" y1="-40" x2="-80" y2="40" stroke="${colors.text}" stroke-width="2" opacity="0.6"/>
+                </g>`;
+        }
         
-        return canvas.toDataURL('image/png');
+        // Background patterns
+        patterns = `
+            <defs>
+                <pattern id="waves" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+                    <path d="M0,20 Q10,10 20,20 Q30,30 40,20" fill="none" stroke="${colors.accent}" stroke-width="1" opacity="0.1"/>
+                </pattern>
+                <linearGradient id="oceanGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="${colors.background}"/>
+                    <stop offset="50%" stop-color="${colors.primary}" stop-opacity="0.1"/>
+                    <stop offset="100%" stop-color="${colors.secondary}" stop-opacity="0.05"/>
+                </linearGradient>
+            </defs>`;
+        
+        const svg = `
+            <svg width="300" height="200" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+                ${patterns}
+                <rect width="300" height="200" fill="url(#oceanGradient)"/>
+                <rect width="300" height="200" fill="url(#waves)"/>
+                ${icon}
+                <text x="150" y="180" text-anchor="middle" fill="${colors.text}" font-family="Inter, sans-serif" font-size="12" font-weight="600" opacity="0.8">
+                    ${project['Project Name'].substring(0, 35)}${project['Project Name'].length > 35 ? '...' : ''}
+                </text>
+            </svg>`;
+        
+        return 'data:image/svg+xml;base64,' + btoa(svg);
     }
 
-    // Set placeholder images
-    const placeholderImage = createPlaceholderImage();
-    document.querySelectorAll('.project-image img, .card-image img').forEach(img => {
-        if (!img.src || img.src === '') {
-            img.src = placeholderImage;
-        }
-    });
+    // Generate dynamic SVG thumbnails for projects
+    function updateProjectThumbnails() {
+        document.querySelectorAll('.project-image img, .card-image img').forEach(img => {
+            const card = img.closest('.project-card');
+            if (card && window.projectsData) {
+                const projectName = card.querySelector('h4')?.textContent;
+                const project = window.projectsData.find(p => p['Project Name'] === projectName);
+                if (project && (!img.src || img.src === '' || img.src.includes('placeholder'))) {
+                    img.src = createProjectThumbnail(project);
+                    img.alt = `${project['Project Name']} - ${project.Sector}`;
+                }
+            }
+        });
+    }
+    
+    // Update thumbnails initially and when theme changes
+    updateProjectThumbnails();
+    
+    // Re-generate thumbnails when theme changes
+    const themeToggle = document.getElementById('themeToggle');
+    if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+            setTimeout(updateProjectThumbnails, 100); // Small delay to let theme change
+        });
+    }
 
     /**
      * Generic slider initialization function that handles both company and project sliders
@@ -286,6 +414,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize intersection observer for animations
     initializeScrollAnimations();
+    
+    // Initialize scroll progress indicator
+    initializeScrollProgress();
 });
 
 // Back to Top Button
@@ -643,3 +774,20 @@ function addAnimationStyles() {
 
 // Initialize animation styles
 addAnimationStyles();
+
+// Scroll Progress Indicator
+function initializeScrollProgress() {
+    const scrollProgress = document.getElementById('scrollProgress');
+    if (!scrollProgress) return;
+    
+    function updateScrollProgress() {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (scrollTop / docHeight) * 100;
+        
+        scrollProgress.style.width = scrolled + '%';
+    }
+    
+    window.addEventListener('scroll', updateScrollProgress);
+    updateScrollProgress(); // Initial call
+}

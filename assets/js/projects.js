@@ -216,5 +216,6 @@ function renderProjects() {
     }
 }
 
-// Expose renderProjects to be called from main.js
+// Expose renderProjects and projects data to be called from main.js
 window.renderProjects = renderProjects;
+window.projectsData = projectsData;
