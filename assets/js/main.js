@@ -2,6 +2,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Add loading class to body
     document.body.classList.add('loading');
     
+    // Detect WebP support
+    detectWebPSupport();
+    
     // Remove loading class after everything is loaded
     window.addEventListener('load', () => {
         document.body.classList.remove('loading');
@@ -168,7 +171,7 @@ document.addEventListener('DOMContentLoaded', function() {
             .replace(/^-|-$/g, ''); // Remove leading/trailing hyphens
     }
 
-    // Load SVG thumbnails from images folder for projects
+    // Progressive image loading with WebP support
     function updateProjectThumbnails() {
         document.querySelectorAll('.project-image img, .card-image img').forEach(img => {
             const card = img.closest('.project-card');
@@ -177,23 +180,60 @@ document.addEventListener('DOMContentLoaded', function() {
                 const project = window.projectsData.find(p => p['Project Name'] === projectName);
                 if (project && (!img.src || img.src === '' || img.src.includes('placeholder'))) {
                     const filename = getProjectImageFilename(project['Project Name']);
-                    const imagePath = `assets/images/projects/${filename}.svg`;
                     
-                    // Try to load the SVG, fallback to placeholder if not found
-                    const testImg = new Image();
-                    testImg.onload = () => {
-                        img.src = imagePath;
-                        img.alt = `${project['Project Name']} - ${project.Sector}`;
-                    };
-                    testImg.onerror = () => {
-                        // Fallback to dynamically generated SVG if file doesn't exist
-                        img.src = createProjectThumbnail(project);
-                        img.alt = `${project['Project Name']} - ${project.Sector}`;
-                    };
-                    testImg.src = imagePath;
+                    // Try WebP first, then fallback to SVG, then generated thumbnail
+                    loadImageWithFallbacks(img, filename, 'projects', project);
                 }
             }
         });
+    }
+    
+    // Progressive image loading with multiple format support
+    function loadImageWithFallbacks(imgElement, filename, folder, dataObject) {
+        const formats = ['webp', 'svg', 'png', 'jpg'];
+        let currentFormatIndex = 0;
+        
+        function tryNextFormat() {
+            if (currentFormatIndex >= formats.length) {
+                // All formats failed, handle error gracefully
+                handleImageError(imgElement, folder, dataObject);
+                return;
+            }
+            
+            const format = formats[currentFormatIndex];
+            const imagePath = `assets/images/${folder}/${filename}.${format}`;
+            
+            // Add loading state
+            imgElement.classList.add('loading-image');
+            
+            const testImg = new Image();
+            testImg.onload = () => {
+                imgElement.src = imagePath;
+                imgElement.classList.remove('loading-image', 'error-image');
+                imgElement.classList.add('loaded-image');
+                
+                if (folder === 'projects') {
+                    imgElement.alt = `${dataObject['Project Name']} - ${dataObject.Sector}`;
+                } else if (folder === 'experience') {
+                    imgElement.alt = `${dataObject.Title} icon`;
+                }
+                
+                // Hide error message if it exists
+                hideImageError(imgElement);
+            };
+            testImg.onerror = () => {
+                currentFormatIndex++;
+                if (currentFormatIndex < formats.length) {
+                    tryNextFormat();
+                } else {
+                    // All formats failed, handle error gracefully
+                    handleImageError(imgElement, folder, dataObject);
+                }
+            };
+            testImg.src = imagePath;
+        }
+        
+        tryNextFormat();
     }
     
     // Update thumbnails initially and when theme changes
@@ -362,20 +402,10 @@ document.addEventListener('DOMContentLoaded', function() {
             
             if (img && (img.src.includes('placeholder') || img.src.includes('data:image/svg'))) {
                 const filename = getExperienceImageFilename(title);
-                const imagePath = `assets/images/experience/${filename}.svg`;
+                const experienceData = { Title: title, Description: description };
                 
-                // Try to load the SVG, fallback to dynamically generated if not found
-                const testImg = new Image();
-                testImg.onload = () => {
-                    img.src = imagePath;
-                    img.alt = `${title} icon`;
-                };
-                testImg.onerror = () => {
-                    // Fallback to dynamically generated SVG if file doesn't exist
-                    img.src = createExperienceIcon(title, description);
-                    img.alt = `${title} icon`;
-                };
-                testImg.src = imagePath;
+                // Use progressive loading with WebP support
+                loadImageWithFallbacks(img, filename, 'experience', experienceData);
             }
         });
     }
@@ -392,6 +422,13 @@ document.addEventListener('DOMContentLoaded', function() {
         window.renderProjects();
         // Update thumbnails after projects are rendered
         setTimeout(updateProjectThumbnails, 200);
+        
+        // Initialize project search after rendering
+        if (window.initializeProjectSearch) {
+            setTimeout(() => {
+                window.initializeProjectSearch();
+            }, 300);
+        }
     }
 
     // Render experience from experience.js
@@ -425,6 +462,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize scroll progress indicator
     initializeScrollProgress();
+    
+    // Initialize mobile navigation
+    initializeMobileNavigation();
 });
 
 // Back to Top Button
@@ -465,9 +505,6 @@ function initializeContactForm() {
     if (!contactForm) return;
 
     contactForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        
-        const formData = new FormData(contactForm);
         const formButton = contactForm.querySelector('.btn-primary');
         const originalButtonText = formButton.innerHTML;
         
@@ -475,23 +512,34 @@ function initializeContactForm() {
         formButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
         formButton.disabled = true;
         
-        try {
-            // Simulate form submission (replace with actual form handler)
-            await new Promise(resolve => setTimeout(resolve, 2000));
+        // Check if Netlify is available (when deployed)
+        const isNetlifyDeployment = window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1';
+        
+        if (isNetlifyDeployment) {
+            // Let Netlify handle the form submission
+            return; // Don't prevent default, let it submit naturally
+        } else {
+            // Local development - prevent default and show demo message
+            e.preventDefault();
             
-            // Show success message
-            showNotification('Message sent successfully! I\'ll get back to you soon.', 'success');
-            
-            // Reset form
-            contactForm.reset();
-            
-        } catch (error) {
-            console.error('Form submission error:', error);
-            showNotification('Sorry, there was an error sending your message. Please try again or contact me directly.', 'error');
-        } finally {
-            // Reset button
-            formButton.innerHTML = originalButtonText;
-            formButton.disabled = false;
+            try {
+                // Simulate form submission
+                await new Promise(resolve => setTimeout(resolve, 2000));
+                
+                // Show success message
+                showNotification('Demo mode: Message would be sent successfully! (This form will work when deployed to Netlify)', 'success');
+                
+                // Reset form
+                contactForm.reset();
+                
+            } catch (error) {
+                console.error('Form submission error:', error);
+                showNotification('Sorry, there was an error. In production, this form will work with Netlify Forms.', 'error');
+            } finally {
+                // Reset button
+                formButton.innerHTML = originalButtonText;
+                formButton.disabled = false;
+            }
         }
     });
 
@@ -808,3 +856,175 @@ function initializeScrollProgress() {
     window.addEventListener('scroll', updateScrollProgress);
     updateScrollProgress(); // Initial call
 }
+
+// Mobile Navigation
+function initializeMobileNavigation() {
+    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+    const navMenu = document.querySelector('.nav-menu');
+    const navLinks = document.querySelectorAll('.nav-link');
+    
+    if (!mobileMenuToggle || !navMenu) return;
+    
+    // Toggle mobile menu
+    function toggleMobileMenu() {
+        const isActive = navMenu.classList.contains('active');
+        
+        if (isActive) {
+            navMenu.classList.remove('active');
+            mobileMenuToggle.classList.remove('active');
+            mobileMenuToggle.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+        } else {
+            navMenu.classList.add('active');
+            mobileMenuToggle.classList.add('active');
+            mobileMenuToggle.setAttribute('aria-expanded', 'true');
+            document.body.style.overflow = 'hidden';
+        }
+    }
+    
+    // Close mobile menu
+    function closeMobileMenu() {
+        navMenu.classList.remove('active');
+        mobileMenuToggle.classList.remove('active');
+        mobileMenuToggle.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+    }
+    
+    // Event listeners
+    mobileMenuToggle.addEventListener('click', toggleMobileMenu);
+    
+    // Close menu when clicking on nav links
+    navLinks.forEach(link => {
+        link.addEventListener('click', closeMobileMenu);
+    });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!navMenu.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
+            closeMobileMenu();
+        }
+    });
+    
+    // Close menu on escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+            closeMobileMenu();
+        }
+    });
+    
+    // Handle window resize
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 768 && navMenu.classList.contains('active')) {
+            closeMobileMenu();
+        }
+    });
+}
+
+// WebP Support Detection
+function detectWebPSupport() {
+    const webP = new Image();
+    webP.onload = webP.onerror = function () {
+        if (webP.height === 2) {
+            document.documentElement.classList.add('webp');
+        } else {
+            document.documentElement.classList.add('no-webp');
+        }
+    };
+    webP.src = 'data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA';
+}
+
+// Image Error Handling
+function handleImageError(imgElement, folder, dataObject) {
+    imgElement.classList.remove('loading-image');
+    imgElement.classList.add('error-image');
+    
+    // Try to generate fallback image
+    try {
+        if (folder === 'projects') {
+            imgElement.src = createProjectThumbnail(dataObject);
+            imgElement.alt = `${dataObject['Project Name']} - ${dataObject.Sector}`;
+        } else if (folder === 'experience') {
+            imgElement.src = createExperienceIcon(dataObject.Title, dataObject.Description);
+            imgElement.alt = `${dataObject.Title} icon`;
+        }
+        imgElement.classList.remove('error-image');
+        imgElement.classList.add('loaded-image');
+    } catch (error) {
+        // If even fallback generation fails, show error message
+        console.warn('Failed to load or generate image:', error);
+        showImageError(imgElement, folder, dataObject);
+    }
+}
+
+function showImageError(imgElement, folder, dataObject) {
+    const card = imgElement.closest('.project-card, .skeleton-experience-item');
+    if (!card) return;
+    
+    // Create error overlay
+    const errorOverlay = document.createElement('div');
+    errorOverlay.className = 'image-error-overlay';
+    errorOverlay.innerHTML = `
+        <div class="error-content">
+            <i class="fas fa-exclamation-triangle"></i>
+            <span>Image not available</span>
+            <button class="retry-btn" onclick="retryImageLoad(this)" data-folder="${folder}" data-name="${dataObject['Project Name'] || dataObject.Title}">
+                <i class="fas fa-redo"></i> Retry
+            </button>
+        </div>
+    `;
+    
+    // Position overlay over image
+    const imageContainer = imgElement.parentElement;
+    if (imageContainer && !imageContainer.querySelector('.image-error-overlay')) {
+        imageContainer.style.position = 'relative';
+        imageContainer.appendChild(errorOverlay);
+    }
+    
+    // Hide the broken image
+    imgElement.style.opacity = '0.1';
+}
+
+function hideImageError(imgElement) {
+    const card = imgElement.closest('.project-card, .skeleton-experience-item');
+    if (!card) return;
+    
+    const errorOverlay = card.querySelector('.image-error-overlay');
+    if (errorOverlay) {
+        errorOverlay.remove();
+    }
+    
+    imgElement.style.opacity = '';
+}
+
+// Retry image loading
+window.retryImageLoad = function(button) {
+    const folder = button.getAttribute('data-folder');
+    const name = button.getAttribute('data-name');
+    const card = button.closest('.project-card, .skeleton-experience-item');
+    
+    if (!card) return;
+    
+    const img = card.querySelector('img');
+    const errorOverlay = card.querySelector('.image-error-overlay');
+    
+    if (errorOverlay) {
+        errorOverlay.remove();
+    }
+    
+    img.style.opacity = '';
+    
+    // Find the data object and retry loading
+    let dataObject;
+    if (folder === 'projects' && window.projectsData) {
+        dataObject = window.projectsData.find(p => p['Project Name'] === name);
+    } else if (folder === 'experience') {
+        dataObject = { Title: name, Description: '' };
+    }
+    
+    if (dataObject) {
+        const filename = folder === 'projects' ? 
+            getProjectImageFilename(dataObject['Project Name']) : 
+            getExperienceImageFilename(dataObject.Title);
+        loadImageWithFallbacks(img, filename, folder, dataObject);
+    }
+};

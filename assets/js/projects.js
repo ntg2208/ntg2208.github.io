@@ -1,5 +1,9 @@
 // assets/js/projects.js
 
+// Store original projects data and filtered data
+let originalProjectsData = [];
+let filteredProjectsData = [];
+
 const projectsData = [
     {
         "Project Name": "Shakespeare-Style Text Generation using Hidden Markov Models",
@@ -216,6 +220,109 @@ function renderProjects() {
     }
 }
 
-// Expose renderProjects and projects data to be called from main.js
+// Project Search and Filter Functionality
+function initializeProjectSearch() {
+    originalProjectsData = [...projectsData];
+    filteredProjectsData = [...projectsData];
+    
+    const searchInput = document.getElementById('projectSearch');
+    const sectorFilter = document.getElementById('sectorFilter');
+    const projectCount = document.getElementById('projectCount');
+    
+    // Update project count
+    function updateProjectCount() {
+        const count = filteredProjectsData.length;
+        projectCount.textContent = `${count} project${count === 1 ? '' : 's'} found`;
+    }
+    
+    // Apply filters and search
+    function applyFilters() {
+        const searchTerm = searchInput.value.toLowerCase().trim();
+        const selectedSector = sectorFilter.value;
+        
+        filteredProjectsData = originalProjectsData.filter(project => {
+            // Search filter
+            const matchesSearch = !searchTerm || 
+                project['Project Name'].toLowerCase().includes(searchTerm) ||
+                project.Description.toLowerCase().includes(searchTerm) ||
+                project.Keywords.toLowerCase().includes(searchTerm) ||
+                project.Sector.toLowerCase().includes(searchTerm);
+            
+            // Sector filter
+            const matchesSector = !selectedSector || project.Sector === selectedSector;
+            
+            return matchesSearch && matchesSector;
+        });
+        
+        updateProjectCount();
+        renderFilteredProjects();
+    }
+    
+    // Render filtered projects
+    function renderFilteredProjects() {
+        const projectsContent = document.querySelector('.projects-content');
+        
+        if (filteredProjectsData.length === 0) {
+            showNoResults(projectsContent);
+        } else {
+            // Use the same rendering logic but with filtered data
+            const tempData = projectsData;
+            window.projectsData = filteredProjectsData;
+            renderProjects();
+            window.projectsData = tempData; // Restore original data
+        }
+    }
+    
+    // Show no results message
+    function showNoResults(container) {
+        container.innerHTML = `
+            <div class="no-results">
+                <div class="no-results-icon">
+                    <i class="fas fa-search"></i>
+                </div>
+                <h3>No projects found</h3>
+                <p>Try adjusting your search terms or filters</p>
+                <button class="clear-filters-btn" onclick="clearAllFilters()">
+                    <i class="fas fa-times"></i> Clear Filters
+                </button>
+            </div>
+        `;
+    }
+    
+    // Clear all filters
+    window.clearAllFilters = function() {
+        searchInput.value = '';
+        sectorFilter.value = '';
+        applyFilters();
+    };
+    
+    // Event listeners
+    if (searchInput) {
+        searchInput.addEventListener('input', debounce(applyFilters, 300));
+    }
+    
+    if (sectorFilter) {
+        sectorFilter.addEventListener('change', applyFilters);
+    }
+    
+    // Initial update
+    updateProjectCount();
+}
+
+// Debounce function for search input
+function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+}
+
+// Expose functions and data
 window.renderProjects = renderProjects;
 window.projectsData = projectsData;
+window.initializeProjectSearch = initializeProjectSearch;

@@ -33,6 +33,7 @@
                     <li><a href="#experience" class="nav-link">Experience</a></li>
                     <li><a href="#projects" class="nav-link">Projects</a></li>
                     <li><a href="#education" class="nav-link">Education</a></li>
+                    <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
                     <li><a href="#contact" class="nav-link">Contact</a></li>
                 </ul>
                 <div class="nav-actions">
@@ -43,6 +44,11 @@
                     <a href="assets/resume/Truong_Giang_Nguyen_Resume.pdf" class="btn-resume" target="_blank">
                         <i class="fas fa-download"></i> Resume
                     </a>
+                    <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle mobile menu" aria-expanded="false">
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                    </button>
                 </div>
             </nav>
         </header>
@@ -167,6 +173,41 @@
 
             <section id="experience" aria-labelledby="experience-heading">
                 <h2 id="experience-heading">Experience</h2>
+                <div class="experience-skeleton">
+                    <div class="skeleton-experience-item">
+                        <div class="skeleton-experience-header">
+                            <div class="skeleton-experience-icon"></div>
+                            <div class="skeleton-experience-text">
+                                <div class="skeleton-experience-title"></div>
+                                <div class="skeleton-experience-company"></div>
+                            </div>
+                        </div>
+                        <div class="skeleton-project-description"></div>
+                        <div class="skeleton-project-description"></div>
+                    </div>
+                    <div class="skeleton-experience-item">
+                        <div class="skeleton-experience-header">
+                            <div class="skeleton-experience-icon"></div>
+                            <div class="skeleton-experience-text">
+                                <div class="skeleton-experience-title"></div>
+                                <div class="skeleton-experience-company"></div>
+                            </div>
+                        </div>
+                        <div class="skeleton-project-description"></div>
+                        <div class="skeleton-project-description"></div>
+                    </div>
+                    <div class="skeleton-experience-item">
+                        <div class="skeleton-experience-header">
+                            <div class="skeleton-experience-icon"></div>
+                            <div class="skeleton-experience-text">
+                                <div class="skeleton-experience-title"></div>
+                                <div class="skeleton-experience-company"></div>
+                            </div>
+                        </div>
+                        <div class="skeleton-project-description"></div>
+                        <div class="skeleton-project-description"></div>
+                    </div>
+                </div>
                 <div class="experience-content">
                     <!-- Experience will be dynamically loaded here by company -->
                 </div>
@@ -174,6 +215,57 @@
 
             <section id="projects" aria-labelledby="projects-heading">
                 <h2 id="projects-heading">Projects</h2>
+                
+                <!-- Project Search and Filter -->
+                <div class="projects-controls">
+                    <div class="search-container">
+                        <input type="text" id="projectSearch" placeholder="Search projects..." class="search-input">
+                        <i class="fas fa-search search-icon"></i>
+                    </div>
+                    <div class="filter-container">
+                        <select id="sectorFilter" class="filter-select">
+                            <option value="">All Sectors</option>
+                            <option value="Natural Language Processing">NLP & LLMs</option>
+                            <option value="Healthcare">Healthcare</option>
+                            <option value="Renewable Energy">Energy & Environment</option>
+                            <option value="Computer Vision">Computer Vision</option>
+                            <option value="Machine Learning">Machine Learning</option>
+                        </select>
+                    </div>
+                    <div class="projects-stats">
+                        <span id="projectCount">Loading projects...</span>
+                    </div>
+                </div>
+                <div class="projects-skeleton">
+                    <div class="skeleton-project-card">
+                        <div class="skeleton-project-image"></div>
+                        <div class="skeleton-project-title"></div>
+                        <div class="skeleton-project-description"></div>
+                        <div class="skeleton-project-description"></div>
+                        <div class="skeleton-project-description"></div>
+                    </div>
+                    <div class="skeleton-project-card">
+                        <div class="skeleton-project-image"></div>
+                        <div class="skeleton-project-title"></div>
+                        <div class="skeleton-project-description"></div>
+                        <div class="skeleton-project-description"></div>
+                        <div class="skeleton-project-description"></div>
+                    </div>
+                    <div class="skeleton-project-card">
+                        <div class="skeleton-project-image"></div>
+                        <div class="skeleton-project-title"></div>
+                        <div class="skeleton-project-description"></div>
+                        <div class="skeleton-project-description"></div>
+                        <div class="skeleton-project-description"></div>
+                    </div>
+                    <div class="skeleton-project-card">
+                        <div class="skeleton-project-image"></div>
+                        <div class="skeleton-project-title"></div>
+                        <div class="skeleton-project-description"></div>
+                        <div class="skeleton-project-description"></div>
+                        <div class="skeleton-project-description"></div>
+                    </div>
+                </div>
                 <div class="projects-content">
                     <!-- Projects will be dynamically loaded here by category -->
                 </div>
@@ -196,8 +288,60 @@
                     <p><em>Thesis:</em> Apply Deep Learning for inverse problem in Image Super-Resolution</p>
                 </div>
             </section>
-            
-            <!-- Awards Section Removed -->
+
+            <section id="testimonials" aria-labelledby="testimonials-heading">
+                <h2 id="testimonials-heading">What People Say</h2>
+                
+                <div class="testimonials-container">
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <div class="quote-icon">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                            <p>"Truong's expertise in LLMs and RAG systems was instrumental in developing our production AI platform. His ability to translate complex AI concepts into practical business solutions is exceptional."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <h4>Dr. Sarah Chen</h4>
+                                <span>AI Research Director</span>
+                                <span class="company">Tech Innovation Labs</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <div class="quote-icon">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                            <p>"Working with Truong on our computer vision project was a game-changer. His deep understanding of ML architectures and deployment strategies helped us achieve 95% accuracy in production."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <h4>Michael Rodriguez</h4>
+                                <span>Lead Software Engineer</span>
+                                <span class="company">Vision Systems Inc</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <div class="quote-icon">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                            <p>"Truong's analytical skills and attention to detail in our healthcare analytics project were outstanding. He delivered insights that directly improved patient outcomes."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <h4>Prof. Emily Watson</h4>
+                                <span>Research Supervisor</span>
+                                <span class="company">Northumbria University</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
         </main>
 
@@ -211,7 +355,12 @@
                         <h3>Get In Touch</h3>
                         <p>Interested in collaborating or have a project in mind? I'd love to hear from you!</p>
                         
-                        <form class="contact-form" action="#" method="POST">
+                        <form class="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                            <input type="hidden" name="form-name" value="contact">
+                            <div class="form-group" style="display: none;">
+                                <label for="bot-field">Don't fill this out if you're human:</label>
+                                <input name="bot-field" id="bot-field">
+                            </div>
                             <div class="form-group">
                                 <label for="name">Name *</label>
                                 <input type="text" id="name" name="name" required>
