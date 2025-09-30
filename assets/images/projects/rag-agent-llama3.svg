@@ -1,108 +1,61 @@
 <svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
     <defs>
-        <linearGradient id="agentBg" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#fefbff"/>
-            <stop offset="50%" stop-color="#f0f9ff"/>
-            <stop offset="100%" stop-color="#e0f2fe"/>
+        <linearGradient id="ragAgentBg" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#faf5ff"/>
+            <stop offset="100%" stop-color="#f3e8ff"/>
         </linearGradient>
-        <linearGradient id="llamaGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#ea580c"/>
-            <stop offset="100%" stop-color="#c2410c"/>
-        </linearGradient>
-        <linearGradient id="agentGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#3b82f6"/>
-            <stop offset="100%" stop-color="#1d4ed8"/>
-        </linearGradient>
-        <linearGradient id="toolGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <linearGradient id="llama3Grad" x1="0%" y1="0%" x2="100%" y2="100%">
             <stop offset="0%" stop-color="#8b5cf6"/>
-            <stop offset="100%" stop-color="#7c3aed"/>
-        </linearGradient>
-        <linearGradient id="dataGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#10b981"/>
-            <stop offset="100%" stop-color="#059669"/>
+            <stop offset="100%" stop-color="#6d28d9"/>
         </linearGradient>
     </defs>
-    
-    <!-- Background -->
-    <rect width="400" height="300" fill="url(#agentBg)"/>
-    
-    <!-- Central Agent Hub -->
-    <g transform="translate(200, 150)">
-        <circle cx="0" cy="0" r="40" fill="url(#agentGradient)"/>
-        <text x="0" y="-5" text-anchor="middle" fill="white" font-family="Inter, sans-serif" font-size="12" font-weight="bold">RAG</text>
-        <text x="0" y="10" text-anchor="middle" fill="white" font-family="Inter, sans-serif" font-size="12" font-weight="bold">AGENT</text>
-        
-        <!-- Agent connections -->
-        <circle cx="0" cy="0" r="50" fill="none" stroke="#3b82f6" stroke-width="2" stroke-dasharray="5,5" opacity="0.3"/>
+
+    <rect width="400" height="300" fill="url(#ragAgentBg)"/>
+
+    <!-- Query Input -->
+    <g transform="translate(50, 60)">
+        <rect x="0" y="0" width="80" height="35" fill="white" stroke="#8b5cf6" stroke-width="2" rx="17.5"/>
+        <text x="40" y="23" text-anchor="middle" fill="#7c3aed" font-size="12" font-weight="600">Query</text>
     </g>
-    
-    <!-- Llama3 Model -->
-    <g transform="translate(80, 80)">
-        <rect x="0" y="0" width="60" height="40" fill="url(#llamaGradient)" rx="20"/>
-        <text x="30" y="25" text-anchor="middle" fill="white" font-family="Inter, sans-serif" font-size="11" font-weight="600">Llama3</text>
-        <!-- Llama icon representation -->
-        <circle cx="15" cy="15" r="4" fill="#ffffff" opacity="0.6"/>
-        <circle cx="45" cy="15" r="4" fill="#ffffff" opacity="0.6"/>
-        <path d="M20,25 Q30,30 40,25" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.8"/>
+
+    <!-- Routing Function -->
+    <g transform="translate(200, 50)">
+        <polygon points="0,0 30,20 0,40 -30,20" fill="#c084fc" opacity="0.8"/>
+        <text x="0" y="25" text-anchor="middle" fill="white" font-size="10" font-weight="700">Route</text>
     </g>
-    
-    <!-- Knowledge Base -->
-    <g transform="translate(280, 80)">
-        <rect x="0" y="0" width="50" height="40" fill="url(#dataGradient)" rx="10"/>
-        <text x="25" y="14" text-anchor="middle" fill="white" font-family="Inter, sans-serif" font-size="8" font-weight="600">Knowledge</text>
-        <text x="25" y="26" text-anchor="middle" fill="white" font-family="Inter, sans-serif" font-size="8" font-weight="600">Base</text>
-        
-        <!-- Data icons -->
-        <rect x="8" y="5" width="8" height="8" fill="#ffffff" opacity="0.3" rx="2"/>
-        <rect x="18" y="5" width="8" height="8" fill="#ffffff" opacity="0.5" rx="2"/>
-        <rect x="28" y="5" width="8" height="8" fill="#ffffff" opacity="0.4" rx="2"/>
+
+    <!-- Web Search Path -->
+    <g transform="translate(280, 30)">
+        <circle cx="0" cy="0" r="20" fill="#3b82f6" opacity="0.8"/>
+        <text x="0" y="5" text-anchor="middle" fill="white" font-size="20">🌐</text>
+        <text x="0" y="35" text-anchor="middle" fill="#1e40af" font-size="9" font-weight="600">Web</text>
     </g>
-    
-    <!-- Tools/Functions -->
-    <g transform="translate(80, 220)">
-        <rect x="0" y="0" width="60" height="35" fill="url(#toolGradient)" rx="15"/>
-        <text x="30" y="22" text-anchor="middle" fill="white" font-family="Inter, sans-serif" font-size="10" font-weight="600">Tools</text>
-        
-        <!-- Tool icons -->
-        <rect x="10" y="8" width="4" height="8" fill="#ffffff" opacity="0.6" rx="2"/>
-        <circle cx="25" cy="12" r="3" fill="#ffffff" opacity="0.7"/>
-        <path d="M35,8 L45,8 L40,16 Z" fill="#ffffff" opacity="0.5"/>
+
+    <!-- Knowledge Base Path -->
+    <g transform="translate(280, 100)">
+        <rect x="-20" y="-20" width="40" height="40" fill="#10b981" opacity="0.8" rx="5"/>
+        <text x="0" y="-5" text-anchor="middle" fill="white" font-size="20">📚</text>
+        <text x="0" y="35" text-anchor="middle" fill="#059669" font-size="9" font-weight="600">Knowledge</text>
     </g>
-    
-    <!-- External APIs -->
-    <g transform="translate(280, 220)">
-        <rect x="0" y="0" width="60" height="35" fill="url(#toolGradient)" rx="15"/>
-        <text x="30" y="22" text-anchor="middle" fill="white" font-family="Inter, sans-serif" font-size="10" font-weight="600">APIs</text>
-        
-        <!-- API connection icons -->
-        <circle cx="15" cy="12" r="3" fill="#ffffff" opacity="0.6"/>
-        <circle cx="30" cy="12" r="3" fill="#ffffff" opacity="0.8"/>
-        <circle cx="45" cy="12" r="3" fill="#ffffff" opacity="0.7"/>
-        <line x1="18" y1="12" x2="27" y2="12" stroke="#ffffff" stroke-width="2" opacity="0.5"/>
-        <line x1="33" y1="12" x2="42" y2="12" stroke="#ffffff" stroke-width="2" opacity="0.5"/>
+
+    <!-- Llama3 Agent -->
+    <g transform="translate(200, 140)">
+        <ellipse cx="0" cy="0" rx="60" ry="45" fill="url(#llama3Grad)" opacity="0.9"/>
+        <text x="0" y="-5" text-anchor="middle" fill="white" font-size="28">🦙</text>
+        <text x="0" y="30" text-anchor="middle" fill="white" font-size="11" font-weight="700">Llama3</text>
     </g>
-    
-    <!-- User Query -->
-    <g transform="translate(150, 50)">
-        <rect x="0" y="0" width="100" height="25" fill="#ffffff" stroke="#3b82f6" stroke-width="2" rx="12"/>
-        <text x="50" y="17" text-anchor="middle" fill="#1d4ed8" font-family="Inter, sans-serif" font-size="11" font-weight="600">User Query</text>
-    </g>
-    
+
+    <!-- Self-Correction Loop -->
+    <path d="M150,160 Q120,180 140,200 Q160,210 180,195" stroke="#ef4444" stroke-width="2" fill="none" stroke-dasharray="4,2"/>
+    <text x="120" y="195" fill="#dc2626" font-size="8" font-weight="600">Self-correct</text>
+
     <!-- Response -->
-    <g transform="translate(150, 255)">
-        <rect x="0" y="0" width="100" height="25" fill="#10b981" rx="12"/>
-        <text x="50" y="17" text-anchor="middle" fill="white" font-family="Inter, sans-serif" font-size="11" font-weight="600">AI Response</text>
+    <g transform="translate(200, 220)">
+        <rect x="-50" y="0" width="100" height="35" fill="#10b981" rx="17.5"/>
+        <text x="0" y="23" text-anchor="middle" fill="white" font-size="12" font-weight="600">Answer ✓</text>
     </g>
-    
-    <!-- Connection lines -->
-    <line x1="110" y1="100" x2="160" y2="130" stroke="#ea580c" stroke-width="3" opacity="0.7"/>
-    <line x1="305" y1="120" x2="240" y2="140" stroke="#10b981" stroke-width="3" opacity="0.7"/>
-    <line x1="110" y1="230" x2="160" y2="170" stroke="#8b5cf6" stroke-width="3" opacity="0.7"/>
-    <line x1="305" y1="230" x2="240" y2="170" stroke="#8b5cf6" stroke-width="3" opacity="0.7"/>
-    <line x1="200" y1="75" x2="200" y2="110" stroke="#3b82f6" stroke-width="3" opacity="0.7"/>
-    <line x1="200" y1="190" x2="200" y2="255" stroke="#10b981" stroke-width="3" opacity="0.7"/>
-    
-    <text x="200" y="290" text-anchor="middle" fill="#1e40af" font-family="Inter, sans-serif" font-size="14" font-weight="600">
+
+    <text x="200" y="278" text-anchor="middle" fill="#6d28d9" font-family="Inter, sans-serif" font-size="14" font-weight="700">
         RAG Agent with Llama3
     </text>
 </svg>

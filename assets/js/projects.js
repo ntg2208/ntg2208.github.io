@@ -151,15 +151,47 @@ function getProjectCategory(sector) {
     return projectCategoryMap[sector] || { name: "Other Projects", icon: "fas fa-code" };
 }
 
+// Create filename-friendly slug from project name
+function getProjectImageFilename(projectName) {
+    const filenameMap = {
+        "Shakespeare-Style Text Generation using Hidden Markov Models": "shakespeare-text-generation.svg",
+        "Wind Turbine Yaw System Performance Analysis": "wind-turbine-yaw-system.svg",
+        "NHS Employment Gap Analysis Using Machine Learning": "nhs-employment-gap-analysis.svg",
+        "DocPatientSumm: Low-Rank Adaptation (LoRA) finetune for Clinical Conversations": "docpatientsumm-lora.svg",
+        "Complaint Tweet Classification using Prompt Tuning of Large Language Models (LLMs)": "complaint-tweet-classification.svg",
+        "RAG agent llama3": "rag-agent-llama3.svg",
+        "Building a Q&A System with Retrieval-Augmented Generation (RAG) using LangChain and llama2": "building-qa-system-rag-langchain-llama2.svg",
+        "Malaria Parasite Detection using Deep Learning (TensorFlow v2)": "malaria-parasite-detection-deep-learning.svg",
+        "Hospital readmission prediction": "hospital-readmission-prediction.svg",
+        "M1 Traffic Analysis": "m1-traffic-analysis.svg",
+        "Edible Mushroom Analysis": "edible-mushroom-analysis.svg",
+        "Lung Nodule Analysis 2016 (LUNA 16)": "lung-nodule-analysis-luna16.svg",
+        "Customer Sentiment Analysis": "customer-sentiment-analysis.svg",
+        "Combating Exam Impersonation in Universities": "combating-exam-impersonation-universities.svg",
+        "JPEG Image Compression in Python": "jpeg-image-compression-python.svg",
+        "Multimodal Conversational AI for E-commerce": "multimodal-conversational-ai-ecommerce.svg"
+    };
+
+    return filenameMap[projectName] || "placeholder.svg";
+}
+
+// Counter for eager loading first few images
+let projectCardIndex = 0;
+
 function createProjectCardHtml(project) {
     const urlHtml = project.URL ? `<a href="${project.URL}" target="_blank" rel="noopener noreferrer">${project.URL.includes('github.com') ? 'GitHub' : (project.URL.includes('kaggle.com') ? 'Kaggle Notebook' : (project.URL.includes('colab.research.google.com') ? 'Google Collab' : 'Project Link'))}</a>` : '';
     const keywordsHtml = project.Keywords ? `<div class="project-keywords">${project.Keywords.split(',').map(k => `<span>${k.trim()}</span>`).join('')}</div>` : '';
-    const year = project.Year || 'N/A'; 
+    const year = project.Year || 'N/A';
+    const imageFile = getProjectImageFilename(project['Project Name']);
+
+    // Load first 6 images eagerly for better perceived performance
+    const loadingStrategy = projectCardIndex < 6 ? 'eager' : 'lazy';
+    projectCardIndex++;
 
     return `
         <div class="project-card" role="listitem">
             <div class="card-image">
-                <img src="assets/img/projects/placeholder.svg" alt="${project['Project Name']} visualization" loading="lazy">
+                <img src="assets/images/projects/${imageFile}" alt="${project['Project Name']} visualization" loading="${loadingStrategy}">
             </div>
             <div class="card-content">
                 <h4>${project['Project Name']}</h4>

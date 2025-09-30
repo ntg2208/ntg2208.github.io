@@ -1,130 +1,64 @@
 <svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
     <defs>
-        <linearGradient id="ecommerceBg" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#fefbff"/>
-            <stop offset="50%" stop-color="#fef3c7"/>
-            <stop offset="100%" stop-color="#fed7aa"/>
-        </linearGradient>
-        <linearGradient id="chatbotGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#3b82f6"/>
-            <stop offset="100%" stop-color="#1d4ed8"/>
-        </linearGradient>
-        <linearGradient id="productGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#f59e0b"/>
-            <stop offset="100%" stop-color="#d97706"/>
-        </linearGradient>
-        <linearGradient id="aiGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#8b5cf6"/>
-            <stop offset="100%" stop-color="#7c3aed"/>
-        </linearGradient>
-        <linearGradient id="cartGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#10b981"/>
-            <stop offset="100%" stop-color="#059669"/>
+        <linearGradient id="fashionBg" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#fef3c7"/>
+            <stop offset="100%" stop-color="#fde68a"/>
         </linearGradient>
     </defs>
-    
-    <!-- Background -->
-    <rect width="400" height="300" fill="url(#ecommerceBg)"/>
-    
-    <!-- User Device/Phone -->
-    <g transform="translate(80, 80)">
-        <rect x="0" y="0" width="50" height="80" fill="#374151" rx="12"/>
-        <rect x="5" y="10" width="40" height="55" fill="#ffffff" rx="4"/>
-        
-        <!-- Chat interface -->
-        <rect x="8" y="15" width="34" height="8" fill="#3b82f6" rx="4"/>
-        <text x="25" y="21" text-anchor="middle" fill="white" font-family="Inter, sans-serif" font-size="6" font-weight="600">Chat with AI</text>
-        
-        <!-- Message bubbles -->
-        <rect x="10" y="26" width="20" height="6" fill="#e5e7eb" rx="3"/>
-        <rect x="20" y="34" width="18" height="6" fill="#3b82f6" rx="3"/>
-        <rect x="12" y="42" width="22" height="6" fill="#e5e7eb" rx="3"/>
-        
-        <!-- Product image placeholder -->
-        <rect x="10" y="50" width="12" height="10" fill="#f59e0b" rx="2"/>
-        <text x="16" y="57" text-anchor="middle" fill="white" font-family="Inter, sans-serif" font-size="4" font-weight="600">IMG</text>
+
+    <rect width="400" height="300" fill="url(#fashionBg)"/>
+
+    <!-- User Query -->
+    <g transform="translate(70, 70)">
+        <rect x="0" y="0" width="100" height="50" fill="white" stroke="#8b5cf6" stroke-width="2" rx="10"/>
+        <text x="10" y="25" fill="#7c3aed" font-size="20">👤</text>
+        <text x="50" y="18" fill="#7c3aed" font-size="10">"Show me</text>
+        <text x="50" y="32" fill="#7c3aed" font-size="10">blue dress"</text>
     </g>
-    
-    <!-- Central AI Brain -->
-    <g transform="translate(200, 140)">
-        <circle cx="0" cy="0" r="35" fill="url(#aiGradient)"/>
-        <text x="0" y="-8" text-anchor="middle" fill="white" font-family="Inter, sans-serif" font-size="10" font-weight="bold">Multimodal</text>
-        <text x="0" y="5" text-anchor="middle" fill="white" font-family="Inter, sans-serif" font-size="10" font-weight="bold">AI</text>
-        <text x="0" y="18" text-anchor="middle" fill="white" font-family="Inter, sans-serif" font-size="8" font-weight="600">Assistant</text>
+
+    <!-- Multimodal Processing -->
+    <g transform="translate(200, 85)">
+        <circle cx="0" cy="0" r="35" fill="#f59e0b" opacity="0.8"/>
+        <text x="0" y="-8" text-anchor="middle" fill="white" font-size="11" font-weight="700">Gemini</text>
+        <text x="0" y="5" text-anchor="middle" fill="white" font-size="9">Flash</text>
         
-        <!-- Neural connections -->
-        <circle cx="0" cy="0" r="45" fill="none" stroke="#8b5cf6" stroke-width="2" stroke-dasharray="4,4" opacity="0.4"/>
+        <!-- Multimodal indicators -->
+        <text x="-20" y="-45" fill="#dc2626" font-size="16">📝</text>
+        <text x="20" y="-45" fill="#3b82f6" font-size="16">🖼️</text>
     </g>
-    
-    <!-- Product Catalog -->
-    <g transform="translate(320, 80)">
-        <text x="0" y="-5" fill="#374151" font-family="Inter, sans-serif" font-size="9" font-weight="600">Product Catalog</text>
-        
-        <!-- Product items -->
-        <rect x="0" y="0" width="20" height="25" fill="url(#productGradient)" rx="4"/>
-        <rect x="2" y="2" width="16" height="12" fill="#ffffff" opacity="0.8" rx="2"/>
-        <rect x="3" y="16" width="14" height="2" fill="#ffffff" opacity="0.6" rx="1"/>
-        <rect x="3" y="19" width="10" height="2" fill="#ffffff" opacity="0.4" rx="1"/>
-        
-        <rect x="25" y="0" width="20" height="25" fill="url(#productGradient)" rx="4"/>
-        <rect x="27" y="2" width="16" height="12" fill="#ffffff" opacity="0.8" rx="2"/>
-        <rect x="28" y="16" width="14" height="2" fill="#ffffff" opacity="0.6" rx="1"/>
-        <rect x="28" y="19" width="10" height="2" fill="#ffffff" opacity="0.4" rx="1"/>
-        
-        <rect x="50" y="0" width="20" height="25" fill="url(#productGradient)" rx="4"/>
-        <rect x="52" y="2" width="16" height="12" fill="#ffffff" opacity="0.8" rx="2"/>
-        <rect x="53" y="16" width="14" height="2" fill="#ffffff" opacity="0.6" rx="1"/>
-        <rect x="53" y="19" width="10" height="2" fill="#ffffff" opacity="0.4" rx="1"/>
+
+    <!-- RAG System -->
+    <g transform="translate(300, 70)">
+        <rect x="-35" y="-25" width="70" height="50" fill="#10b981" opacity="0.8" rx="8"/>
+        <text x="0" y="-5" text-anchor="middle" fill="white" font-size="10" font-weight="700">RAG</text>
+        <text x="0" y="8" text-anchor="middle" fill="white" font-size="8">System</text>
     </g>
-    
-    <!-- Image Recognition -->
-    <g transform="translate(300, 180)">
-        <rect x="0" y="0" width="60" height="35" fill="#6366f1" rx="8"/>
-        <text x="30" y="14" text-anchor="middle" fill="white" font-family="Inter, sans-serif" font-size="8" font-weight="600">Image</text>
-        <text x="30" y="25" text-anchor="middle" fill="white" font-family="Inter, sans-serif" font-size="8" font-weight="600">Recognition</text>
-        
-        <!-- Camera/eye icon -->
-        <circle cx="15" cy="8" r="4" fill="#ffffff" opacity="0.3"/>
-        <circle cx="15" cy="8" r="2" fill="#ffffff" opacity="0.8"/>
-        <circle cx="45" cy="8" r="4" fill="#ffffff" opacity="0.3"/>
-        <circle cx="45" cy="8" r="2" fill="#ffffff" opacity="0.8"/>
+
+    <!-- Product Display -->
+    <g transform="translate(80, 160)">
+        <!-- Product 1 -->
+        <rect x="0" y="0" width="50" height="70" fill="#3b82f6" opacity="0.7" rx="5"/>
+        <rect x="5" y="5" width="40" height="40" fill="white" opacity="0.8"/>
+        <text x="25" y="60" text-anchor="middle" fill="white" font-size="8" font-weight="600">Dress A</text>
+
+        <!-- Product 2 -->
+        <rect x="60" y="0" width="50" height="70" fill="#8b5cf6" opacity="0.7" rx="5"/>
+        <rect x="65" y="5" width="40" height="40" fill="white" opacity="0.8"/>
+        <text x="85" y="60" text-anchor="middle" fill="white" font-size="8" font-weight="600">Dress B</text>
+
+        <!-- Product 3 -->
+        <rect x="120" y="0" width="50" height="70" fill="#60a5fa" opacity="0.7" rx="5"/>
+        <rect x="125" y="5" width="40" height="40" fill="white" opacity="0.8"/>
+        <text x="145" y="60" text-anchor="middle" fill="white" font-size="8" font-weight="600">Dress C</text>
     </g>
-    
-    <!-- Shopping Cart -->
-    <g transform="translate(100, 200)">
-        <rect x="0" y="0" width="50" height="30" fill="url(#cartGradient)" rx="8"/>
-        <text x="25" y="20" text-anchor="middle" fill="white" font-family="Inter, sans-serif" font-size="9" font-weight="600">Shopping Cart</text>
-        
-        <!-- Cart icon -->
-        <rect x="8" y="8" width="8" height="6" fill="#ffffff" opacity="0.6" rx="1"/>
-        <circle cx="10" cy="6" r="1" fill="#ffffff" opacity="0.8"/>
-        <circle cx="14" cy="6" r="1" fill="#ffffff" opacity="0.8"/>
-        
-        <!-- Items in cart -->
-        <rect x="20" y="8" width="4" height="4" fill="#ffffff" opacity="0.4" rx="1"/>
-        <rect x="26" y="8" width="4" height="4" fill="#ffffff" opacity="0.5" rx="1"/>
-        <rect x="32" y="8" width="4" height="4" fill="#ffffff" opacity="0.3" rx="1"/>
+
+    <!-- AI Agent -->
+    <g transform="translate(270, 180)">
+        <rect x="0" y="0" width="90" height="35" fill="#ef4444" opacity="0.8" rx="10"/>
+        <text x="45" y="22" text-anchor="middle" fill="white" font-size="11" font-weight="700">PydanticAI</text>
     </g>
-    
-    <!-- Connection lines -->
-    <line x1="130" y1="120" x2="165" y2="130" stroke="#3b82f6" stroke-width="3" opacity="0.7"/>
-    <line x1="235" y1="130" x2="310" y2="100" stroke="#f59e0b" stroke-width="3" opacity="0.7"/>
-    <line x1="230" y1="165" x2="290" y2="185" stroke="#6366f1" stroke-width="3" opacity="0.7"/>
-    <line x1="170" y1="160" x2="140" y2="200" stroke="#10b981" stroke-width="3" opacity="0.7"/>
-    
-    <!-- Text/Voice indicators -->
-    <g transform="translate(60, 40)">
-        <ellipse cx="0" cy="0" rx="25" ry="15" fill="#ffffff" stroke="#3b82f6" stroke-width="2"/>
-        <text x="0" y="4" text-anchor="middle" fill="#1d4ed8" font-family="Inter, sans-serif" font-size="8" font-weight="600">Voice + Text</text>
-    </g>
-    
-    <!-- Recommendation output -->
-    <g transform="translate(260, 40)">
-        <ellipse cx="0" cy="0" rx="35" ry="15" fill="#10b981"/>
-        <text x="0" y="4" text-anchor="middle" fill="white" font-family="Inter, sans-serif" font-size="8" font-weight="600">Personalized Recs</text>
-    </g>
-    
-    <text x="200" y="285" text-anchor="middle" fill="#d97706" font-family="Inter, sans-serif" font-size="14" font-weight="600">
-        Multimodal Conversational AI for E-commerce
+
+    <text x="200" y="265" text-anchor="middle" fill="#92400e" font-family="Inter, sans-serif" font-size="13" font-weight="700">
+        Multimodal AI E-commerce Assistant
     </text>
 </svg>

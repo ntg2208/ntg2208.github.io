@@ -1,116 +1,48 @@
-<svg width="150" height="100" viewBox="0 0 150 100" xmlns="http://www.w3.org/2000/svg">
+<svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
     <defs>
         <linearGradient id="analyticsBg" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#f0fdfa"/>
-            <stop offset="100%" stop-color="#ccfbf1"/>
-        </linearGradient>
-        <linearGradient id="dashGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stop-color="#0d9488"/>
-            <stop offset="50%" stop-color="#14b8a6"/>
-            <stop offset="100%" stop-color="#5eead4"/>
+            <stop offset="0%" stop-color="#eff6ff"/>
+            <stop offset="100%" stop-color="#dbeafe"/>
         </linearGradient>
     </defs>
+    <rect width="400" height="300" fill="url(#analyticsBg)"/>
     
-    <!-- Background -->
-    <rect width="150" height="100" fill="url(#analyticsBg)" rx="8"/>
+    <!-- Data Sources -->
+    <g transform="translate(70, 90)">
+        <circle cx="0" cy="-20" r="12" fill="#3b82f6" opacity="0.7"/>
+        <circle cx="0" cy="0" r="12" fill="#10b981" opacity="0.7"/>
+        <circle cx="0" cy="20" r="12" fill="#f59e0b" opacity="0.7"/>
+        <text x="0" y="45" text-anchor="middle" fill="#1e40af" font-size="9" font-weight="600">Data Sources</text>
+    </g>
     
-    <!-- Main Dashboard -->
-    <g transform="translate(5, 5)">
-        <rect x="0" y="0" width="140" height="70" fill="white" stroke="#e5e7eb" stroke-width="1" rx="6"/>
+    <!-- Platform -->
+    <g transform="translate(180, 80)">
+        <rect x="-60" y="-35" width="120" height="70" fill="#8b5cf6" opacity="0.9" rx="10"/>
+        <text x="0" y="-15" text-anchor="middle" fill="white" font-size="11" font-weight="700">Analytics</text>
+        <text x="0" y="0" text-anchor="middle" fill="white" font-size="11" font-weight="700">Platform</text>
+        <text x="0" y="20" text-anchor="middle" fill="white" font-size="9">Python + SQL</text>
+    </g>
+    
+    <!-- Dashboards -->
+    <g transform="translate(280, 70)">
+        <rect x="0" y="0" width="70" height="60" fill="white" stroke="#10b981" stroke-width="2" rx="5"/>
         
-        <!-- Dashboard Header -->
-        <rect x="3" y="3" width="134" height="12" fill="url(#dashGradient)" rx="3"/>
-        <text x="70" y="11" font-family="Arial" font-size="6" fill="white" text-anchor="middle" font-weight="bold">🚀 Retail Analytics Platform</text>
+        <!-- Chart visualization -->
+        <circle cx="20" cy="25" r="8" fill="#10b981" opacity="0.6"/>
+        <rect x="35" y="15" width="8" height="25" fill="#3b82f6" opacity="0.6"/>
+        <rect x="47" y="20" width="8" height="20" fill="#f59e0b" opacity="0.6"/>
         
-        <!-- KPI Cards Row -->
-        <g transform="translate(5, 20)">
-            <!-- Revenue KPI -->
-            <rect x="0" y="0" width="30" height="18" fill="#10b981" rx="3" opacity="0.9"/>
-            <text x="15" y="6" font-family="Arial" font-size="4" fill="white" text-anchor="middle" font-weight="bold">💰 Revenue</text>
-            <text x="15" y="12" font-family="Arial" font-size="7" fill="white" text-anchor="middle" font-weight="bold">$2.4M</text>
-            <text x="15" y="16" font-family="Arial" font-size="3" fill="white" text-anchor="middle">+15% ↗</text>
-            
-            <!-- Orders KPI -->
-            <rect x="35" y="0" width="30" height="18" fill="#3b82f6" rx="3" opacity="0.9"/>
-            <text x="50" y="6" font-family="Arial" font-size="4" fill="white" text-anchor="middle" font-weight="bold">📦 Orders</text>
-            <text x="50" y="12" font-family="Arial" font-size="7" fill="white" text-anchor="middle" font-weight="bold">12.5K</text>
-            <text x="50" y="16" font-family="Arial" font-size="3" fill="white" text-anchor="middle">+8% ↗</text>
-            
-            <!-- Customers KPI -->
-            <rect x="70" y="0" width="30" height="18" fill="#8b5cf6" rx="3" opacity="0.9"/>
-            <text x="85" y="6" font-family="Arial" font-size="4" fill="white" text-anchor="middle" font-weight="bold">👥 Customers</text>
-            <text x="85" y="12" font-family="Arial" font-size="7" fill="white" text-anchor="middle" font-weight="bold">8.2K</text>
-            <text x="85" y="16" font-family="Arial" font-size="3" fill="white" text-anchor="middle">+22% ↗</text>
-            
-            <!-- Conversion KPI -->
-            <rect x="105" y="0" width="30" height="18" fill="#f59e0b" rx="3" opacity="0.9"/>
-            <text x="120" y="6" font-family="Arial" font-size="4" fill="white" text-anchor="middle" font-weight="bold">🎯 Conv Rate</text>
-            <text x="120" y="12" font-family="Arial" font-size="7" fill="white" text-anchor="middle" font-weight="bold">3.2%</text>
-            <text x="120" y="16" font-family="Arial" font-size="3" fill="white" text-anchor="middle">+0.5% ↗</text>
-        </g>
-        
-        <!-- Charts Section -->
-        <g transform="translate(5, 42)">
-            <!-- Sales Chart -->
-            <rect x="0" y="0" width="40" height="25" fill="#f8fafc" stroke="#e5e7eb" stroke-width="1" rx="2"/>
-            <text x="20" y="6" font-family="Arial" font-size="4" fill="#374151" text-anchor="middle" font-weight="bold">📊 Sales by Category</text>
-            
-            <!-- Bar Chart -->
-            <rect x="3" y="18" width="4" height="5" fill="#10b981"/>
-            <rect x="8" y="15" width="4" height="8" fill="#3b82f6"/>
-            <rect x="13" y="12" width="4" height="11" fill="#8b5cf6"/>
-            <rect x="18" y="16" width="4" height="7" fill="#f59e0b"/>
-            <rect x="23" y="19" width="4" height="4" fill="#ef4444"/>
-            <rect x="28" y="14" width="4" height="9" fill="#06b6d4"/>
-            <rect x="33" y="17" width="4" height="6" fill="#84cc16"/>
-            
-            <!-- Trend Analysis Chart -->
-            <rect x="45" y="0" width="40" height="25" fill="#f8fafc" stroke="#e5e7eb" stroke-width="1" rx="2"/>
-            <text x="65" y="6" font-family="Arial" font-size="4" fill="#374151" text-anchor="middle" font-weight="bold">📈 Growth Trend</text>
-            
-            <!-- Trend Line -->
-            <path d="M48 20 L52 18 L56 16 L60 13 L64 11 L68 9 L72 8 L76 7 L80 6" stroke="#10b981" stroke-width="2" fill="none"/>
-            <circle cx="48" cy="20" r="1" fill="#10b981"/>
-            <circle cx="60" cy="13" r="1" fill="#10b981"/>
-            <circle cx="72" cy="8" r="1" fill="#10b981"/>
-            <circle cx="80" cy="6" r="1" fill="#10b981"/>
-            
-            <!-- Performance Metrics -->
-            <rect x="90" y="0" width="45" height="25" fill="#f8fafc" stroke="#e5e7eb" stroke-width="1" rx="2"/>
-            <text x="112.5" y="6" font-family="Arial" font-size="4" fill="#374151" text-anchor="middle" font-weight="bold">🎯 Performance</text>
-            
-            <!-- Metrics Grid -->
-            <text x="95" y="12" font-family="Arial" font-size="3" fill="#6b7280">CTR: 2.4%</text>
-            <text x="95" y="16" font-family="Arial" font-size="3" fill="#6b7280">AOV: $195</text>
-            <text x="95" y="20" font-family="Arial" font-size="3" fill="#6b7280">ROAS: 4.2x</text>
-            
-            <text x="115" y="12" font-family="Arial" font-size="3" fill="#6b7280">CAC: $45</text>
-            <text x="115" y="16" font-family="Arial" font-size="3" fill="#6b7280">LTV: $520</text>
-            <text x="115" y="20" font-family="Arial" font-size="3" fill="#6b7280">Churn: 5.2%</text>
-        </g>
+        <text x="35" y="55" text-anchor="middle" fill="#059669" font-size="8" font-weight="600">Dashboard</text>
     </g>
     
-    <!-- Real-time Data Indicators -->
-    <g transform="translate(10, 80)">
-        <rect x="0" y="0" width="25" height="8" fill="#059669" rx="4" opacity="0.9"/>
-        <text x="12.5" y="5.5" font-family="Arial" font-size="4" fill="white" text-anchor="middle" font-weight="bold">🔄 Real-time</text>
+    <!-- Cost Savings -->
+    <g transform="translate(100, 170)">
+        <rect x="0" y="0" width="200" height="45" fill="#10b981" opacity="0.9" rx="12"/>
+        <text x="100" y="20" text-anchor="middle" fill="white" font-size="13" font-weight="700">Cost Savings</text>
+        <text x="100" y="36" text-anchor="middle" fill="white" font-size="11">$2,000/month</text>
     </g>
     
-    <g transform="translate(40, 80)">
-        <rect x="0" y="0" width="25" height="8" fill="#dc2626" rx="4" opacity="0.9"/>
-        <text x="12.5" y="5.5" font-family="Arial" font-size="4" fill="white" text-anchor="middle" font-weight="bold">🤖 AI Powered</text>
-    </g>
-    
-    <g transform="translate(70, 80)">
-        <rect x="0" y="0" width="25" height="8" fill="#7c3aed" rx="4" opacity="0.9"/>
-        <text x="12.5" y="5.5" font-family="Arial" font-size="4" fill="white" text-anchor="middle" font-weight="bold">📊 Multi-channel</text>
-    </g>
-    
-    <g transform="translate(100, 80)">
-        <rect x="0" y="0" width="35" height="8" fill="#f59e0b" rx="4" opacity="0.9"/>
-        <text x="17.5" y="5.5" font-family="Arial" font-size="4" fill="white" text-anchor="middle" font-weight="bold">🔮 Predictive Analytics</text>
-    </g>
-    
-    <!-- Title -->
-    <text x="75" y="95" font-family="Arial" font-size="9" fill="#1e293b" text-anchor="middle" font-weight="bold">Retail Data Analytics Platform</text>
+    <text x="200" y="265" text-anchor="middle" fill="#1e40af" font-family="Inter, sans-serif" font-size="13" font-weight="700">
+        Retail Data Analytics Platform
+    </text>
 </svg>

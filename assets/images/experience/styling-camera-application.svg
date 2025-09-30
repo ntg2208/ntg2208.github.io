@@ -1,148 +1,53 @@
-<svg width="150" height="100" viewBox="0 0 150 100" xmlns="http://www.w3.org/2000/svg">
+<svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
     <defs>
         <linearGradient id="cameraBg" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#f1f5f9"/>
-            <stop offset="100%" stop-color="#e2e8f0"/>
-        </linearGradient>
-        <linearGradient id="phoneGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#1e293b"/>
-            <stop offset="100%" stop-color="#334155"/>
-        </linearGradient>
-        <linearGradient id="screenGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stop-color="#f8fafc"/>
-            <stop offset="100%" stop-color="#e2e8f0"/>
+            <stop offset="0%" stop-color="#fef3c7"/>
+            <stop offset="100%" stop-color="#fde68a"/>
         </linearGradient>
     </defs>
+    <rect width="400" height="300" fill="url(#cameraBg)"/>
     
-    <!-- Background -->
-    <rect width="150" height="100" fill="url(#cameraBg)" rx="8"/>
+    <!-- Camera -->
+    <g transform="translate(90, 100)">
+        <rect x="-30" y="-20" width="60" height="40" fill="#374151" rx="5"/>
+        <circle cx="0" cy="0" r="15" fill="#1e293b"/>
+        <circle cx="0" cy="0" r="10" fill="#3b82f6"/>
+        <rect x="25" y="-8" width="15" height="16" fill="#475569"/>
+        <text x="0" y="40" text-anchor="middle" fill="#1e293b" font-size="10" font-weight="600">Real-time</text>
+    </g>
     
-    <!-- Smartphone Body -->
-    <g transform="translate(35, 10)">
-        <rect x="0" y="0" width="80" height="70" fill="url(#phoneGradient)" rx="12" stroke="#0f172a" stroke-width="1"/>
+    <!-- Computer Vision Detection -->
+    <g transform="translate(200, 100)">
+        <rect x="-40" y="-40" width="80" height="80" fill="white" stroke="#8b5cf6" stroke-width="2" rx="5"/>
         
-        <!-- Screen -->
-        <rect x="4" y="8" width="72" height="54" fill="url(#screenGradient)" rx="8"/>
+        <!-- Person silhouette -->
+        <circle cx="0" cy="-15" r="10" fill="#8b5cf6" opacity="0.7"/>
+        <ellipse cx="0" cy="10" rx="12" ry="18" fill="#8b5cf6" opacity="0.7"/>
         
-        <!-- Camera App Interface -->
-        <g transform="translate(4, 8)">
-            <!-- Viewfinder Area -->
-            <rect x="0" y="0" width="72" height="40" fill="#000000" rx="8"/>
-            
-            <!-- Camera Overlay -->
-            <g stroke="white" stroke-width="1" fill="none" opacity="0.7">
-                <!-- Grid Lines -->
-                <line x1="24" y1="5" x2="24" y2="35"/>
-                <line x1="48" y1="5" x2="48" y2="35"/>
-                <line x1="8" y1="13" x2="64" y2="13"/>
-                <line x1="8" y1="27" x2="64" y2="27"/>
-            </g>
-            
-            <!-- AI Style Preview -->
-            <g transform="translate(10, 8)">
-                <rect x="0" y="0" width="20" height="15" fill="#ec4899" rx="2" opacity="0.8"/>
-                <text x="10" y="9" font-family="Arial" font-size="4" fill="white" text-anchor="middle" font-weight="bold">Vintage</text>
-                
-                <rect x="25" y="0" width="20" height="15" fill="#3b82f6" rx="2" opacity="0.8"/>
-                <text x="35" y="9" font-family="Arial" font-size="4" fill="white" text-anchor="middle" font-weight="bold">Modern</text>
-            </g>
-            
-            <!-- AI Detection Box -->
-            <rect x="20" y="18" width="32" height="18" fill="none" stroke="#10b981" stroke-width="2" rx="2"/>
-            <text x="36" y="15" font-family="Arial" font-size="4" fill="#10b981" text-anchor="middle" font-weight="bold">Person Detected</text>
-            
-            <!-- Style Controls -->
-            <g transform="translate(5, 42)">
-                <!-- Style Selector -->
-                <rect x="0" y="0" width="62" height="12" fill="#1e293b" rx="3"/>
-                
-                <!-- Style Options -->
-                <circle cx="8" cy="6" r="3" fill="#ec4899"/>
-                <circle cx="18" cy="6" r="3" fill="#3b82f6"/>
-                <circle cx="28" cy="6" r="3" fill="#10b981"/>
-                <circle cx="38" cy="6" r="3" fill="#f59e0b"/>
-                <circle cx="48" cy="6" r="3" fill="#8b5cf6"/>
-                
-                <!-- Style Labels -->
-                <text x="8" y="2" font-family="Arial" font-size="2" fill="white" text-anchor="middle">V</text>
-                <text x="18" y="2" font-family="Arial" font-size="2" fill="white" text-anchor="middle">M</text>
-                <text x="28" y="2" font-family="Arial" font-size="2" fill="white" text-anchor="middle">C</text>
-                <text x="38" y="2" font-family="Arial" font-size="2" fill="white" text-anchor="middle">R</text>
-                <text x="48" y="2" font-family="Arial" font-size="2" fill="white" text-anchor="middle">B</text>
-                
-                <!-- Capture Button -->
-                <circle cx="58" cy="6" r="4" fill="white" stroke="#e5e7eb" stroke-width="1"/>
-                <circle cx="58" cy="6" r="2" fill="#dc2626"/>
-            </g>
-        </g>
+        <!-- Detection points -->
+        <circle cx="0" cy="-25" r="2" fill="#10b981"/>
+        <circle cx="-12" cy="0" r="2" fill="#10b981"/>
+        <circle cx="12" cy="0" r="2" fill="#10b981"/>
+    </g>
+    
+    <!-- Fashion Recommendations -->
+    <g transform="translate(290, 80)">
+        <rect x="0" y="0" width="45" height="50" fill="#ef4444" opacity="0.7" rx="5"/>
+        <rect x="3" y="3" width="39" height="35" fill="white" opacity="0.8"/>
+        <text x="22" y="48" text-anchor="middle" fill="white" font-size="16">👔</text>
         
-        <!-- Home Button -->
-        <circle cx="40" cy="66" r="3" fill="#64748b"/>
+        <rect x="0" y="60" width="45" height="50" fill="#10b981" opacity="0.7" rx="5"/>
+        <rect x="3" y="63" width="39" height="35" fill="white" opacity="0.8"/>
+        <text x="22" y="108" text-anchor="middle" fill="white" font-size="16">👗</text>
     </g>
     
-    <!-- AI Processing Indicators -->
-    <g transform="translate(5, 15)">
-        <rect x="0" y="0" width="25" height="8" fill="#3b82f6" rx="4" opacity="0.9"/>
-        <text x="12.5" y="5.5" font-family="Arial" font-size="4" fill="white" text-anchor="middle" font-weight="bold">🤖 AI Styling</text>
+    <!-- Integration -->
+    <g transform="translate(100, 180)">
+        <rect x="0" y="0" width="200" height="35" fill="#3b82f6" opacity="0.8" rx="8"/>
+        <text x="100" y="23" text-anchor="middle" fill="white" font-size="11" font-weight="600">E-commerce Integration</text>
     </g>
     
-    <g transform="translate(5, 28)">
-        <rect x="0" y="0" width="25" height="8" fill="#10b981" rx="4" opacity="0.9"/>
-        <text x="12.5" y="5.5" font-family="Arial" font-size="4" fill="white" text-anchor="middle" font-weight="bold">📸 Real-time</text>
-    </g>
-    
-    <g transform="translate(5, 41)">
-        <rect x="0" y="0" width="25" height="8" fill="#ec4899" rx="4" opacity="0.9"/>
-        <text x="12.5" y="5.5" font-family="Arial" font-size="4" fill="white" text-anchor="middle" font-weight="bold">✨ Filters</text>
-    </g>
-    
-    <g transform="translate(5, 54)">
-        <rect x="0" y="0" width="25" height="8" fill="#f59e0b" rx="4" opacity="0.9"/>
-        <text x="12.5" y="5.5" font-family="Arial" font-size="4" fill="white" text-anchor="middle" font-weight="bold">🎨 Style Transfer</text>
-    </g>
-    
-    <!-- Feature Highlights -->
-    <g transform="translate(120, 15)">
-        <rect x="0" y="0" width="25" height="8" fill="#8b5cf6" rx="4" opacity="0.9"/>
-        <text x="12.5" y="5.5" font-family="Arial" font-size="4" fill="white" text-anchor="middle" font-weight="bold">👁️ Face Detection</text>
-    </g>
-    
-    <g transform="translate(120, 28)">
-        <rect x="0" y="0" width="25" height="8" fill="#06b6d4" rx="4" opacity="0.9"/>
-        <text x="12.5" y="5.5" font-family="Arial" font-size="4" fill="white" text-anchor="middle" font-weight="bold">🧠 Neural Style</text>
-    </g>
-    
-    <g transform="translate(120, 41)">
-        <rect x="0" y="0" width="25" height="8" fill="#ef4444" rx="4" opacity="0.9"/>
-        <text x="12.5" y="5.5" font-family="Arial" font-size="4" fill="white" text-anchor="middle" font-weight="bold">⚡ Instant Apply</text>
-    </g>
-    
-    <g transform="translate(120, 54)">
-        <rect x="0" y="0" width="25" height="8" fill="#84cc16" rx="4" opacity="0.9"/>
-        <text x="12.5" y="5.5" font-family="Arial" font-size="4" fill="white" text-anchor="middle" font-weight="bold">💾 Save & Share</text>
-    </g>
-    
-    <!-- Performance Metrics -->
-    <g transform="translate(10, 85)">
-        <rect x="0" y="0" width="30" height="6" fill="#059669" rx="1" opacity="0.9"/>
-        <text x="15" y="4" font-family="Arial" font-size="3" fill="white" text-anchor="middle" font-weight="bold">Processing: 60 FPS</text>
-    </g>
-    
-    <g transform="translate(45, 85)">
-        <rect x="0" y="0" width="25" height="6" fill="#dc2626" rx="1" opacity="0.9"/>
-        <text x="12.5" y="4" font-family="Arial" font-size="3" fill="white" text-anchor="middle" font-weight="bold">Latency: < 50ms</text>
-    </g>
-    
-    <g transform="translate(75, 85)">
-        <rect x="0" y="0" width="25" height="6" fill="#7c3aed" rx="1" opacity="0.9"/>
-        <text x="12.5" y="4" font-family="Arial" font-size="3" fill="white" text-anchor="middle" font-weight="bold">Quality: 4K</text>
-    </g>
-    
-    <g transform="translate(105, 85)">
-        <rect x="0" y="0" width="35" height="6" fill="#f59e0b" rx="1" opacity="0.9"/>
-        <text x="17.5" y="4" font-family="Arial" font-size="3" fill="white" text-anchor="middle" font-weight="bold">ML Models: 5 Active</text>
-    </g>
-    
-    <!-- Title -->
-    <text x="75" y="97" font-family="Arial" font-size="9" fill="#1e293b" text-anchor="middle" font-weight="bold">Styling Camera Application</text>
+    <text x="200" y="265" text-anchor="middle" fill="#d97706" font-family="Inter, sans-serif" font-size="13" font-weight="700">
+        Styling Camera Application
+    </text>
 </svg>

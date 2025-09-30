@@ -1,0 +1,60 @@
+/* Performance optimizations for faster image loading */
+
+/* Add loading shimmer effect */
+.card-image {
+    position: relative;
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+    min-height: 200px;
+}
+
+@keyframes shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+.card-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.card-image img[src]:not([src=""]) {
+    opacity: 1;
+}
+
+/* Remove shimmer once image is loaded */
+.card-image img.loaded-image {
+    opacity: 1;
+}
+
+.card-image:has(img.loaded-image) {
+    animation: none;
+    background: transparent;
+}
+
+/* Optimize font loading */
+body {
+    font-display: swap;
+}
+
+/* Reduce layout shift */
+.project-card {
+    contain: layout style paint;
+}
+
+/* GPU acceleration for smoother scrolling */
+.project-card,
+.card-image {
+    will-change: transform;
+    transform: translateZ(0);
+}
+
+/* Reduce repaints */
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}

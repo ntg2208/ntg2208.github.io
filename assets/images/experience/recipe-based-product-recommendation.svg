@@ -1,110 +1,49 @@
-<svg width="150" height="100" viewBox="0 0 150 100" xmlns="http://www.w3.org/2000/svg">
+<svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
     <defs>
         <linearGradient id="recipeBg" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#fef7ed"/>
-            <stop offset="100%" stop-color="#fed7aa"/>
-        </linearGradient>
-        <linearGradient id="recipeCard" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stop-color="#ffffff"/>
-            <stop offset="100%" stop-color="#f8fafc"/>
+            <stop offset="0%" stop-color="#fef3c7"/>
+            <stop offset="100%" stop-color="#fde68a"/>
         </linearGradient>
     </defs>
+    <rect width="400" height="300" fill="url(#recipeBg)"/>
     
-    <!-- Background -->
-    <rect width="150" height="100" fill="url(#recipeBg)" rx="8"/>
-    
-    <!-- Recipe Card (Left) -->
-    <g transform="translate(10, 15)">
-        <rect x="0" y="0" width="35" height="45" fill="url(#recipeCard)" stroke="#e5e7eb" stroke-width="1" rx="4"/>
-        
-        <!-- Recipe Image -->
-        <rect x="3" y="3" width="29" height="18" fill="#f59e0b" rx="2"/>
-        <text x="17.5" y="14" font-family="Arial" font-size="8" fill="white" text-anchor="middle" font-weight="bold">🍝</text>
-        
-        <!-- Recipe Title -->
-        <text x="17.5" y="28" font-family="Arial" font-size="6" fill="#374151" text-anchor="middle" font-weight="bold">Pasta Recipe</text>
-        
-        <!-- Ingredients List -->
-        <g>
-            <circle cx="5" cy="33" r="1" fill="#10b981"/>
-            <text x="8" y="35" font-family="Arial" font-size="4" fill="#6b7280">Tomatoes</text>
-            <circle cx="5" cy="38" r="1" fill="#10b981"/>
-            <text x="8" y="40" font-family="Arial" font-size="4" fill="#6b7280">Pasta</text>
-            <circle cx="5" cy="43" r="1" fill="#10b981"/>
-            <text x="8" y="45" font-family="Arial" font-size="4" fill="#6b7280">Cheese</text>
-        </g>
+    <!-- Recipe Blog -->
+    <g transform="translate(70, 80)">
+        <rect x="0" y="0" width="90" height="70" fill="white" stroke="#f59e0b" stroke-width="2" rx="8"/>
+        <text x="45" y="20" text-anchor="middle" fill="#d97706" font-size="20">📝</text>
+        <line x1="10" y1="35" x2="80" y2="35" stroke="#f59e0b" stroke-width="2"/>
+        <line x1="10" y1="45" x2="70" y2="45" stroke="#f59e0b" stroke-width="1.5"/>
+        <line x1="10" y1="55" x2="80" y2="55" stroke="#f59e0b" stroke-width="1.5"/>
     </g>
     
-    <!-- AI Processing Arrow -->
-    <g transform="translate(50, 35)">
-        <path d="M0 5 L15 5 L10 0 L20 8 L10 16 L15 11 L0 11 Z" fill="#3b82f6"/>
-        <text x="10" y="25" font-family="Arial" font-size="5" fill="#3b82f6" text-anchor="middle" font-weight="bold">AI Match</text>
+    <!-- NLP Processing -->
+    <g transform="translate(200, 100)">
+        <circle cx="0" cy="0" r="35" fill="#8b5cf6" opacity="0.8"/>
+        <text x="0" y="-5" text-anchor="middle" fill="white" font-size="10" font-weight="700">NLP</text>
+        <text x="0" y="8" text-anchor="middle" fill="white" font-size="9">Analysis</text>
     </g>
     
-    <!-- Product Recommendations (Right) -->
-    <g transform="translate(75, 10)">
-        <!-- Product 1: Tomatoes -->
-        <g>
-            <rect x="0" y="0" width="20" height="15" fill="#ef4444" rx="3"/>
-            <text x="10" y="9" font-family="Arial" font-size="6" fill="white" text-anchor="middle" font-weight="bold">🍅</text>
-            <text x="10" y="20" font-family="Arial" font-size="4" fill="#374151" text-anchor="middle">Tomatoes</text>
-            <text x="10" y="25" font-family="Arial" font-size="4" fill="#059669" text-anchor="middle" font-weight="bold">$2.99</text>
-        </g>
+    <!-- Product Bundle -->
+    <g transform="translate(280, 70)">
+        <rect x="0" y="0" width="30" height="40" fill="#3b82f6" opacity="0.7" rx="3"/>
+        <rect x="35" y="0" width="30" height="40" fill="#10b981" opacity="0.7" rx="3"/>
+        <rect x="70" y="0" width="30" height="40" fill="#ef4444" opacity="0.7" rx="3"/>
         
-        <!-- Product 2: Pasta -->
-        <g transform="translate(25, 0)">
-            <rect x="0" y="0" width="20" height="15" fill="#f59e0b" rx="3"/>
-            <text x="10" y="9" font-family="Arial" font-size="6" fill="white" text-anchor="middle" font-weight="bold">🍝</text>
-            <text x="10" y="20" font-family="Arial" font-size="4" fill="#374151" text-anchor="middle">Pasta</text>
-            <text x="10" y="25" font-family="Arial" font-size="4" fill="#059669" text-anchor="middle" font-weight="bold">$1.49</text>
-        </g>
+        <!-- Bundle indicator -->
+        <ellipse cx="50" cy="50" rx="55" ry="8" fill="#f59e0b" opacity="0.4"/>
+        <text x="50" y="68" text-anchor="middle" fill="#d97706" font-size="9" font-weight="600">Product Bundle</text>
+    </g>
+    
+    <!-- Metrics -->
+    <g transform="translate(100, 180)">
+        <rect x="0" y="0" width="90" height="40" fill="#10b981" opacity="0.8" rx="8"/>
+        <text x="45" y="23" text-anchor="middle" fill="white" font-size="12" font-weight="700">+25% Sales</text>
         
-        <!-- Product 3: Cheese -->
-        <g transform="translate(50, 0)">
-            <rect x="0" y="0" width="20" height="15" fill="#fbbf24" rx="3"/>
-            <text x="10" y="9" font-family="Arial" font-size="6" fill="white" text-anchor="middle" font-weight="bold">🧀</text>
-            <text x="10" y="20" font-family="Arial" font-size="4" fill="#374151" text-anchor="middle">Cheese</text>
-            <text x="10" y="25" font-family="Arial" font-size="4" fill="#059669" text-anchor="middle" font-weight="bold">$4.99</text>
-        </g>
-        
-        <!-- Matching Score -->
-        <g transform="translate(0, 35)">
-            <rect x="0" y="0" width="70" height="12" fill="#10b981" rx="6" opacity="0.9"/>
-            <text x="35" y="8" font-family="Arial" font-size="6" fill="white" text-anchor="middle" font-weight="bold">Perfect Match: 95%</text>
-        </g>
-        
-        <!-- Add to Cart Button -->
-        <g transform="translate(0, 50)">
-            <rect x="0" y="0" width="70" height="12" fill="#3b82f6" rx="6"/>
-            <text x="35" y="8" font-family="Arial" font-size="6" fill="white" text-anchor="middle" font-weight="bold">🛒 Add All to Cart</text>
-        </g>
+        <rect x="110" y="0" width="90" height="40" fill="#3b82f6" opacity="0.8" rx="8"/>
+        <text x="155" y="23" text-anchor="middle" fill="white" font-size="12" font-weight="700">+15% Bundles</text>
     </g>
     
-    <!-- Algorithm Tags -->
-    <g transform="translate(10, 65)">
-        <rect x="0" y="0" width="30" height="8" fill="#8b5cf6" rx="2" opacity="0.9"/>
-        <text x="15" y="5.5" font-family="Arial" font-size="4" fill="white" text-anchor="middle" font-weight="bold">ML Recommendation</text>
-    </g>
-    
-    <g transform="translate(45, 65)">
-        <rect x="0" y="0" width="25" height="8" fill="#059669" rx="2" opacity="0.9"/>
-        <text x="12.5" y="5.5" font-family="Arial" font-size="4" fill="white" text-anchor="middle" font-weight="bold">NLP Parsing</text>
-    </g>
-    
-    <g transform="translate(75, 65)">
-        <rect x="0" y="0" width="30" height="8" fill="#dc2626" rx="2" opacity="0.9"/>
-        <text x="15" y="5.5" font-family="Arial" font-size="4" fill="white" text-anchor="middle" font-weight="bold">Price Optimization</text>
-    </g>
-    
-    <!-- Confidence Indicators -->
-    <g transform="translate(110, 65)">
-        <circle cx="5" cy="4" r="2" fill="#10b981"/>
-        <circle cx="12" cy="4" r="2" fill="#10b981"/>
-        <circle cx="19" cy="4" r="2" fill="#10b981"/>
-        <circle cx="26" cy="4" r="2" fill="#10b981"/>
-        <circle cx="33" cy="4" r="2" fill="#e5e7eb"/>
-    </g>
-    
-    <!-- Title -->
-    <text x="75" y="90" font-family="Arial" font-size="9" fill="#1e293b" text-anchor="middle" font-weight="bold">Recipe-Based Product Recommendation</text>
+    <text x="200" y="265" text-anchor="middle" fill="#d97706" font-family="Inter, sans-serif" font-size="13" font-weight="700">
+        Recipe-Based Product Recommendation
+    </text>
 </svg>

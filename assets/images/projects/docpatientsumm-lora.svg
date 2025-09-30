@@ -1,74 +1,70 @@
 <svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
     <defs>
-        <linearGradient id="medicalGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#f0f9ff"/>
-            <stop offset="50%" stop-color="#e0f2fe"/>
-            <stop offset="100%" stop-color="#bae6fd"/>
+        <linearGradient id="medBg" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#f0fdf4"/>
+            <stop offset="100%" stop-color="#dcfce7"/>
         </linearGradient>
-        <linearGradient id="crossGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#0ea5e9"/>
-            <stop offset="100%" stop-color="#0284c7"/>
-        </linearGradient>
-        <linearGradient id="aiGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#7c3aed"/>
-            <stop offset="100%" stop-color="#5b21b6"/>
+        <linearGradient id="loraGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#10b981"/>
+            <stop offset="100%" stop-color="#059669"/>
         </linearGradient>
     </defs>
-    
-    <!-- Background -->
-    <rect width="400" height="300" fill="url(#medicalGradient)"/>
-    
-    <!-- Medical cross -->
-    <g transform="translate(120, 100)">
-        <rect x="-8" y="-25" width="16" height="50" fill="url(#crossGradient)" rx="2"/>
-        <rect x="-25" y="-8" width="50" height="16" fill="url(#crossGradient)" rx="2"/>
-        <circle cx="0" cy="0" r="30" fill="none" stroke="#0ea5e9" stroke-width="2" opacity="0.3"/>
+
+    <rect width="400" height="300" fill="url(#medBg)"/>
+
+    <!-- Doctor-Patient Conversation -->
+    <g transform="translate(60, 80)">
+        <!-- Doctor icon -->
+        <circle cx="0" cy="0" r="25" fill="#3b82f6" opacity="0.8"/>
+        <rect x="-15" y="20" width="30" height="35" fill="#3b82f6" opacity="0.6" rx="5"/>
+        <circle cx="0" cy="-5" r="12" fill="#93c5fd"/>
+
+        <!-- Speech bubble -->
+        <rect x="35" y="-15" width="60" height="30" fill="white" stroke="#3b82f6" stroke-width="2" rx="10"/>
+        <line x1="40" y1="0" x2="75" y2="0" stroke="#3b82f6" stroke-width="1.5"/>
+        <line x1="40" y1="8" x2="70" y2="8" stroke="#3b82f6" stroke-width="1.5"/>
     </g>
-    
-    <!-- Document/Conversation bubbles -->
-    <g transform="translate(80, 180)">
-        <rect x="0" y="0" width="40" height="30" fill="#ffffff" stroke="#0284c7" stroke-width="2" rx="4"/>
-        <rect x="5" y="5" width="30" height="3" fill="#0284c7" opacity="0.7" rx="1"/>
-        <rect x="5" y="10" width="25" height="3" fill="#0284c7" opacity="0.5" rx="1"/>
-        <rect x="5" y="15" width="30" height="3" fill="#0284c7" opacity="0.3" rx="1"/>
-        <rect x="5" y="20" width="20" height="3" fill="#0284c7" opacity="0.4" rx="1"/>
+
+    <g transform="translate(280, 80)">
+        <!-- Patient icon -->
+        <circle cx="0" cy="0" r="25" fill="#8b5cf6" opacity="0.8"/>
+        <rect x="-15" y="20" width="30" height="35" fill="#8b5cf6" opacity="0.6" rx="5"/>
+        <circle cx="0" cy="-5" r="12" fill="#c4b5fd"/>
+
+        <!-- Speech bubble -->
+        <rect x="-95" y="-15" width="60" height="30" fill="white" stroke="#8b5cf6" stroke-width="2" rx="10"/>
+        <line x1="-90" y1="0" x2="-55" y2="0" stroke="#8b5cf6" stroke-width="1.5"/>
+        <line x1="-90" y1="8" x2="-60" y2="8" stroke="#8b5cf6" stroke-width="1.5"/>
     </g>
-    
-    <!-- AI/Neural Network representation -->
-    <g transform="translate(280, 120)">
-        <!-- Neural network nodes -->
-        <circle cx="0" cy="-20" r="8" fill="url(#aiGradient)"/>
-        <circle cx="25" cy="-10" r="6" fill="url(#aiGradient)" opacity="0.8"/>
-        <circle cx="25" cy="10" r="6" fill="url(#aiGradient)" opacity="0.8"/>
-        <circle cx="0" cy="20" r="8" fill="url(#aiGradient)"/>
-        <circle cx="50" cy="0" r="10" fill="url(#aiGradient)"/>
-        
-        <!-- Neural connections -->
-        <line x1="8" y1="-16" x2="19" y2="-12" stroke="#7c3aed" stroke-width="2" opacity="0.6"/>
-        <line x1="8" y1="-24" x2="19" y2="6" stroke="#7c3aed" stroke-width="2" opacity="0.4"/>
-        <line x1="8" y1="16" x2="19" y2="12" stroke="#7c3aed" stroke-width="2" opacity="0.6"/>
-        <line x1="8" y1="24" x2="19" y2="6" stroke="#7c3aed" stroke-width="2" opacity="0.4"/>
-        <line x1="31" y1="-8" x2="40" y2="-2" stroke="#7c3aed" stroke-width="2" opacity="0.6"/>
-        <line x1="31" y1="8" x2="40" y2="2" stroke="#7c3aed" stroke-width="2" opacity="0.6"/>
+
+    <!-- LoRA Fine-tuning -->
+    <g transform="translate(200, 160)">
+        <circle cx="0" cy="0" r="40" fill="url(#loraGrad)" opacity="0.2"/>
+        <circle cx="0" cy="0" r="30" fill="url(#loraGrad)" opacity="0.4"/>
+        <circle cx="0" cy="0" r="20" fill="url(#loraGrad)" opacity="0.8"/>
+        <text x="0" y="5" text-anchor="middle" fill="white" font-size="10" font-weight="700">LoRA</text>
     </g>
-    
-    <!-- Conversation flow arrow -->
-    <path d="M160 150 Q200 140 240 150" fill="none" stroke="#0ea5e9" stroke-width="3" marker-end="url(#arrowhead)"/>
-    
-    <!-- Arrow marker -->
+
+    <!-- Summary Document -->
+    <g transform="translate(280, 200)">
+        <rect x="0" y="0" width="60" height="40" fill="white" stroke="#10b981" stroke-width="2" rx="5"/>
+        <line x1="8" y1="12" x2="52" y2="12" stroke="#10b981" stroke-width="2"/>
+        <line x1="8" y1="20" x2="45" y2="20" stroke="#10b981" stroke-width="2"/>
+        <line x1="8" y1="28" x2="50" y2="28" stroke="#10b981" stroke-width="2"/>
+        <text x="30" y="-8" text-anchor="middle" fill="#059669" font-size="9" font-weight="600">Summary</text>
+    </g>
+
+    <!-- Arrows -->
+    <path d="M170,100 Q200,120 200,140" stroke="#10b981" stroke-width="3" fill="none" marker-end="url(#arrowLora)"/>
+    <path d="M220,170 Q260,180 280,205" stroke="#10b981" stroke-width="3" fill="none" marker-end="url(#arrowLora)"/>
+
     <defs>
-        <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
-            <polygon points="0 0, 10 3.5, 0 7" fill="#0ea5e9"/>
+        <marker id="arrowLora" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+            <polygon points="0 0, 8 3, 0 6" fill="#10b981"/>
         </marker>
     </defs>
-    
-    <!-- LoRA fine-tuning indicator -->
-    <g transform="translate(200, 200)">
-        <rect x="-20" y="-8" width="40" height="16" fill="#f97316" opacity="0.8" rx="8"/>
-        <text x="0" y="4" text-anchor="middle" fill="white" font-family="Inter, sans-serif" font-size="10" font-weight="600">LoRA</text>
-    </g>
-    
-    <text x="200" y="280" text-anchor="middle" fill="#0c4a6e" font-family="Inter, sans-serif" font-size="14" font-weight="600">
-        DocPatientSumm: LoRA Fine-tuning
+
+    <text x="200" y="275" text-anchor="middle" fill="#059669" font-family="Inter, sans-serif" font-size="13" font-weight="700">
+        DocPatientSumm - LoRA Fine-tuning
     </text>
 </svg>

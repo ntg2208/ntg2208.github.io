@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .test-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px; }
+        .test-card { border: 1px solid #ccc; padding: 10px; text-align: center; }
+        .test-card img { width: 100%; height: auto; max-width: 200px; }
+        .test-card h4 { font-size: 12px; margin: 5px 0; }
+        .status { color: green; }
+        .error { color: red; }
+    </style>
+</head>
+<body>
+    <h1>Image Loading Test</h1>
+    <p>Testing all SVG images...</p>
+    
+    <h2>Projects (16 images)</h2>
+    <div class="test-grid" id="projects"></div>
+    
+    <h2>Experience (17 images)</h2>
+    <div class="test-grid" id="experience"></div>
+    
+    <script>
+        const projectImages = [
+            'shakespeare-text-generation.svg',
+            'wind-turbine-yaw-system.svg',
+            'nhs-employment-gap-analysis.svg',
+            'docpatientsumm-lora.svg',
+            'complaint-tweet-classification.svg',
+            'rag-agent-llama3.svg',
+            'building-qa-system-rag-langchain-llama2.svg',
+            'malaria-parasite-detection-deep-learning.svg',
+            'hospital-readmission-prediction.svg',
+            'm1-traffic-analysis.svg',
+            'edible-mushroom-analysis.svg',
+            'lung-nodule-analysis-luna16.svg',
+            'customer-sentiment-analysis.svg',
+            'combating-exam-impersonation-universities.svg',
+            'jpeg-image-compression-python.svg',
+            'multimodal-conversational-ai-ecommerce.svg'
+        ];
+        
+        const experienceImages = [
+            'data-analysis-processing.svg',
+            'statistical-analysis.svg',
+            'ml-model-development.svg',
+            'recipe-based-product-recommendation.svg',
+            'competitive-price-intelligence.svg',
+            'product-and-combo-pricing.svg',
+            'sales-forecast-and-inventory-management.svg',
+            'ai-fashion-recommendation.svg',
+            'retail-data-analytics-platform.svg',
+            'styling-camera-application.svg',
+            'gan-research.svg',
+            'advanced-image-processing.svg',
+            'defective-semiconductor-detection.svg',
+            'computer-vision-pipeline.svg',
+            'auto-inspection-system.svg',
+            'ev-interface-development.svg',
+            'advanced-cpp-development.svg'
+        ];
+        
+        function testImage(name, folder, container) {
+            const card = document.createElement('div');
+            card.className = 'test-card';
+            card.innerHTML = `
+                <h4>${name.replace('.svg', '').replace(/-/g, ' ')}</h4>
+                <img src="assets/images/${folder}/${name}" alt="${name}">
+                <p class="status">Loading...</p>
+            `;
+            container.appendChild(card);
+            
+            const img = card.querySelector('img');
+            const status = card.querySelector('.status');
+            
+            img.onload = function() {
+                status.textContent = '✓ Loaded';
+                status.className = 'status';
+            };
+            
+            img.onerror = function() {
+                status.textContent = '✗ Failed';
+                status.className = 'error';
+            };
+        }
+        
+        const projectsContainer = document.getElementById('projects');
+        const experienceContainer = document.getElementById('experience');
+        
+        projectImages.forEach(name => testImage(name, 'projects', projectsContainer));
+        experienceImages.forEach(name => testImage(name, 'experience', experienceContainer));
+    </script>
+</body>
+</html>

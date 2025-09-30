@@ -1,102 +1,54 @@
-<svg width="150" height="100" viewBox="0 0 150 100" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <linearGradient id="systemGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#2563eb;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#1e3a8a;stop-opacity:1" />
-    </linearGradient>
-    <linearGradient id="conveyorGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#1e40af;stop-opacity:1" />
-    </linearGradient>
-    <radialGradient id="scanGrad" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:0.8" />
-      <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:0.1" />
-    </radialGradient>
-  </defs>
-  
-  <!-- Background -->
-  <rect width="150" height="100" fill="#ffffff" rx="8"/>
-  
-  <!-- Inspection System Frame -->
-  <rect x="10" y="15" width="130" height="60" rx="4" fill="none" stroke="#2563eb" stroke-width="2"/>
-  
-  <!-- Conveyor Belt -->
-  <rect x="15" y="55" width="120" height="15" rx="2" fill="url(#conveyorGrad)" stroke="#1e3a8a" stroke-width="1"/>
-  
-  <!-- Conveyor belt pattern -->
-  <g stroke="#ffffff" stroke-width="1" opacity="0.5">
-    <line x1="20" y1="60" x2="25" y2="65"/>
-    <line x1="30" y1="60" x2="35" y2="65"/>
-    <line x1="40" y1="60" x2="45" y2="65"/>
-    <line x1="50" y1="60" x2="55" y2="65"/>
-    <line x1="60" y1="60" x2="65" y2="65"/>
-    <line x1="70" y1="60" x2="75" y2="65"/>
-    <line x1="80" y1="60" x2="85" y2="65"/>
-    <line x1="90" y1="60" x2="95" y2="65"/>
-    <line x1="100" y1="60" x2="105" y2="65"/>
-    <line x1="110" y1="60" x2="115" y2="65"/>
-    <line x1="120" y1="60" x2="125" y2="65"/>
-  </g>
-  
-  <!-- Inspection Items on Belt -->
-  <g fill="#1e40af" opacity="0.8">
-    <rect x="25" y="50" width="12" height="8" rx="2"/>
-    <rect x="65" y="50" width="12" height="8" rx="2"/>
-    <rect x="105" y="50" width="12" height="8" rx="2"/>
-  </g>
-  
-  <!-- Inspection Cameras/Sensors -->
-  <g transform="translate(30, 25)">
-    <!-- Camera 1 -->
-    <rect x="0" y="0" width="15" height="10" rx="2" fill="url(#systemGrad)"/>
-    <circle cx="7.5" cy="5" r="3" fill="#ffffff" opacity="0.8"/>
-    <circle cx="7.5" cy="5" r="1.5" fill="#1e3a8a"/>
+<svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="inspectBg" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#eff6ff"/>
+            <stop offset="100%" stop-color="#dbeafe"/>
+        </linearGradient>
+    </defs>
+    <rect width="400" height="300" fill="url(#inspectBg)"/>
     
-    <!-- Scan beam -->
-    <ellipse cx="7.5" cy="20" rx="8" ry="4" fill="url(#scanGrad)"/>
-    <line x1="7.5" y1="10" x2="7.5" y2="15" stroke="#3b82f6" stroke-width="2" stroke-dasharray="1,1"/>
-  </g>
-  
-  <g transform="translate(70, 25)">
-    <!-- Camera 2 -->
-    <rect x="0" y="0" width="15" height="10" rx="2" fill="url(#systemGrad)"/>
-    <circle cx="7.5" cy="5" r="3" fill="#ffffff" opacity="0.8"/>
-    <circle cx="7.5" cy="5" r="1.5" fill="#1e3a8a"/>
+    <!-- Manufacturing Line -->
+    <g transform="translate(70, 100)">
+        <rect x="0" y="0" width="80" height="60" fill="#64748b" opacity="0.8" rx="5"/>
+        <rect x="10" y="10" width="25" height="25" fill="#93c5fd"/>
+        <rect x="45" y="10" width="25" height="25" fill="#93c5fd"/>
+        <text x="40" y="52" text-anchor="middle" fill="white" font-size="9" font-weight="600">Products</text>
+    </g>
     
-    <!-- Scan beam -->
-    <ellipse cx="7.5" cy="20" rx="8" ry="4" fill="url(#scanGrad)"/>
-    <line x1="7.5" y1="10" x2="7.5" y2="15" stroke="#3b82f6" stroke-width="2" stroke-dasharray="1,1"/>
-  </g>
-  
-  <g transform="translate(110, 25)">
-    <!-- Camera 3 -->
-    <rect x="0" y="0" width="15" height="10" rx="2" fill="url(#systemGrad)"/>
-    <circle cx="7.5" cy="5" r="3" fill="#ffffff" opacity="0.8"/>
-    <circle cx="7.5" cy="5" r="1.5" fill="#1e3a8a"/>
+    <!-- Camera/Inspection -->
+    <g transform="translate(200, 90)">
+        <rect x="-30" y="-15" width="60" height="30" fill="#374151" rx="5"/>
+        <circle cx="0" cy="0" r="12" fill="#1e293b"/>
+        <circle cx="0" cy="0" r="8" fill="#3b82f6"/>
+        <text x="0" y="35" text-anchor="middle" fill="#1e293b" font-size="9" font-weight="600">Inspection</text>
+    </g>
     
-    <!-- Scan beam -->
-    <ellipse cx="7.5" cy="20" rx="8" ry="4" fill="url(#scanGrad)"/>
-    <line x1="7.5" y1="10" x2="7.5" y2="15" stroke="#3b82f6" stroke-width="2" stroke-dasharray="1,1"/>
-  </g>
-  
-  <!-- Control Panel -->
-  <g transform="translate(5, 5)">
-    <rect x="0" y="0" width="25" height="12" rx="2" fill="#2563eb"/>
-    <text x="12.5" y="8" font-family="Arial, sans-serif" font-size="6" fill="#ffffff" text-anchor="middle">CONTROL</text>
-  </g>
-  
-  <!-- Status Indicators -->
-  <g transform="translate(125, 5)">
-    <circle cx="3" cy="3" r="2" fill="#22c55e"/>
-    <circle cx="10" cy="3" r="2" fill="#3b82f6"/>
-    <circle cx="17" cy="3" r="2" fill="#f59e0b"/>
-  </g>
-  
-  <!-- Quality Control Results -->
-  <g transform="translate(15, 85)">
-    <text x="0" y="0" font-family="Arial, sans-serif" font-size="8" fill="#22c55e">PASS</text>
-    <text x="30" y="0" font-family="Arial, sans-serif" font-size="8" fill="#ef4444">FAIL</text>
-    <text x="60" y="0" font-family="Arial, sans-serif" font-size="8" fill="#22c55e">PASS</text>
-    <text x="90" y="0" font-family="Arial, sans-serif" font-size="8" fill="#2563eb">AUTO-QC</text>
-  </g>
+    <!-- AI Detection -->
+    <g transform="translate(200, 140)">
+        <rect x="-40" y="0" width="80" height="35" fill="#8b5cf6" opacity="0.9" rx="8"/>
+        <text x="0" y="23" text-anchor="middle" fill="white" font-size="11" font-weight="700">AI Detection</text>
+    </g>
+    
+    <!-- Results -->
+    <g transform="translate(290, 85)">
+        <!-- Good -->
+        <circle cx="0" cy="0" r="20" fill="#10b981" opacity="0.8"/>
+        <text x="0" y="6" text-anchor="middle" fill="white" font-size="16">✓</text>
+        <text x="0" y="32" text-anchor="middle" fill="#059669" font-size="8" font-weight="600">Pass</text>
+        
+        <!-- Defect -->
+        <circle cx="0" cy="55" r="20" fill="#ef4444" opacity="0.8"/>
+        <text x="0" y="61" text-anchor="middle" fill="white" font-size="16">✗</text>
+        <text x="0" y="87" text-anchor="middle" fill="#dc2626" font-size="8" font-weight="600">Defect</text>
+    </g>
+    
+    <!-- Real-time -->
+    <g transform="translate(120, 190)">
+        <rect x="0" y="0" width="160" height="35" fill="#f59e0b" opacity="0.9" rx="10"/>
+        <text x="80" y="23" text-anchor="middle" fill="white" font-size="12" font-weight="700">Real-time QC</text>
+    </g>
+    
+    <text x="200" y="265" text-anchor="middle" fill="#1e40af" font-family="Inter, sans-serif" font-size="14" font-weight="700">
+        Auto Inspection System
+    </text>
 </svg>

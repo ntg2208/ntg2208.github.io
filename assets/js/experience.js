@@ -103,11 +103,45 @@ const experienceData = [
     }
 ];
 
+// Map experience project titles to SVG filenames
+function getExperienceImageFilename(projectTitle) {
+    const filenameMap = {
+        "Data Analysis & Processing": "data-analysis-processing.svg",
+        "Statistical Analysis": "statistical-analysis.svg",
+        "ML Model Development": "ml-model-development.svg",
+        "Recipe-Based Product Recommendation": "recipe-based-product-recommendation.svg",
+        "Competitive Price Intelligence": "competitive-price-intelligence.svg",
+        "Product and Combo Pricing": "product-and-combo-pricing.svg",
+        "Sales Forecast and Inventory Management": "sales-forecast-and-inventory-management.svg",
+        "AI Fashion Recommendation": "ai-fashion-recommendation.svg",
+        "Retail Data Analytics Platform": "retail-data-analytics-platform.svg",
+        "Styling Camera Application": "styling-camera-application.svg",
+        "GAN Research": "gan-research.svg",
+        "Advanced Image Processing": "advanced-image-processing.svg",
+        "Defective Semiconductor Detection": "defective-semiconductor-detection.svg",
+        "Computer Vision Pipeline": "computer-vision-pipeline.svg",
+        "Auto Inspection System": "auto-inspection-system.svg",
+        "EV Interface Development": "ev-interface-development.svg",
+        "Advanced C++ Development": "advanced-cpp-development.svg"
+    };
+
+    return filenameMap[projectTitle] || "placeholder.svg";
+}
+
+// Counter for eager loading first few experience images
+let experienceCardIndex = 0;
+
 function createExperienceCardHtml(project) {
+    const imageFile = getExperienceImageFilename(project.Title);
+
+    // Load first 4 experience images eagerly
+    const loadingStrategy = experienceCardIndex < 4 ? 'eager' : 'lazy';
+    experienceCardIndex++;
+
     return `
         <div class="project-card" role="listitem">
             <div class="card-image">
-                <img src="assets/img/projects/placeholder.svg" alt="${project.Title} visualization" loading="lazy">
+                <img src="assets/images/experience/${imageFile}" alt="${project.Title} visualization" loading="${loadingStrategy}">
             </div>
             <div class="card-content">
                 <h4>${project.Title}</h4>

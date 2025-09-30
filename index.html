@@ -6,14 +6,46 @@
     <meta name="description" content="Portfolio of Truong Giang Nguyen - AI Engineer specializing in LLMs, RAG systems, computer vision, and production-grade AI solutions">
     <meta name="keywords" content="AI Engineer, Large Language Models, LLMs, RAG, Computer Vision, Natural Language Processing, Python, PyTorch, TensorFlow, HuggingFace">
     <title>Truong Giang Nguyen - AI Engineer Portfolio</title>
+
+    <!-- Favicons -->
     <link href="assets/icons/favicon.png" rel="icon">
     <link href="assets/icons/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Preconnect to external domains for faster loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+    <!-- Preload critical CSS and fonts -->
+    <link rel="preload" href="assets/css/styles.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" as="style">
+
+    <!-- DNS Prefetch for external resources -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+
+    <!-- Stylesheets -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/performance-fixes.css">
+
+    <!-- Inline critical image preloader for faster loading -->
+    <script>
+        // Preload critical images immediately
+        ['shakespeare-text-generation','wind-turbine-yaw-system','nhs-employment-gap-analysis','docpatientsumm-lora'].forEach(function(name){
+            var link=document.createElement('link');
+            link.rel='prefetch';
+            link.as='image';
+            link.href='assets/images/projects/'+name+'.svg';
+            document.head.appendChild(link);
+        });
+    </script>
+
+    <!-- Load JavaScript in order (projects/experience data must load before main.js) -->
     <script src="assets/js/projects.js"></script>
     <script src="assets/js/experience.js"></script>
-    <script src="assets/js/main.js"></script>
+    <script src="assets/js/main.js" defer></script>
 </head>
 <body>
     <!-- Scroll Progress Indicator -->
