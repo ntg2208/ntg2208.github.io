@@ -1,0 +1,53 @@
+Company,Sector,Period,Role,Description,Achievement
+Northumbria University,UK University,Jan 2023 - Jun 2023,Data Scientist,"Extracted data from medical wearable devices, transform sensory data into tabular dataset, visualised users behaviours patterns. Used Statistical Analysis to assess the effectiveness of medical wearable devices for drooling treatment for People with Parkinson's Disease. Used Machine Learning model to build a personalised treatments schedule recommendation system, predict treatments hours for individual People with Parkinson's Disease.","Transformed sensory data into tabular dataset and visualised user behaviour patterns from medical wearable devices. Assessed the effectiveness of medical wearable devices for drooling treatment for People with Parkinson's Disease using Statistical Analysis. Built a personalised treatments schedule recommendation system using Machine Learning model, predicted treatments hours for individual People with Parkinson's Disease."
+Seedcom,Venture Capital,Nov. 2020 - Dec. 2022,Machine Learning Engineer,"Seedcom is operating national-wide Coffee Chain, Supermarket and Fashion Brands in Vietnam.
+** LLMs **
+- Implemented a personalised notification system using LoRA fine-tuning on llama 3, enhancing app re-engagement rates and improving user retention metrics.
+- Engineered a Vietnamese recipe recommendation chatbot with Gemini and RAG technique, utilising users' basket history to provide tailored culinary suggestions.
+
+**Recipe Recommendation System**
+
+- **Recipe Data Utilization**: Leveraged Vietnamese recipe blogs to curate product bundles, creating targeted promotions that align with popular recipes and culinary trends.
+- **Cross-Sale Recommendations**: Developed a recommendation system that suggests complementary products based on user shopping baskets and associated recipes, driving cross-sales and enhancing the customer shopping experience.
+
+**Product Price Mapping with Competitors**
+
+- **Data Crawling and Mapping**: Developed and implemented a web scraping system to collect product data from competitor websites. Utilized a multimodal model to accurately map competitor products to the company’s product catalog.
+- **Price Tracking Pipeline**: Established a robust pipeline for continuous monitoring and comparison of online pricing between the company’s products and competitors, ensuring up-to-date pricing intelligence.
+- **Analytics Integration**: Integrated price tracking data into product analytics dashboards, enabling real-time visibility and actionable insights for pricing strategies and competitive analysis.
+
+**Product and Combo Pricing**
+
+- **Statistical Analysis**: Conducted thorough statistical analysis to identify top-performing product combinations frequently bought together, optimizing cross-sell opportunities.
+- **Pricing Algorithm Development**: Developed and implemented a dynamic pricing algorithm for product bundles, ensuring competitive pricing that maximizes both customer retention and profit margins.
+- **Strategic Promotion Planning**: Designed a comprehensive 1-year promotional strategy for product bundles, incorporating special pricing to boost sales and enhance customer engagement.
+
+**Sales Forecast and Inventory Management**
+
+- **Statistical Analysis**: Conducted comprehensive statistical analysis to identify trends and seasonal patterns in time-series sales data, providing actionable insights for decision-making.
+- **Advanced Forecasting Models**: Deployed sophisticated forecasting models, including DeepAR and LightGBM, to predict sales at the store and area levels with high accuracy.
+- **Inventory Optimisation**: Enhanced inventory management by implementing an alert system to identify and address overstock and understock situations, thereby optimizing stock levels and reducing carrying costs.","Implemented a personalised notification system using LoRA fine-tuning on llama 3, enhancing app re-engagement rates and improving user retention metrics. Engineered a Vietnamese recipe recommendation chatbot with Gemini and RAG technique, utilising users' basket history to provide tailored culinary suggestions. Leveraged Vietnamese recipe blogs to curate product bundles, creating targeted promotions that align with popular recipes and culinary trends. Developed a recommendation system that suggests complementary products based on user shopping baskets and associated recipes, driving cross-sales and enhancing the customer shopping experience. Developed and implemented a web scraping system to collect product data from competitor websites. Utilized a multimodal model to accurately map competitor products to the company’s product catalog. Established a robust pipeline for continuous monitoring and comparison of online pricing between the company’s products and competitors, ensuring up-to-date pricing intelligence. Integrated price tracking data into product analytics dashboards, enabling real-time visibility and actionable insights for pricing strategies and competitive analysis."
+Seedcom,Venture Capital,Nov. 2020 - Dec. 2022,Style improvement recommendation systems,"Lead a team of 3 engineers, research, propose, implement and deploy computer vision solution
+- Used RetinaNet and OpenCV to build a fashion items object detection and localisation to identify what users are wearing with an average precision of 92\%.
+- Retrieved store's similar items to what user are wearing.
+- Documented and packaged model using Docker, delivered to Recommendation team for further research by pushing Docker Image to Docker Hub private repository.
+- Packaged as APIs and delivered to Recommendation team for further research
+- Built fashion items recommendation and outfit recommendation systems to improve customer's shopping experiences and targeting to increase customer click-rate, cross-sell and total selling revenue.
+- Deployed model in form of Application programming interface (API) for store and web access.","Built fashion items recommendation and outfit recommendation systems to improve customer's shopping experiences and targeting to increase customer click-rate, cross-sell and total selling revenue. Used RetinaNet and OpenCV to build a fashion items object detection and localisation to identify what users are wearing with an average precision of 92\%. Lead a team of 3 engineers, research, propose, implement and deploy computer vision solution. Documented and packaged model using Docker, delivered to Recommendation team for further research by pushing Docker Image to Docker Hub private repository. Packaged as APIs and delivered to Recommendation team for further research"
+Seedcom,Venture Capital,Nov. 2020 - Dec. 2022,Retail Data Analytic and Marketing Platform,"Worked as a team member in a team of 7: Project Manager, Product Design, Business Analyst, Data Engineer, Data Analyst
+- Created dashboards for analysing, clustering, identifying trend of customers, products of Vietnam's biggest supermarket chain using customer transactions data and products information
+- Optimised the query time for Analytic Dashboards
+- Created a well-organised documentation with definitions, formulas and SQL codes for each section of customers and product analysis dashboard.
+- Merged subsidiary database system for more general view.","Created dashboards for analysing, clustering, identifying trend of customers, products of Vietnam's biggest supermarket chain using customer transactions data and products information. Optimised the query time for Analytic Dashboards. Created a well-organised documentation with definitions, formulas and SQL codes for each section of customers and product analysis dashboard. Merged subsidiary database system for more general view."
+Vulcan Labs,Gaming and Application Company,Jul. 2020 - Nov. 2020,Machine Learning Engineer,"Deployed Deep Learning and Computer Vision Solution to AWS EC2 using Docker
+- Researched Topics: Generative Adversarial Networks, Salient Object Detection, Image Segmentation
+- Researched models: StyleGAN, StyleGAN2, U-Squared-Net","Researched Topics: Generative Adversarial Networks, Salient Object Detection, Image Segmentation. Researched models: StyleGAN, StyleGAN2, U-Squared-Net. Deployed Deep Learning and Computer Vision Solution to AWS EC2 using Docker"
+Emage Development Pte. Ltd.,Computer Vision Company,Jul. 2019 - Jul. 2020,Defective semiconductor detection using Machine Learning,"Worked with 2 Engineers: Senior Computer Vision Engineer, Junior AI Engineer
+- Used OpenCV and Image Processing techniques: Hough transform, Canny edges detection and Resnet for features extraction
+- Used Yolov3 and RetinaNet to build a defective semiconductor detector with a precision of 98\%.
+- Documented and deployed Machine Learning model on using Docker
+- Deployed Machine Learning model on factory's computer with inspection time of 0.2 sec/image
+- Built a Windows Presentation Foundation (WPF) application for semiconductor image annotation, train, inference and evaluate Object Detection Machine Learning model","Used Yolov3 and RetinaNet to build a defective semiconductor detector with a precision of 98\%. Documented and deployed Machine Learning model on using Docker. Used OpenCV and Image Processing techniques: Hough transform, Canny edges detection and Resnet for features extraction. Deployed Machine Learning model on factory's computer with inspection time of 0.2 sec/image. Built a Windows Presentation Foundation (WPF) application for semiconductor image annotation, train, inference and evaluate Object Detection Machine Learning model."
+Emage Development Pte. Ltd.,Computer Vision Company,Jul. 2019 - Jul. 2020,Research on Apply Reinforcement Learning for Auto Defective Inspection,Research basic definition of Reinforcement Learning and practice example of Double Q-Learning.,Research basic definition of Reinforcement Learning and practice example of Double Q-Learning.
+Robert Bosch Engineering And Business Solutions,,May. 2019 - Nov. 2019,Embedded Software Engineer - Internship,"Trained with multiple problems in C/C++: Parallel Programming, Application's Design Pattern.
+- Developed application used for debugging Application's User Interface.",Developed application used for debugging Application's User Interface.

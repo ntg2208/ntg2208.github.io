@@ -465,6 +465,12 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize mobile navigation
     initializeMobileNavigation();
+
+    // Initialize scrollspy
+    initializeScrollspy();
+
+    // Initialize testimonial slider
+    initializeTestimonialSlider();
 });
 
 // Back to Top Button
@@ -857,7 +863,7 @@ function initializeScrollProgress() {
     updateScrollProgress(); // Initial call
 }
 
-// Mobile Navigation
+// Initialize mobile navigation
 function initializeMobileNavigation() {
     const mobileMenuToggle = document.getElementById('mobileMenuToggle');
     const navMenu = document.querySelector('.nav-menu');
@@ -919,6 +925,64 @@ function initializeMobileNavigation() {
         }
     });
 }
+
+// Scrollspy for navigation links
+function initializeScrollspy() {
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-menu a');
+    const headerHeight = document.querySelector('.main-header').offsetHeight;
+
+    function onScroll() {
+        const scrollPosition = window.scrollY + headerHeight;
+
+        sections.forEach(section => {
+            if (scrollPosition >= section.offsetTop && scrollPosition < section.offsetTop + section.offsetHeight) {
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href').substring(1) === section.id) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+        });
+    }
+
+    window.addEventListener('scroll', onScroll);
+}
+
+// Testimonial slider
+function initializeTestimonialSlider() {
+    const slider = document.querySelector('.testimonial-slider');
+    if (!slider) return;
+    const slides = slider.querySelectorAll('.testimonial-card');
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+    let currentIndex = 0;
+
+    function showSlide(index) {
+        slider.style.transform = `translateX(${-index * 100}%)`;
+        slides.forEach((slide, i) => {
+            slide.classList.toggle('active', i === index);
+        });
+    }
+
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % slides.length;
+        showSlide(currentIndex);
+    }
+
+    function prevSlide() {
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        showSlide(currentIndex);
+    }
+
+    prevBtn.addEventListener('click', prevSlide);
+    nextBtn.addEventListener('click', nextSlide);
+
+    // Optional: Auto-play
+    // setInterval(nextSlide, 5000);
+}
+
 
 // WebP Support Detection
 function detectWebPSupport() {

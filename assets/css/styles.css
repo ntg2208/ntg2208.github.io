@@ -270,7 +270,8 @@ a:focus {
 }
 
 .nav-link:hover,
-.nav-link:focus {
+.nav-link:focus,
+.nav-link.active {
     color: var(--accent-color);
     background-color: rgba(52, 152, 219, 0.1);
     transform: translateY(-1px);
@@ -289,7 +290,8 @@ a:focus {
 }
 
 .nav-link:hover::after,
-.nav-link:focus::after {
+.nav-link:focus::after,
+.nav-link.active::after {
     width: 80%;
 }
 
@@ -1758,6 +1760,63 @@ section:hover {
     .contact-links {
         text-align: left;
     }
+}
+
+/* Testimonials Section */
+.testimonial-slider-container {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.testimonial-slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.testimonial-card {
+    flex: 0 0 100%;
+    padding: 2rem;
+    background: var(--card-background);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    border: 1px solid var(--border-color);
+}
+
+.slider-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    z-index: 1;
+}
+
+.slider-nav button {
+    background: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.slider-nav button:hover {
+    background: var(--accent-hover);
+    transform: scale(1.1);
+}
+
+.prev-btn {
+    margin-left: -20px;
+}
+
+.next-btn {
+    margin-right: -20px;
 }
 
 /* Reduced Motion */
