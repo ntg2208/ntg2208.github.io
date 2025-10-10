@@ -162,26 +162,26 @@ function getProjectCategory(sector) {
 // Create filename-friendly slug from project name
 function getProjectImageFilename(projectName) {
     const filenameMap = {
-        "Efficient Clinical Notes Summarization with LoRA Fine-tuning": "docpatientsumm-lora.svg",
-        "Agentic RAG System with Llama3 & LangGraph": "rag-agent-llama3.svg",
-        "DocPatientSumm: Clinical Conversation Summarization with LoRA": "docpatientsumm-lora.svg",
-        "Building Q&A System with RAG using LangChain & Llama2": "building-qa-system-rag-langchain-llama2.svg",
-        "Complaint Tweet Classification with Prompt Tuning": "complaint-tweet-classification.svg",
-        "Shakespeare-Style Text Generation with Hidden Markov Models": "shakespeare-text-generation.svg",
-        "CIBMTR - Equity in Post-HCT Survival Predictions": "hospital-readmission-prediction.svg",
-        "NHS Employment Gap Analysis Using Machine Learning": "nhs-employment-gap-analysis.svg",
-        "Wind Turbine Yaw System Performance Analysis": "wind-turbine-yaw-system.svg",
-        "M1 Motorway Traffic Analysis": "m1-traffic-analysis.svg",
-        "Hospital Readmission Prediction System": "hospital-readmission-prediction.svg",
-        "Edible Mushroom Classification System": "edible-mushroom-analysis.svg",
-        "Malaria Parasite Detection using Deep Learning": "malaria-parasite-detection-deep-learning.svg",
-        "Customer Sentiment Analysis with Facial Recognition": "customer-sentiment-analysis.svg",
-        "Combating Exam Impersonation in Universities": "combating-exam-impersonation-universities.svg",
-        "LUNA 16: Lung Nodule Analysis": "lung-nodule-analysis-luna16.svg",
-        "JPEG Image Compression Algorithm": "jpeg-image-compression-python.svg"
+        "Efficient Clinical Notes Summarization with LoRA Fine-tuning": "docpatientsumm-lora",
+        "Agentic RAG System with Llama3 & LangGraph": "rag-agent-llama3",
+        "DocPatientSumm: Clinical Conversation Summarization with LoRA": "docpatientsumm-lora",
+        "Building Q&A System with RAG using LangChain & Llama2": "building-qa-system-rag-langchain-llama2",
+        "Complaint Tweet Classification with Prompt Tuning": "complaint-tweet-classification",
+        "Shakespeare-Style Text Generation with Hidden Markov Models": "shakespeare-text-generation",
+        "CIBMTR - Equity in Post-HCT Survival Predictions": "hospital-readmission-prediction",
+        "NHS Employment Gap Analysis Using Machine Learning": "nhs-employment-gap-analysis",
+        "Wind Turbine Yaw System Performance Analysis": "wind-turbine-yaw-system",
+        "M1 Motorway Traffic Analysis": "m1-traffic-analysis",
+        "Hospital Readmission Prediction System": "hospital-readmission-prediction",
+        "Edible Mushroom Classification System": "edible-mushroom-analysis",
+        "Malaria Parasite Detection using Deep Learning": "malaria-parasite-detection-deep-learning",
+        "Customer Sentiment Analysis with Facial Recognition": "customer-sentiment-analysis",
+        "Combating Exam Impersonation in Universities": "combating-exam-impersonation-universities",
+        "LUNA 16: Lung Nodule Analysis": "lung-nodule-analysis-luna16",
+        "JPEG Image Compression Algorithm": "jpeg-image-compression-python"
     };
 
-    return filenameMap[projectName] || "placeholder.svg";
+    return filenameMap[projectName] || "placeholder";
 }
 
 // Counter for eager loading first few images
@@ -191,7 +191,6 @@ function createProjectCardHtml(project) {
     const urlHtml = project.URL ? `<a href="${project.URL}" target="_blank" rel="noopener noreferrer">${project.URL.includes('github.com') ? 'GitHub' : (project.URL.includes('kaggle.com') ? 'Kaggle Notebook' : (project.URL.includes('colab.research.google.com') ? 'Google Colab' : 'Project Link'))}</a>` : '';
     const keywordsHtml = project.Keywords ? `<div class="project-keywords">${project.Keywords.split(',').map(k => `<span>${k.trim()}</span>`).join('')}</div>` : '';
     const year = project.Year || 'N/A';
-    const imageFile = getProjectImageFilename(project['Project Name']);
 
     // Load first 6 images eagerly for better perceived performance
     const loadingStrategy = projectCardIndex < 6 ? 'eager' : 'lazy';
@@ -200,7 +199,7 @@ function createProjectCardHtml(project) {
     return `
         <div class="project-card" role="listitem">
             <div class="card-image">
-                <img src="assets/images/projects/${imageFile}" alt="${project['Project Name']} visualization" loading="${loadingStrategy}">
+                <img src="assets/img/projects/placeholder.svg" alt="${project['Project Name']} visualization" loading="${loadingStrategy}">
             </div>
             <div class="card-content">
                 <h4>${project['Project Name']}</h4>

@@ -96,29 +96,27 @@ const experienceData = [
 // Map experience project titles to SVG filenames
 function getExperienceImageFilename(projectTitle) {
     const filenameMap = {
-        "Production AI Multi-Agent Systems": "advanced-cpp-development.svg",
-        "RAG + Database Hybrid Architecture": "advanced-cpp-development.svg",
-        "LLM & RAG Systems": "recipe-based-product-recommendation.svg",
-        "MLOps & Infrastructure": "computer-vision-pipeline.svg",
-        "Computer Vision - Fashion Recommendation System": "ai-fashion-recommendation.svg",
-        "Pricing Intelligence & Competitive Analysis": "competitive-price-intelligence.svg",
-        "Demand Forecasting & Inventory Optimization": "sales-forecast-and-inventory-management.svg",
-        "Data Analytics Platform": "retail-data-analytics-platform.svg",
-        "Researching Solutions for Parkinson's Disease Treatment": "ml-model-development.svg",
-        "Computer Vision for Mobile Applications": "gan-research.svg",
-        "Defective Semiconductor Detection": "defective-semiconductor-detection.svg",
-        "Renault & Nissan Interior Application for Electrical Vehicles": "ev-interface-development.svg"
+        "Production AI Multi-Agent Systems": "advanced-cpp-development",
+        "RAG + Database Hybrid Architecture": "advanced-cpp-development",
+        "LLM & RAG Systems": "recipe-based-product-recommendation",
+        "MLOps & Infrastructure": "computer-vision-pipeline",
+        "Computer Vision - Fashion Recommendation System": "ai-fashion-recommendation",
+        "Pricing Intelligence & Competitive Analysis": "competitive-price-intelligence",
+        "Demand Forecasting & Inventory Optimization": "sales-forecast-and-inventory-management",
+        "Data Analytics Platform": "retail-data-analytics-platform",
+        "Researching Solutions for Parkinson's Disease Treatment": "ml-model-development",
+        "Computer Vision for Mobile Applications": "gan-research",
+        "Defective Semiconductor Detection": "defective-semiconductor-detection",
+        "Renault & Nissan Interior Application for Electrical Vehicles": "ev-interface-development"
     };
 
-    return filenameMap[projectTitle] || "placeholder.svg";
+    return filenameMap[projectTitle] || "placeholder";
 }
 
 // Counter for eager loading first few experience images
 let experienceCardIndex = 0;
 
 function createExperienceCardHtml(project) {
-    const imageFile = getExperienceImageFilename(project.Title);
-
     // Load first 4 experience images eagerly
     const loadingStrategy = experienceCardIndex < 4 ? 'eager' : 'lazy';
     experienceCardIndex++;
@@ -126,7 +124,7 @@ function createExperienceCardHtml(project) {
     return `
         <div class="project-card" role="listitem">
             <div class="card-image">
-                <img src="assets/images/experience/${imageFile}" alt="${project.Title} visualization" loading="${loadingStrategy}">
+                <img src="assets/img/projects/placeholder.svg" alt="${project.Title} visualization" loading="${loadingStrategy}">
             </div>
             <div class="card-content">
                 <h4>${project.Title}</h4>
