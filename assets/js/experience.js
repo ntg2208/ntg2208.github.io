@@ -1,103 +1,93 @@
 // assets/js/experience.js
 
 const experienceData = [
-    // Northumbria University
+    {
+        "Company": "twentytwotensors, UK",
+        "Position": "Machine Learning Engineer",
+        "Period": "Dec 2024 - Present",
+        "Projects": [
+            {
+                "Title": "Production AI Multi-Agent Systems",
+                "Description": "Architected and deployed a production-grade multi-agent AI customer support system using Google Gemini, orchestrating a Master Agent with specialized Policy Agent (RAG) and Ticket Agent (database operations), reducing operational costs by 60% while enabling 24/7 service availability."
+            },
+            {
+                "Title": "RAG + Database Hybrid Architecture",
+                "Description": "Engineered a sophisticated RAG + Database hybrid architecture with location intelligence, achieving 100% routing accuracy across 15+ comprehensive test scenarios with sub-2-second response times."
+            }
+        ]
+    },
+    {
+        "Company": "Seedcom R&D, Vietnam (Remote)",
+        "Position": "AI Engineer",
+        "Period": "Nov 2020 - Oct 2024",
+        "Projects": [
+            {
+                "Title": "LLM & RAG Systems",
+                "Description": "Built a Vietnamese recipe recommendation chatbot using Retrieval-Augmented Generation (RAG) with Google Gemini, leveraging customer basket history to deliver personalized culinary suggestions and enhance user engagement. Developed and fine-tuned a personalized notification system using LoRA on Llama 3, enhancing app re-engagement rates and significantly improving user retention metrics."
+            },
+            {
+                "Title": "MLOps & Infrastructure",
+                "Description": "Designed and automated end-to-end ML pipelines on Google Vertex AI for competitor price mapping and product recommendations, utilizing CI/CD best practices (GitLab CI, Airflow) for robust, automated deployment. Implemented comprehensive monitoring and automated deployment pipelines ensuring resilience and scalability."
+            },
+            {
+                "Title": "Computer Vision - Fashion Recommendation System",
+                "Description": "Led a cross-functional team of 3 engineers to research, develop, and deploy a production computer vision solution for fashion retail. Built a fashion item detection and localization system using RetinaNet and OpenCV, achieving 92% average precision in identifying customer outfits. Developed an outfit recommendation engine to improve customer shopping experiences, targeting increases in customer click-rate, cross-sell opportunities, and total selling revenue."
+            },
+            {
+                "Title": "Pricing Intelligence & Competitive Analysis",
+                "Description": "Developed an automated web scraping system with multimodal AI to map competitor products to the internal catalog for comprehensive price tracking. Built a real-time price tracking pipeline integrating with analytics dashboards, enabling data-driven pricing strategies and competitive analysis. Created a dynamic pricing algorithm for product bundles using statistical analysis of purchase patterns, optimizing profit margins while maintaining competitiveness."
+            },
+            {
+                "Title": "Demand Forecasting & Inventory Optimization",
+                "Description": "Deployed advanced forecasting models (DeepAR, LightGBM) for time-series sales prediction at store and regional levels with high accuracy. Implemented an intelligent alert system for inventory management to identify and address overstock and understock situations, optimizing stock levels and reducing carrying costs."
+            },
+            {
+                "Title": "Data Analytics Platform",
+                "Description": "Collaborated within an agile team of 7 members to build a comprehensive retail analytics and marketing platform for Vietnam's largest supermarket chain. Created interactive dashboards analyzing customer behavior, product trends, and clustering patterns using BigQuery and GCP. Optimized query performance for analytic dashboards, enabling real-time insights for business stakeholders."
+            }
+        ]
+    },
     {
         "Company": "Northumbria University, UK",
         "Position": "Data Scientist",
-        "Period": "Jan 2023 - Jun 2023",
+        "Period": "Jan 2023 - Jul 2023",
         "Projects": [
             {
-                "Title": "Data Analysis & Processing",
-                "Description": "Extracted and transformed sensory data from medical wearable devices into structured datasets for Parkinson's Disease treatment research."
-            },
-            {
-                "Title": "Statistical Analysis", 
-                "Description": "Conducted comprehensive statistical analysis of treatment effectiveness using medical device data to validate therapeutic approaches."
-            },
-            {
-                "Title": "ML Model Development",
-                "Description": "Developed machine learning model for personalized treatment recommendations with optimal scheduling based on patient data."
+                "Title": "Researching Solutions for Parkinson's Disease Treatment",
+                "Description": "Conducted statistical analysis and built predictive ML models (Random Forests, Logistic Regression) to evaluate the effectiveness of wearable/smartphone cues for drooling treatment in Parkinson's patients. Developed a personalized treatment schedule prediction system on AWS SageMaker, achieving 65% F1-score accuracy in predicting optimal cue timing through rigorous hyperparameter tuning and model selection."
             }
         ]
     },
-    // Seedcom
     {
-        "Company": "Seedcom - A Venture Capital Company, Vietnam",
+        "Company": "Vulcan Labs, Vietnam",
         "Position": "Machine Learning Engineer",
-        "Period": "Nov. 2020 - Nov. 2024",
+        "Period": "Jul 2020 - Nov 2020",
         "Projects": [
             {
-                "Title": "Recipe-Based Product Recommendation",
-                "Description": "Developed a NLP-based system to analyze Vietnamese recipe blogs and automatically curate product bundles, resulting in a 15% increase in bundle purchases. Implemented a real-time recommendation engine using collaborative filtering to suggest complementary products based on shopping baskets and recipe associations, leading to a 25% increase in cross-sales."
-            },
-            {
-                "Title": "Competitive Price Intelligence",
-                "Description": "Architected an automated web scraping system using Selenium and BeautifulSoup to monitor competitor pricing. Implemented a BERT-based multimodal model achieving 95% accuracy in mapping competitor products. Developed real-time price monitoring dashboards in Tableau, improving profit margins by 12%."
-            },
-            {
-                "Title": "Product and Combo Pricing",
-                "Description": "Conducted statistical analysis to identify top-performing product combinations. Developed dynamic pricing algorithm for product bundles and designed a comprehensive 1-year promotional strategy incorporating special pricing to boost sales and enhance customer engagement."
-            },
-            {
-                "Title": "Sales Forecast and Inventory Management",
-                "Description": "Deployed sophisticated forecasting models including DeepAR and LightGBM to predict sales at store and area levels. Enhanced inventory management by implementing an alert system to identify and address overstock and understock situations."
-            },
-            {
-                "Title": "AI Fashion Recommendation",
-                "Description": "Led a team of 3 engineers in developing computer vision solution using RetinaNet with 92% precision. Containerized the solution using Docker and deployed via RESTful APIs, resulting in 30% increase in click-through rates and 20% increase in cross-category purchases."
-            },
-            {
-                "Title": "Retail Data Analytics Platform",
-                "Description": "Built an in-house data analytics platform using Python and SQL, migrating from Looker Studio to reduce operational costs by $2,000 per month. The platform provides real-time sales insights, customer behavior analysis, and automated reporting for strategic decision-making."
-            },
-            {
-                "Title": "Styling Camera Application",
-                "Description": "Developed a real-time camera application that detects user appearance and recommends fashion styles using computer vision. The application integrates with the e-commerce platform to suggest relevant products, enhancing user experience and driving sales."
+                "Title": "Computer Vision for Mobile Applications",
+                "Description": "Researched and implemented Generative Adversarial Networks (GANs) including StyleGAN, StyleGAN2, and U²-Net for image enhancement and salient object detection applications. Deployed Deep Learning and Computer Vision solutions to AWS EC2 using Docker containerization, ensuring scalable production infrastructure."
             }
         ]
     },
-    // Vulcan Labs
     {
-        "Company": "Vulcan Labs",
-        "Position": "Computer Vision Engineer",
-        "Period": "Sep. 2018 - Nov. 2020",
+        "Company": "Emage Development Pte. Ltd., Singapore",
+        "Position": "Machine Learning Engineer",
+        "Period": "Jul 2019 - Jul 2020",
         "Projects": [
-            {
-                "Title": "GAN Research",
-                "Description": "Researched and implemented state-of-the-art GAN architectures to enhance image quality and create realistic synthetic datasets for training purposes."
-            },
-            {
-                "Title": "Advanced Image Processing",
-                "Description": "Developed sophisticated image processing algorithms for real-time applications, optimizing performance and accuracy for production environments."
-            },
             {
                 "Title": "Defective Semiconductor Detection",
-                "Description": "Created an automated quality control system using deep learning models to detect defective semiconductors with 98% accuracy, reducing manual inspection time by 80%."
-            },
-            {
-                "Title": "Computer Vision Pipeline",
-                "Description": "Designed and implemented end-to-end computer vision pipelines for multiple client projects, integrating object detection, segmentation, and classification models."
-            },
-            {
-                "Title": "Auto Inspection System",
-                "Description": "Built automated inspection systems for manufacturing quality control, utilizing advanced computer vision techniques to identify defects and anomalies in real-time."
+                "Description": "Collaborated with a team of 2 engineers to build a production-ready defect detection system. Built a high-precision defect detection system using YOLOv3 and RetinaNet, achieving 98% precision in identifying semiconductor defects. Engineered a computer vision pipeline combining OpenCV, Hough Transform, Canny edge detection, and ResNet for robust feature extraction. Deployed a containerized ML model to the factory floor with a 0.2-second inspection time per image, enabling real-time quality control."
             }
         ]
     },
-    // Emage Development
     {
-        "Company": "Emage Development",
-        "Position": "Software Engineer",
-        "Period": "Jun. 2017 - Sep. 2018",
+        "Company": "Robert Bosch Engineering, Vietnam",
+        "Position": "Embedded Software Engineer Intern",
+        "Period": "May 2019 - Nov 2019",
         "Projects": [
             {
-                "Title": "EV Interface Development",
-                "Description": "Developed user interfaces and control systems for electric vehicle charging stations, focusing on user experience and system reliability."
-            },
-            {
-                "Title": "Advanced C++ Development",
-                "Description": "Implemented high-performance C++ applications for embedded systems, optimizing code for resource-constrained environments and real-time operations."
+                "Title": "Renault & Nissan Interior Application for Electrical Vehicles",
+                "Description": "Trained in advanced C/C++ programming including parallel programming and application design patterns. Developed debugging tools for automotive user interface applications, supporting R&D team efficiency."
             }
         ]
     }
@@ -106,23 +96,18 @@ const experienceData = [
 // Map experience project titles to SVG filenames
 function getExperienceImageFilename(projectTitle) {
     const filenameMap = {
-        "Data Analysis & Processing": "data-analysis-processing.svg",
-        "Statistical Analysis": "statistical-analysis.svg",
-        "ML Model Development": "ml-model-development.svg",
-        "Recipe-Based Product Recommendation": "recipe-based-product-recommendation.svg",
-        "Competitive Price Intelligence": "competitive-price-intelligence.svg",
-        "Product and Combo Pricing": "product-and-combo-pricing.svg",
-        "Sales Forecast and Inventory Management": "sales-forecast-and-inventory-management.svg",
-        "AI Fashion Recommendation": "ai-fashion-recommendation.svg",
-        "Retail Data Analytics Platform": "retail-data-analytics-platform.svg",
-        "Styling Camera Application": "styling-camera-application.svg",
-        "GAN Research": "gan-research.svg",
-        "Advanced Image Processing": "advanced-image-processing.svg",
+        "Production AI Multi-Agent Systems": "advanced-cpp-development.svg",
+        "RAG + Database Hybrid Architecture": "advanced-cpp-development.svg",
+        "LLM & RAG Systems": "recipe-based-product-recommendation.svg",
+        "MLOps & Infrastructure": "computer-vision-pipeline.svg",
+        "Computer Vision - Fashion Recommendation System": "ai-fashion-recommendation.svg",
+        "Pricing Intelligence & Competitive Analysis": "competitive-price-intelligence.svg",
+        "Demand Forecasting & Inventory Optimization": "sales-forecast-and-inventory-management.svg",
+        "Data Analytics Platform": "retail-data-analytics-platform.svg",
+        "Researching Solutions for Parkinson's Disease Treatment": "ml-model-development.svg",
+        "Computer Vision for Mobile Applications": "gan-research.svg",
         "Defective Semiconductor Detection": "defective-semiconductor-detection.svg",
-        "Computer Vision Pipeline": "computer-vision-pipeline.svg",
-        "Auto Inspection System": "auto-inspection-system.svg",
-        "EV Interface Development": "ev-interface-development.svg",
-        "Advanced C++ Development": "advanced-cpp-development.svg"
+        "Renault & Nissan Interior Application for Electrical Vehicles": "ev-interface-development.svg"
     };
 
     return filenameMap[projectTitle] || "placeholder.svg";
