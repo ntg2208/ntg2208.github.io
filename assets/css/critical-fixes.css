@@ -267,3 +267,31 @@ img {
         transition: opacity 0.6s ease-out, transform 0.6s ease-out;
     }
 }
+
+/* Fix 31: Remove red outline from contact form inputs */
+/* Prevent :invalid pseudo-class from showing red outline on page load */
+#contact input:invalid,
+#contact textarea:invalid {
+    box-shadow: none !important;
+}
+
+/* Remove browser default invalid styling */
+#contact input:not(:focus):not(:placeholder-shown):invalid,
+#contact textarea:not(:focus):not(:placeholder-shown):invalid {
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+/* Only show validation styles when user has interacted */
+#contact input.touched:invalid,
+#contact textarea.touched:invalid {
+    border-color: rgba(231, 76, 60, 0.5) !important;
+}
+
+/* Fix form input focus states in contact section */
+#contact input:focus-visible,
+#contact textarea:focus-visible {
+    outline: 2px solid rgba(255, 255, 255, 0.5) !important;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1) !important;
+}
