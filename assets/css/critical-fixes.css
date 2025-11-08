@@ -268,20 +268,30 @@ img {
     }
 }
 
-/* Fix 31: Remove red outline from contact form inputs */
-/* Completely override all invalid/error styling */
+/* Fix 31: Remove red outline from contact form inputs - COMPREHENSIVE FIX */
+/* Force white borders on ALL states - override everything */
 #contact input,
-#contact textarea {
+#contact textarea,
+#contact input[type="text"],
+#contact input[type="email"],
+#contact input:required,
+#contact textarea:required {
     border: 2px solid rgba(255, 255, 255, 0.2) !important;
     box-shadow: none !important;
     outline: none !important;
 }
 
-/* Prevent :invalid pseudo-class from showing red outline */
+/* Override all invalid/error pseudo-classes */
 #contact input:invalid,
 #contact textarea:invalid,
+#contact input:required:invalid,
+#contact textarea:required:invalid,
+#contact input[type="email"]:invalid,
 #contact input:not(:focus):invalid,
-#contact textarea:not(:focus):invalid {
+#contact textarea:not(:focus):invalid,
+#contact input:not(:placeholder-shown):invalid,
+#contact textarea:not(:placeholder-shown):invalid {
+    border: 2px solid rgba(255, 255, 255, 0.2) !important;
     border-color: rgba(255, 255, 255, 0.2) !important;
     box-shadow: none !important;
     outline: none !important;
@@ -289,21 +299,38 @@ img {
 
 /* Normal focus state - white outline */
 #contact input:focus,
-#contact textarea:focus {
+#contact textarea:focus,
+#contact input:required:focus,
+#contact textarea:required:focus {
     outline: 2px solid rgba(255, 255, 255, 0.5) !important;
     outline-offset: 2px;
+    border: 2px solid rgba(255, 255, 255, 0.5) !important;
     border-color: rgba(255, 255, 255, 0.5) !important;
     box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1) !important;
     background: rgba(255, 255, 255, 0.15) !important;
 }
 
-/* Remove any red error styling completely */
+/* Remove any error classes or invalid focus states */
 #contact input.error,
 #contact textarea.error,
 #contact input:invalid:focus,
-#contact textarea:invalid:focus {
+#contact textarea:invalid:focus,
+#contact input:required:invalid:focus,
+#contact textarea:required:invalid:focus {
+    border: 2px solid rgba(255, 255, 255, 0.5) !important;
     border-color: rgba(255, 255, 255, 0.5) !important;
+    outline: 2px solid rgba(255, 255, 255, 0.5) !important;
     outline-color: rgba(255, 255, 255, 0.5) !important;
+}
+
+/* Override autofill styles */
+#contact input:-webkit-autofill,
+#contact textarea:-webkit-autofill,
+#contact input:-webkit-autofill:hover,
+#contact input:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0 1000px rgba(255, 255, 255, 0.1) inset !important;
+    -webkit-text-fill-color: white !important;
+    border: 2px solid rgba(255, 255, 255, 0.2) !important;
 }
 
 /* Fix 32: Compact card styles without images */
