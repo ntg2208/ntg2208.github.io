@@ -319,3 +319,48 @@ img {
     display: block !important;
     overflow: visible !important;
 }
+
+/* Fix 33: Speed up hover effects for better responsiveness */
+.project-card {
+    transition: transform 0.15s cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1),
+                border-color 0.15s ease !important;
+}
+
+.project-card:hover,
+.project-card:focus-within {
+    transform: translateY(-5px) scale(1.01) !important;
+}
+
+.experience-category,
+.project-category {
+    transition: transform 0.15s ease,
+                box-shadow 0.15s ease !important;
+}
+
+.icon {
+    transition: transform 0.15s cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1),
+                border-color 0.15s ease !important;
+}
+
+.icon:hover {
+    transform: translateY(-3px) scale(1.03) !important;
+}
+
+/* Speed up button transitions */
+.btn-primary,
+.btn-secondary {
+    transition: transform 0.15s ease,
+                box-shadow 0.15s ease,
+                background-color 0.15s ease !important;
+}
+
+/* Speed up nav link transitions */
+.nav-link {
+    transition: all 0.15s ease !important;
+}
+
+.nav-link::after {
+    transition: width 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
