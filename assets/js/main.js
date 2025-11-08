@@ -146,23 +146,40 @@ document.addEventListener('DOMContentLoaded', function() {
     function getProjectImageFilename(projectName) {
         // Manual mapping for existing files
         const fileMapping = {
-            'Shakespeare-Style Text Generation using Hidden Markov Models': 'shakespeare-text-generation',
-            'Wind Turbine Yaw System Performance Analysis': 'wind-turbine-yaw-system',
+            // NLP Projects
+            'Efficient Clinical Notes Summarization with LoRA Fine-tuning': 'docpatientsumm-lora',
+            'Agentic RAG System with Llama3 & LangGraph': 'rag-agent-llama3',
+            'DocPatientSumm: Clinical Conversation Summarization with LoRA': 'docpatientsumm-lora',
+            'Building Q&A System with RAG using LangChain & Llama2': 'building-qa-system-rag-langchain-llama2',
+            'Complaint Tweet Classification with Prompt Tuning': 'complaint-tweet-classification',
+            'Shakespeare-Style Text Generation with Hidden Markov Models': 'shakespeare-text-generation',
+
+            // Healthcare Projects
+            'CIBMTR - Equity in Post-HCT Survival Predictions': 'cibmtr-equity-post-hct-survival-predictions',
             'NHS Employment Gap Analysis Using Machine Learning': 'nhs-employment-gap-analysis',
-            'DocPatientSumm: Low-Rank Adaptation (LoRA) finetune for Clinical Conversations': 'docpatientsumm-lora',
-            'Complaint Tweet Classification using Prompt Tuning of Large Language Models (LLMs)': 'complaint-tweet-classification',
-            'RAG agent llama3': 'rag-agent-llama3',
-            'Building a Q&A System with Retrieval-Augmented Generation (RAG) using LangChain and llama2': 'building-qa-system-rag-langchain-llama2',
-            'Malaria Parasite Detection using Deep Learning (TensorFlow v2)': 'malaria-parasite-detection-deep-learning',
-            'Hospital readmission prediction': 'hospital-readmission-prediction',
+            'Hospital Readmission Prediction System': 'hospital-readmission-prediction',
+            'Malaria Parasite Detection using Deep Learning': 'malaria-parasite-detection-deep-learning',
+            'LUNA 16: Lung Nodule Analysis': 'lung-nodule-analysis-luna16',
+
+            // Energy & Analysis Projects
+            'Wind Turbine Yaw System Performance Analysis': 'wind-turbine-yaw-system',
+            'M1 Motorway Traffic Analysis': 'm1-traffic-analysis',
+            'Edible Mushroom Classification System': 'edible-mushroom-analysis',
+
+            // Computer Vision Projects
+            'Customer Sentiment Analysis with Facial Recognition': 'customer-sentiment-analysis',
+            'Combating Exam Impersonation in Universities': 'combating-exam-impersonation-universities',
+            'JPEG Image Compression Algorithm': 'jpeg-image-compression-python',
+
+            // E-commerce
             'Multimodal Conversational AI for E-commerce': 'multimodal-conversational-ai-ecommerce'
         };
-        
+
         // Check if we have a manual mapping
         if (fileMapping[projectName]) {
             return fileMapping[projectName];
         }
-        
+
         // Fallback to automatic conversion
         return projectName.toLowerCase()
             .replace(/[^a-z0-9\s-]/g, '') // Remove special characters
