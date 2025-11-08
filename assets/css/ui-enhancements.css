@@ -1,0 +1,866 @@
+/* ============================================
+   MODERN UI/UX ENHANCEMENTS
+   Advanced animations, micro-interactions, and visual effects
+   ============================================ */
+
+/* Enhanced CSS Variables */
+:root {
+    /* Advanced Gradients */
+    --gradient-vibrant: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --gradient-sunset: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    --gradient-ocean-deep: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #60a5fa 100%);
+    --gradient-mesh:
+        radial-gradient(at 40% 20%, rgba(37, 99, 235, 0.15) 0px, transparent 50%),
+        radial-gradient(at 80% 0%, rgba(96, 165, 250, 0.15) 0px, transparent 50%),
+        radial-gradient(at 0% 50%, rgba(30, 58, 138, 0.15) 0px, transparent 50%),
+        radial-gradient(at 80% 50%, rgba(59, 130, 246, 0.15) 0px, transparent 50%),
+        radial-gradient(at 0% 100%, rgba(37, 99, 235, 0.15) 0px, transparent 50%),
+        radial-gradient(at 80% 100%, rgba(96, 165, 250, 0.15) 0px, transparent 50%);
+
+    /* Advanced Shadows */
+    --shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.06);
+    --shadow-medium: 0 4px 16px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.06);
+    --shadow-large: 0 12px 24px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.08);
+    --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.16), 0 8px 16px rgba(0, 0, 0, 0.12);
+    --shadow-colored: 0 10px 30px rgba(37, 99, 235, 0.2), 0 4px 12px rgba(37, 99, 235, 0.15);
+    --shadow-colored-hover: 0 15px 40px rgba(37, 99, 235, 0.3), 0 6px 16px rgba(37, 99, 235, 0.2);
+
+    /* Advanced Transitions */
+    --transition-smooth: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --transition-elastic: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+[data-theme="dark"] {
+    --shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.3), 0 1px 2px rgba(0, 0, 0, 0.4);
+    --shadow-medium: 0 4px 16px rgba(0, 0, 0, 0.4), 0 2px 4px rgba(0, 0, 0, 0.3);
+    --shadow-large: 0 12px 24px rgba(0, 0, 0, 0.5), 0 4px 8px rgba(0, 0, 0, 0.4);
+    --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.6), 0 8px 16px rgba(0, 0, 0, 0.5);
+    --shadow-colored: 0 10px 30px rgba(96, 165, 250, 0.3), 0 4px 12px rgba(96, 165, 250, 0.2);
+    --shadow-colored-hover: 0 15px 40px rgba(96, 165, 250, 0.4), 0 6px 16px rgba(96, 165, 250, 0.3);
+}
+
+/* ============================================
+   ENHANCED HERO SECTION WITH GEOMETRIC PATTERNS
+   ============================================ */
+
+.hero-section {
+    background: var(--hero-bg);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Animated geometric background */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: var(--gradient-mesh);
+    animation: meshRotate 30s ease-in-out infinite;
+    opacity: 1;
+    z-index: 0;
+}
+
+.hero-section::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 200px;
+    background: linear-gradient(to top, var(--background-color), transparent);
+    z-index: 1;
+}
+
+@keyframes meshRotate {
+    0%, 100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    25% {
+        transform: translate(-10px, -10px) rotate(1deg);
+    }
+    50% {
+        transform: translate(-20px, 10px) rotate(-1deg);
+    }
+    75% {
+        transform: translate(10px, -5px) rotate(0.5deg);
+    }
+}
+
+/* Floating particles effect */
+.hero-particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: var(--accent-color);
+    border-radius: 50%;
+    opacity: 0.3;
+    animation: floatParticle 20s infinite;
+}
+
+.particle:nth-child(1) { left: 10%; animation-delay: 0s; }
+.particle:nth-child(2) { left: 20%; animation-delay: 2s; }
+.particle:nth-child(3) { left: 30%; animation-delay: 4s; }
+.particle:nth-child(4) { left: 40%; animation-delay: 1s; }
+.particle:nth-child(5) { left: 50%; animation-delay: 3s; }
+.particle:nth-child(6) { left: 60%; animation-delay: 5s; }
+.particle:nth-child(7) { left: 70%; animation-delay: 2.5s; }
+.particle:nth-child(8) { left: 80%; animation-delay: 4.5s; }
+.particle:nth-child(9) { left: 90%; animation-delay: 1.5s; }
+
+@keyframes floatParticle {
+    0% {
+        transform: translateY(100vh) scale(0);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.3;
+    }
+    90% {
+        opacity: 0.3;
+    }
+    100% {
+        transform: translateY(-100px) scale(1);
+        opacity: 0;
+    }
+}
+
+/* ============================================
+   ENHANCED BUTTON STYLES WITH MICRO-INTERACTIONS
+   ============================================ */
+
+.btn-primary,
+.btn-secondary {
+    position: relative;
+    overflow: hidden;
+    transform: translateZ(0);
+    will-change: transform, box-shadow;
+    isolation: isolate;
+}
+
+/* Shimmer effect on hover */
+.btn-primary::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent 30%,
+        rgba(255, 255, 255, 0.3) 50%,
+        transparent 70%
+    );
+    transform: translateX(-100%) translateY(-100%) rotate(45deg);
+    transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.btn-primary:hover::after {
+    transform: translateX(100%) translateY(100%) rotate(45deg);
+}
+
+/* Ripple effect on click */
+.btn-ripple {
+    position: relative;
+    overflow: hidden;
+}
+
+.ripple {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    transform: scale(0);
+    animation: ripple 0.6s ease-out;
+    pointer-events: none;
+}
+
+@keyframes ripple {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+/* ============================================
+   ENHANCED CARD DESIGNS WITH 3D EFFECTS
+   ============================================ */
+
+.project-card,
+.education-item,
+.testimonial-card {
+    position: relative;
+    transform-style: preserve-3d;
+    transition: var(--transition-smooth);
+}
+
+.project-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(37, 99, 235, 0.05) 0%,
+        transparent 50%,
+        rgba(96, 165, 250, 0.05) 100%
+    );
+    border-radius: var(--border-radius);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.project-card:hover::before {
+    opacity: 1;
+}
+
+/* Glass-morphism enhancement */
+.glass-card {
+    background: var(--glass-background);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: var(--shadow-large);
+}
+
+[data-theme="dark"] .glass-card {
+    background: rgba(30, 41, 59, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Magnetic hover effect for cards */
+.magnetic-card {
+    transition: transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.magnetic-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: var(--shadow-xl);
+}
+
+/* ============================================
+   ADVANCED FORM STYLES WITH FLOATING LABELS
+   ============================================ */
+
+.form-group {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.form-group label {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    pointer-events: none;
+    color: var(--muted-text-color);
+    background: var(--card-background);
+    padding: 0 0.5rem;
+}
+
+.form-group input:focus + label,
+.form-group textarea:focus + label,
+.form-group input:not(:placeholder-shown) + label,
+.form-group textarea:not(:placeholder-shown) + label {
+    top: -0.75rem;
+    left: 0.75rem;
+    font-size: 0.85rem;
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid var(--border-color);
+    border-radius: var(--border-radius);
+    background: var(--card-background);
+    color: var(--text-color);
+    font-size: 1rem;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.form-group input:focus::placeholder,
+.form-group textarea:focus::placeholder {
+    opacity: 0.5;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+    transform: translateY(-2px);
+}
+
+/* Input validation states */
+.form-group input:valid,
+.form-group textarea:valid {
+    border-color: var(--success-color);
+}
+
+.form-group input:invalid:not(:placeholder-shown),
+.form-group textarea:invalid:not(:placeholder-shown) {
+    border-color: var(--error-color);
+}
+
+/* ============================================
+   SMOOTH SCROLL ANIMATIONS
+   ============================================ */
+
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.fade-in-left {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.fade-in-right {
+    opacity: 0;
+    transform: translateX(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.scale-in {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.scale-in.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Stagger animation for children */
+.stagger-container .stagger-item {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.stagger-container.visible .stagger-item:nth-child(1) { transition-delay: 0.1s; }
+.stagger-container.visible .stagger-item:nth-child(2) { transition-delay: 0.2s; }
+.stagger-container.visible .stagger-item:nth-child(3) { transition-delay: 0.3s; }
+.stagger-container.visible .stagger-item:nth-child(4) { transition-delay: 0.4s; }
+.stagger-container.visible .stagger-item:nth-child(5) { transition-delay: 0.5s; }
+.stagger-container.visible .stagger-item:nth-child(6) { transition-delay: 0.6s; }
+
+.stagger-container.visible .stagger-item {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ============================================
+   ENHANCED NAVIGATION WITH BLUR EFFECT
+   ============================================ */
+
+.main-header {
+    background: var(--glass-background);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.main-header.scrolled {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Animated underline for nav links */
+.nav-link {
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-link::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--gradient);
+    transform: translateX(-100%);
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.nav-link:hover::before,
+.nav-link.active::before {
+    transform: translateX(0);
+}
+
+/* ============================================
+   ENHANCED SKILL ICONS WITH GLOW EFFECT
+   ============================================ */
+
+.icon {
+    position: relative;
+    transition: var(--transition-smooth);
+}
+
+.icon::after {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    background: var(--gradient);
+    border-radius: var(--border-radius);
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.3s ease;
+    filter: blur(8px);
+}
+
+.icon:hover::after {
+    opacity: 0.5;
+}
+
+.icon:hover {
+    transform: translateY(-10px) rotate(5deg) scale(1.1);
+    box-shadow: var(--shadow-colored-hover);
+}
+
+/* ============================================
+   TESTIMONIAL SLIDER ENHANCEMENTS
+   ============================================ */
+
+.testimonial-slider-container {
+    position: relative;
+    padding: 2rem 0;
+}
+
+.testimonial-card {
+    background: linear-gradient(135deg, var(--card-background), var(--surface-2));
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    transition: var(--transition-smooth);
+}
+
+.testimonial-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--gradient);
+    transition: width 0.3s ease;
+}
+
+.testimonial-card:hover::before {
+    width: 100%;
+    opacity: 0.05;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-colored-hover);
+}
+
+/* ============================================
+   SCROLL PROGRESS INDICATOR
+   ============================================ */
+
+.scroll-indicator {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--surface-2);
+    z-index: 9999;
+}
+
+.scroll-progress {
+    height: 100%;
+    background: var(--gradient);
+    width: 0%;
+    transition: width 0.1s ease;
+    box-shadow: 0 0 10px var(--accent-color);
+}
+
+/* ============================================
+   LOADING STATES WITH SKELETON SHIMMER
+   ============================================ */
+
+@keyframes shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
+.skeleton {
+    background: linear-gradient(
+        90deg,
+        var(--surface-2) 0px,
+        var(--surface-3) 40px,
+        var(--surface-2) 80px
+    );
+    background-size: 1000px 100%;
+    animation: shimmer 2s infinite linear;
+}
+
+/* ============================================
+   ENHANCED HOVER EFFECTS FOR PROFILE IMAGE
+   ============================================ */
+
+.profile-hero-img {
+    position: relative;
+    transition: var(--transition-smooth);
+    filter: grayscale(0);
+}
+
+.profile-hero-img:hover {
+    transform: scale(1.05) rotate(2deg);
+    box-shadow: 0 25px 50px rgba(37, 99, 235, 0.3);
+    filter: grayscale(0) brightness(1.1);
+}
+
+/* Animated ring around profile image */
+.hero-image::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 360px;
+    height: 360px;
+    border: 3px solid var(--accent-color);
+    border-radius: 50%;
+    opacity: 0.3;
+    transform: translate(-50%, -50%);
+    animation: pulseRing 3s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
+    z-index: 1;
+}
+
+@keyframes pulseRing {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.3;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.1);
+        opacity: 0.1;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.3;
+    }
+}
+
+/* ============================================
+   CONTACT SECTION ENHANCEMENTS
+   ============================================ */
+
+#contact {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Animated gradient background */
+#contact::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: var(--gradient-mesh);
+    animation: gradientShift 20s ease infinite;
+    opacity: 0.5;
+    z-index: 1;
+}
+
+@keyframes gradientShift {
+    0%, 100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    33% {
+        transform: translate(5%, 5%) rotate(120deg);
+    }
+    66% {
+        transform: translate(-5%, 5%) rotate(240deg);
+    }
+}
+
+.contact-links li a {
+    position: relative;
+    overflow: hidden;
+    transition: var(--transition-smooth);
+}
+
+.contact-links li a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.contact-links li a:hover::before {
+    left: 100%;
+}
+
+/* ============================================
+   BACK TO TOP BUTTON ENHANCEMENT
+   ============================================ */
+
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 50px;
+    height: 50px;
+    background: var(--gradient);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    box-shadow: var(--shadow-colored);
+    transition: var(--transition-smooth);
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1000;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    animation: bounceIn 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@keyframes bounceIn {
+    0% {
+        transform: scale(0) rotate(0deg);
+    }
+    50% {
+        transform: scale(1.2) rotate(180deg);
+    }
+    100% {
+        transform: scale(1) rotate(360deg);
+    }
+}
+
+.back-to-top:hover {
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: var(--shadow-colored-hover);
+}
+
+.back-to-top:active {
+    transform: translateY(-3px) scale(1.05);
+}
+
+/* ============================================
+   SECTION DIVIDERS WITH GRADIENTS
+   ============================================ */
+
+.section-divider {
+    height: 1px;
+    background: var(--gradient);
+    margin: 4rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.section-divider::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, white, transparent);
+    animation: shimmerLine 3s infinite;
+}
+
+@keyframes shimmerLine {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+/* ============================================
+   RESPONSIVE ENHANCEMENTS
+   ============================================ */
+
+@media (max-width: 768px) {
+    .hero-section::before {
+        animation-duration: 40s;
+    }
+
+    .magnetic-card:hover {
+        transform: translateY(-4px) scale(1.01);
+    }
+
+    .icon:hover {
+        transform: translateY(-5px) scale(1.05);
+    }
+}
+
+/* ============================================
+   PERFORMANCE OPTIMIZATIONS
+   ============================================ */
+
+/* Enable hardware acceleration for smooth animations */
+.hero-section,
+.project-card,
+.btn-primary,
+.btn-secondary,
+.icon,
+.nav-link,
+.back-to-top {
+    transform: translateZ(0);
+    will-change: transform;
+    backface-visibility: hidden;
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+
+/* Disable animations on low-performance devices */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .fade-in-up,
+    .fade-in-left,
+    .fade-in-right,
+    .scale-in {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+/* ============================================
+   DARK MODE SPECIFIC ENHANCEMENTS
+   ============================================ */
+
+[data-theme="dark"] .glass-card {
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+[data-theme="dark"] .project-card:hover {
+    box-shadow: var(--shadow-colored-hover);
+}
+
+[data-theme="dark"] .form-group input:focus,
+[data-theme="dark"] .form-group textarea:focus {
+    box-shadow: 0 0 0 4px rgba(96, 165, 250, 0.2);
+}
+
+/* ============================================
+   ACCESSIBILITY IMPROVEMENTS
+   ============================================ */
+
+/* Focus visible for keyboard navigation */
+.btn-primary:focus-visible,
+.btn-secondary:focus-visible,
+.nav-link:focus-visible,
+.form-group input:focus-visible,
+.form-group textarea:focus-visible {
+    outline: 3px solid var(--accent-color);
+    outline-offset: 3px;
+}
+
+/* Skip to main content link */
+.skip-to-main {
+    position: absolute;
+    top: -100px;
+    left: 0;
+    background: var(--accent-color);
+    color: white;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    border-radius: 0 0 var(--border-radius) 0;
+    z-index: 10000;
+    transition: top 0.3s;
+}
+
+.skip-to-main:focus {
+    top: 0;
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+
+@media print {
+    .hero-section::before,
+    .hero-section::after,
+    .particle,
+    .back-to-top,
+    .scroll-indicator,
+    .section-divider::before,
+    #contact::before {
+        display: none !important;
+    }
+
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}
