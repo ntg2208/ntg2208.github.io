@@ -37,21 +37,39 @@
 /* Fix 3: Remove blur from profile images */
 .profile-hero-img {
     filter: none !important;
+    -webkit-filter: none !important;
 }
 
 .profile-hero-img:hover {
     filter: none !important;
+    -webkit-filter: none !important;
 }
 
 .about-image-modern img {
     filter: none !important;
+    -webkit-filter: none !important;
 }
 
-/* Fix 4: Fix icon blur issues - reduced for better performance */
+/* Fix 3.5: Remove blur and grayscale from skill icons */
+.icon img,
+#skills .icon img,
+.skills-grid .icon img {
+    filter: none !important;
+    -webkit-filter: none !important;
+}
+
+/* Keep hover effect but remove blur/shadow */
+.icon:hover img,
+#skills .icon:hover img,
+.skills-grid .icon:hover img {
+    filter: none !important;
+    -webkit-filter: none !important;
+    transform: scale(1.1) rotate(5deg) !important;
+}
+
+/* Fix 4: DISABLE icon pseudo-element blur for crisp icons */
 .icon::after {
-    filter: blur(4px) !important;
-    z-index: -1;
-    opacity: 0.5;
+    display: none !important;
 }
 
 /* Fix 5: Ensure sections don't overlap */
