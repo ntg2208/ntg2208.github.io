@@ -32,6 +32,7 @@
     <noscript><link rel="stylesheet" href="assets/css/styles.min.css"></noscript>
 
     <link rel="stylesheet" href="assets/css/performance-fixes.min.css">
+    <link rel="stylesheet" href="assets/css/ui-enhancements.css">
 
     <!-- Inline critical image preloader for faster loading -->
     <script>
@@ -49,6 +50,7 @@
     <script src="assets/js/projects.min.js" defer></script>
     <script src="assets/js/experience.min.js" defer></script>
     <script src="assets/js/main.min.js" defer></script>
+    <script src="assets/js/ui-enhancements.js" defer></script>
 </head>
 <body>
     <!-- Scroll Progress Indicator -->
@@ -121,8 +123,8 @@
             </div>
         </section>
         
-        <main role="main">
-            <section id="about" aria-labelledby="about-heading" class="about-section-modern">
+        <main role="main" id="main">
+            <section id="about" aria-labelledby="about-heading" class="about-section-modern fade-in-up">
                 <h2 id="about-heading">About Me</h2>
                 <div class="about-container-modern">
                     <div class="about-image-modern">
@@ -150,63 +152,63 @@
                 </div>
             </section>
 
-            <section id="skills" aria-labelledby="skills-heading">
+            <section id="skills" aria-labelledby="skills-heading" class="fade-in-up">
                 <h2 id="skills-heading">Skills</h2>
-                
-                <div class="skills-grid" role="region" aria-label="Technical Skills">
+
+                <div class="skills-grid stagger-container" role="region" aria-label="Technical Skills">
                         <!-- First set of icons -->
-                        <div class="icon" role="listitem">
+                        <div class="icon stagger-item magnetic-card" role="listitem">
                             <img src="assets/img/skills/python.png" alt="Python" loading="lazy">
                             <span>Python</span>
                         </div>
-                        <div class="icon" role="listitem">
+                        <div class="icon stagger-item magnetic-card" role="listitem">
                             <img src="assets/img/skills/cpp.png" alt="C++" loading="lazy">
                             <span>C++</span>
                         </div>
-                        <div class="icon" role="listitem">
+                        <div class="icon stagger-item magnetic-card" role="listitem">
                             <img src="assets/img/skills/R.png" alt="R" loading="lazy">
                             <span>R</span>
                         </div>
-                        <div class="icon" role="listitem">
+                        <div class="icon stagger-item magnetic-card" role="listitem">
                             <img src="assets/img/skills/sql.png" alt="SQL" loading="lazy">
                             <span>SQL</span>
                         </div>
-                        <div class="icon" role="listitem">
+                        <div class="icon stagger-item magnetic-card" role="listitem">
                             <img src="assets/img/skills/Matlab.png" alt="MATLAB" loading="lazy">
                             <span>MATLAB</span>
                         </div>
-                        <div class="icon" role="listitem">
+                        <div class="icon stagger-item magnetic-card" role="listitem">
                             <img src="assets/img/skills/pytorch.png" alt="PyTorch" loading="lazy">
                             <span>PyTorch</span>
                         </div>
-                        <div class="icon" role="listitem">
+                        <div class="icon stagger-item magnetic-card" role="listitem">
                             <img src="assets/img/skills/tf.png" alt="TensorFlow" loading="lazy">
                             <span>TensorFlow</span>
                         </div>
-                        <div class="icon" role="listitem">
+                        <div class="icon stagger-item magnetic-card" role="listitem">
                             <img src="assets/img/skills/hf.png" alt="HuggingFace" loading="lazy">
                             <span>HuggingFace</span>
                         </div>
-                        <div class="icon" role="listitem">
+                        <div class="icon stagger-item magnetic-card" role="listitem">
                             <img src="assets/img/skills/opencv.png" alt="OpenCV" loading="lazy">
                             <span>OpenCV</span>
                         </div>
-                        <div class="icon" role="listitem">
+                        <div class="icon stagger-item magnetic-card" role="listitem">
                             <img src="assets/img/skills/sklearn.png" alt="Scikit-learn" loading="lazy">
                             <span>Scikit-learn</span>
                         </div>
-                        <div class="icon" role="listitem">
+                        <div class="icon stagger-item magnetic-card" role="listitem">
                             <img src="assets/img/skills/aws.png" alt="AWS" loading="lazy">
                             <span>AWS</span>
                         </div>
-                        <div class="icon" role="listitem">
+                        <div class="icon stagger-item magnetic-card" role="listitem">
                             <img src="assets/img/skills/gcp.png" alt="GCP" loading="lazy">
                             <span>GCP</span>
                         </div>
                 </div>
             </section>
 
-            <section id="experience" aria-labelledby="experience-heading">
+            <section id="experience" aria-labelledby="experience-heading" class="fade-in-up">
                 <h2 id="experience-heading">Experience</h2>
                 <div class="experience-skeleton">
                     <div class="skeleton-experience-item">
@@ -248,7 +250,7 @@
                 </div>
             </section>
 
-            <section id="projects" aria-labelledby="projects-heading">
+            <section id="projects" aria-labelledby="projects-heading" class="fade-in-up">
                 <h2 id="projects-heading">Projects</h2>
                 
                 <!-- Project Search and Filter -->
@@ -306,7 +308,7 @@
                 </div>
             </section>
 
-            <section id="education" aria-labelledby="education-heading">
+            <section id="education" aria-labelledby="education-heading" class="fade-in-up">
                 <h2 id="education-heading">Education</h2>
 
                 <div class="education-item">
@@ -324,12 +326,12 @@
                 </div>
             </section>
 
-            <section id="testimonials" aria-labelledby="testimonials-heading">
+            <section id="testimonials" aria-labelledby="testimonials-heading" class="fade-in-up">
                 <h2 id="testimonials-heading">What People Say</h2>
                 
                 <div class="testimonial-slider-container">
                     <div class="testimonial-slider">
-                        <div class="testimonial-card">
+                        <div class="testimonial-card glass-card">
                             <div class="testimonial-content">
                                 <div class="quote-icon">
                                     <i class="fas fa-quote-left"></i>
@@ -345,7 +347,7 @@
                             </div>
                         </div>
 
-                        <div class="testimonial-card">
+                        <div class="testimonial-card glass-card">
                             <div class="testimonial-content">
                                 <div class="quote-icon">
                                     <i class="fas fa-quote-left"></i>
@@ -361,7 +363,7 @@
                             </div>
                         </div>
 
-                        <div class="testimonial-card">
+                        <div class="testimonial-card glass-card">
                             <div class="testimonial-content">
                                 <div class="quote-icon">
                                     <i class="fas fa-quote-left"></i>
