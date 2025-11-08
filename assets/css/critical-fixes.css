@@ -50,7 +50,16 @@
     -webkit-filter: none !important;
 }
 
-/* Fix 3.5: Remove blur and grayscale from skill icons */
+/* Fix 3.5: AGGRESSIVELY Remove ALL blur and grayscale from skill icons */
+/* Remove backdrop-filter from icon containers */
+.icon,
+#skills .icon,
+.skills-grid .icon {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+}
+
+/* Remove all filters from icon images */
 .icon img,
 #skills .icon img,
 .skills-grid .icon img {
@@ -58,7 +67,7 @@
     -webkit-filter: none !important;
 }
 
-/* Keep hover effect but remove blur/shadow */
+/* Remove ALL filters on hover (including drop-shadow) */
 .icon:hover img,
 #skills .icon:hover img,
 .skills-grid .icon:hover img {
@@ -67,8 +76,16 @@
     transform: scale(1.1) rotate(5deg) !important;
 }
 
-/* Fix 4: DISABLE icon pseudo-element blur for crisp icons */
-.icon::after {
+/* Fix 4: DISABLE icon pseudo-elements completely */
+.icon::after,
+#skills .icon::after,
+.skills-grid .icon::after {
+    display: none !important;
+}
+
+.icon::before,
+#skills .icon::before,
+.skills-grid .icon::before {
     display: none !important;
 }
 
