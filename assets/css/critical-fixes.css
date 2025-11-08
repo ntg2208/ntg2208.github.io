@@ -1,0 +1,254 @@
+/* ============================================
+   CRITICAL FIXES FOR UI ISSUES
+   This file fixes: blur, z-index, overlapping, header issues
+   ============================================ */
+
+/* Fix 1: Remove excessive backdrop blur from header */
+.main-header {
+    background: var(--glass-background) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    z-index: 9999 !important;
+    position: fixed !important;
+}
+
+/* Fix 2: Ensure hero section doesn't overlap other content */
+.hero-section {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-section::before,
+.hero-section::after {
+    z-index: 0;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* Fix 3: Remove blur from profile images */
+.profile-hero-img {
+    filter: none !important;
+}
+
+.profile-hero-img:hover {
+    filter: none !important;
+}
+
+.about-image-modern img {
+    filter: none !important;
+}
+
+/* Fix 4: Fix icon blur issues */
+.icon::after {
+    filter: blur(6px) !important;
+    z-index: -1;
+}
+
+/* Fix 5: Ensure sections don't overlap */
+section {
+    position: relative;
+    z-index: 2;
+    isolation: isolate;
+}
+
+/* Fix 6: Fix nav link hover - remove conflicting ::before */
+.nav-link::before {
+    display: none !important;
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--accent-color);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-link.active::after,
+.nav-link:hover::after {
+    width: 80%;
+}
+
+/* Fix 7: Reduce aggressive animations */
+.magnetic-card:hover {
+    transform: translateY(-4px) scale(1.01) !important;
+}
+
+.icon:hover {
+    transform: translateY(-5px) scale(1.05) !important;
+}
+
+/* Fix 8: Fix back to top button z-index */
+.back-to-top {
+    z-index: 9998 !important;
+}
+
+/* Fix 9: Fix scroll indicator z-index */
+.scroll-indicator {
+    z-index: 10000 !important;
+}
+
+/* Fix 10: Ensure proper stacking context for cards */
+.project-card,
+.education-item,
+.testimonial-card {
+    isolation: isolate;
+}
+
+/* Fix 11: Remove transform from sections on load */
+section {
+    opacity: 1 !important;
+    transform: none !important;
+}
+
+/* Fix 12: Fix parallax causing overlap */
+.hero-section {
+    transform: none !important;
+}
+
+/* Fix 13: Reduce backdrop blur on glass cards */
+.glass-card {
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+}
+
+/* Fix 14: Ensure contact section doesn't overflow */
+#contact {
+    overflow: visible;
+}
+
+#contact::before {
+    opacity: 0.3 !important;
+}
+
+/* Fix 15: Fix loading image blur */
+.loading-image {
+    opacity: 0.5;
+    filter: none !important;
+}
+
+.loaded-image {
+    opacity: 1;
+    filter: none !important;
+}
+
+/* Fix 16: Ensure hero particles don't interfere */
+.hero-particles {
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Fix 17: Fix stagger animation initialization */
+.stagger-item {
+    opacity: 1 !important;
+    transform: none !important;
+}
+
+/* Fix 18: Fix fade-in elements on page load */
+.fade-in-up,
+.fade-in-left,
+.fade-in-right,
+.scale-in {
+    opacity: 1;
+    transform: none;
+}
+
+/* Only animate when visible class is added */
+.fade-in-up.animating {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.fade-in-up.animating.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Fix 19: Ensure proper header stacking */
+.navbar {
+    position: relative;
+    z-index: 10001;
+}
+
+/* Fix 20: Fix mobile menu z-index */
+.nav-menu {
+    z-index: 9997;
+}
+
+.mobile-menu-toggle {
+    z-index: 10002;
+}
+
+/* Fix 21: Remove excessive transforms */
+.btn-primary:hover,
+.btn-secondary:hover {
+    transform: translateY(-2px) !important;
+}
+
+/* Fix 22: Fix testimonial slider z-index */
+.testimonial-slider-container {
+    position: relative;
+    z-index: 1;
+}
+
+/* Fix 23: Ensure images are crisp */
+img {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+}
+
+/* Fix 24: Remove blur from skill icon images */
+.icon img {
+    filter: none !important;
+}
+
+/* Fix 25: Fix form z-index */
+.contact-form {
+    position: relative;
+    z-index: 3;
+}
+
+/* Fix 26: Reduce particle effect intensity */
+.particle {
+    opacity: 0.2 !important;
+}
+
+/* Fix 27: Fix hero image z-index */
+.hero-image {
+    position: relative;
+    z-index: 3;
+}
+
+.hero-bg-decoration {
+    z-index: 1;
+}
+
+/* Fix 28: Ensure text is readable */
+.hero-text {
+    position: relative;
+    z-index: 3;
+}
+
+/* Fix 29: Fix skill icons positioning */
+.skills-grid {
+    position: relative;
+    z-index: 2;
+}
+
+/* Fix 30: Disable problematic animations on page load */
+@media (prefers-reduced-motion: no-preference) {
+    /* Only enable smooth animations after page load */
+    .page-loaded .fade-in-up,
+    .page-loaded .fade-in-left,
+    .page-loaded .fade-in-right,
+    .page-loaded .scale-in {
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+}

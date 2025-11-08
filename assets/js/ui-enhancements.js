@@ -33,14 +33,13 @@ document.addEventListener('DOMContentLoaded', function() {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
-                // Optionally unobserve after animation
-                // observer.unobserve(entry.target);
             }
         });
     }, observerOptions);
 
-    // Observe fade-in elements
+    // Add animating class first, then observe
     document.querySelectorAll('.fade-in-up, .fade-in-left, .fade-in-right, .scale-in').forEach(el => {
+        el.classList.add('animating');
         observer.observe(el);
     });
 
@@ -280,19 +279,9 @@ document.addEventListener('DOMContentLoaded', function() {
     highlightActiveSection(); // Call once on load
 
     // ============================================
-    // PARALLAX EFFECT FOR HERO SECTION
+    // PARALLAX EFFECT FOR HERO SECTION - DISABLED (causing overlap)
     // ============================================
-    const heroSection = document.querySelector('.hero-section');
-    if (heroSection) {
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const parallaxSpeed = 0.5;
-
-            if (scrolled < window.innerHeight) {
-                heroSection.style.transform = `translateY(${scrolled * parallaxSpeed}px)`;
-            }
-        });
-    }
+    // Parallax disabled to prevent section overlap issues
 
     // ============================================
     // LAZY LOADING ENHANCEMENT
@@ -399,48 +388,12 @@ document.addEventListener('DOMContentLoaded', function() {
     // ============================================
     // SKILL ICONS ANIMATION ON SCROLL
     // ============================================
-    const skillIcons = document.querySelectorAll('.icon');
-
-    const skillObserver = new IntersectionObserver((entries) => {
-        entries.forEach((entry, index) => {
-            if (entry.isIntersecting) {
-                setTimeout(() => {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }, index * 50); // Stagger the animation
-
-                skillObserver.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.1 });
-
-    skillIcons.forEach(icon => {
-        icon.style.opacity = '0';
-        icon.style.transform = 'translateY(20px)';
-        icon.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-        skillObserver.observe(icon);
-    });
+    // Using stagger-container class instead for better performance
 
     // ============================================
-    // SECTION REVEAL ANIMATIONS
+    // SECTION REVEAL ANIMATIONS - DISABLED (causing overlap issues)
     // ============================================
-    const sections = document.querySelectorAll('section');
-
-    const sectionObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }
-        });
-    }, { threshold: 0.05 });
-
-    sections.forEach(section => {
-        section.style.opacity = '0';
-        section.style.transform = 'translateY(30px)';
-        section.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
-        sectionObserver.observe(section);
-    });
+    // Sections will use individual element animations instead
 
     // ============================================
     // PERFORMANCE OPTIMIZATION
