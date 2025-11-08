@@ -3,24 +3,30 @@
    This file fixes: blur, z-index, overlapping, header issues
    ============================================ */
 
-/* Fix 1: Remove excessive backdrop blur from header */
+/* Fix 1: Remove excessive backdrop blur from header - optimized for performance */
 .main-header {
     background: var(--glass-background) !important;
-    backdrop-filter: blur(10px) !important;
-    -webkit-backdrop-filter: blur(10px) !important;
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
     z-index: 9999 !important;
     position: fixed !important;
+    /* Hardware acceleration for better performance */
+    will-change: transform;
+    transform: translateZ(0);
 }
 
 /* Fix 2: Ensure hero section doesn't overlap other content */
 .hero-section {
     position: relative;
     z-index: 1;
+    /* Allow gradient mesh animation to work */
 }
 
 .hero-section::before,
 .hero-section::after {
     z-index: 0;
+    /* Ensure background gradients stay behind content */
+    pointer-events: none;
 }
 
 .hero-content {
@@ -41,10 +47,11 @@
     filter: none !important;
 }
 
-/* Fix 4: Fix icon blur issues */
+/* Fix 4: Fix icon blur issues - reduced for better performance */
 .icon::after {
-    filter: blur(6px) !important;
+    filter: blur(4px) !important;
     z-index: -1;
+    opacity: 0.5;
 }
 
 /* Fix 5: Ensure sections don't overlap */
@@ -108,15 +115,15 @@ section {
     transform: none !important;
 }
 
-/* Fix 12: Fix parallax causing overlap */
-.hero-section {
-    transform: none !important;
-}
+/* Fix 12: Fix parallax causing overlap - REMOVED to allow gradient animation */
+/* The hero-section gradient animation needs transform to work */
 
-/* Fix 13: Reduce backdrop blur on glass cards */
+/* Fix 13: Reduce backdrop blur on glass cards - optimized for performance */
 .glass-card {
-    backdrop-filter: blur(10px) !important;
-    -webkit-backdrop-filter: blur(10px) !important;
+    backdrop-filter: blur(6px) !important;
+    -webkit-backdrop-filter: blur(6px) !important;
+    /* Hardware acceleration */
+    will-change: transform;
 }
 
 /* Fix 14: Ensure contact section doesn't overflow */
@@ -215,9 +222,17 @@ img {
     z-index: 3;
 }
 
-/* Fix 26: Reduce particle effect intensity */
+/* Fix 26: Reduce particle effect intensity for better performance */
 .particle {
-    opacity: 0.2 !important;
+    opacity: 0.15 !important;
+    will-change: transform;
+}
+
+/* Reduce number of particles on mobile for performance */
+@media (max-width: 768px) {
+    .particle:nth-child(n+8) {
+        display: none;
+    }
 }
 
 /* Fix 27: Fix hero image z-index */
