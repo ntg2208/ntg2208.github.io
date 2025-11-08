@@ -121,18 +121,10 @@ function createExperienceCardHtml(project) {
     const loadingStrategy = experienceCardIndex < 4 ? 'eager' : 'lazy';
     experienceCardIndex++;
 
-    // Get the image filename for this project
-    const imageFilename = getExperienceImageFilename(project.Title);
-    const imagePath = `assets/images/experience/${imageFilename}`;
-
     return `
         <div class="project-card" role="listitem">
             <div class="card-image">
-                <picture>
-                    <source srcset="${imagePath}.webp" type="image/webp">
-                    <source srcset="${imagePath}.png" type="image/png">
-                    <img src="${imagePath}.svg" alt="${project.Title} visualization" loading="${loadingStrategy}" onerror="this.src='assets/img/projects/placeholder.svg'">
-                </picture>
+                <img src="assets/img/projects/placeholder.svg" alt="${project.Title} visualization" loading="${loadingStrategy}">
             </div>
             <div class="card-content">
                 <h4>${project.Title}</h4>
