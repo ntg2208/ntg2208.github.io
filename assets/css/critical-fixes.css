@@ -295,3 +295,27 @@ img {
     outline-offset: 2px;
     box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1) !important;
 }
+
+/* Fix 32: Compact card styles without images */
+.project-card-compact {
+    min-height: auto !important;
+}
+
+.project-card-compact .card-image {
+    display: none !important;
+}
+
+.project-card-compact .card-content {
+    padding: 1.5rem !important;
+}
+
+.project-card-compact h4 {
+    min-height: auto !important;
+    margin-bottom: 0.75rem !important;
+}
+
+.project-card-compact p {
+    -webkit-line-clamp: unset !important;
+    display: block !important;
+    overflow: visible !important;
+}

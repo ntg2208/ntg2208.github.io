@@ -117,15 +117,8 @@ function getExperienceImageFilename(projectTitle) {
 let experienceCardIndex = 0;
 
 function createExperienceCardHtml(project) {
-    // Load first 4 experience images eagerly
-    const loadingStrategy = experienceCardIndex < 4 ? 'eager' : 'lazy';
-    experienceCardIndex++;
-
     return `
-        <div class="project-card" role="listitem">
-            <div class="card-image">
-                <img src="assets/img/projects/placeholder.svg" alt="${project.Title} visualization" loading="${loadingStrategy}">
-            </div>
+        <div class="project-card project-card-compact" role="listitem">
             <div class="card-content">
                 <h4>${project.Title}</h4>
                 <p>${project.Description}</p>
