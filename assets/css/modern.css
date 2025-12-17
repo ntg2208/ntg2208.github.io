@@ -381,12 +381,13 @@ section {
     border-radius: var(--radius-md);
     transition: all var(--transition-fast);
     position: relative;
+    display: inline-block;
 }
 
 .nav-link:hover,
 .nav-link.active {
     color: var(--color-primary);
-    background: rgba(37, 99, 235, 0.1);
+    background: rgba(37, 99, 235, 0.2);
 }
 
 .nav-link::after {
@@ -404,7 +405,7 @@ section {
 
 .nav-link:hover::after,
 .nav-link.active::after {
-    width: 70%;
+    width: 100%;
 }
 
 .nav-actions {
