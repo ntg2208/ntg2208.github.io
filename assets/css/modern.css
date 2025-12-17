@@ -759,6 +759,14 @@ section {
     gap: var(--space-lg);
 }
 
+.skill-divider {
+    grid-column: 1 / -1;
+    height: 1px;
+    background: var(--color-border);
+    margin: var(--space-xl) 0;
+    opacity: 0.5;
+}
+
 .skill-item {
     display: flex;
     flex-direction: column;
@@ -1476,37 +1484,7 @@ section {
     box-shadow: var(--shadow-xl);
 }
 
-/* Cursor Effects */
-.cursor-dot,
-.cursor-outline {
-    position: fixed;
-    top: 0;
-    left: 0;
-    transform: translate(-50%, -50%);
-    border-radius: var(--radius-full);
-    z-index: var(--z-tooltip);
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.cursor-dot {
-    width: 8px;
-    height: 8px;
-    background: var(--color-primary);
-}
-
-.cursor-outline {
-    width: 40px;
-    height: 40px;
-    border: 2px solid var(--color-primary);
-    transition: width 0.2s ease, height 0.2s ease, opacity 0.3s ease;
-}
-
-body:hover .cursor-dot,
-body:hover .cursor-outline {
-    opacity: 1;
-}
+/* Cursor Effects - Removed to use default cursor */
 
 /* Animations */
 @keyframes fadeInUp {
@@ -1844,6 +1822,66 @@ body:hover .cursor-outline {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: var(--space-xl);
+}
+
+/* Grouped experience layout */
+.experience-group-grid {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.experience-group-item {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    background: var(--color-surface);
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg);
+    border: 1px solid var(--color-border);
+    transition: all var(--transition-normal);
+}
+
+.experience-group-item:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--color-primary);
+}
+
+.group-company-header {
+    text-align: center;
+    padding-bottom: var(--space-md);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.group-company-position {
+    color: var(--color-primary);
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--space-xs);
+}
+
+.group-company-name {
+    color: var(--color-text);
+    font-size: var(--font-size-md);
+    margin-bottom: var(--space-xs);
+}
+
+.group-company-period {
+    display: block;
+    color: var(--color-primary);
+    font-weight: var(--font-weight-semibold);
+    font-size: var(--font-size-sm);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .experience-group-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .experience-group-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* Skeleton loading for experience */

@@ -186,39 +186,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Cursor Effect
-    const cursorDot = document.querySelector('.cursor-dot');
-    const cursorOutline = document.querySelector('.cursor-outline');
-    
-    if (cursorDot && cursorOutline) {
-        document.addEventListener('mousemove', (e) => {
-            const posX = e.clientX;
-            const posY = e.clientY;
-            
-            cursorDot.style.left = `${posX}px`;
-            cursorDot.style.top = `${posY}px`;
-            
-            cursorOutline.style.left = `${posX}px`;
-            cursorOutline.style.top = `${posY}px`;
-        });
-        
-        // Interactive elements hover effect
-        const interactiveElements = document.querySelectorAll('a, button, .btn, .project-card, .expertise-item');
-        
-        interactiveElements.forEach(element => {
-            element.addEventListener('mouseenter', () => {
-                cursorOutline.style.width = '60px';
-                cursorOutline.style.height = '60px';
-                cursorOutline.style.borderColor = 'var(--color-accent)';
-            });
-            
-            element.addEventListener('mouseleave', () => {
-                cursorOutline.style.width = '40px';
-                cursorOutline.style.height = '40px';
-                cursorOutline.style.borderColor = 'var(--color-primary)';
-            });
-        });
-    }
+    // Cursor Effect - Removed to use default cursor
     
     // Scroll Animations
     const animatedElements = document.querySelectorAll('.fade-in-up');

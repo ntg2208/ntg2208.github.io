@@ -147,22 +147,80 @@ function renderExperience() {
 
     const targetContainer = experienceSection.querySelector('.experience-content');
 
+    // Companies to group together (single-project experiences)
+    const companiesToGroup = [
+        'Northumbria University, UK',
+        'Vulcan Labs, Vietnam',
+        'Emage Development Pte. Ltd., Singapore'
+    ];
+
+    // Track if we've started grouping
+    let groupStarted = false;
+    let groupContainer = null;
+
     // Create experience entries for each company
     experienceData.forEach(company => {
-        const companySection = document.createElement('div');
-        companySection.classList.add('experience-category');
-        companySection.innerHTML = `
-            <div class="company-header">
-                <h3 class="company-position">${company.Position}</h3>
-                <h4 class="company-name">${company.Company}</h4>
-                <span class="company-period">${company.Period}</span>
-            </div>
-            <div class="experience-projects-grid">
+        // Check if this company should be grouped
+        if (companiesToGroup.includes(company.Company)) {
+            // First company in group? Create a special grouped container
+            if (!groupStarted) {
+                groupStarted = true;
+                groupContainer = document.createElement('div');
+                groupContainer.classList.add('experience-category', 'experience-group');
+                groupContainer.innerHTML = `
+                    <div class="company-header">
+                        <h3 class="company-position">Research & Development Roles</h3>
+                        <h4 class="company-name">Single-Project Experiences</h4>
+                        <span class="company-period">Various Periods</span>
+                    </div>
+                    <div class="experience-projects-grid experience-group-grid">
+                    </div>
+                `;
+                targetContainer.appendChild(groupContainer);
+            }
+
+            // Add this company's project to the group
+            const companyProject = document.createElement('div');
+            companyProject.classList.add('experience-group-item');
+            companyProject.innerHTML = `
+                <div class="group-company-header">
+                    <h4 class="group-company-position">${company.Position}</h4>
+                    <h5 class="group-company-name">${company.Company}</h5>
+                    <span class="group-company-period">${company.Period}</span>
+                </div>
                 ${company.Projects.map(createExperienceCardHtml).join('')}
-            </div>
-        `;
-        targetContainer.appendChild(companySection);
+            `;
+            groupContainer.querySelector('.experience-projects-grid').appendChild(companyProject);
+        } else {
+            // Not a grouped company - render normally
+            // If we were grouping, close the group container
+            if (groupStarted) {
+                groupStarted = false;
+                // Close the experience-projects-grid div
+                const grid = groupContainer.querySelector('.experience-projects-grid');
+                // Nothing to close, we already added children
+            }
+
+            const companySection = document.createElement('div');
+            companySection.classList.add('experience-category');
+            companySection.innerHTML = `
+                <div class="company-header">
+                    <h3 class="company-position">${company.Position}</h3>
+                    <h4 class="company-name">${company.Company}</h4>
+                    <span class="company-period">${company.Period}</span>
+                </div>
+                <div class="experience-projects-grid">
+                    ${company.Projects.map(createExperienceCardHtml).join('')}
+                </div>
+            `;
+            targetContainer.appendChild(companySection);
+        }
     });
+
+    // Close group if still open at the end
+    if (groupStarted) {
+        // Already closed by adding children
+    }
 }
 
 // Expose renderExperience and experience data to be called from main.js
