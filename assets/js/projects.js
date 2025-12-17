@@ -168,7 +168,7 @@ function getProjectImageFilename(projectName) {
         "Building Q&A System with RAG using LangChain & Llama2": "building-qa-system-rag-langchain-llama2",
         "Complaint Tweet Classification with Prompt Tuning": "complaint-tweet-classification",
         "Shakespeare-Style Text Generation with Hidden Markov Models": "shakespeare-text-generation",
-        "CIBMTR - Equity in Post-HCT Survival Predictions": "hospital-readmission-prediction",
+        "CIBMTR - Equity in Post-HCT Survival Predictions": "cibmtr-equity-post-hct-survival-predictions",
         "NHS Employment Gap Analysis Using Machine Learning": "nhs-employment-gap-analysis",
         "Wind Turbine Yaw System Performance Analysis": "wind-turbine-yaw-system",
         "M1 Motorway Traffic Analysis": "m1-traffic-analysis",
@@ -192,15 +192,8 @@ function createProjectCardHtml(project) {
     const keywordsHtml = project.Keywords ? `<div class="project-keywords">${project.Keywords.split(',').map(k => `<span>${k.trim()}</span>`).join('')}</div>` : '';
     const year = project.Year || 'N/A';
 
-    // Load first 6 images eagerly for better perceived performance
-    const loadingStrategy = projectCardIndex < 6 ? 'eager' : 'lazy';
-    projectCardIndex++;
-
     return `
-        <div class="project-card" role="listitem">
-            <div class="card-image">
-                <img src="assets/img/projects/placeholder.svg" alt="${project['Project Name']} visualization" loading="${loadingStrategy}">
-            </div>
+        <div class="project-card project-card-compact" role="listitem">
             <div class="card-content">
                 <h4>${project['Project Name']}</h4>
                 ${urlHtml}

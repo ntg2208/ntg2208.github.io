@@ -1,0 +1,438 @@
+/* ============================================
+   CRITICAL FIXES FOR UI ISSUES
+   This file fixes: blur, z-index, overlapping, header issues
+   ============================================ */
+
+/* Fix 1: Remove excessive backdrop blur from header - optimized for performance */
+.main-header {
+    background: var(--glass-background) !important;
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+    z-index: 9999 !important;
+    position: fixed !important;
+    /* Hardware acceleration for better performance */
+    will-change: transform;
+    transform: translateZ(0);
+}
+
+/* Fix 2: Ensure hero section doesn't overlap other content */
+.hero-section {
+    position: relative;
+    z-index: 1;
+    /* Allow gradient mesh animation to work */
+}
+
+.hero-section::before,
+.hero-section::after {
+    z-index: 0;
+    /* Ensure background gradients stay behind content */
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* Fix 3: Remove blur from profile images */
+.profile-hero-img {
+    filter: none !important;
+    -webkit-filter: none !important;
+}
+
+.profile-hero-img:hover {
+    filter: none !important;
+    -webkit-filter: none !important;
+}
+
+.about-image-modern img {
+    filter: none !important;
+    -webkit-filter: none !important;
+}
+
+/* Fix 3.5: AGGRESSIVELY Remove ALL blur and grayscale from skill icons */
+/* Remove backdrop-filter from icon containers */
+.icon,
+#skills .icon,
+.skills-grid .icon {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+}
+
+/* Remove all filters from icon images */
+.icon img,
+#skills .icon img,
+.skills-grid .icon img {
+    filter: none !important;
+    -webkit-filter: none !important;
+}
+
+/* Remove ALL filters on hover (including drop-shadow) */
+.icon:hover img,
+#skills .icon:hover img,
+.skills-grid .icon:hover img {
+    filter: none !important;
+    -webkit-filter: none !important;
+    transform: scale(1.1) rotate(5deg) !important;
+}
+
+/* Fix 4: DISABLE icon pseudo-elements completely */
+.icon::after,
+#skills .icon::after,
+.skills-grid .icon::after {
+    display: none !important;
+}
+
+.icon::before,
+#skills .icon::before,
+.skills-grid .icon::before {
+    display: none !important;
+}
+
+/* Fix 5: Ensure sections don't overlap */
+section {
+    position: relative;
+    z-index: 2;
+    isolation: isolate;
+}
+
+/* Fix 6: Fix nav link hover - remove conflicting ::before */
+.nav-link::before {
+    display: none !important;
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--accent-color);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-link.active::after,
+.nav-link:hover::after {
+    width: 80%;
+}
+
+/* Fix 7: Reduce aggressive animations */
+.magnetic-card:hover {
+    transform: translateY(-4px) scale(1.01) !important;
+}
+
+.icon:hover {
+    transform: translateY(-5px) scale(1.05) !important;
+}
+
+/* Fix 8: Fix back to top button z-index */
+.back-to-top {
+    z-index: 9998 !important;
+}
+
+/* Fix 9: Fix scroll indicator z-index */
+.scroll-indicator {
+    z-index: 10000 !important;
+}
+
+/* Fix 10: Ensure proper stacking context for cards */
+.project-card,
+.education-item,
+.testimonial-card {
+    isolation: isolate;
+}
+
+/* Fix 11: Remove transform from sections on load */
+section {
+    opacity: 1 !important;
+    transform: none !important;
+}
+
+/* Fix 12: Fix parallax causing overlap - REMOVED to allow gradient animation */
+/* The hero-section gradient animation needs transform to work */
+
+/* Fix 13: Reduce backdrop blur on glass cards - optimized for performance */
+.glass-card {
+    backdrop-filter: blur(6px) !important;
+    -webkit-backdrop-filter: blur(6px) !important;
+    /* Hardware acceleration */
+    will-change: transform;
+}
+
+/* Fix 14: Ensure contact section doesn't overflow */
+#contact {
+    overflow: visible;
+}
+
+#contact::before {
+    opacity: 0.3 !important;
+}
+
+/* Fix 15: Fix loading image blur */
+.loading-image {
+    opacity: 0.5;
+    filter: none !important;
+}
+
+.loaded-image {
+    opacity: 1;
+    filter: none !important;
+}
+
+/* Fix 16: Ensure hero particles don't interfere */
+.hero-particles {
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Fix 17: Fix stagger animation initialization */
+.stagger-item {
+    opacity: 1 !important;
+    transform: none !important;
+}
+
+/* Fix 18: Fix fade-in elements on page load */
+.fade-in-up,
+.fade-in-left,
+.fade-in-right,
+.scale-in {
+    opacity: 1;
+    transform: none;
+}
+
+/* Only animate when visible class is added */
+.fade-in-up.animating {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.fade-in-up.animating.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Fix 19: Ensure proper header stacking */
+.navbar {
+    position: relative;
+    z-index: 10001;
+}
+
+/* Fix 20: Fix mobile menu z-index */
+.nav-menu {
+    z-index: 9997;
+}
+
+.mobile-menu-toggle {
+    z-index: 10002;
+}
+
+/* Fix 21: Remove excessive transforms */
+.btn-primary:hover,
+.btn-secondary:hover {
+    transform: translateY(-2px) !important;
+}
+
+/* Fix 22: Fix testimonial slider z-index */
+.testimonial-slider-container {
+    position: relative;
+    z-index: 1;
+}
+
+/* Fix 23: Ensure images are crisp */
+img {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+}
+
+/* Fix 24: Remove blur from skill icon images */
+.icon img {
+    filter: none !important;
+}
+
+/* Fix 25: Fix form z-index */
+.contact-form {
+    position: relative;
+    z-index: 3;
+}
+
+/* Fix 26: Reduce particle effect intensity for better performance */
+.particle {
+    opacity: 0.15 !important;
+    will-change: transform;
+}
+
+/* Reduce number of particles on mobile for performance */
+@media (max-width: 768px) {
+    .particle:nth-child(n+8) {
+        display: none;
+    }
+}
+
+/* Fix 27: Fix hero image z-index */
+.hero-image {
+    position: relative;
+    z-index: 3;
+}
+
+.hero-bg-decoration {
+    z-index: 1;
+}
+
+/* Fix 28: Ensure text is readable */
+.hero-text {
+    position: relative;
+    z-index: 3;
+}
+
+/* Fix 29: Fix skill icons positioning */
+.skills-grid {
+    position: relative;
+    z-index: 2;
+}
+
+/* Fix 30: Disable problematic animations on page load */
+@media (prefers-reduced-motion: no-preference) {
+    /* Only enable smooth animations after page load */
+    .page-loaded .fade-in-up,
+    .page-loaded .fade-in-left,
+    .page-loaded .fade-in-right,
+    .page-loaded .scale-in {
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+}
+
+/* Fix 31: Remove red outline from contact form inputs - COMPREHENSIVE FIX */
+/* Force white borders on ALL states - override everything */
+#contact input,
+#contact textarea,
+#contact input[type="text"],
+#contact input[type="email"],
+#contact input:required,
+#contact textarea:required {
+    border: 2px solid rgba(255, 255, 255, 0.2) !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+/* Override all invalid/error pseudo-classes */
+#contact input:invalid,
+#contact textarea:invalid,
+#contact input:required:invalid,
+#contact textarea:required:invalid,
+#contact input[type="email"]:invalid,
+#contact input:not(:focus):invalid,
+#contact textarea:not(:focus):invalid,
+#contact input:not(:placeholder-shown):invalid,
+#contact textarea:not(:placeholder-shown):invalid {
+    border: 2px solid rgba(255, 255, 255, 0.2) !important;
+    border-color: rgba(255, 255, 255, 0.2) !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+/* Normal focus state - white outline */
+#contact input:focus,
+#contact textarea:focus,
+#contact input:required:focus,
+#contact textarea:required:focus {
+    outline: 2px solid rgba(255, 255, 255, 0.5) !important;
+    outline-offset: 2px;
+    border: 2px solid rgba(255, 255, 255, 0.5) !important;
+    border-color: rgba(255, 255, 255, 0.5) !important;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1) !important;
+    background: rgba(255, 255, 255, 0.15) !important;
+}
+
+/* Remove any error classes or invalid focus states */
+#contact input.error,
+#contact textarea.error,
+#contact input:invalid:focus,
+#contact textarea:invalid:focus,
+#contact input:required:invalid:focus,
+#contact textarea:required:invalid:focus {
+    border: 2px solid rgba(255, 255, 255, 0.5) !important;
+    border-color: rgba(255, 255, 255, 0.5) !important;
+    outline: 2px solid rgba(255, 255, 255, 0.5) !important;
+    outline-color: rgba(255, 255, 255, 0.5) !important;
+}
+
+/* Override autofill styles */
+#contact input:-webkit-autofill,
+#contact textarea:-webkit-autofill,
+#contact input:-webkit-autofill:hover,
+#contact input:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0 1000px rgba(255, 255, 255, 0.1) inset !important;
+    -webkit-text-fill-color: white !important;
+    border: 2px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Fix 32: Compact card styles without images */
+.project-card-compact {
+    min-height: auto !important;
+}
+
+.project-card-compact .card-image {
+    display: none !important;
+}
+
+.project-card-compact .card-content {
+    padding: 1.5rem !important;
+}
+
+.project-card-compact h4 {
+    min-height: auto !important;
+    margin-bottom: 0.75rem !important;
+}
+
+.project-card-compact p {
+    -webkit-line-clamp: unset !important;
+    display: block !important;
+    overflow: visible !important;
+}
+
+/* Fix 33: Speed up hover effects for better responsiveness */
+.project-card {
+    transition: transform 0.15s cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1),
+                border-color 0.15s ease !important;
+}
+
+.project-card:hover,
+.project-card:focus-within {
+    transform: translateY(-5px) scale(1.01) !important;
+}
+
+.experience-category,
+.project-category {
+    transition: transform 0.15s ease,
+                box-shadow 0.15s ease !important;
+}
+
+.icon {
+    transition: transform 0.15s cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1),
+                border-color 0.15s ease !important;
+}
+
+.icon:hover {
+    transform: translateY(-3px) scale(1.03) !important;
+}
+
+/* Speed up button transitions */
+.btn-primary,
+.btn-secondary {
+    transition: transform 0.15s ease,
+                box-shadow 0.15s ease,
+                background-color 0.15s ease !important;
+}
+
+/* Speed up nav link transitions */
+.nav-link {
+    transition: all 0.15s ease !important;
+}
+
+.nav-link::after {
+    transition: width 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
