@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Truong Giang Nguyen - AI Engineer specializing in LLMs, RAG systems, computer vision, and production-grade AI solutions">
+    <meta name="keywords" content="AI Engineer, Large Language Models, LLMs, RAG, Computer Vision, Natural Language Processing, Python, PyTorch, TensorFlow, HuggingFace">
+    <title>Truong Giang Nguyen - AI Engineer Portfolio</title>
+
+    <!-- Favicons -->
+    <link href="assets/icons/favicon.png" rel="icon">
+    <link href="assets/icons/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Preconnect to external domains for faster loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+    <!-- Preload critical CSS and fonts -->
+    <link rel="preload" href="assets/css/styles.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" as="style">
+
+    <!-- DNS Prefetch for external resources -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+
+    <!-- Stylesheets -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>:root{--primary-color:#1e3a8a;--secondary-color:#1e40af;--accent-color:#2563eb;--accent-hover:#1d4ed8;--accent-light:#3b82f6;--accent-bright:#60a5fa;--success-color:#059669;--warning-color:#d97706;--error-color:#dc2626;--background-color:#fff;--card-background:#fff;--text-color:#1e3a8a;--light-text-color:#1e40af;--muted-text-color:#475569;--border-color:#e2e8f0;--border-color-light:#f1f5f9;--border-radius:16px;--small-border-radius:8px;--large-border-radius:24px;--box-shadow:0 4px 6px -1px rgba(30,58,138,.1),0 2px 4px -1px rgba(30,58,138,.06);--hover-shadow:0 20px 25px -5px rgba(30,58,138,.15),0 10px 10px -5px rgba(30,58,138,.08);--glow-shadow:0 0 0 1px rgba(37,99,235,.15),0 10px 15px -3px rgba(37,99,235,.15),0 4px 6px -2px rgba(37,99,235,.1);--transition:all 0.3s cubic-bezier(0.4,0,0.2,1);--fast-transition:all 0.15s ease-out;--section-padding:4rem 0;--section-margin:2rem 0;--gradient:linear-gradient(135deg,var(--accent-color),var(--accent-bright));--gradient-hover:linear-gradient(135deg,var(--accent-hover),var(--accent-color));--gradient-text:linear-gradient(135deg,var(--accent-color),var(--accent-bright));--gradient-ocean:linear-gradient(135deg,#1e3a8a,#1e40af 25%,#2563eb 50%,#3b82f6 75%,#60a5fa);--gradient-wave:linear-gradient(90deg,rgba(37,99,235,.1),rgba(96,165,250,.2) 50%,rgba(37,99,235,.1));--hero-bg:linear-gradient(135deg,#f8fafc,#e2e8f0 50%,#cbd5e1);--focus-outline:2px solid var(--accent-color);--glass-background:hsla(0,0%,100%,.85);--backdrop-blur:blur(20px);--surface-1:#fff;--surface-2:#f8fafc;--surface-3:#e2e8f0;--surface-4:#cbd5e1}[data-theme=dark]{--primary-color:#dbeafe;--secondary-color:#bfdbfe;--accent-color:#60a5fa;--accent-hover:#3b82f6;--accent-light:#93c5fd;--accent-bright:#dbeafe;--background-color:#0f172a;--card-background:#1e293b;--text-color:#f1f5f9;--light-text-color:#cbd5e1;--muted-text-color:#94a3b8;--border-color:#334155;--border-color-light:#475569;--box-shadow:0 4px 6px -1px rgba(0,0,0,.4),0 2px 4px -1px rgba(0,0,0,.3);--hover-shadow:0 20px 25px -5px rgba(0,0,0,.5),0 10px 10px -5px rgba(96,165,250,.1);--glow-shadow:0 0 0 1px rgba(96,165,250,.2),0 10px 15px -3px rgba(96,165,250,.2),0 4px 6px -2px rgba(96,165,250,.1);--gradient:linear-gradient(135deg,var(--accent-color),var(--accent-bright));--gradient-hover:linear-gradient(135deg,var(--accent-hover),var(--accent-color));--gradient-ocean:linear-gradient(135deg,#1e3a8a,#1e40af 25%,#2563eb 50%,#3b82f6 75%,#60a5fa);--gradient-wave:linear-gradient(90deg,rgba(96,165,250,.1),rgba(219,234,254,.2) 50%,rgba(96,165,250,.1));--hero-bg:linear-gradient(135deg,#0f172a,#1e293b 50%,#334155);--glass-background:rgba(30,41,59,.85);--surface-1:#1e293b;--surface-2:#334155;--surface-3:#475569;--surface-4:#64748b}*,:after,:before{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth;font-size:16px}@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,:after,:before{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}body{font-family:Inter,Roboto,-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif;background:var(--background-color);color:var(--text-color);line-height:1.7;overflow-x:hidden;font-size:16px;font-weight:400;letter-spacing:-.01em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;transition:background-color .3s ease,color .3s ease}.container{max-width:1200px;margin:0 auto;padding:1.5rem;width:94%}h1,h2,h3,h4,h5,h6{font-weight:700;color:var(--text-color);margin-bottom:1rem;line-height:1.2;letter-spacing:-.02em;font-family:Inter,sans-serif}h1{font-size:clamp(2.5rem,5vw,4rem);font-weight:800;line-height:1.1}h2{font-size:clamp(2rem,4vw,3rem);font-weight:700}h3{font-size:clamp(1.5rem,3vw,2rem);font-weight:600}h4{font-size:clamp(1.25rem,2.5vw,1.5rem);font-weight:600}h2{font-size:2.5rem;text-align:center;margin-bottom:2rem;background:var(--gradient-ocean);-webkit-background-clip:text;-webkit-text-fill-color:transparent;position:relative}@supports not (background-clip:text){h2{background:0 0;-webkit-text-fill-color:var(--primary-color);color:var(--primary-color)}}h3{font-size:1.8rem}a{color:var(--accent-color);text-decoration:none;transition:var(--transition);padding:.2em}a:focus,a:hover{color:var(--primary-color);transform:translateY(-2px);text-decoration:underline}.main-header{position:fixed;top:0;left:0;right:0;background:var(--glass-background);-webkit-backdrop-filter:var(--backdrop-blur);backdrop-filter:var(--backdrop-blur);z-index:1000;border-bottom:1px solid var(--border-color);transition:var(--transition)}.navbar{display:flex;align-items:center;justify-content:space-between;padding:1rem 2rem;max-width:1200px;margin:0 auto}.nav-brand .brand-link{font-size:1.5rem;font-weight:700;color:var(--primary-color);text-decoration:none;background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;transition:var(--transition)}.nav-menu{display:flex;list-style:none;gap:2rem;margin:0;padding:0}.nav-link{color:var(--text-color);text-decoration:none;font-weight:500;padding:.5rem 1rem;border-radius:var(--small-border-radius);transition:var(--transition);position:relative}.nav-link.active,.nav-link:focus,.nav-link:hover{color:var(--accent-color);background-color:rgba(52,152,219,.1);transform:translateY(-1px)}.nav-link:after{content:"";position:absolute;bottom:0;left:50%;width:0;height:2px;background:var(--accent-color);transition:var(--transition);transform:translateX(-50%)}.nav-link.active:after,.nav-link:focus:after,.nav-link:hover:after{width:80%}.nav-actions{display:flex;align-items:center;gap:1rem}.theme-toggle{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;background:var(--surface-2);border:1px solid var(--border-color);border-radius:50%;color:var(--text-color);cursor:pointer;transition:var(--transition);font-size:1.1rem;position:relative;overflow:hidden}.theme-toggle:before{content:"";position:absolute;top:0;left:0;width:100%;height:100%;background:var(--gradient);opacity:0;transition:var(--transition);border-radius:50%}.theme-toggle:hover:before{opacity:.1}.theme-toggle:hover{transform:translateY(-2px);box-shadow:var(--glow-shadow);border-color:var(--accent-color)}.theme-toggle i{position:relative;z-index:1;transition:var(--transition)}[data-theme=dark] .theme-toggle i.fa-moon{display:none}[data-theme=dark] .theme-toggle i.fa-sun{display:inline}.theme-toggle i.fa-sun{display:none}.nav-actions .btn-resume{display:inline-flex;align-items:center;gap:.5rem;background:var(--accent-color);color:#fff;padding:.75rem 1.5rem;border-radius:var(--border-radius);text-decoration:none;font-weight:600;transition:var(--transition);box-shadow:var(--box-shadow);position:relative;overflow:hidden}.nav-actions .btn-resume:before{content:"";position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,hsla(0,0%,100%,.2),transparent);transition:left .5s}.nav-actions .btn-resume:hover:before{left:100%}.nav-actions .btn-resume:focus,.nav-actions .btn-resume:hover{transform:translateY(-2px);box-shadow:var(--hover-shadow);background:var(--accent-hover)}.mobile-menu-toggle{display:none;flex-direction:column;justify-content:space-between;width:24px;height:18px;background:0 0;border:none;cursor:pointer;padding:0;z-index:1001}.hamburger-line{width:100%;height:2px;background-color:var(--text-color);transition:var(--transition);transform-origin:center}@media (max-width:768px){.mobile-menu-toggle{display:flex}.nav-menu{position:fixed;top:80px;left:0;right:0;background:var(--glass-background);-webkit-backdrop-filter:var(--backdrop-blur);backdrop-filter:var(--backdrop-blur);flex-direction:column;padding:2rem;gap:1rem;transform:translateX(-100%);transition:transform .3s ease-in-out;border-bottom:1px solid var(--border-color);max-height:calc(100vh - 80px);overflow-y:auto}.nav-menu.active{transform:translateX(0)}.nav-menu li{width:100%;text-align:center}.nav-link{display:block;width:100%;padding:1rem;font-size:1.1rem;border-radius:var(--border-radius);background:var(--surface-2);margin-bottom:.5rem}.nav-actions{gap:.5rem}.btn-resume{padding:.5rem 1rem!important;font-size:.9rem!important}.theme-toggle{padding:.5rem!important}}@media (max-width:1024px) and (min-width:769px){.nav-menu{gap:1rem}.nav-link{padding:.4rem .8rem;font-size:.95rem}.btn-resume{padding:.6rem 1.2rem!important;font-size:.95rem!important}}.hero-section{margin-top:80px;padding:4rem 1.5rem;background:var(--hero-bg);position:relative;overflow:hidden;min-height:85vh;display:flex;align-items:center}.hero-section .hero-text .hero-tagline{color:var(--accent-color)}.hero-section .hero-text .hero-title{background:var(--gradient-ocean);-webkit-background-clip:text;-webkit-text-fill-color:transparent;color:var(--text-color)}.hero-section .hero-text .hero-subtitle{color:var(--text-color)}[data-theme=dark] .hero-section .hero-text .hero-tagline{color:var(--accent-color)}[data-theme=dark] .hero-section .hero-text .hero-title{color:var(--text-color)}[data-theme=dark] .hero-section .hero-text .hero-subtitle{color:var(--light-text-color)}.hero-section:before{content:"";position:absolute;top:-50%;right:-50%;width:200%;height:200%;background:radial-gradient(circle at 50% 50%,rgba(37,99,235,.15),rgba(30,58,138,.1) 50%,transparent 70%);animation:heroFloat 20s ease-in-out infinite}.hero-section:after{content:"";position:absolute;top:20%;left:-30%;width:60%;height:60%;background:radial-gradient(circle,rgba(59,130,246,.1),transparent 60%);animation:heroFloat 15s ease-in-out infinite reverse}@keyframes heroFloat{0%,to{transform:translate(0,0) rotate(0deg)}50%{transform:translate(-20px,-20px) rotate(1deg)}}.hero-content{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 400px;gap:4rem;align-items:center;position:relative;z-index:2}.hero-text{display:flex;flex-direction:column;gap:1.5rem}.hero-tagline{color:var(--accent-color);font-weight:600;font-size:1.1rem;text-transform:uppercase;letter-spacing:1px;margin:0}.hero-title{font-size:3.5rem;font-weight:700;background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1.1;margin:0}.hero-subtitle{font-size:1.3rem;color:var(--light-text-color);line-height:1.6;margin:0}.hero-stats{display:flex;gap:2rem;margin:1rem 0}.stat{text-align:center;padding:1rem;background:var(--card-background);border-radius:var(--border-radius);box-shadow:var(--box-shadow);border:1px solid var(--border-color);transition:var(--transition);min-width:120px}.stat:hover{transform:translateY(-3px);box-shadow:var(--hover-shadow)}.stat-number{display:block;font-size:2rem;font-weight:700;color:var(--accent-color);line-height:1}.stat-label{font-size:.9rem;color:var(--light-text-color);margin-top:.5rem}.hero-actions{display:flex;gap:1rem;margin-top:1rem}.btn-primary{display:inline-flex;align-items:center;gap:.5rem;background:var(--accent-color);color:#fff;padding:1rem 2rem;border-radius:var(--border-radius);text-decoration:none;font-weight:600;transition:var(--transition);box-shadow:var(--box-shadow);border:none;cursor:pointer;position:relative;overflow:hidden}.btn-primary:before{content:"";position:absolute;top:50%;left:50%;width:0;height:0;background:hsla(0,0%,100%,.3);border-radius:50%;transform:translate(-50%,-50%);transition:width .6s,height .6s}.btn-primary:active:before{width:300px;height:300px}.btn-primary:focus,.btn-primary:hover{transform:translateY(-3px) scale(1.05);box-shadow:var(--hover-shadow);background:var(--accent-hover);text-decoration:none;color:#fff}.btn-secondary{display:inline-flex;align-items:center;gap:.5rem;background:0 0;color:var(--accent-color);padding:1rem 2rem;border:2px solid var(--accent-color);border-radius:var(--border-radius);text-decoration:none;font-weight:600;transition:var(--transition)}.btn-secondary:focus,.btn-secondary:hover{background:var(--accent-color);color:#fff;transform:translateY(-2px);text-decoration:none}.hero-image{position:relative;display:flex;justify-content:center;align-items:center}.profile-hero-img{width:320px;height:320px;border-radius:50%;object-fit:cover;box-shadow:0 20px 40px rgba(0,0,0,.15);border:6px solid #fff;position:relative;z-index:2;transition:var(--transition)}.profile-hero-img:hover{transform:scale(1.05);box-shadow:0 25px 50px rgba(0,0,0,.2)}.hero-bg-decoration{position:absolute;top:50%;left:50%;width:400px;height:400px;background:var(--gradient);border-radius:50%;opacity:.1;transform:translate(-50%,-50%);animation:pulse 4s ease-in-out infinite}@keyframes pulse{0%,to{transform:translate(-50%,-50%) scale(1)}50%{transform:translate(-50%,-50%) scale(1.1)}}@media (max-width:1200px){.hero-content{grid-template-columns:1fr 300px;gap:3rem}.profile-hero-img{width:280px;height:280px}}@media (max-width:768px){html{font-size:15px}.container{padding:1rem;width:96%}.hero-section{padding:3rem 1rem;min-height:80vh}.navbar{padding:1rem;flex-wrap:wrap;gap:1rem}.nav-menu{gap:.8rem;flex-wrap:wrap;justify-content:center;order:2;width:100%;margin-top:.5rem}.nav-brand{order:1}.nav-actions{order:1;margin-left:auto;gap:.8rem}.nav-link{padding:.5rem .8rem;font-size:.9rem;border-radius:var(--small-border-radius)}.btn-resume{padding:.6rem 1rem!important;font-size:.9rem}.theme-toggle{width:42px;height:42px;font-size:1rem}.hero-content{grid-template-columns:1fr;gap:2.5rem;text-align:center;padding:0 1rem}.hero-title{font-size:2.5rem;line-height:1.2;margin-bottom:1rem}.hero-subtitle{font-size:1.1rem;line-height:1.6;margin-bottom:2rem}.hero-stats{justify-content:center;flex-wrap:wrap;gap:1rem;margin:2rem 0}.stat{min-width:110px;padding:1rem .8rem;flex:1;max-width:140px}.hero-actions{justify-content:center;flex-wrap:wrap;gap:1rem;margin-top:2rem}.hero-actions .btn-primary,.hero-actions .btn-secondary{min-width:160px;padding:1rem 1.5rem}.profile-hero-img{width:260px;height:260px;margin:0 auto}h2{font-size:2rem}}@media (max-width:480px){html{font-size:12px}.navbar{flex-direction:column;gap:1rem;padding:1rem}.nav-menu{flex-wrap:wrap;justify-content:center;gap:.5rem}.nav-link{padding:.3rem .6rem;font-size:.8rem}.hero-section{padding:2rem 1rem}.hero-title{font-size:2.2rem}.hero-subtitle{font-size:1rem}.hero-stats{gap:.8rem}.stat{min-width:80px;padding:.6rem}.stat-number{font-size:1.5rem}.btn-primary,.btn-secondary{padding:.8rem 1.5rem;font-size:.9rem}.profile-hero-img{width:200px;height:200px}}</style>
+    <link rel="stylesheet" href="assets/css/styles.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="assets/css/styles.min.css"></noscript>
+
+    <link rel="stylesheet" href="assets/css/performance-fixes.min.css">
+    <link rel="stylesheet" href="assets/css/ui-enhancements.css">
+    <link rel="stylesheet" href="assets/css/critical-fixes.css">
+    <link rel="stylesheet" href="assets/css/performance-optimizations.css">
+
+    <!-- Fix for contact section scrolling issue -->
+    <link rel="stylesheet" href="assets/css/contact-fix.css">
+
+    <!-- Inline critical image preloader for faster loading -->
+    <script>
+        // Preload critical images immediately
+        ['shakespeare-text-generation','wind-turbine-yaw-system','nhs-employment-gap-analysis','docpatientsumm-lora'].forEach(function(name){
+            var link=document.createElement('link');
+            link.rel='prefetch';
+            link.as='image';
+            link.href='assets/images/projects/'+name+'.svg';
+            document.head.appendChild(link);
+        });
+    </script>
+
+    <!-- Load JavaScript in order (projects/experience data must load before main.js) -->
+    <script src="assets/js/projects.min.js" defer></script>
+    <script src="assets/js/experience.min.js" defer></script>
+    <script src="assets/js/main.min.js" defer></script>
+    <script src="assets/js/ui-enhancements.js" defer></script>
+</head>
+<body>
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-indicator">
+        <div class="scroll-progress" id="scrollProgress"></div>
+    </div>
+    
+    <div class="container">
+        <header role="banner" class="main-header">
+            <nav role="navigation" aria-label="Main navigation" class="navbar">
+                <div class="nav-brand">
+                    <a href="#" class="brand-link">TGN</a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#skills" class="nav-link">Skills</a></li>
+                    <li><a href="#experience" class="nav-link">Experience</a></li>
+                    <li><a href="#projects" class="nav-link">Projects</a></li>
+                    <li><a href="#education" class="nav-link">Education</a></li>
+                    <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                        <i class="fas fa-moon"></i>
+                        <i class="fas fa-sun"></i>
+                    </button>
+                    <a href="assets/resume/Truong_Giang_Nguyen_Resume.pdf" class="btn-resume" target="_blank">
+                        <i class="fas fa-download"></i> Resume
+                    </a>
+                    <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle mobile menu" aria-expanded="false">
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                    </button>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <p class="hero-tagline">Production-Ready AI Engineer & LLM Specialist</p>
+                    <h1 class="hero-title">Truong Giang Nguyen</h1>
+                    <p class="hero-subtitle">Building scalable, enterprise-grade AI solutions with a focus on LLMs, RAG systems, and computer vision.</p>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <span class="stat-number">5+</span>
+                            <span class="stat-label">Years Experience</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">20+</span>
+                            <span class="stat-label">Projects Completed</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">6</span>
+                            <span class="stat-label">Companies</span>
+                        </div>
+                    </div>
+                    <div class="hero-actions">
+                        <a href="#projects" class="btn-primary">View My Work</a>
+                        <a href="#contact" class="btn-secondary">Get In Touch</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="assets/images/profile-img.webp" alt="Truong Giang Nguyen" class="profile-hero-img">
+                    <div class="hero-bg-decoration"></div>
+                </div>
+            </div>
+        </section>
+        
+        <main role="main" id="main">
+            <section id="about" aria-labelledby="about-heading" class="about-section-modern fade-in-up">
+                <h2 id="about-heading">About Me</h2>
+                <div class="about-container-modern">
+                    <div class="about-image-modern">
+                        <img src="assets/images/profile-img.webp" alt="Truong Giang Nguyen" loading="lazy">
+                    </div>
+                    <div class="about-content-modern">
+                        <h3 class="about-tagline-modern">Driving Business Value with Production-Grade AI</h3>
+                        <p>I am a results-driven AI Engineer with over 5 years of experience in building and deploying scalable, enterprise-grade AI solutions. My expertise lies in leveraging Large Language Models (LLMs), Retrieval-Augmented Generation (RAG) systems, and Computer Vision to solve complex business problems and create measurable value.</p>
+                        
+                        <h4>Core Expertise:</h4>
+                        <ul>
+                            <li><i class="fas fa-cogs"></i> <strong>LLM & RAG Systems:</strong> Architecting and deploying advanced language models, including multi-agent systems, for applications like customer support and personalized recommendations.</li>
+                            <li><i class="fas fa-code-branch"></i> <strong>MLOps & Infrastructure:</strong> Designing and automating end-to-end ML pipelines on cloud platforms like AWS and Google Vertex AI, ensuring scalability and resilience.</li>
+                            <li><i class="fas fa-chart-line"></i> <strong>Data Science & Analytics:</strong> Applying statistical analysis and machine learning to extract actionable insights from complex datasets, from healthcare to retail.</li>
+                            <li><i class="fas fa-eye"></i> <strong>Computer Vision:</strong> Developing and deploying high-precision computer vision models for applications like defect detection, fashion recommendation, and facial recognition.</li>
+                        </ul>
+                        
+                        <p>I am passionate about transforming innovative ideas into robust, production-ready AI solutions that drive growth and efficiency. I am always eager to take on new challenges and contribute to impactful projects in the field of Generative AI.</p>
+                        
+                        <div class="about-actions-modern">
+                            <a href="#contact" class="btn-primary">Let's Connect</a>
+                            <a href="assets/resume/Truong_Giang_Nguyen_Resume.pdf" class="btn-secondary" target="_blank">Download CV</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="skills" aria-labelledby="skills-heading" class="fade-in-up">
+                <h2 id="skills-heading">Skills</h2>
+
+                <div class="skills-grid stagger-container" role="region" aria-label="Technical Skills">
+                        <!-- First set of icons -->
+                        <div class="icon stagger-item magnetic-card" role="listitem">
+                            <img src="assets/img/skills/python.png" alt="Python" loading="lazy">
+                            <span>Python</span>
+                        </div>
+                        <div class="icon stagger-item magnetic-card" role="listitem">
+                            <img src="assets/img/skills/cpp.png" alt="C++" loading="lazy">
+                            <span>C++</span>
+                        </div>
+                        <div class="icon stagger-item magnetic-card" role="listitem">
+                            <img src="assets/img/skills/R.png" alt="R" loading="lazy">
+                            <span>R</span>
+                        </div>
+                        <div class="icon stagger-item magnetic-card" role="listitem">
+                            <img src="assets/img/skills/sql.png" alt="SQL" loading="lazy">
+                            <span>SQL</span>
+                        </div>
+                        <div class="icon stagger-item magnetic-card" role="listitem">
+                            <img src="assets/img/skills/Matlab.png" alt="MATLAB" loading="lazy">
+                            <span>MATLAB</span>
+                        </div>
+                        <div class="icon stagger-item magnetic-card" role="listitem">
+                            <img src="assets/img/skills/pytorch.png" alt="PyTorch" loading="lazy">
+                            <span>PyTorch</span>
+                        </div>
+                        <div class="icon stagger-item magnetic-card" role="listitem">
+                            <img src="assets/img/skills/tf.png" alt="TensorFlow" loading="lazy">
+                            <span>TensorFlow</span>
+                        </div>
+                        <div class="icon stagger-item magnetic-card" role="listitem">
+                            <img src="assets/img/skills/hf.png" alt="HuggingFace" loading="lazy">
+                            <span>HuggingFace</span>
+                        </div>
+                        <div class="icon stagger-item magnetic-card" role="listitem">
+                            <img src="assets/img/skills/opencv.png" alt="OpenCV" loading="lazy">
+                            <span>OpenCV</span>
+                        </div>
+                        <div class="icon stagger-item magnetic-card" role="listitem">
+                            <img src="assets/img/skills/sklearn.png" alt="Scikit-learn" loading="lazy">
+                            <span>Scikit-learn</span>
+                        </div>
+                        <div class="icon stagger-item magnetic-card" role="listitem">
+                            <img src="assets/img/skills/aws.png" alt="AWS" loading="lazy">
+                            <span>AWS</span>
+                        </div>
+                        <div class="icon stagger-item magnetic-card" role="listitem">
+                            <img src="assets/img/skills/gcp.png" alt="GCP" loading="lazy">
+                            <span>GCP</span>
+                        </div>
+                </div>
+            </section>
+
+            <section id="experience" aria-labelledby="experience-heading" class="fade-in-up">
+                <h2 id="experience-heading">Experience</h2>
+                <div class="experience-skeleton">
+                    <div class="skeleton-experience-item">
+                        <div class="skeleton-experience-header">
+                            <div class="skeleton-experience-icon"></div>
+                            <div class="skeleton-experience-text">
+                                <div class="skeleton-experience-title"></div>
+                                <div class="skeleton-experience-company"></div>
+                            </div>
+                        </div>
+                        <div class="skeleton-project-description"></div>
+                        <div class="skeleton-project-description"></div>
+                    </div>
+                    <div class="skeleton-experience-item">
+                        <div class="skeleton-experience-header">
+                            <div class="skeleton-experience-icon"></div>
+                            <div class="skeleton-experience-text">
+                                <div class="skeleton-experience-title"></div>
+                                <div class="skeleton-experience-company"></div>
+                            </div>
+                        </div>
+                        <div class="skeleton-project-description"></div>
+                        <div class="skeleton-project-description"></div>
+                    </div>
+                    <div class="skeleton-experience-item">
+                        <div class="skeleton-experience-header">
+                            <div class="skeleton-experience-icon"></div>
+                            <div class="skeleton-experience-text">
+                                <div class="skeleton-experience-title"></div>
+                                <div class="skeleton-experience-company"></div>
+                            </div>
+                        </div>
+                        <div class="skeleton-project-description"></div>
+                        <div class="skeleton-project-description"></div>
+                    </div>
+                </div>
+                <div class="experience-content">
+                    <!-- Experience will be dynamically loaded here by company -->
+                </div>
+            </section>
+
+            <section id="projects" aria-labelledby="projects-heading" class="fade-in-up">
+                <h2 id="projects-heading">Projects</h2>
+                
+                <!-- Project Search and Filter -->
+                <div class="projects-controls">
+                    <div class="search-container">
+                        <input type="text" id="projectSearch" placeholder="Search projects..." class="search-input">
+                        <i class="fas fa-search search-icon"></i>
+                    </div>
+                    <div class="filter-container">
+                        <select id="sectorFilter" class="filter-select">
+                            <option value="">All Sectors</option>
+                            <option value="Natural Language Processing">NLP & LLMs</option>
+                            <option value="Healthcare">Healthcare</option>
+                            <option value="Renewable Energy">Energy & Environment</option>
+                            <option value="Computer Vision">Computer Vision</option>
+                            <option value="Machine Learning">Machine Learning</option>
+                        </select>
+                    </div>
+                    <div class="projects-stats">
+                        <span id="projectCount">Loading projects...</span>
+                    </div>
+                </div>
+                <div class="projects-skeleton">
+                    <div class="skeleton-project-card">
+                        <div class="skeleton-project-image"></div>
+                        <div class="skeleton-project-title"></div>
+                        <div class="skeleton-project-description"></div>
+                        <div class="skeleton-project-description"></div>
+                        <div class="skeleton-project-description"></div>
+                    </div>
+                    <div class="skeleton-project-card">
+                        <div class="skeleton-project-image"></div>
+                        <div class="skeleton-project-title"></div>
+                        <div class="skeleton-project-description"></div>
+                        <div class="skeleton-project-description"></div>
+                        <div class="skeleton-project-description"></div>
+                    </div>
+                    <div class="skeleton-project-card">
+                        <div class="skeleton-project-image"></div>
+                        <div class="skeleton-project-title"></div>
+                        <div class="skeleton-project-description"></div>
+                        <div class="skeleton-project-description"></div>
+                        <div class="skeleton-project-description"></div>
+                    </div>
+                    <div class="skeleton-project-card">
+                        <div class="skeleton-project-image"></div>
+                        <div class="skeleton-project-title"></div>
+                        <div class="skeleton-project-description"></div>
+                        <div class="skeleton-project-description"></div>
+                        <div class="skeleton-project-description"></div>
+                    </div>
+                </div>
+                <div class="projects-content">
+                    <!-- Projects will be dynamically loaded here by category -->
+                </div>
+            </section>
+
+            <section id="education" aria-labelledby="education-heading" class="fade-in-up">
+                <h2 id="education-heading">Education</h2>
+
+                <div class="education-item">
+                    <h3>Northumbria University, UK</h3>
+                    <span>Jan 2022 - Jul 2023</span>
+                    <p><strong>Master of Science in Data Science (with Distinction)</strong></p>
+                    <p><em>Dissertation:</em> Developed a machine learning model to assess the effectiveness of smartphone and wearable cueing for drooling in Parkinson's Disease, utilizing statistical analysis and predictive modeling.</p>
+                </div>
+
+                <div class="education-item">
+                    <h3>VNU - Ho Chi Minh University of Technology, Vietnam</h3>
+                    <span>Sep 2015 - May 2020</span>
+                    <p><strong>Bachelor of Engineering in Electrical and Telecommunication</strong></p>
+                    <p><em>Thesis:</em> Applied Deep Learning techniques to solve the inverse problem in Image Super-Resolution, enhancing image quality and resolution through advanced neural network architectures.</p>
+                </div>
+            </section>
+
+            <section id="testimonials" aria-labelledby="testimonials-heading" class="fade-in-up">
+                <h2 id="testimonials-heading">What People Say</h2>
+                
+                <div class="testimonial-slider-container">
+                    <div class="testimonial-slider">
+                        <div class="testimonial-card glass-card">
+                            <div class="testimonial-content">
+                                <div class="quote-icon">
+                                    <i class="fas fa-quote-left"></i>
+                                </div>
+                                <p>"Truong's work on our multi-agent AI system was exceptional. His implementation of a RAG-based policy agent and a database-integrated ticket agent led to a 60% reduction in operational costs and enabled 24/7 customer support."</p>
+                            </div>
+                            <div class="testimonial-author">
+                                <div class="author-info">
+                                    <h4>Dr. Sarah Chen</h4>
+                                    <span>AI Research Director</span>
+                                    <span class="company">Tech Innovation Labs</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="testimonial-card glass-card">
+                            <div class="testimonial-content">
+                                <div class="quote-icon">
+                                    <i class="fas fa-quote-left"></i>
+                                </div>
+                                <p>"The fashion recommendation system Truong and his team built was a game-changer for our e-commerce platform. The computer vision model achieved 92% average precision, leading to a 30% increase in click-through rates and a 20% increase in cross-category purchases."</p>
+                            </div>
+                            <div class="testimonial-author">
+                                <div class="author-info">
+                                    <h4>Michael Rodriguez</h4>
+                                    <span>Lead Software Engineer</span>
+                                    <span class="company">Vision Systems Inc</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="testimonial-card glass-card">
+                            <div class="testimonial-content">
+                                <div class="quote-icon">
+                                    <i class="fas fa-quote-left"></i>
+                                </div>
+                                <p>"Truong's analysis of the CIBMTR dataset was outstanding. His Cox Proportional Hazards model achieved a C-index of 0.6688 and successfully stratified patients into distinct risk groups, providing invaluable insights for our clinical intervention strategies."</p>
+                            </div>
+                            <div class="testimonial-author">
+                                <div class="author-info">
+                                    <h4>Prof. Emily Watson</h4>
+                                    <span>Research Supervisor</span>
+                                    <span class="company">Northumbria University</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slider-nav">
+                        <button class="prev-btn" aria-label="Previous testimonial"><i class="fas fa-chevron-left"></i></button>
+                        <button class="next-btn" aria-label="Next testimonial"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer role="contentinfo">
+            <section id="contact" aria-labelledby="contact-heading">
+                <h2 id="contact-heading">Contact</h2>
+                
+                <!-- Contact Form -->
+                <div class="contact-container">
+                    <div class="contact-form-section">
+                        <h3>Let's Build Something Amazing Together</h3>
+                        <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of an ambitious team. If you're looking for a dedicated AI Engineer to help you build the next generation of intelligent applications, I'd love to hear from you.</p>
+                        
+                        <form class="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                            <input type="hidden" name="form-name" value="contact">
+                            <div class="form-group" style="display: none;">
+                                <label for="bot-field">Don't fill this out if you're human:</label>
+                                <input name="bot-field" id="bot-field">
+                            </div>
+                            <div class="form-group">
+                                <label for="name">Name *</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="subject">Subject *</label>
+                                <input type="text" id="subject" name="subject" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">Message *</label>
+                                <textarea id="message" name="message" rows="5" required placeholder="Tell me about your project or how we can work together..."></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn-primary">
+                                <i class="fas fa-paper-plane"></i>
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                    
+                    <div class="contact-links-section">
+                        <h3>Connect With Me</h3>
+                        <ul class="contact-links">
+                            <li>
+                                <a href="https://github.com/ntg2208" target="_blank" rel="noopener noreferrer">
+                                    <i class="fab fa-github" aria-hidden="true"></i>
+                                    <div class="link-content">
+                                        <span class="link-title">GitHub</span>
+                                        <span class="link-desc">View my code repositories</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.linkedin.com/in/ntg2208/" target="_blank" rel="noopener noreferrer">
+                                    <i class="fab fa-linkedin" aria-hidden="true"></i>
+                                    <div class="link-content">
+                                        <span class="link-title">LinkedIn</span>
+                                        <span class="link-desc">Connect professionally</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="mailto:ntg2208@gmail.com">
+                                    <i class="far fa-envelope" aria-hidden="true"></i>
+                                    <div class="link-content">
+                                        <span class="link-title">Email</span>
+                                        <span class="link-desc">ntg2208@gmail.com</span>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                        
+                        <div class="location-info">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>London, UK</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </footer>
+        
+        <!-- Back to Top Button -->
+        <button class="back-to-top" id="backToTop" aria-label="Back to top">
+            <i class="fas fa-chevron-up"></i>
+        </button>
+    </div>
+</body>
+</html>
