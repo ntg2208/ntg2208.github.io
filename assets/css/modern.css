@@ -134,6 +134,13 @@
 html {
     scroll-behavior: smooth;
     font-size: 16px;
+    scroll-padding-top: 80px;
+}
+
+@media (max-width: 768px) {
+    html {
+        scroll-padding-top: 60px;
+    }
 }
 
 @media (prefers-reduced-motion: reduce) {

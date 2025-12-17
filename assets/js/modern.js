@@ -5,7 +5,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const currentTheme = localStorage.getItem('theme') || 'light';
     
     document.documentElement.setAttribute('data-theme', currentTheme);
-    
+
+    // Reset any hero transform from previous session
+    const hero = document.querySelector('.hero');
+    if (hero) {
+        hero.style.transform = 'none';
+    }
+
     themeToggle.addEventListener('click', () => {
         const currentTheme = document.documentElement.getAttribute('data-theme');
         const newTheme = currentTheme === 'light' ? 'dark' : 'light';
@@ -292,13 +298,78 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Parallax effect for hero section
+    // Parallax effect for hero background and image - disabled to prevent overlap
     window.addEventListener('scroll', () => {
         const scrolled = window.pageYOffset;
         const hero = document.querySelector('.hero');
-        
+        const particles = document.querySelector('.particles');
+        const heroImage = document.querySelector('.hero-image');
+
+        // Reset hero transform to prevent overlap
         if (hero) {
-            hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+            hero.style.transform = 'none';
         }
+        // Disable parallax to prevent overlapping issues
+        // if (particles) {
+        //     // Move background slower for depth effect
+        //     particles.style.transform = `translateY(${scrolled * 0.3}px)`;
+        // }
+        // if (heroImage) {
+        //     // Move hero image slightly for subtle depth
+        //     heroImage.style.transform = `translateY(${scrolled * 0.2}px)`;
+        // }
     });
+
+    // Hide skeleton placeholders when content loads
+    function hideSkeletons() {
+        const experienceSkeleton = document.querySelector('.experience-skeleton');
+        const projectsSkeleton = document.querySelector('.projects-skeleton');
+
+        if (experienceSkeleton && document.querySelector('.experience-content').children.length > 0) {
+            experienceSkeleton.style.display = 'none';
+        }
+        if (projectsSkeleton && document.querySelector('.projects-content').children.length > 0) {
+            projectsSkeleton.style.display = 'none';
+        }
+    }
+
+    // Ensure content is rendered; if not, try to render it
+    function ensureContentRendered() {
+        const experienceContent = document.querySelector('.experience-content');
+        const projectsContent = document.querySelector('.projects-content');
+
+        // If experience content is empty, try to render experience
+        if (experienceContent && experienceContent.children.length === 0 && window.renderExperience) {
+            console.log('Experience content empty, calling renderExperience');
+            window.renderExperience();
+        }
+
+        // If projects content is empty, try to render projects
+        if (projectsContent && projectsContent.children.length === 0 && window.renderProjects) {
+            console.log('Projects content empty, calling renderProjects');
+            window.renderProjects();
+            // Also initialize search if available
+            if (window.initializeProjectSearch) {
+                setTimeout(() => window.initializeProjectSearch(), 300);
+            }
+        }
+    }
+
+    // Check periodically for loaded content
+    const skeletonCheckInterval = setInterval(() => {
+        hideSkeletons();
+        ensureContentRendered();
+        const experienceLoaded = document.querySelector('.experience-content').children.length > 0;
+        const projectsLoaded = document.querySelector('.projects-content').children.length > 0;
+        if (experienceLoaded && projectsLoaded) {
+            clearInterval(skeletonCheckInterval);
+        }
+    }, 500);
+
+    // Also hide skeletons after max 5 seconds as fallback
+    setTimeout(() => {
+        hideSkeletons();
+        ensureContentRendered();
+        clearInterval(skeletonCheckInterval);
+    }, 5000);
 });
