@@ -352,6 +352,7 @@ section {
     justify-content: space-between;
     padding: var(--space-md) 0;
     position: relative;
+    gap: var(--space-lg);
 }
 
 .logo {
@@ -371,7 +372,6 @@ section {
     gap: var(--space-lg);
     flex: 1;
     justify-content: center;
-    margin: 0 var(--space-lg);
 }
 
 .nav-link {
