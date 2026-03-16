@@ -1,0 +1,67 @@
+---
+import { Mail, MapPin, Linkedin, Github } from '@lucide/astro';
+---
+<section id="contact" class="py-20 bg-slate-50">
+  <div class="max-w-6xl mx-auto px-6">
+    <p class="text-sm font-medium text-blue-600 mb-2">Contact</p>
+    <h2 class="text-3xl font-semibold text-slate-900 mb-4">Let's Build Something Amazing Together</h2>
+    <p class="text-slate-500 mb-10 max-w-2xl">
+      I'm always open to discussing new projects, creative ideas, or opportunities to be part of an ambitious team.
+    </p>
+
+    <div class="grid md:grid-cols-2 gap-12">
+      <div class="flex flex-col gap-4">
+        <div class="flex items-start gap-3">
+          <Mail class="w-5 h-5 text-blue-600 mt-0.5 shrink-0" />
+          <div>
+            <p class="text-xs text-slate-500 mb-0.5">Email</p>
+            <a href="mailto:ntg2208@gmail.com" class="text-sm text-blue-600 hover:text-blue-700">ntg2208@gmail.com</a>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-3">
+          <MapPin class="w-5 h-5 text-blue-600 mt-0.5 shrink-0" />
+          <div>
+            <p class="text-xs text-slate-500 mb-0.5">Location</p>
+            <p class="text-sm text-slate-900">London, UK</p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-3">
+          <Linkedin class="w-5 h-5 text-blue-600 mt-0.5 shrink-0" />
+          <div>
+            <p class="text-xs text-slate-500 mb-0.5">LinkedIn</p>
+            <a href="https://www.linkedin.com/in/ntg2208/" target="_blank" rel="noopener"
+               class="text-sm text-blue-600 hover:text-blue-700">linkedin.com/in/ntg2208</a>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-3">
+          <Github class="w-5 h-5 text-blue-600 mt-0.5 shrink-0" />
+          <div>
+            <p class="text-xs text-slate-500 mb-0.5">GitHub</p>
+            <a href="https://github.com/ntg2208" target="_blank" rel="noopener"
+               class="text-sm text-blue-600 hover:text-blue-700">github.com/ntg2208</a>
+          </div>
+        </div>
+      </div>
+
+      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="flex flex-col gap-4">
+        <input type="text" name="name" placeholder="Your Name" required
+               class="px-4 py-2.5 text-sm border border-slate-200 rounded-md bg-white text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent" />
+        <input type="email" name="email" placeholder="Your Email" required
+               class="px-4 py-2.5 text-sm border border-slate-200 rounded-md bg-white text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent" />
+        <input type="text" name="subject" placeholder="Subject" required
+               class="px-4 py-2.5 text-sm border border-slate-200 rounded-md bg-white text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent" />
+        <textarea name="message" rows="5" placeholder="Tell me about your project..." required
+                  class="px-4 py-2.5 text-sm border border-slate-200 rounded-md bg-white text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent resize-none"></textarea>
+        <!-- Honeypot for spam -->
+        <input type="text" name="_gotcha" class="hidden" />
+        <button type="submit"
+                class="px-5 py-2.5 bg-blue-600 text-white text-sm font-medium rounded-md hover:bg-blue-700 transition-colors self-start">
+          Send Message
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
