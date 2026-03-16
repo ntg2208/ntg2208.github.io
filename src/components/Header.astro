@@ -1,0 +1,81 @@
+---
+const navLinks = [
+  { label: 'Home', href: '#home' },
+  { label: 'About', href: '#about' },
+  { label: 'Skills', href: '#skills' },
+  { label: 'Experience', href: '#experience' },
+  { label: 'Projects', href: '#projects' },
+  { label: 'Education', href: '#education' },
+  { label: 'Testimonials', href: '#testimonials' },
+  { label: 'Contact', href: '#contact' },
+];
+---
+<header class="fixed top-0 left-0 right-0 z-50 bg-white border-b border-slate-200">
+  <div class="max-w-6xl mx-auto px-6 flex items-center justify-between h-16">
+    <a href="#home" class="text-xl font-bold text-slate-900">TGN</a>
+
+    <nav class="hidden md:flex items-center gap-6">
+      {navLinks.map(link => (
+        <a href={link.href} class="text-sm text-slate-500 hover:text-blue-600 transition-colors" data-nav-link>
+          {link.label}
+        </a>
+      ))}
+    </nav>
+
+    <div class="flex items-center gap-4">
+      <a href="/resume/Truong_Giang_Nguyen_Resume.pdf" target="_blank" rel="noopener"
+         class="hidden md:inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-md hover:bg-blue-700 transition-colors">
+        Download Resume
+      </a>
+      <button id="menu-toggle" class="md:hidden p-2 text-slate-500 hover:text-slate-900" aria-label="Toggle menu" aria-expanded="false">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="hidden md:hidden border-t border-slate-200 bg-white">
+    <nav class="flex flex-col px-6 py-4 gap-3">
+      {navLinks.map(link => (
+        <a href={link.href} class="text-sm text-slate-500 hover:text-blue-600 transition-colors" data-mobile-link>
+          {link.label}
+        </a>
+      ))}
+      <a href="/resume/Truong_Giang_Nguyen_Resume.pdf" target="_blank" rel="noopener"
+         class="mt-2 inline-flex items-center justify-center gap-2 px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-md hover:bg-blue-700 transition-colors">
+        Download Resume
+      </a>
+    </nav>
+  </div>
+</header>
+
+<script>
+  // Mobile menu toggle
+  const toggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+  toggle?.addEventListener('click', () => {
+    const open = menu?.classList.toggle('hidden') === false;
+    toggle.setAttribute('aria-expanded', String(open));
+  });
+  document.querySelectorAll('[data-mobile-link]').forEach(link => {
+    link.addEventListener('click', () => menu?.classList.add('hidden'));
+  });
+
+  // Active nav highlighting via IntersectionObserver
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('[data-nav-link]');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(link => {
+          const active = link.getAttribute('href') === `#${entry.target.id}`;
+          link.classList.toggle('text-blue-600', active);
+          link.classList.toggle('text-slate-500', !active);
+        });
+      }
+    });
+  }, { rootMargin: '-50% 0px -50% 0px' });
+  sections.forEach(section => observer.observe(section));
+</script>
