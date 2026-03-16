@@ -1,0 +1,19 @@
+---
+import { getCollection } from 'astro:content';
+import ProjectFilter from './ProjectFilter.tsx';
+
+const projectEntries = await getCollection('projects');
+const projects = projectEntries
+  .sort((a, b) => a.data.order - b.data.order)
+  .map(entry => ({
+    id: entry.id,
+    ...entry.data,
+  }));
+---
+<section id="projects" class="py-20 bg-white">
+  <div class="max-w-6xl mx-auto px-6">
+    <p class="text-sm font-medium text-blue-600 mb-2">Projects</p>
+    <h2 class="text-3xl font-semibold text-slate-900 mb-8">Featured Work</h2>
+    <ProjectFilter client:visible projects={projects} />
+  </div>
+</section>
