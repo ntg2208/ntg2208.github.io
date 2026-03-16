@@ -35,6 +35,7 @@ const sectorLabels: Record<string, string> = {
 export default function ProjectFilter({ projects }: Props) {
   const [search, setSearch] = useState('');
   const [sector, setSector] = useState('all');
+  const [expanded, setExpanded] = useState<Set<string>>(new Set());
 
   const sectors = useMemo(() => {
     const unique = [...new Set(projects.map(p => p.sector))];
@@ -51,6 +52,15 @@ export default function ProjectFilter({ projects }: Props) {
       return matchesSector && matchesSearch;
     });
   }, [projects, search, sector]);
+
+  const toggleExpand = (id: string) => {
+    setExpanded(prev => {
+      const next = new Set(prev);
+      if (next.has(id)) next.delete(id);
+      else next.add(id);
+      return next;
+    });
+  };
 
   return (
     <div>
@@ -77,38 +87,51 @@ export default function ProjectFilter({ projects }: Props) {
         <p class="text-sm text-slate-500 text-center py-12">No projects found matching your criteria.</p>
       ) : (
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filtered.map(project => (
-            <div key={project.id} class="border border-slate-200 rounded-lg bg-white overflow-hidden">
-              {project.image && (
-                <img src={project.image} alt={project.title} class="w-full h-40 object-cover" loading="lazy" />
-              )}
-              <div class="p-5">
-                <div class="flex items-center justify-between mb-2">
-                  <h3 class="text-sm font-semibold text-slate-900 line-clamp-1">{project.title}</h3>
-                  {project.date && <span class="text-xs text-slate-400 shrink-0 ml-2">{project.date}</span>}
-                </div>
-                <p class="text-xs text-slate-500 leading-relaxed mb-3 line-clamp-2">{project.description}</p>
-                <div class="flex flex-wrap gap-1.5 mb-3">
-                  {project.tech.slice(0, 4).map(tag => (
-                    <span key={tag} class="px-2 py-1 text-xs text-blue-700 bg-blue-50 rounded">{tag}</span>
-                  ))}
-                  {project.tech.length > 4 && (
-                    <span class="px-2 py-1 text-xs text-slate-500 bg-slate-50 rounded">+{project.tech.length - 4}</span>
+          {filtered.map(project => {
+            const isExpanded = expanded.has(project.id);
+            const isLong = project.description.length > 120;
+            return (
+              <div key={project.id} class="border border-slate-200 rounded-lg bg-white overflow-hidden flex flex-col">
+                <div class="p-5 flex flex-col flex-1">
+                  <div class="flex items-start justify-between mb-2">
+                    <h3 class="text-sm font-semibold text-slate-900">{project.title}</h3>
+                    {project.date && <span class="text-xs text-slate-400 shrink-0 ml-2 mt-0.5">{project.date}</span>}
+                  </div>
+                  <div class="mb-3">
+                    <p class={`text-xs text-slate-500 leading-relaxed ${!isExpanded && isLong ? 'line-clamp-3' : ''}`}>
+                      {project.description}
+                    </p>
+                    {isLong && (
+                      <button
+                        onClick={() => toggleExpand(project.id)}
+                        class="text-xs text-blue-600 hover:text-blue-700 font-medium mt-1"
+                      >
+                        {isExpanded ? 'Show less' : 'Read more'}
+                      </button>
+                    )}
+                  </div>
+                  <div class="flex flex-wrap gap-1.5 mb-3 mt-auto">
+                    {project.tech.slice(0, 4).map(tag => (
+                      <span key={tag} class="px-2 py-1 text-xs text-blue-700 bg-blue-50 rounded">{tag}</span>
+                    ))}
+                    {project.tech.length > 4 && (
+                      <span class="px-2 py-1 text-xs text-slate-500 bg-slate-50 rounded">+{project.tech.length - 4}</span>
+                    )}
+                  </div>
+                  {project.links && project.links.length > 0 && (
+                    <div class="flex gap-3">
+                      {project.links.map(link => (
+                        <a key={link.url} href={link.url} target="_blank" rel="noopener"
+                           class="text-xs text-blue-600 hover:text-blue-700 font-medium">
+                          {link.label} →
+                        </a>
+                      ))}
+                    </div>
                   )}
                 </div>
-                {project.links && project.links.length > 0 && (
-                  <div class="flex gap-3">
-                    {project.links.map(link => (
-                      <a key={link.url} href={link.url} target="_blank" rel="noopener"
-                         class="text-xs text-blue-600 hover:text-blue-700 font-medium">
-                        {link.label} →
-                      </a>
-                    ))}
-                  </div>
-                )}
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       )}
     </div>
