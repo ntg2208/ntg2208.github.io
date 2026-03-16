@@ -4,7 +4,7 @@ import ProjectFilter from './ProjectFilter.tsx';
 
 const projectEntries = await getCollection('projects');
 const projects = projectEntries
-  .sort((a, b) => a.data.order - b.data.order)
+  .sort((a, b) => parseInt(b.data.date || '0') - parseInt(a.data.date || '0'))
   .map(entry => ({
     id: entry.id,
     ...entry.data,
