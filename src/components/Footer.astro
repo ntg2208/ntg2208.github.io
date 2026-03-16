@@ -1,0 +1,64 @@
+---
+const quickLinks = [
+  { label: 'Home', href: '#home' },
+  { label: 'About', href: '#about' },
+  { label: 'Projects', href: '#projects' },
+  { label: 'Contact', href: '#contact' },
+];
+
+const socialLinks = [
+  { label: 'GitHub', href: 'https://github.com/ntg2208' },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/ntg2208/' },
+  { label: 'Email', href: 'mailto:ntg2208@gmail.com' },
+];
+
+const year = new Date().getFullYear();
+---
+<footer class="bg-slate-50 border-t border-slate-200">
+  <div class="max-w-6xl mx-auto px-6 py-12 text-center">
+    <a href="#home" class="text-xl font-bold text-slate-900">TGN</a>
+    <p class="text-sm text-slate-500 mt-1 mb-6">AI Engineer & LLM Specialist</p>
+
+    <div class="flex justify-center gap-6 mb-4">
+      {quickLinks.map(link => (
+        <a href={link.href} class="text-sm text-slate-500 hover:text-blue-600 transition-colors">{link.label}</a>
+      ))}
+    </div>
+
+    <div class="flex justify-center gap-6 mb-8">
+      {socialLinks.map(link => (
+        <a href={link.href} target={link.href.startsWith('mailto') ? undefined : '_blank'}
+           rel={link.href.startsWith('mailto') ? undefined : 'noopener'}
+           class="text-sm text-slate-500 hover:text-blue-600 transition-colors">
+          {link.label}
+        </a>
+      ))}
+    </div>
+
+    <p class="text-xs text-slate-400">&copy; {year} Truong Giang Nguyen. All rights reserved.</p>
+  </div>
+
+  <!-- Back to top -->
+  <button id="back-to-top" aria-label="Back to top"
+          class="fixed bottom-6 right-6 w-10 h-10 bg-white border border-slate-200 rounded-md text-slate-500 hover:text-blue-600 hover:border-blue-600 transition-colors hidden items-center justify-center">
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+    </svg>
+  </button>
+</footer>
+
+<script>
+  const btn = document.getElementById('back-to-top');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 500) {
+      btn?.classList.remove('hidden');
+      btn?.classList.add('flex');
+    } else {
+      btn?.classList.add('hidden');
+      btn?.classList.remove('flex');
+    }
+  });
+  btn?.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
