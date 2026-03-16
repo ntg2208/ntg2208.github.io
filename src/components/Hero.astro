@@ -1,0 +1,38 @@
+---
+const stats = [
+  { value: '5+', label: 'Years Experience' },
+  { value: '20+', label: 'Projects Completed' },
+  { value: '6', label: 'Companies' },
+];
+---
+<section id="home" class="min-h-screen flex items-center bg-white">
+  <div class="max-w-6xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-12 items-center">
+    <div>
+      <p class="text-sm font-medium text-blue-600 mb-3">Production-Ready AI Engineer & LLM Specialist</p>
+      <h1 class="text-5xl font-bold text-slate-900 mb-4">Truong Giang Nguyen</h1>
+      <p class="text-base text-slate-500 mb-8 leading-relaxed">
+        Building scalable, enterprise-grade AI solutions with a focus on LLMs, RAG systems, and computer vision.
+      </p>
+      <div class="flex gap-3 mb-10">
+        <a href="#projects" class="px-5 py-2.5 border border-blue-600 text-blue-600 text-sm font-medium rounded-md hover:bg-blue-50 transition-colors">
+          View My Work
+        </a>
+        <a href="#contact" class="px-5 py-2.5 bg-blue-600 text-white text-sm font-medium rounded-md hover:bg-blue-700 transition-colors">
+          Get In Touch
+        </a>
+      </div>
+      <div class="flex gap-8">
+        {stats.map(stat => (
+          <div>
+            <p class="text-2xl font-bold text-slate-900">{stat.value}</p>
+            <p class="text-xs text-slate-500">{stat.label}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+    <div class="flex justify-center">
+      <img src="/images/profile-img.webp" alt="Truong Giang Nguyen" width="400" height="400"
+           class="rounded-xl w-full max-w-sm" loading="eager" />
+    </div>
+  </div>
+</section>
