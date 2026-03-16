@@ -1,15 +1,14 @@
 {
   "company": "Northumbria University",
   "location": "UK",
-  "role": "Data Scientist",
+  "role": "Data Scientist (MSc Dissertation Research)",
   "startDate": "Jan 2023",
   "endDate": "Jul 2023",
   "projects": [
     {
-      "title": "Researching Solutions for Parkinson's Disease Treatment",
-      "description": "Conducted statistical analysis and built predictive ML models (Random Forests, Logistic Regression) to evaluate the effectiveness of wearable/smartphone cues for drooling treatment in Parkinson's patients. Developed a personalized treatment schedule prediction system on AWS SageMaker, achieving 65% F1-score accuracy through rigorous hyperparameter tuning and model selection.",
-      "tech": ["Random Forests", "Logistic Regression", "AWS SageMaker", "Python", "Statistical Analysis"],
-      "image": "/images/experience/statistical-analysis.svg"
+      "title": "Parkinson's Disease Treatment Research",
+      "description": "Conducted statistical analysis and built predictive ML models (Random Forests, Logistic Regression) using Python and scikit-learn to evaluate wearable/smartphone cue effectiveness for Parkinson's disease drooling treatment. Developed personalized treatment schedule prediction system achieving 65% F1-score accuracy. Received MSc Distinction for dissertation demonstrating rigorous research methodology.",
+      "tech": ["Random Forests", "Logistic Regression", "scikit-learn", "Python", "Statistical Analysis"]
     }
   ],
   "order": 3

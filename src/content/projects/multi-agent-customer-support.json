@@ -1,0 +1,9 @@
+{
+  "title": "Multi-Agent AI Customer Support System",
+  "description": "Architected Master Agent orchestration with specialized Policy Agent (RAG) and Ticket Agent (database operations). Achieved 100% routing accuracy across 15+ test scenarios with sub-2-second response times. Implemented safety guardrails (PII protection, content moderation) and LLM-as-a-Judge evaluation framework. Published on GitHub (13 stars, 4 forks).",
+  "sector": "nlp",
+  "tech": ["Google ADK", "Vertex AI", "RAG", "Vector Databases", "FastAPI", "PostgreSQL"],
+  "links": [{"label": "GitHub", "url": "https://github.com/ntg2208/production-ai-customer-support"}],
+  "date": "2024",
+  "order": 0
+}

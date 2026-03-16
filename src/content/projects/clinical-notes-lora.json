@@ -1,10 +1,9 @@
 {
-  "title": "Efficient Clinical Notes Summarization with LoRA Fine-tuning",
-  "description": "Engineered an efficient LLM fine-tuning pipeline using LoRA on a 4-bit quantized Mistral 7B model, improving clinical note summarization accuracy threefold. Processed and curated the 'Asclepius-Synthetic-Clinical-Notes' dataset, improving ROUGE-1 score from 0.381 to 0.423.",
+  "title": "Clinical Notes Summarization with LoRA Fine-tuning",
+  "description": "Fine-tuned Mistral 7B using parameter-efficient LoRA with 4-bit quantization for clinical note summarization. Improved ROUGE-1 from 0.381 to 0.423 (11% improvement). Achieved 17.9-minute training time through parameter-efficient fine-tuning. Processed Asclepius-Synthetic-Clinical-Notes dataset with custom filtering.",
   "sector": "nlp",
-  "tech": ["Python", "PyTorch", "Hugging Face Transformers", "Unsloth", "ROUGE", "Pandas"],
-  "image": "/images/projects/multimodal-conversational-ai-ecommerce.png",
-  "links": [{"label": "Colab", "url": "https://colab.research.google.com/drive/1Q3IVwDquecpz_zfnjNq4TKudIzVQdnOk?usp=sharing"}],
+  "tech": ["PyTorch", "Hugging Face", "LoRA", "Unsloth", "ROUGE"],
+  "links": [{"label": "Colab", "url": "https://colab.research.google.com/drive/1Q3IVwDquecpz_zfnjNq4TKudIzVQdnOk"}],
   "date": "2024",
   "order": 1
 }

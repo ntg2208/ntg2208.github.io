@@ -2,8 +2,7 @@
   "title": "Customer Sentiment Analysis with Facial Recognition",
   "description": "Built a real-time human emotion classifier detecting 7 emotional states: Angry, Disgust, Fear, Happy, Sad, Surprise, Neutral. Integrated a face detection and emotion recognition pipeline for automated customer satisfaction evaluation in retail environments.",
   "sector": "cv",
-  "tech": ["TensorFlow", "Computer Vision", "Docker", "Face Detection", "CNN", "Cloud Deployment"],
-  "image": "/images/projects/customer-sentiment-analysis.svg",
+  "tech": ["TensorFlow", "Computer Vision", "Docker", "Face Detection", "CNN"],
   "date": "2019",
   "order": 14
 }

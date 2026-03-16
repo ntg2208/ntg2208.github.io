@@ -6,10 +6,9 @@
   "endDate": "Nov 2020",
   "projects": [
     {
-      "title": "Computer Vision for Mobile Applications",
-      "description": "Researched and implemented Generative Adversarial Networks (GANs) including StyleGAN, StyleGAN2, and U\u00b2-Net for image enhancement and salient object detection applications. Deployed Deep Learning and Computer Vision solutions to AWS EC2 using Docker containerization, ensuring scalable production infrastructure.",
-      "tech": ["StyleGAN", "StyleGAN2", "U\u00b2-Net", "OpenCV", "Docker", "AWS EC2"],
-      "image": "/images/experience/gan-research.svg"
+      "title": "GAN Research & Image Enhancement",
+      "description": "Researched Generative Adversarial Networks (StyleGAN, StyleGAN2, U²-Net) for image enhancement and object detection. Designed technical solutions and presented architecture recommendations to backend engineering team for implementation.",
+      "tech": ["StyleGAN", "StyleGAN2", "U²-Net", "OpenCV", "Docker", "AWS EC2"]
     }
   ],
   "order": 4

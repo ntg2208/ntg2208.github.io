@@ -6,10 +6,9 @@
   "endDate": "Jul 2020",
   "projects": [
     {
-      "title": "Defective Semiconductor Detection",
-      "description": "Collaborated with a team of 2 engineers to build a production-ready defect detection system. Built a high-precision defect detection system using YOLOv3 and RetinaNet, achieving 98% precision in identifying semiconductor defects. Engineered a computer vision pipeline combining OpenCV, Hough Transform, Canny edge detection, and ResNet for robust feature extraction. Deployed a containerized ML model to the factory floor with a 0.2-second inspection time per image.",
-      "tech": ["YOLOv3", "RetinaNet", "OpenCV", "ResNet", "Docker", "Python"],
-      "image": "/images/experience/defective-semiconductor-detection.svg"
+      "title": "Semiconductor Defect Detection System",
+      "description": "Collaborated with 2-engineer team to build semiconductor defect detection system achieving 98% precision using YOLOv3 and RetinaNet. Engineered computer vision pipeline with OpenCV, Hough Transform, Canny edge detection, and ResNet achieving 0.2-second inference time. Developed WPF application for complete ML workflow (annotation, training, inference, evaluation).",
+      "tech": ["YOLOv3", "RetinaNet", "OpenCV", "ResNet", "Docker", "C#", "Python"]
     }
   ],
   "order": 5

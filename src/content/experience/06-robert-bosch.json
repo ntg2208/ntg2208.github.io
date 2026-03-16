@@ -6,10 +6,9 @@
   "endDate": "Nov 2019",
   "projects": [
     {
-      "title": "Renault & Nissan Interior Application for Electrical Vehicles",
-      "description": "Trained in advanced C/C++ programming including parallel programming and application design patterns. Developed debugging tools for automotive user interface applications, supporting R&D team efficiency.",
-      "tech": ["C++", "C", "Parallel Programming", "Automotive Software", "Debugging Tools"],
-      "image": "/images/experience/ev-interface-development.svg"
+      "title": "Automotive UI Development",
+      "description": "Trained in C/C++ programming including parallel programming and design patterns. Developed debugging tools for automotive user interface applications.",
+      "tech": ["C++", "C", "Parallel Programming", "Automotive Software"]
     }
   ],
   "order": 6

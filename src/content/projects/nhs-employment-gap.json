@@ -1,9 +1,8 @@
 {
   "title": "NHS Employment Gap Analysis Using Machine Learning",
-  "description": "Engineered an end-to-end machine learning pipeline to investigate employment gaps between the general population and people with long-term conditions in the NHS. Developed a Random Forest classifier achieving 94.6% accuracy in predicting high employment gaps.",
+  "description": "Built Random Forest classifier achieving 94.6% accuracy predicting employment gaps for people with long-term conditions. Applied K-Means clustering uncovering 3 distinct employment pattern clusters across demographics. Generated 20+ interactive visualizations for healthcare workforce planning insights.",
   "sector": "healthcare",
   "tech": ["Python", "scikit-learn", "pandas", "matplotlib", "seaborn", "Random Forest", "K-Means"],
-  "image": "/images/projects/nhs-employment-gap-analysis.png",
   "links": [{"label": "GitHub", "url": "https://github.com/ntg2208/employment-gap-analysis"}],
   "date": "2025",
   "order": 8

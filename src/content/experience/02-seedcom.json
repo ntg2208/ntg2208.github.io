@@ -1,45 +1,34 @@
 {
   "company": "Seedcom R&D",
   "location": "Vietnam (Remote)",
-  "role": "AI Engineer",
+  "role": "ML Engineer / Data Scientist",
   "startDate": "Nov 2020",
   "endDate": "Oct 2024",
   "projects": [
     {
-      "title": "LLM & RAG Systems",
-      "description": "Built a Vietnamese recipe recommendation chatbot using Retrieval-Augmented Generation (RAG) with Google Gemini, leveraging customer basket history to deliver personalized culinary suggestions. Developed and fine-tuned a personalized notification system using LoRA on Llama 3, enhancing app re-engagement rates and improving user retention metrics.",
-      "tech": ["Google Gemini", "RAG", "LoRA", "Llama 3", "Python"],
-      "image": "/images/experience/recipe-based-product-recommendation.svg"
+      "title": "Production ML Systems (Deployed)",
+      "description": "Led team of 3 engineers developing automated price intelligence system with multimodal AI; built product matching using Google SigCLIP (text + image embeddings with category-specific weighting) to match 6,000 SKUs across 6 retailers. Deployed to production on GCP (Vertex AI), running 2+ years; integrated with BigQuery for real-time analytics dashboards.",
+      "tech": ["Google SigCLIP", "Vertex AI", "BigQuery", "Python", "GCP"]
     },
     {
-      "title": "MLOps & Infrastructure",
-      "description": "Designed and automated end-to-end ML pipelines on Google Vertex AI for competitor price mapping and product recommendations, utilizing CI/CD best practices (GitLab CI, Airflow) for robust, automated deployment. Implemented comprehensive monitoring and automated deployment pipelines ensuring resilience and scalability.",
-      "tech": ["Google Vertex AI", "GitLab CI", "Airflow", "MLOps", "Docker"],
-      "image": "/images/experience/competitive-price-intelligence.svg"
+      "title": "Analytics Platform (Production)",
+      "description": "Contributed as team member (7-person team) to large-scale analytics platform deployed to production for Vietnam's largest supermarket chain (Kingfood/Onelife). Optimized BigQuery pipelines handling millions of daily transactions; built production dashboards with FastAPI backend.",
+      "tech": ["BigQuery", "FastAPI", "GCP", "SQL", "Python"]
     },
     {
-      "title": "Computer Vision - Fashion Recommendation System",
-      "description": "Led a cross-functional team of 3 engineers to develop and deploy a production computer vision solution for fashion retail. Built a fashion item detection and localization system using RetinaNet and OpenCV, achieving 92% average precision. Developed an outfit recommendation engine improving customer click-rate and cross-sell opportunities.",
-      "tech": ["RetinaNet", "OpenCV", "Computer Vision", "Python", "AWS"],
-      "image": "/images/experience/ai-fashion-recommendation.svg"
+      "title": "ML Infrastructure & Pipelines",
+      "description": "Designed and automated ML pipelines on Google Vertex AI with orchestration using Airflow. Implemented CI/CD practices with GitLab CI for automated model training and deployment. Deployed FastAPI-based ML services; containerized models with Docker for reproducible deployments. Built monitoring infrastructure tracking model performance.",
+      "tech": ["Vertex AI", "Airflow", "GitLab CI", "Docker", "FastAPI", "MLOps"]
     },
     {
-      "title": "Pricing Intelligence & Competitive Analysis",
-      "description": "Developed an automated web scraping system with multimodal AI to map competitor products to internal catalog for comprehensive price tracking. Built a real-time price tracking pipeline integrating with analytics dashboards. Created a dynamic pricing algorithm for product bundles using statistical analysis of purchase patterns.",
-      "tech": ["Web Scraping", "Multimodal AI", "Python", "BigQuery", "Statistics"],
-      "image": "/images/experience/product-and-combo-pricing.svg"
+      "title": "Computer Vision - Fashion Detection System",
+      "description": "Led team of 3 engineers developing fashion detection system (RetinaNet, 92% AP, 19 categories) for 2 years. Evaluated YOLO/ResNet before selecting RetinaNet for production. Implemented complete CV pipeline from data preprocessing to inference.",
+      "tech": ["RetinaNet", "OpenCV", "Computer Vision", "Python"]
     },
     {
-      "title": "Demand Forecasting & Inventory Optimization",
-      "description": "Deployed advanced forecasting models (DeepAR, LightGBM) for time-series sales prediction at store and regional levels with high accuracy. Implemented an intelligent alert system for inventory management to identify overstock and understock situations, optimizing stock levels and reducing carrying costs.",
-      "tech": ["DeepAR", "LightGBM", "Time-Series", "Python", "AWS SageMaker"],
-      "image": "/images/experience/sales-forecast-and-inventory-management.svg"
-    },
-    {
-      "title": "Data Analytics Platform",
-      "description": "Collaborated within an agile team of 7 members to build a comprehensive retail analytics and marketing platform for Vietnam's largest supermarket chain. Created interactive dashboards analyzing customer behavior, product trends, and clustering patterns using BigQuery and GCP. Optimized query performance enabling real-time insights for business stakeholders.",
-      "tech": ["BigQuery", "GCP", "Data Analytics", "SQL", "Python"],
-      "image": "/images/experience/retail-data-analytics-platform.svg"
+      "title": "NLP & Forecasting Systems",
+      "description": "Designed NLP systems: Vietnamese recipe chatbot using RAG with 800 recipes; personalized notification system using LoRA fine-tuning on Llama 3. Built demand forecasting models (DeepAR, LightGBM) for time-series sales prediction at store and regional levels.",
+      "tech": ["RAG", "LoRA", "Llama 3", "DeepAR", "LightGBM", "Python"]
     }
   ],
   "order": 2

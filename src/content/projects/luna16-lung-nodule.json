@@ -3,7 +3,6 @@
   "description": "Processed and analyzed the LUNA 16 (LUng Nodule Analysis) dataset for lung disease detection research. Developed a pipeline for loading and extracting MRI scans, converting 3D volumes to 2D slice sequences for analysis.",
   "sector": "healthcare",
   "tech": ["Python", "Medical Imaging", "3D Image Processing", "Visualization"],
-  "image": "/images/projects/lung-nodule-analysis-luna16.svg",
   "date": "2020",
   "order": 16
 }

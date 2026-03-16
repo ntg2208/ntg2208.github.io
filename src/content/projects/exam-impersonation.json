@@ -3,7 +3,6 @@
   "description": "Developed a real-time face recognition system to prevent exam impersonation in university settings, combining supervised and unsupervised learning approaches. Implemented unsupervised clustering algorithms for anomaly detection, automatically flagging potential impersonation attempts.",
   "sector": "cv",
   "tech": ["MATLAB", "Face Recognition", "Supervised Learning", "Unsupervised Learning", "Real-time Processing"],
-  "image": "/images/projects/combating-exam-impersonation-universities.svg",
   "links": [{"label": "GitHub", "url": "https://github.com/ntg2208/matlab-anti-impersonator"}],
   "date": "2018",
   "order": 15

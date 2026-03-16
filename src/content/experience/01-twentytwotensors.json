@@ -1,21 +1,19 @@
 {
   "company": "twentytwotensors",
   "location": "UK",
-  "role": "Machine Learning Engineer",
-  "startDate": "Dec 2024",
+  "role": "Independent AI/ML Consultant",
+  "startDate": "Oct 2024",
   "endDate": "Present",
   "projects": [
     {
-      "title": "Production AI Multi-Agent Systems",
-      "description": "Architected and deployed a production-grade multi-agent AI customer support system using Google Gemini, orchestrating a Master Agent with specialized Policy Agent (RAG) and Ticket Agent (database operations), reducing operational costs by 60% while enabling 24/7 service availability.",
-      "tech": ["Google Gemini", "RAG", "Multi-Agent Systems", "Python"],
-      "image": "/images/experience/ml-model-development.svg"
+      "title": "Multi-Agent AI Customer Support System",
+      "description": "Created multi-agent AI system using Google ADK with Master Agent orchestration coordinating specialized Policy Agent (RAG) and Ticket Agent (database operations). Achieved 100% routing accuracy across 15+ test scenarios with sub-2-second response times. Implemented safety guardrails (PII protection, content moderation) and LLM-as-a-Judge evaluation framework. Published on GitHub (13 stars, 4 forks) and YouTube tutorials.",
+      "tech": ["Google ADK", "RAG", "Multi-Agent Systems", "FastAPI", "PostgreSQL", "Python"]
     },
     {
-      "title": "RAG + Database Hybrid Architecture",
-      "description": "Engineered a sophisticated RAG + Database hybrid architecture with location intelligence, achieving 100% routing accuracy across 15+ comprehensive test scenarios with sub-2-second response times.",
-      "tech": ["RAG", "Database Architecture", "Location Intelligence", "Python"],
-      "image": "/images/experience/data-analysis-processing.svg"
+      "title": "Production-Ready ML & Cloud Infrastructure",
+      "description": "Maintained production-ready skillset: survival analysis (Cox PH, 0.6688 C-index on 28,800 patients), customer segmentation (Random Forest, 94.6% accuracy), LLM fine-tuning (LoRA on clinical notes). Deployed Qwen3.5 35B on AWS using Terraform, vLLM, and llama.cpp for self-hosted model inference.",
+      "tech": ["AWS", "Terraform", "vLLM", "llama.cpp", "Docker", "CI/CD"]
     }
   ],
   "order": 1

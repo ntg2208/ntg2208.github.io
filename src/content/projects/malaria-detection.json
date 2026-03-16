@@ -1,9 +1,8 @@
 {
   "title": "Malaria Parasite Detection using Deep Learning",
-  "description": "Designed and deployed a CNN-based deep learning model for automated malaria parasite detection in blood cell microscopy images using TensorFlow v2. Achieved 97% precision for parasitized cell identification, demonstrating high accuracy for automated malaria screening.",
+  "description": "Built CNN-based model for automated malaria detection achieving 97% precision for parasitized cell identification in blood microscopy images. Implemented preprocessing pipeline with data augmentation for medical imaging.",
   "sector": "healthcare",
-  "tech": ["TensorFlow v2", "CNNs", "Image Processing", "Data Augmentation", "Medical Imaging"],
-  "image": "/images/projects/malaria-parasite-detection-deep-learning.png",
+  "tech": ["TensorFlow", "CNNs", "Image Processing", "Data Augmentation", "Medical Imaging"],
   "links": [{"label": "GitHub", "url": "https://github.com/ntg2208/malaria_detection_CNN"}],
   "date": "2023",
   "order": 13
