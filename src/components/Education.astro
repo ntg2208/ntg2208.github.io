@@ -1,0 +1,38 @@
+---
+const education = [
+  {
+    institution: 'Northumbria University',
+    location: 'UK',
+    degree: 'Master of Science in Data Science',
+    distinction: 'with Distinction',
+    period: 'Jan 2022 — Jul 2023',
+    description: "Developed a machine learning model to assess the effectiveness of smartphone and wearable cueing for drooling in Parkinson's Disease, utilizing statistical analysis and predictive modeling.",
+  },
+  {
+    institution: 'VNU — Ho Chi Minh University of Technology',
+    location: 'Vietnam',
+    degree: 'Bachelor of Engineering in Electrical and Telecommunication',
+    distinction: '',
+    period: 'Sep 2015 — May 2020',
+    description: 'Applied Deep Learning techniques to solve the inverse problem in Image Super-Resolution, enhancing image quality and resolution through advanced neural network architectures.',
+  },
+];
+---
+<section id="education" class="py-20 bg-slate-50">
+  <div class="max-w-6xl mx-auto px-6">
+    <p class="text-sm font-medium text-blue-600 mb-2">Education</p>
+    <h2 class="text-3xl font-semibold text-slate-900 mb-10">Academic Background</h2>
+    <div class="grid md:grid-cols-2 gap-6">
+      {education.map(edu => (
+        <div class="p-6 border border-slate-200 rounded-lg bg-white">
+          <h3 class="text-lg font-semibold text-slate-900 mb-1">{edu.institution}</h3>
+          <p class="text-sm text-blue-600 font-medium mb-1">
+            {edu.degree}{edu.distinction && ` (${edu.distinction})`}
+          </p>
+          <p class="text-xs text-slate-500 mb-4">{edu.period} · {edu.location}</p>
+          <p class="text-xs text-slate-500 leading-relaxed">{edu.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
