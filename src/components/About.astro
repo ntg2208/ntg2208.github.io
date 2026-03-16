@@ -1,0 +1,52 @@
+---
+import MessageSquare from '@lucide/astro/icons/message-square';
+import Settings from '@lucide/astro/icons/settings';
+import ChartBar from '@lucide/astro/icons/chart-bar';
+import Eye from '@lucide/astro/icons/eye';
+---
+<section id="about" class="py-20 bg-slate-50">
+  <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-start">
+    <div class="flex justify-center">
+      <img src="/images/profile-img.webp" alt="Truong Giang Nguyen" width="400" height="400"
+           class="rounded-xl w-full max-w-sm" loading="lazy" />
+    </div>
+    <div>
+      <p class="text-sm font-medium text-blue-600 mb-2">About Me</p>
+      <h2 class="text-3xl font-semibold text-slate-900 mb-4">Driving Business Value with Production-Grade AI</h2>
+      <p class="text-slate-500 mb-8 leading-relaxed">
+        I am a results-driven AI Engineer with over 5 years of experience in building and deploying scalable, enterprise-grade AI solutions. My expertise lies in leveraging Large Language Models (LLMs), Retrieval-Augmented Generation (RAG) systems, and Computer Vision to solve complex business problems and create measurable value.
+      </p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div class="p-4 border border-slate-200 rounded-lg bg-white">
+          <MessageSquare class="w-5 h-5 text-blue-600 mb-2" />
+          <h3 class="text-sm font-semibold text-slate-900 mb-1">LLM & RAG Systems</h3>
+          <p class="text-xs text-slate-500 leading-relaxed">Architecting and deploying advanced language models, including multi-agent systems, for applications like customer support and personalized recommendations.</p>
+        </div>
+        <div class="p-4 border border-slate-200 rounded-lg bg-white">
+          <Settings class="w-5 h-5 text-blue-600 mb-2" />
+          <h3 class="text-sm font-semibold text-slate-900 mb-1">MLOps & Infrastructure</h3>
+          <p class="text-xs text-slate-500 leading-relaxed">Designing and automating end-to-end ML pipelines on cloud platforms like AWS and Google Vertex AI, ensuring scalability and resilience.</p>
+        </div>
+        <div class="p-4 border border-slate-200 rounded-lg bg-white">
+          <ChartBar class="w-5 h-5 text-blue-600 mb-2" />
+          <h3 class="text-sm font-semibold text-slate-900 mb-1">Data Science & Analytics</h3>
+          <p class="text-xs text-slate-500 leading-relaxed">Applying statistical analysis and machine learning to extract actionable insights from complex datasets, from healthcare to retail.</p>
+        </div>
+        <div class="p-4 border border-slate-200 rounded-lg bg-white">
+          <Eye class="w-5 h-5 text-blue-600 mb-2" />
+          <h3 class="text-sm font-semibold text-slate-900 mb-1">Computer Vision</h3>
+          <p class="text-xs text-slate-500 leading-relaxed">Developing and deploying high-precision computer vision models for applications like defect detection, fashion recommendation, and facial recognition.</p>
+        </div>
+      </div>
+      <div class="flex gap-3 mt-8">
+        <a href="#contact" class="px-5 py-2.5 border border-blue-600 text-blue-600 text-sm font-medium rounded-md hover:bg-blue-50 transition-colors">
+          Let's Connect
+        </a>
+        <a href="/resume/Truong_Giang_Nguyen_Resume.pdf" target="_blank" rel="noopener"
+           class="px-5 py-2.5 bg-blue-600 text-white text-sm font-medium rounded-md hover:bg-blue-700 transition-colors">
+          Download CV
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
