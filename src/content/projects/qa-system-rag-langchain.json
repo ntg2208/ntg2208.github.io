@@ -1,0 +1,10 @@
+{
+  "title": "Building Q&A System with RAG using LangChain & Llama2",
+  "description": "Developed a production-grade Retrieval-Augmented Generation system using LangChain and Llama2 on AWS infrastructure (SageMaker, Jumpstart). Engineered a comprehensive data preprocessing pipeline for Amazon's Letters to Shareholders, creating a structured knowledge base for retrieval.",
+  "sector": "nlp",
+  "tech": ["LangChain", "Llama2", "AWS SageMaker", "AWS Jumpstart", "Vector Databases"],
+  "image": "/images/projects/building-qa-system-rag-langchain-llama2.png",
+  "links": [{"label": "Colab", "url": "https://colab.research.google.com/drive/1ct4A3H97BaJoqeyv6MjSXkHS_-4uJCFf?usp=sharing"}],
+  "date": "2023",
+  "order": 4
+}

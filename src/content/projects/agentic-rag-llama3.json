@@ -1,0 +1,10 @@
+{
+  "title": "Agentic RAG System with Llama3 & LangGraph",
+  "description": "Architected a sophisticated Retrieval-Augmented Generation (RAG) agent using Llama3 and LangGraph, implementing intelligent routing logic for accurate document retrieval. Integrated a fallback web search mechanism for out-of-domain queries and implemented self-correction and hallucination detection features.",
+  "sector": "nlp",
+  "tech": ["Llama3", "LangGraph", "LangChain", "Vector Databases", "Python"],
+  "image": "/images/projects/rag-agent-llama3.png",
+  "links": [{"label": "Colab", "url": "https://colab.research.google.com/drive/1Pe1wPAGh4Z2b6c8QUhny0KWQyC70vK9r?usp=sharing"}],
+  "date": "2024",
+  "order": 2
+}

@@ -1,0 +1,10 @@
+{
+  "title": "Shakespeare-Style Text Generation with Hidden Markov Models",
+  "description": "Developed a sophisticated text generation engine using Hidden Markov Models and advanced NLP techniques, successfully replicating Shakespearean writing style. Achieved 98.13% unique vocabulary generation while maintaining authentic Shakespearean stylistic patterns.",
+  "sector": "nlp",
+  "tech": ["Python", "NLTK", "SpaCy", "Hidden Markov Models", "Matplotlib", "Seaborn"],
+  "image": "/images/projects/shakespeare-text-generation.png",
+  "links": [{"label": "GitHub", "url": "https://github.com/ntg2208/HMM_Text_Gen"}],
+  "date": "2024",
+  "order": 6
+}

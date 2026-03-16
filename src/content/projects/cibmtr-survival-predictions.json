@@ -1,0 +1,9 @@
+{
+  "title": "CIBMTR - Equity in Post-HCT Survival Predictions",
+  "description": "Developed a Cox Proportional Hazards survival model achieving a C-index of 0.6688 on a dataset of 28,800 transplant patients with 103 clinical features. Successfully stratified patients into 4 distinct risk groups with a 4.59x hazard ratio between the highest and lowest risk categories.",
+  "sector": "healthcare",
+  "tech": ["Python", "lifelines", "scikit-learn", "pandas", "PCA", "Statistical Analysis", "Survival Modeling"],
+  "links": [{"label": "Kaggle", "url": "https://www.kaggle.com/competitions/equity-post-HCT-survival-predictions"}],
+  "date": "2025",
+  "order": 7
+}

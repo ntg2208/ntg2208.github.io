@@ -1,0 +1,10 @@
+{
+  "title": "JPEG Image Compression Algorithm",
+  "description": "Implemented a complete JPEG compression and decompression pipeline from scratch in pure Python, demonstrating a deep understanding of image processing fundamentals. Applied Discrete Cosine Transform (DCT) for image quantization and Inverse DCT for reconstruction.",
+  "sector": "image-processing",
+  "tech": ["Python", "Signal Processing", "DCT", "Image Compression", "NumPy"],
+  "image": "/images/projects/jpeg-image-compression-python.svg",
+  "links": [{"label": "GitHub", "url": "https://github.com/ntg2208/JPEG-Image-compression-python-example"}],
+  "date": "2018",
+  "order": 17
+}

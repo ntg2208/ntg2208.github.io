@@ -1,0 +1,10 @@
+{
+  "title": "Complaint Tweet Classification with Prompt Tuning",
+  "description": "Investigated prompt engineering techniques for fine-tuning the BLOOM LLM on a complaint tweet classification task. Designed and optimized prompt templates to guide model behavior for sentiment analysis and complaint categorization.",
+  "sector": "nlp",
+  "tech": ["BLOOM", "Prompt Engineering", "NLP", "Python", "Transformers"],
+  "image": "/images/projects/complaint-tweet-classification.png",
+  "links": [{"label": "Kaggle", "url": "https://www.kaggle.com/code/p1ayer0ne/prompttuning-bloom?scriptVersionId=165711500"}],
+  "date": "2024",
+  "order": 5
+}

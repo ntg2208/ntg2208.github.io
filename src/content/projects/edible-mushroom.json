@@ -1,0 +1,10 @@
+{
+  "title": "Edible Mushroom Classification System",
+  "description": "Developed a comprehensive analysis and classification system for distinguishing edible from poisonous mushrooms, addressing a critical public health safety concern. Built an ensemble of ML models achieving 99% precision in edible mushroom classification.",
+  "sector": "data-analysis",
+  "tech": ["R", "ggplot2", "Random Forest", "XGBoost", "SVM", "Decision Trees"],
+  "image": "/images/projects/edible-mushroom-analysis.svg",
+  "links": [{"label": "GitHub", "url": "https://github.com/ntg2208/Edible-Mushroom-Analysis"}],
+  "date": "2022",
+  "order": 12
+}

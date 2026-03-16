@@ -1,0 +1,10 @@
+{
+  "title": "M1 Motorway Traffic Analysis",
+  "description": "Architected an automated web scraping system to collect speed data across 48 junctions on the M1 motorway every 6 hours, building a comprehensive 3-month traffic database. Performed comparative statistical analysis of northbound vs southbound traffic patterns.",
+  "sector": "transport",
+  "tech": ["R", "ggplot2", "Web Scraping", "Statistical Analysis", "Hypothesis Testing"],
+  "image": "/images/projects/m1-traffic-analysis.svg",
+  "links": [{"label": "GitHub", "url": "https://github.com/ntg2208/M1-Traffic-Analysis-R"}],
+  "date": "2022",
+  "order": 10
+}

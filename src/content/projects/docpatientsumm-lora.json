@@ -1,0 +1,10 @@
+{
+  "title": "DocPatientSumm: Clinical Conversation Summarization with LoRA",
+  "description": "Fine-tuned large language models for doctor-patient conversation summarization, achieving a threefold improvement in accuracy through parameter-efficient LoRA techniques. Configured distributed training infrastructure with model parallelism across multi-GPU setups.",
+  "sector": "nlp",
+  "tech": ["LoRA", "Gemma", "Multi-GPU Training", "Model Parallelism", "PyTorch"],
+  "image": "/images/projects/docpatientsumm-lora.png",
+  "links": [{"label": "Kaggle", "url": "https://www.kaggle.com/code/p1ayer0ne/gemma-doctor-patient-dialog"}],
+  "date": "2024",
+  "order": 3
+}

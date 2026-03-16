@@ -1,0 +1,16 @@
+{
+  "company": "Emage Development Pte. Ltd.",
+  "location": "Singapore",
+  "role": "Machine Learning Engineer",
+  "startDate": "Jul 2019",
+  "endDate": "Jul 2020",
+  "projects": [
+    {
+      "title": "Defective Semiconductor Detection",
+      "description": "Collaborated with a team of 2 engineers to build a production-ready defect detection system. Built a high-precision defect detection system using YOLOv3 and RetinaNet, achieving 98% precision in identifying semiconductor defects. Engineered a computer vision pipeline combining OpenCV, Hough Transform, Canny edge detection, and ResNet for robust feature extraction. Deployed a containerized ML model to the factory floor with a 0.2-second inspection time per image.",
+      "tech": ["YOLOv3", "RetinaNet", "OpenCV", "ResNet", "Docker", "Python"],
+      "image": "/images/experience/defective-semiconductor-detection.svg"
+    }
+  ],
+  "order": 5
+}

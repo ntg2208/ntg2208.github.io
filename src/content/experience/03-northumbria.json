@@ -1,0 +1,16 @@
+{
+  "company": "Northumbria University",
+  "location": "UK",
+  "role": "Data Scientist",
+  "startDate": "Jan 2023",
+  "endDate": "Jul 2023",
+  "projects": [
+    {
+      "title": "Researching Solutions for Parkinson's Disease Treatment",
+      "description": "Conducted statistical analysis and built predictive ML models (Random Forests, Logistic Regression) to evaluate the effectiveness of wearable/smartphone cues for drooling treatment in Parkinson's patients. Developed a personalized treatment schedule prediction system on AWS SageMaker, achieving 65% F1-score accuracy through rigorous hyperparameter tuning and model selection.",
+      "tech": ["Random Forests", "Logistic Regression", "AWS SageMaker", "Python", "Statistical Analysis"],
+      "image": "/images/experience/statistical-analysis.svg"
+    }
+  ],
+  "order": 3
+}

@@ -1,0 +1,22 @@
+{
+  "company": "twentytwotensors",
+  "location": "UK",
+  "role": "Machine Learning Engineer",
+  "startDate": "Dec 2024",
+  "endDate": "Present",
+  "projects": [
+    {
+      "title": "Production AI Multi-Agent Systems",
+      "description": "Architected and deployed a production-grade multi-agent AI customer support system using Google Gemini, orchestrating a Master Agent with specialized Policy Agent (RAG) and Ticket Agent (database operations), reducing operational costs by 60% while enabling 24/7 service availability.",
+      "tech": ["Google Gemini", "RAG", "Multi-Agent Systems", "Python"],
+      "image": "/images/experience/ml-model-development.svg"
+    },
+    {
+      "title": "RAG + Database Hybrid Architecture",
+      "description": "Engineered a sophisticated RAG + Database hybrid architecture with location intelligence, achieving 100% routing accuracy across 15+ comprehensive test scenarios with sub-2-second response times.",
+      "tech": ["RAG", "Database Architecture", "Location Intelligence", "Python"],
+      "image": "/images/experience/data-analysis-processing.svg"
+    }
+  ],
+  "order": 1
+}

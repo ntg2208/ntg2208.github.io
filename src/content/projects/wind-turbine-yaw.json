@@ -1,0 +1,10 @@
+{
+  "title": "Wind Turbine Yaw System Performance Analysis",
+  "description": "Conducted a comprehensive analysis of wind turbine yaw system performance using real-world SCADA data from the Kelmarsh wind farm spanning a 1-year operational period. Delivered optimization recommendations for yaw control, particularly at wind speeds above 9 m/s where power losses were most significant.",
+  "sector": "energy",
+  "tech": ["Python", "Pandas", "Matplotlib", "Seaborn", "Circular Statistics", "Time-Series Analysis"],
+  "image": "/images/projects/wind-turbine-yaw-system.png",
+  "links": [{"label": "GitHub", "url": "https://github.com/ntg2208/YAW_System_Analysis"}],
+  "date": "2024",
+  "order": 9
+}

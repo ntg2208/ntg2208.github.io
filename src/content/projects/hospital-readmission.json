@@ -1,0 +1,10 @@
+{
+  "title": "Hospital Readmission Prediction System",
+  "description": "Built a predictive machine learning system analyzing patient medical histories and admission patterns to forecast hospital readmission risk. Conducted comprehensive exploratory data analysis (EDA) to identify key risk factors and admission trends.",
+  "sector": "healthcare",
+  "tech": ["Python", "scikit-learn", "pandas", "Feature Engineering", "Classification Models"],
+  "image": "/images/projects/hospital-readmission-prediction.png",
+  "links": [{"label": "Kaggle", "url": "https://www.kaggle.com/code/p1ayer0ne/hospital-readmissions-eda-and-model"}],
+  "date": "2023",
+  "order": 11
+}
