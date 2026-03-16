@@ -1,0 +1,63 @@
+<svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="trafficBg" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#f1f5f9"/>
+            <stop offset="100%" stop-color="#e2e8f0"/>
+        </linearGradient>
+    </defs>
+
+    <rect width="400" height="300" fill="url(#trafficBg)"/>
+
+    <!-- Motorway -->
+    <rect x="50" y="120" width="300" height="60" fill="#374151" rx="5"/>
+    <line x1="50" y1="150" x2="350" y2="150" stroke="#fcd34d" stroke-width="2" stroke-dasharray="20,10"/>
+
+    <!-- Cars -->
+    <g transform="translate(80, 135)">
+        <rect x="0" y="0" width="40" height="20" fill="#ef4444" rx="3"/>
+        <circle cx="10" cy="22" r="4" fill="#1f2937"/>
+        <circle cx="30" cy="22" r="4" fill="#1f2937"/>
+    </g>
+
+    <g transform="translate(180, 135)">
+        <rect x="0" y="0" width="40" height="20" fill="#3b82f6" rx="3"/>
+        <circle cx="10" cy="22" r="4" fill="#1f2937"/>
+        <circle cx="30" cy="22" r="4" fill="#1f2937"/>
+    </g>
+
+    <g transform="translate(280, 135)">
+        <rect x="0" y="0" width="40" height="20" fill="#10b981" rx="3"/>
+        <circle cx="10" cy="22" r="4" fill="#1f2937"/>
+        <circle cx="30" cy="22" r="4" fill="#1f2937"/>
+    </g>
+
+    <!-- Junction markers -->
+    <g transform="translate(50, 70)">
+        <rect x="0" y="0" width="40" height="30" fill="#1e40af" rx="5"/>
+        <text x="20" y="20" text-anchor="middle" fill="white" font-size="12" font-weight="700">J1</text>
+    </g>
+
+    <g transform="translate(150, 70)">
+        <rect x="0" y="0" width="40" height="30" fill="#1e40af" rx="5"/>
+        <text x="20" y="20" text-anchor="middle" fill="white" font-size="12" font-weight="700">J2</text>
+    </g>
+
+    <g transform="translate(250, 70)">
+        <rect x="0" y="0" width="40" height="30" fill="#1e40af" rx="5"/>
+        <text x="20" y="20" text-anchor="middle" fill="white" font-size="12" font-weight="700">J3</text>
+    </g>
+
+    <!-- Speed Chart -->
+    <g transform="translate(80, 210)">
+        <text x="80" y="0" text-anchor="middle" fill="#374151" font-size="10" font-weight="600">Speed Analysis</text>
+        <polyline points="0,30 40,15 80,20 120,10 160,25 200,12 240,18" stroke="#8b5cf6" stroke-width="3" fill="none"/>
+        <circle cx="0" cy="30" r="4" fill="#8b5cf6"/>
+        <circle cx="80" cy="20" r="4" fill="#8b5cf6"/>
+        <circle cx="160" cy="25" r="4" fill="#8b5cf6"/>
+        <circle cx="240" cy="18" r="4" fill="#8b5cf6"/>
+    </g>
+
+    <text x="200" y="285" text-anchor="middle" fill="#1e40af" font-family="Inter, sans-serif" font-size="14" font-weight="700">
+        M1 Traffic Analysis
+    </text>
+</svg>

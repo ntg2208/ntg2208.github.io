@@ -1,0 +1,41 @@
+<svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="cppBg" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#eff6ff"/>
+            <stop offset="100%" stop-color="#dbeafe"/>
+        </linearGradient>
+    </defs>
+    <rect width="400" height="300" fill="url(#cppBg)"/>
+    
+    <!-- C++ Logo -->
+    <g transform="translate(100, 100)">
+        <rect x="-40" y="-40" width="80" height="80" fill="#044F88" opacity="0.9" rx="5"/>
+        <text x="0" y="-5" text-anchor="middle" fill="white" font-size="24" font-weight="700">C++</text>
+        <text x="0" y="20" text-anchor="middle" fill="#659AD2" font-size="10" font-weight="600">High Performance</text>
+    </g>
+    
+    <!-- Embedded System -->
+    <g transform="translate(240, 90)">
+        <rect x="0" y="0" width="90" height="70" fill="#10b981" opacity="0.8" rx="8"/>
+        <text x="45" y="25" text-anchor="middle" fill="white" font-size="11" font-weight="700">Embedded</text>
+        <text x="45" y="40" text-anchor="middle" fill="white" font-size="11" font-weight="700">Systems</text>
+        
+        <!-- Chip icon -->
+        <rect x="35" y="48" width="20" height="15" fill="white" opacity="0.8" rx="2"/>
+        <circle cx="40" cy="55" r="2" fill="#10b981"/>
+        <circle cx="50" cy="55" r="2" fill="#10b981"/>
+    </g>
+    
+    <!-- Performance Indicators -->
+    <g transform="translate(100, 180)">
+        <rect x="0" y="0" width="80" height="35" fill="#f59e0b" opacity="0.8" rx="8"/>
+        <text x="40" y="23" text-anchor="middle" fill="white" font-size="11" font-weight="700">Optimized</text>
+        
+        <rect x="95" y="0" width="80" height="35" fill="#ef4444" opacity="0.8" rx="8"/>
+        <text x="135" y="23" text-anchor="middle" fill="white" font-size="11" font-weight="700">Real-time</text>
+    </g>
+    
+    <text x="200" y="265" text-anchor="middle" fill="#044F88" font-family="Inter, sans-serif" font-size="14" font-weight="700">
+        Advanced C++ Development
+    </text>
+</svg>

@@ -1,0 +1,53 @@
+<svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="cameraBg" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#fef3c7"/>
+            <stop offset="100%" stop-color="#fde68a"/>
+        </linearGradient>
+    </defs>
+    <rect width="400" height="300" fill="url(#cameraBg)"/>
+    
+    <!-- Camera -->
+    <g transform="translate(90, 100)">
+        <rect x="-30" y="-20" width="60" height="40" fill="#374151" rx="5"/>
+        <circle cx="0" cy="0" r="15" fill="#1e293b"/>
+        <circle cx="0" cy="0" r="10" fill="#3b82f6"/>
+        <rect x="25" y="-8" width="15" height="16" fill="#475569"/>
+        <text x="0" y="40" text-anchor="middle" fill="#1e293b" font-size="10" font-weight="600">Real-time</text>
+    </g>
+    
+    <!-- Computer Vision Detection -->
+    <g transform="translate(200, 100)">
+        <rect x="-40" y="-40" width="80" height="80" fill="white" stroke="#8b5cf6" stroke-width="2" rx="5"/>
+        
+        <!-- Person silhouette -->
+        <circle cx="0" cy="-15" r="10" fill="#8b5cf6" opacity="0.7"/>
+        <ellipse cx="0" cy="10" rx="12" ry="18" fill="#8b5cf6" opacity="0.7"/>
+        
+        <!-- Detection points -->
+        <circle cx="0" cy="-25" r="2" fill="#10b981"/>
+        <circle cx="-12" cy="0" r="2" fill="#10b981"/>
+        <circle cx="12" cy="0" r="2" fill="#10b981"/>
+    </g>
+    
+    <!-- Fashion Recommendations -->
+    <g transform="translate(290, 80)">
+        <rect x="0" y="0" width="45" height="50" fill="#ef4444" opacity="0.7" rx="5"/>
+        <rect x="3" y="3" width="39" height="35" fill="white" opacity="0.8"/>
+        <text x="22" y="48" text-anchor="middle" fill="white" font-size="16">👔</text>
+        
+        <rect x="0" y="60" width="45" height="50" fill="#10b981" opacity="0.7" rx="5"/>
+        <rect x="3" y="63" width="39" height="35" fill="white" opacity="0.8"/>
+        <text x="22" y="108" text-anchor="middle" fill="white" font-size="16">👗</text>
+    </g>
+    
+    <!-- Integration -->
+    <g transform="translate(100, 180)">
+        <rect x="0" y="0" width="200" height="35" fill="#3b82f6" opacity="0.8" rx="8"/>
+        <text x="100" y="23" text-anchor="middle" fill="white" font-size="11" font-weight="600">E-commerce Integration</text>
+    </g>
+    
+    <text x="200" y="265" text-anchor="middle" fill="#d97706" font-family="Inter, sans-serif" font-size="13" font-weight="700">
+        Styling Camera Application
+    </text>
+</svg>

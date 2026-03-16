@@ -1,0 +1,58 @@
+<svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="emotionBg" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#fef3c7"/>
+            <stop offset="100%" stop-color="#fde68a"/>
+        </linearGradient>
+    </defs>
+
+    <rect width="400" height="300" fill="url(#emotionBg)"/>
+
+    <!-- Customer Faces -->
+    <g transform="translate(80, 80)">
+        <!-- Happy -->
+        <circle cx="0" cy="0" r="30" fill="#10b981" opacity="0.8"/>
+        <circle cx="-10" cy="-5" r="4" fill="#1f2937"/>
+        <circle cx="10" cy="-5" r="4" fill="#1f2937"/>
+        <path d="M-12,8 Q0,18 12,8" stroke="#1f2937" stroke-width="3" fill="none"/>
+        <text x="0" y="50" text-anchor="middle" fill="#059669" font-size="10" font-weight="600">Happy</text>
+    </g>
+
+    <g transform="translate(200, 80)">
+        <!-- Neutral -->
+        <circle cx="0" cy="0" r="30" fill="#3b82f6" opacity="0.8"/>
+        <circle cx="-10" cy="-5" r="4" fill="#1f2937"/>
+        <circle cx="10" cy="-5" r="4" fill="#1f2937"/>
+        <line x1="-10" y1="10" x2="10" y2="10" stroke="#1f2937" stroke-width="3"/>
+        <text x="0" y="50" text-anchor="middle" fill="#1e40af" font-size="10" font-weight="600">Neutral</text>
+    </g>
+
+    <g transform="translate(320, 80)">
+        <!-- Sad -->
+        <circle cx="0" cy="0" r="30" fill="#f59e0b" opacity="0.8"/>
+        <circle cx="-10" cy="-5" r="4" fill="#1f2937"/>
+        <circle cx="10" cy="-5" r="4" fill="#1f2937"/>
+        <path d="M-12,15 Q0,5 12,15" stroke="#1f2937" stroke-width="3" fill="none"/>
+        <text x="0" y="50" text-anchor="middle" fill="#d97706" font-size="10" font-weight="600">Sad</text>
+    </g>
+
+    <!-- Camera/Detection -->
+    <g transform="translate(200, 160)">
+        <rect x="-30" y="-15" width="60" height="30" fill="#475569" rx="5"/>
+        <circle cx="0" cy="0" r="12" fill="#1e293b"/>
+        <circle cx="0" cy="0" r="8" fill="#60a5fa"/>
+        <text x="0" y="40" text-anchor="middle" fill="#1e293b" font-size="10" font-weight="600">Face Detection</text>
+    </g>
+
+    <!-- CNN Model -->
+    <g transform="translate(100, 210)">
+        <rect x="0" y="0" width="200" height="35" fill="#8b5cf6" opacity="0.8" rx="8"/>
+        <text x="100" y="23" text-anchor="middle" fill="white" font-size="12" font-weight="700">
+            Emotion Recognition CNN
+        </text>
+    </g>
+
+    <text x="200" y="278" text-anchor="middle" fill="#92400e" font-family="Inter, sans-serif" font-size="14" font-weight="700">
+        Customer Sentiment Analysis
+    </text>
+</svg>
