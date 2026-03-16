@@ -1,24 +1,24 @@
 {
-  "name": "astro-temp",
-  "type": "module",
-  "version": "0.0.1",
-  "engines": {
-    "node": ">=22.12.0"
-  },
-  "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
-  },
-  "dependencies": {
-    "@astrojs/preact": "^5.0.1",
-    "astro": "^6.0.5",
-    "preact": "^10.29.0"
-  },
-  "devDependencies": {
-    "@lucide/astro": "^0.577.0",
-    "@tailwindcss/vite": "^4.2.1",
-    "tailwindcss": "^4.2.1"
-  }
+	"name": "ntg2208-portfolio",
+	"type": "module",
+	"version": "0.0.1",
+	"engines": {
+		"node": ">=22.12.0"
+	},
+	"scripts": {
+		"dev": "astro dev",
+		"build": "astro build",
+		"preview": "astro preview",
+		"astro": "astro"
+	},
+	"dependencies": {
+		"@astrojs/preact": "^5.0.1",
+		"astro": "^6.0.5",
+		"preact": "^10.29.0",
+		"@lucide/astro": "^0.577.0"
+	},
+	"devDependencies": {
+		"@tailwindcss/vite": "^4.2.1",
+		"tailwindcss": "^4.2.1"
+	}
 }
