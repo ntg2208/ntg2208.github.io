@@ -1,0 +1,46 @@
+---
+import { getCollection } from 'astro:content';
+
+const experienceEntries = await getCollection('experience');
+const sorted = experienceEntries.sort((a, b) => a.data.order - b.data.order);
+---
+<section id="experience" class="py-20 bg-slate-50">
+  <div class="max-w-6xl mx-auto px-6">
+    <p class="text-sm font-medium text-blue-600 mb-2">Experience</p>
+    <h2 class="text-3xl font-semibold text-slate-900 mb-10">Professional Journey</h2>
+
+    <div class="relative">
+      <!-- Timeline line -->
+      <div class="absolute left-0 md:left-4 top-0 bottom-0 w-px bg-slate-200"></div>
+
+      <div class="flex flex-col gap-12">
+        {sorted.map(entry => (
+          <div class="relative pl-8 md:pl-12">
+            <!-- Timeline dot -->
+            <div class="absolute left-0 md:left-4 top-1 w-2 h-2 -translate-x-1/2 rounded-full bg-blue-600"></div>
+
+            <div class="mb-4">
+              <h3 class="text-lg font-semibold text-slate-900">{entry.data.company}</h3>
+              <p class="text-sm text-blue-600 font-medium">{entry.data.role}</p>
+              <p class="text-xs text-slate-500">{entry.data.startDate} — {entry.data.endDate} · {entry.data.location}</p>
+            </div>
+
+            <div class="flex flex-col gap-4">
+              {entry.data.projects.map(project => (
+                <div class="p-4 border border-slate-200 rounded-lg bg-white">
+                  <h4 class="text-sm font-semibold text-slate-900 mb-2">{project.title}</h4>
+                  <p class="text-xs text-slate-500 leading-relaxed mb-3">{project.description}</p>
+                  <div class="flex flex-wrap gap-1.5">
+                    {project.tech.map(tag => (
+                      <span class="px-2 py-1 text-xs text-blue-700 bg-blue-50 rounded">{tag}</span>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
