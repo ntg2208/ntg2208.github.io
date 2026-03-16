@@ -28,7 +28,7 @@ const navLinks = [
         Download Resume
       </a>
       <button id="menu-toggle" class="md:hidden p-2 text-slate-500 hover:text-slate-900" aria-label="Toggle menu" aria-expanded="false">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
           <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
         </svg>
       </button>
@@ -55,9 +55,13 @@ const navLinks = [
   // Mobile menu toggle
   const toggle = document.getElementById('menu-toggle');
   const menu = document.getElementById('mobile-menu');
+  const menuIcon = document.getElementById('menu-icon');
+  const HAMBURGER = 'M4 6h16M4 12h16M4 18h16';
+  const CLOSE = 'M6 18L18 6M6 6l12 12';
   toggle?.addEventListener('click', () => {
     const open = menu?.classList.toggle('hidden') === false;
     toggle.setAttribute('aria-expanded', String(open));
+    if (menuIcon) menuIcon.setAttribute('d', open ? CLOSE : HAMBURGER);
   });
   document.querySelectorAll('[data-mobile-link]').forEach(link => {
     link.addEventListener('click', () => menu?.classList.add('hidden'));
